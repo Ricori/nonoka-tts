@@ -1,0 +1,49 @@
+﻿round,idx,label,checkpoint,similarity,pronunciation,naturalness,stability,issues,comment,best
+1,1,A,full_s2e10_s1e3_t7k3,3,3,3,3,noise accent,语调略显平淡低沉，尾句疑问语气不足，带有轻微底噪。,0
+1,1,B,full_s2e10_s1e6_t7k3_ref0230,5,5,5,5,,声音甜美自然，完美还原参考音色，语调与问句起伏极为生动。,1
+1,1,C,full_s2e10_s1e6_t7k3,2,3,2,2,noise unnatural_pause,语速拖沓且停顿突兀，音质发闷并伴有明显杂音与失真。,0
+1,1,D,full_s2e10_s1e6,4,4,3,4,other,咬字清晰且音色较贴合，但情绪起伏较平，略带机械感。,0
+1,1,E,gsv_s2e8_s1e15,3,4,3,2,noise,发音准确但开头及部分音节有明显电流杂音和毛刺感。,0
+1,1,F,full_s2e10_s1e3,3,3,3,3,accent other,“ございます”处语调微怪并带颤音，整体节奏略显僵硬。,0
+1,1,G,full_s2e10_s1e6_t7k3_ref4690,1,3,2,4,other,音调过高偏幼，音色严重偏离参考说话人，语速偏慢。,0
+1,1,H,full_s2e10_s1base,3,3,2,3,accent other,问好较仓促收尾突兀，“帰れますか”声调怪异且带金属混响。,0
+1,3,A,full_s2e10_s1base,5,5,5,5,,音色极其贴合，发音自然生动，整体表现优秀。,1
+1,3,B,full_s2e10_s1e6_t7k3_ref0230,4,4,2,3,unnatural_pause,金曜日后停顿时间过长，打断了语流节奏。,0
+1,3,C,full_s2e10_s1e6_t7k3_ref4690,5,5,4,5,,音色柔和自然，吐字清晰，语调平顺连贯。,0
+1,3,D,full_s2e10_s1e6,3,3,3,3,accent unnatural_pause,声线略显生硬沙哑，停顿节奏不够自然。,0
+1,3,E,full_s2e10_s1e3,3,4,2,4,accent,语调偏平直机械，缺乏抑扬顿挫的真实感。,0
+1,3,F,full_s2e10_s1e3_t7k3,3,4,2,2,noise unnatural_pause,停顿处较突兀且音质沉闷，伴有轻微杂音。,0
+1,3,G,full_s2e10_s1e6_t7k3,2,3,2,1,noise accent,电音金属感明显，声调怪异且伴有杂音。,0
+1,3,H,gsv_s2e8_s1e15,3,4,2,2,noise unnatural_pause,换气声异常粗重突兀，出现明显噪音伪影。,0
+1,6,A,full_s2e10_s1e3_t7k3,3,3,3,4,misread,十分误读为じゅうぶん，语调较平淡沉闷，表现力欠缺。,0
+1,6,B,gsv_s2e8_s1e15,2,3,2,4,misread,十分误读为じゅうぶん，节奏机械生硬，缺乏情感起伏。,0
+1,6,C,full_s2e10_s1e6_t7k3,3,3,3,4,misread,十分误读为じゅうぶん，音色偏沉，句尾语调略显疲惫呆滞。,0
+1,6,D,full_s2e10_s1e6_t7k3_ref4690,5,4,5,5,misread,十分误读为じゅうぶん；音色与原声高度契合，声调灵动自然。,1
+1,6,E,full_s2e10_s1e6,3,3,3,4,misread,十分误读为じゅうぶん，声音略显含糊无力，抑扬顿挫不足。,0
+1,6,F,full_s2e10_s1e3,2,2,2,3,misread,十分误读为じゅうぶん，音质发闷发虚，语调机械僵死。,0
+1,6,G,full_s2e10_s1base,2,3,2,3,misread,十分误读为じゅうぶん，声音略带空洞滤镜感，语调平滞。,0
+1,6,H,full_s2e10_s1e6_t7k3_ref0230,4,4,4,5,misread,十分误读为じゅうぶん；声线甜美贴合原声，语气温柔略显拘谨。,0
+1,7,A,full_s2e10_s1e6_t7k3_ref0230,3,4,3,4,accent unnatural_pause,生まれて读音正确，但上手に声调不自然，语调偏机械。,0
+1,7,B,gsv_s2e8_s1e15,4,2,4,4,misread,生まれて误读为ほまれで，但后续音色甜美自然。,0
+1,7,C,full_s2e10_s1e6,2,2,2,3,misread accent noise,生まれて误读，上手に发音含糊，音质发闷有杂音。,0
+1,7,D,full_s2e10_s1e3_t7k3,4,3,4,4,misread,生まれて读成おまれて，但整体声线温柔，语气较贴合。,0
+1,7,E,full_s2e10_s1e3,3,2,1,2,misread accent unnatural_pause noise,生まれて误读，节奏破碎且有不自然停顿，杂音明显。,0
+1,7,F,full_s2e10_s1e6_t7k3,2,1,2,3,misread accent,生まれて严重误读，句尾升调缺失，语调极为机械生硬。,0
+1,7,G,full_s2e10_s1e6_t7k3_ref4690,5,5,5,5,,发音与声调完全准确，语气生动自然，音色极度贴合原声。,1
+1,7,H,full_s2e10_s1base,3,2,2,2,misread accent noise,生まれて误读为ほまれで，声调平淡无起伏，尾音带底噪。,0
+1,8,A,full_s2e10_s1e3,3,2,2,2,skip_or_repeat unnatural_pause,漏读「先輩ったら」，笑声后停顿过长。,0
+1,8,B,full_s2e10_s1e6,5,5,5,5,,音色甜美贴合，语调生动俏皮，发音自然流畅。,1
+1,8,C,full_s2e10_s1e6_t7k3_ref4690,3,3,3,3,misread noise,笑声发音偏向「へへ」，略带电音杂音，语调生硬。,0
+1,8,D,full_s2e10_s1e6_t7k3,4,4,3,4,unnatural_pause,笑声呼吸音较重，句间停顿略显生硬，语调欠自然。,0
+1,8,E,full_s2e10_s1e6_t7k3_ref0230,3,2,2,2,skip_or_repeat unnatural_pause,漏读「先輩ったら」，笑声后存在较长空白停顿。,0
+1,8,F,full_s2e10_s1base,4,5,4,5,other,发音准确清晰，但语调起伏较弱，语气稍显平淡。,0
+1,8,G,full_s2e10_s1e3_t7k3,3,3,3,3,misread unnatural_pause,笑声发音似「はは」，句间停顿突兀，语调不连贯。,0
+1,8,H,gsv_s2e8_s1e15,5,5,4,5,,音色还原度高，整体自然生动，句尾语调略紧。,0
+1,10,A,full_s2e10_s1e3_t7k3,3,4,3,4,accent other,发音准确但语调平淡略显机械，音色偏沉闷，缺乏灵动感。,0
+1,10,B,full_s2e10_s1e6_t7k3_ref0230,5,4,4,5,unnatural_pause,音色甜美贴合原声，但日期处停顿稍显突兀，整体表现良好。,0
+1,10,C,full_s2e10_s1e3,1,3,1,3,accent noise other,音色低沉发闷严重失真，语调沉闷无生气且带有轻微空洞杂音。,0
+1,10,D,full_s2e10_s1e6_t7k3_ref4690,4,4,3,4,unnatural_pause,声线明亮元气贴合角色，但标点逗号处缺乏停顿，节奏略急促。,0
+1,10,E,gsv_s2e8_s1e15,5,5,5,5,,音色与原声高度契合，发音自然生动，断句与节奏感极佳。,1
+1,10,F,full_s2e10_s1base,2,3,2,3,accent noise other,声音干涩沙哑偏低沉，语调机械平缓，结尾音质模糊发虚。,0
+1,10,G,full_s2e10_s1e6_t7k3,2,3,2,4,accent other,声线偏厚且略显生硬，“気温は”声调不自然，合成感明显。,0
+1,10,H,full_s2e10_s1e6,4,3,3,4,accent,虽保持了少女音色，但“今日の”声调起伏突兀，略带颤音。,0

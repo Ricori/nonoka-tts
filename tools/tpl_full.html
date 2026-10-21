@@ -1,0 +1,58 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全量转写校对</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1f1f1f;--mut:#777;--line:#e3e1dc;--hi:#c2410c;--mid:#b7791f;--ok:#2f7d4f;--acc:#3b5bdb}
+@media (prefers-color-scheme:dark){:root{--bg:#18181a;--card:#222225;--ink:#ececec;--mut:#9a9a9a;--line:#333;--hi:#f08c5a;--mid:#e0b24f;--ok:#62c48a;--acc:#8ea2ff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic UI","Microsoft YaHei",sans-serif}
+header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+h1{font-size:17px;margin:0 12px 0 0}.prog{color:var(--mut)}button,select{font:inherit;padding:5px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff}main{max-width:980px;margin:0 auto;padding:12px 16px 80px}
+.tip{color:var(--mut);font-size:13px;margin:4px 0 12px}
+.c{background:var(--card);border:1px solid var(--line);border-left:4px solid transparent;border-radius:8px;padding:10px 12px;margin:10px 0}
+.c.高{border-left-color:var(--hi)}.c.中{border-left-color:var(--mid)}.c.done{opacity:.6}.c.cur{outline:2px solid var(--acc)}
+.top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--mut)}.fn{font-family:ui-monospace,Consolas,monospace;color:var(--ink)}
+.b{padding:0 7px;border-radius:10px;font-size:12px;color:#fff}.b.高{background:var(--hi)}.b.中{background:var(--mid)}
+audio{height:32px;width:100%;max-width:420px;margin:6px 0}
+textarea{width:100%;font-size:16px;line-height:1.6;font-family:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);resize:vertical}
+.ref{font-size:13px;color:var(--mut);margin-top:4px}label{cursor:pointer;user-select:none}.drop{color:var(--hi)}
+</style></head><body>
+<header><h1>全量转写校对</h1><span class="prog" id="prog"></span>
+<select id="flt"><option value="all">全部</option><option value="need">只看 Gemini 改过的</option><option value="todo">只看未确认</option></select>
+<button onclick="exportCsv()" class="p">导出结果</button></header>
+<main><p class="tip">这里只列出 large-v3 和 kotoba 结果不一致、或 Gemini 改过的条目，其余条目两个模型一致，直接使用。<br>
+文本框是 Gemini 听写后的底稿，灰字是两个识别模型的原始结果和 Gemini 的改动说明。边听边改，改好后勾选「已确认」；不想用的条目勾选「排除」。<br>
+人名照常写汉字即可（奏先輩、夜月先輩、十和先輩），训练时会自动转成读音。<br>
+快捷键：Ctrl+Enter 确认并播放下一条，Ctrl+Space 播放/暂停当前条。修改会自动保存在本浏览器里，全部改完点「导出结果」，把下载的 proofread_result.csv 放进 02_dataset_full 文件夹，然后告诉 Claude。</p><div id="list"></div></main>
+<script>
+const DATA=__DATA__;const KEY="gsv_proof_full";let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const S=f=>st[f]||(st[f]={});let cur=0;
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function render(){const flt=document.getElementById("flt").value;const L=document.getElementById("list");L.innerHTML="";
+DATA.forEach((d,i)=>{const s=S(d.file);if(flt==="need"&&!d.gemini_changed)return;if(flt==="todo"&&(s.done||s.drop))return;
+const el=document.createElement("div");el.className="c "+(d.priority||"")+(s.done||s.drop?" done":"");el.id="c"+i;
+el.innerHTML=`<div class="top"><span class="fn">${d.file}</span><span>${d.dur}s</span>${d.priority?`<span class="b ${d.priority}">${d.priority}</span>`:""}<span>${esc(d.reason||"")}</span>${d.gemini_changed?`<span class="b 中">Gemini 改过</span>`:""}</div>
+<audio controls preload="none" src="${d.file}"></audio>
+<textarea rows="2">${esc(s.text??d.text)}</textarea><div class="ref">large-v3：${esc(d.large_v3)}<br>kotoba：${esc(d.kotoba)}${d.note?`<br>Gemini：${esc(d.note)}`:""}</div>
+<div class="top" style="margin-top:6px"><label><input type="checkbox" class="dn" ${s.done?"checked":""}> 已确认</label><label class="drop"><input type="checkbox" class="dr" ${s.drop?"checked":""}> 排除</label><button class="rs" style="padding:2px 8px">恢复原文</button></div>`;
+el.querySelector("textarea").oninput=e=>{s.text=e.target.value;save()};
+el.querySelector(".dn").onchange=e=>{s.done=e.target.checked;save();prog();el.classList.toggle("done",s.done||s.drop)};
+el.querySelector(".dr").onchange=e=>{s.drop=e.target.checked;save();prog();el.classList.toggle("done",s.done||s.drop)};
+el.querySelector(".rs").onclick=()=>{delete s.text;save();el.querySelector("textarea").value=d.text};
+el.querySelector("audio").onplay=()=>{document.querySelectorAll("audio").forEach(a=>{if(a!==el.querySelector("audio"))a.pause()});setCur(i)};
+el.onclick=()=>setCur(i);L.appendChild(el)});prog()}
+function setCur(i){document.querySelectorAll(".c.cur").forEach(x=>x.classList.remove("cur"));cur=i;const e=document.getElementById("c"+i);if(e)e.classList.add("cur")}
+function prog(){const n=DATA.length,dn=DATA.filter(d=>S(d.file).done).length,dr=DATA.filter(d=>S(d.file).drop).length;
+document.getElementById("prog").textContent=`已确认 ${dn} / 排除 ${dr} / 共 ${n}`}
+function txt(d){return (S(d.file).text??d.text).replace(/[\r\n|]+/g,"").trim()}
+function dl(name,content){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([content],{type:"text/plain;charset=utf-8"}));a.download=name;a.click()}
+function exportList(){const keep=DATA.filter(d=>!S(d.file).drop);const und=keep.filter(d=>!S(d.file).done).length;
+if(und&&!confirm(`还有 ${und} 条未确认，仍然导出吗？`))return;dl("esd.list",keep.map(d=>`${d.file.replace(/\.\w+$/,"")}.wav|nonoka|JP|${txt(d)}`).join("\n")+"\n")}
+function exportCsv(){const q=s=>'"'+String(s).replace(/"/g,'""')+'"';dl("proofread_result.csv","﻿"+["file,status,text"].concat(DATA.map(d=>{const s=S(d.file);return [d.file,s.drop?"drop":s.done?"done":"todo",q(txt(d))].join(",")})).join("\n"))}
+document.getElementById("flt").onchange=render;
+document.addEventListener("keydown",e=>{if(!e.ctrlKey)return;const el=document.getElementById("c"+cur);
+if(e.key===" "){e.preventDefault();const a=el&&el.querySelector("audio");if(a)a.paused?a.play():a.pause()}
+if(e.key==="Enter"){e.preventDefault();if(el){const s=S(DATA[cur].file);s.done=true;save();el.querySelector(".dn").checked=true;el.classList.add("done");prog();el.querySelector("audio").pause()}
+let n=cur+1;while(n<DATA.length&&!document.getElementById("c"+n))n++;const ne=document.getElementById("c"+n);if(ne){setCur(n);ne.scrollIntoView({block:"center"});const a=ne.querySelector("audio");a.play();ne.querySelector("textarea").focus()}}});
+render();setCur(0);
+</script></body></html>

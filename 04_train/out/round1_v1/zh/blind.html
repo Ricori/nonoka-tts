@@ -1,0 +1,125 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>检查点盲听</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1f1f1f;--mut:#777;--line:#e3e1dc;--hi:#c2410c;--ok:#2f7d4f;--acc:#3b5bdb;--accbg:#e8ecfd}
+@media (prefers-color-scheme:dark){:root{--bg:#18181a;--card:#222225;--ink:#ececec;--mut:#9a9a9a;--line:#333;--hi:#f08c5a;--ok:#62c48a;--acc:#8ea2ff;--accbg:#2a3156}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic UI","Microsoft YaHei",sans-serif}
+header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+h1{font-size:17px;margin:0 12px 0 0}.prog{color:var(--mut)}
+button{font:inherit;padding:5px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff}
+main{max-width:980px;margin:0 auto;padding:12px 16px 80px}
+.tip{color:var(--mut);font-size:13px;margin:4px 0 12px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:12px 0}
+.c h2{font-size:16px;margin:0 0 6px;font-weight:600}.c h2 .n{color:var(--mut);font-weight:400;margin-right:6px}
+.refs .r{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:4px 12px;align-items:center;font-size:13px;color:var(--mut);padding:3px 0}
+@media (max-width:640px){.refs .r{grid-template-columns:1fr}}
+audio{height:32px;width:100%;max-width:340px}
+.v{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:48px minmax(0,320px) 1fr;gap:6px 12px;align-items:center}
+.v.cur{background:var(--accbg);margin:0 -12px;padding:8px 12px}
+.lab{font-weight:700;font-size:18px;text-align:center}.lab small{display:block;font-size:11px;font-weight:400;color:var(--mut);line-height:1.2;white-space:nowrap}
+.dims{display:flex;flex-wrap:wrap;gap:4px 14px}
+.dim{display:flex;align-items:center;gap:3px;font-size:13px}.dim span{width:30px;color:var(--mut)}
+.dim button{width:26px;height:26px;padding:0;font-size:13px;border-radius:4px}
+.dim button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.flags{grid-column:2/4;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:13px;color:var(--mut)}
+.flags label{cursor:pointer;user-select:none}.flags input[type=text]{flex:1;min-width:140px;font:inherit;font-size:13px;padding:2px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.asr{grid-column:2/4;font-size:13px;color:var(--mut)}.asr b{color:var(--hi);font-weight:600}.asr .z{color:var(--ok)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right}th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:500}tr.best td{font-weight:700}.wrap{overflow-x:auto}
+@media (max-width:640px){.v{grid-template-columns:48px 1fr}.dims,.flags,.asr{grid-column:1/3}}
+</style></head><body>
+<header><h1>检查点盲听</h1><span class="prog" id="prog"></span>
+<button id="reveal" class="p">揭晓结果</button><button id="csv">导出 CSV</button></header>
+<main>
+<p class="tip">每句话的各个版本顺序已随机打乱，字母和来源的对应关系在揭晓前看不到。先听上面的原声找感觉，再按句子横向对比。所有版本的播放音量已自动对齐（不同模型的输出响度不同，响的总会显得更好），不用自己调音量。<br>
+每项 1–5 分：<b>相似</b>像不像她 · <b>读音</b>汉字读法和アクセント · <b>自然</b>语调、停顿、气息 · <b>稳定</b>杂音、吞字、重复。可以只给明显好或差的打分，空着的不计入平均。<br>
+快捷键：<b>J / K</b> 下一个 / 上一个版本并播放，<b>空格</b> 播放/暂停，<b>1–5</b> 给当前版本的当前维度打分（打分后自动跳到下一维度），<b>Tab</b> 切换维度。打分自动保存在本浏览器里。</p>
+<div id="result"></div>
+<div class="c refs" id="refs"><h2>原声参考</h2></div>
+<div id="list"></div>
+</main>
+<script>
+const DATA={"key": "ecc19ecc51", "sentences": ["学长，早上好！今天能一起回家吗？", "昨天晚上，我在车站前的书店买了三本新小说。", "下周五下午三点，请到学生会室集合。", "今天风很大，出门最好穿上外套哦。", "嘿嘿，学长你看，头发又翘起来了。", "约好了哦。明天早上七点半，我在老地方等你。"], "ckpts": [{"name": "gsv_s2e8_s1e10", "step": 0}, {"name": "gsv_s2e8_s1e15", "step": 0}], "refs": [{"src": "../../../02_dataset_v1/03002860.ogg", "text": "先輩、何か考え事ですか？それとも、何か悩みでも？", "vol": 0.887}, {"src": "../../../02_dataset_v1/03003430.ogg", "text": "そうですね。頑張って練習しましょう。今日はもうお店閉めちゃってもいいよってお父さんが言ってくれましたし。", "vol": 0.75}, {"src": "../../../02_dataset_v1/03004600.ogg", "text": "あのお店のコーヒーもケーキも、すっごく美味しかったですね。何かうちも、大好メニューを考えなきゃいけないかもしれません。", "vol": 0.818}], "vols": {"gsv_s2e8_s1e10": {"1": 1.0, "2": 1.0, "3": 1.0, "4": 0.967, "5": 1.0, "6": 1.0}, "gsv_s2e8_s1e15": {"1": 0.986, "2": 0.981, "3": 0.99, "4": 1.0, "5": 1.0, "6": 1.0}}, "cer": {"gsv_s2e8_s1e10": {"items": {"1": {"hyp": "学长,早上好,今天能一起回家吗?", "cer": 0.0}, "2": {"hyp": "否定完手,我在车站前的书店买了三本新小说。", "cer": 0.2105}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,出门最好站向外道。", "cer": 0.2857}, "5": {"hyp": "哼哼,头发有着痴了呢。", "cer": 0.8462}, "6": {"hyp": "约好了啊,明天早上七点半,我在老地方等你。", "cer": 0.0556}}, "total": 0.21739130434782608}, "gsv_s2e8_s1e15": {"items": {"1": {"hyp": "学长,今天能一起回家吗?", "cer": 0.2308}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,出门,最好穿上外套啊。", "cer": 0.0714}, "5": {"hyp": "嘿嘿,修道女官,头发要敲起来了。", "cer": 0.4615}, "6": {"hyp": "约好了,明天早上七点半,我在老地方等你。", "cer": 0.0556}}, "total": 0.11956521739130435}}, "auto": [{"name": "原声", "sim": 0.8457555555555555, "mos": 3.9295666666666667, "dnsmos": 3.119277777777778, "f0_st": 3.6754444444444445, "mora_s": 4.256333333333333}, {"name": "gsv_s2e8_s1e10", "sim": 0.8012333333333334, "mos": 3.9711666666666665, "dnsmos": 3.1795000000000004, "f0_st": 2.6366666666666667, "mora_s": 4.2700000000000005}, {"name": "gsv_s2e8_s1e15", "sim": 0.7895500000000001, "mos": 3.9019999999999997, "dnsmos": 3.132, "f0_st": 2.8966666666666665, "mora_s": 4.496666666666667}], "gemini": {"summary": [{"name": "gsv_s2e8_s1e10", "n": 12, "best": 6, "similarity": 4.25, "pronunciation": 3.5, "naturalness": 3.5833333333333335, "stability": 3.5}, {"name": "gsv_s2e8_s1e15", "n": 12, "best": 6, "similarity": 4.25, "pronunciation": 3.5833333333333335, "naturalness": 3.4166666666666665, "stability": 3.8333333333333335}], "items": {"gsv_s2e8_s1e10": {"1": ["5/4/5/5 完整流畅自然，语气生动贴合角色，声调轻微口音。", "5/5/5/5 发音准确完整，音色贴合参考，语气甜美自然。"], "2": ["3/2/2/4 “前”字发音不准偏三声，有明显口音且停顿生硬。", "4/4/3/3 句首起音有杂音，韵律稍显机械生硬，个别字调欠自然。"], "3": ["5/5/5/5 发音清晰标准，语调自然甜美，停顿节奏适宜，音色还原度高。", "4/3/4/3 音色甜美自然，语调流畅，但\"下周五\"漏读了\"五\"。"], "4": ["3/2/2/2 开头有杂音，风读作fo，穿发音不准，口音重。", "4/4/3/3 句首有多余杂音，穿字发音稍含糊，语调略显僵硬。"], "5": ["4/1/2/1 严重漏读“学长你看”，前半句缺失，后半句音色尚可。", "4/2/2/1 漏读“学长你看”，中间有明显异常停顿。"], "6": ["5/5/5/5 音色贴合度极高，语调生动自然，停顿节奏舒适。", "5/5/5/5 发音清晰自然，语速节奏平稳，停顿恰当，音色还原度高。"]}, "gsv_s2e8_s1e15": {"1": ["4/2/2/2 漏读“早上好”，停顿不自然，带有轻微口音。", "4/2/3/2 漏读“早上好”，中间停顿较长且不自然。"], "2": ["5/5/4/5 咬字清晰，声调准确，音色还原度高且语气自然。", "5/5/5/5 发音准确自然，声线高度还原参考音色，无杂音瑕疵。"], "3": ["4/4/3/4 中间逗号停顿过长，影响整体语句连贯性，节奏稍显拖沓。", "3/2/2/2 \"下周五\"漏读\"五\"，且\"下周\"严重含糊失真读成\"沙都\"。"], "4": ["4/3/3/4 无杂音较干净，风与穿字音欠准，音色还原度好。", "5/5/5/5 发音纯正自然，语气生动契合角色，无杂音与杂音节。"], "5": ["4/3/4/4 未漏字，但“学长你看”发音含糊带口音，语调自然。", "5/4/5/5 完整生动贴合角色，仅“学长”发音略带口音。"], "6": ["4/4/3/4 七点半后停顿过长，语调节奏略显脱节生硬。", "4/4/2/4 语速前急后缓，七点半后停顿过长，节奏略显脱节。"]}}}};
+const DIMS=[["sim","相似"],["read","读音"],["nat","自然"],["stab","稳定"]];
+const FLAGS=[["misread","读错/音调错"],["drop","吞字/重复"],["noise","杂音/破音"]];
+const KEY="sbv2_blind_"+DATA.key;
+let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+st.order=st.order||{};st.s=st.s||{};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LABELS="ABCDEFGHIJ";
+const NAMES=DATA.ckpts.map(c=>c.name);
+function order(i){let o=st.order[i];
+  if(!o||o.length!==NAMES.length||!NAMES.every(n=>o.includes(n))){o=NAMES.slice();for(let k=o.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[o[k],o[j]]=[o[j],o[k]]}st.order[i]=o;save()}
+  return o}
+const S=(i,ck)=>{const k=i+"|"+ck;return st.s[k]||(st.s[k]={})};
+const short=n=>{const c=DATA.ckpts.find(c=>c.name===n);return c&&c.step?c.step+" 步":n.replace(/^sarashina_/,"Sarashina ")};
+let cur=0,curDim=0;const rows=[];
+
+DATA.refs.forEach(r=>{const d=document.createElement("div");d.className="r";
+  d.innerHTML=`<audio controls preload="none" src="${esc(r.src)}"></audio><span>${esc(r.text)}</span>`;
+  d.querySelector("audio").volume=r.vol??1;document.getElementById("refs").appendChild(d)});
+
+function render(){const L=document.getElementById("list");L.innerHTML="";rows.length=0;
+  DATA.sentences.forEach((sen,i)=>{const card=document.createElement("div");card.className="c";
+    card.innerHTML=`<h2><span class="n">${i+1}</span>${esc(sen)}</h2>`;
+    order(i).forEach((ck,k)=>{const s=S(i,ck);const v=document.createElement("div");v.className="v";
+      const cer=st.revealed&&DATA.cer&&DATA.cer[ck]&&DATA.cer[ck].items[i+1];
+      v.innerHTML=`<div class="lab">${LABELS[k]}${st.revealed?`<small>${short(ck)}</small>`:""}</div>
+<audio controls preload="none" src="samples/${encodeURIComponent(ck)}/${String(i+1).padStart(2,"0")}.wav"></audio>
+<div class="dims">${DIMS.map(([d,t])=>`<div class="dim" data-d="${d}"><span>${t}</span>${[1,2,3,4,5].map(n=>`<button data-n="${n}" class="${s[d]===n?"on":""}">${n}</button>`).join("")}</div>`).join("")}</div>
+<div class="flags">${FLAGS.map(([f,t])=>`<label><input type="checkbox" data-f="${f}" ${s[f]?"checked":""}> ${t}</label>`).join("")}<input type="text" placeholder="备注（例：「人気」读成ひとけ）" value="${esc(s.note||"")}"></div>
+${st.revealed&&DATA.gemini&&DATA.gemini.items[ck]&&DATA.gemini.items[ck][i+1]?DATA.gemini.items[ck][i+1].map(g=>`<div class="asr">Gemini（相似/读音/自然/稳定）：${esc(g)}</div>`).join(""):""}
+${cer?`<div class="asr">Whisper 听写：${esc(cer.hyp)}　${cer.cer>0?`<b>CER ${(cer.cer*100).toFixed(1)}%</b>`:`<span class="z">CER 0</span>`}</div>`:""}`;
+      v.querySelectorAll(".dim").forEach((el,di)=>el.querySelectorAll("button").forEach(b=>b.onclick=()=>{b.blur();setCur(rows.indexOf(v),di);score(+b.dataset.n)}));
+      v.querySelectorAll("input[type=checkbox]").forEach(cb=>cb.onchange=()=>{cb.blur();s[cb.dataset.f]=cb.checked;save();setCur(rows.indexOf(v),curDim);if(st.revealed)renderResult()});
+      v.querySelector("input[type=text]").oninput=e=>{s.note=e.target.value;save()};
+      const a=v.querySelector("audio");a.volume=(DATA.vols&&DATA.vols[ck]&&DATA.vols[ck][i+1])??1;  // loudness-matched playback
+      a.onplay=()=>{document.querySelectorAll("audio").forEach(x=>{if(x!==a)x.pause()});setCur(rows.indexOf(v),curDim)};
+      v._i=i;v._ck=ck;rows.push(v);card.appendChild(v)});
+    L.appendChild(card)});
+  setCur(Math.min(cur,rows.length-1),curDim);prog();renderResult()}
+
+function setCur(r,d){rows.forEach(x=>x.classList.remove("cur"));cur=r;curDim=d;const v=rows[r];if(!v)return;v.classList.add("cur");
+  v.querySelectorAll(".dim span").forEach((x,k)=>x.style.color=k===d?"var(--acc)":"")}
+function score(n){const v=rows[cur];if(!v)return;const s=S(v._i,v._ck),d=DIMS[curDim][0];s[d]=s[d]===n?undefined:n;save();
+  v.querySelectorAll(".dim")[curDim].querySelectorAll("button").forEach(b=>b.classList.toggle("on",+b.dataset.n===s[d]));
+  setCur(cur,Math.min(curDim+1,DIMS.length-1));prog();if(st.revealed)renderResult()}
+function scored(s){return DIMS.some(([d])=>s[d])}
+function prog(){const n=rows.length,k=rows.filter(v=>scored(S(v._i,v._ck))).length;document.getElementById("prog").textContent=`已打分 ${k} / ${n}`}
+
+function stats(){return DATA.ckpts.map(c=>{const r={name:c.name,step:c.step,n:0,flags:0};
+  DIMS.forEach(([d])=>{const xs=DATA.sentences.map((_,i)=>S(i,c.name)[d]).filter(Boolean);r[d]=xs.length?xs.reduce((a,b)=>a+b,0)/xs.length:null});
+  DATA.sentences.forEach((_,i)=>{const s=S(i,c.name);if(scored(s))r.n++;r.flags+=FLAGS.filter(([f])=>s[f]).length});
+  const ds=DIMS.map(([d])=>r[d]).filter(x=>x!==null);r.avg=ds.length?ds.reduce((a,b)=>a+b,0)/ds.length:null;
+  r.cer=DATA.cer&&DATA.cer[c.name]?DATA.cer[c.name].total:null;return r})}
+function renderResult(){const el=document.getElementById("result");if(!st.revealed){el.innerHTML="";return}
+  const R=stats(),best=Math.max(...R.map(r=>r.avg??-1)),f=x=>x===null?"–":x.toFixed(2);
+  el.innerHTML=`<div class="c"><h2>结果（按检查点汇总）</h2><div class="wrap"><table><tr><th>检查点</th>${DIMS.map(([,t])=>`<th>${t}</th>`).join("")}<th>平均</th><th>已评句数</th><th>问题标记</th><th>CER</th></tr>
+${R.map(r=>`<tr class="${r.avg!==null&&r.avg===best?"best":""}"><td>${esc(r.name)}</td>${DIMS.map(([d])=>`<td>${f(r[d])}</td>`).join("")}<td>${f(r.avg)}</td><td>${r.n}</td><td>${r.flags}</td><td>${r.cer===null?"–":(r.cer*100).toFixed(1)+"%"}</td></tr>`).join("")}</table></div>
+<p class="tip">读音和稳定是否决项：问题标记多的检查点优先排除。平均分接近时选步数少的。CER 只反映 Whisper 能否听对字，测不出多音字和アクセント。<button id="hide">隐藏结果，继续盲听</button></p></div>
+${DATA.auto?`<div class="c"><h2>自动指标（03_asr/auto_eval.py）</h2><div class="wrap"><table><tr><th>检查点</th><th>音色相似</th><th>MOS</th><th>DNSMOS</th><th>音高起伏</th><th>语速</th></tr>
+${DATA.auto.map(a=>`<tr${a.name==="原声"?' class="best"':""}><td>${esc(a.name==="原声"?"原声（基线）":a.name)}</td><td>${a.sim.toFixed(3)}</td><td>${a.mos.toFixed(2)}</td><td>${a.dnsmos.toFixed(2)}</td><td>${a.f0_st.toFixed(2)} st</td><td>${a.mora_s.toFixed(1)} 拍/秒</td></tr>`).join("")}</table></div>
+<p class="tip">越接近原声那一行越好。音色相似：和 90 条原声的说话人向量的余弦相似度。MOS：SQUIM 预测的自然度（英语数据训练，只看相对高低）。DNSMOS：杂音和音质。音高起伏：音高的标准差（半音），明显低于原声说明语调偏平。语速：每秒多少拍。</p></div>`:""}
+${DATA.gemini?`<div class="c"><h2>Gemini 盲评（04_train/gemini_judge.py）</h2><div class="wrap"><table><tr><th>检查点</th><th>相似</th><th>读音</th><th>自然</th><th>稳定</th><th>平均</th><th>被选为最佳</th><th>评测次数</th></tr>
+${DATA.gemini.summary.map(g=>`<tr><td>${esc(g.name)}</td><td>${g.similarity.toFixed(2)}</td><td>${g.pronunciation.toFixed(2)}</td><td>${g.naturalness.toFixed(2)}</td><td>${g.stability.toFixed(2)}</td><td>${((g.similarity+g.pronunciation+g.naturalness+g.stability)/4).toFixed(2)}</td><td>${g.best}</td><td>${g.n}</td></tr>`).join("")}</table></div>
+<p class="tip">Gemini 3.8 Flash 每句同时听 3 条原声和打乱顺序的全部版本后打分，跑了多轮取平均。它是另一个"耳朵"，可以参考，但不能代替你自己听。</p></div>`:""}`;
+  document.getElementById("hide").onclick=()=>{st.revealed=false;save();render()}}
+
+document.getElementById("reveal").onclick=()=>{const left=rows.filter(v=>!scored(S(v._i,v._ck))).length;
+  if(left&&!confirm(`还有 ${left} 个版本没打分，揭晓后就不再是盲听了。继续吗？`))return;st.revealed=true;save();render();window.scrollTo(0,0)};
+document.getElementById("csv").onclick=()=>{const q=s=>'"'+String(s??"").replace(/"/g,'""')+'"';
+  const lines=["sentence_idx,sentence,label,checkpoint,step,"+DIMS.map(([d])=>d).join(",")+","+FLAGS.map(([f])=>f).join(",")+",note,cer,whisper"];
+  DATA.sentences.forEach((sen,i)=>order(i).forEach((ck,k)=>{const s=S(i,ck),c=DATA.ckpts.find(c=>c.name===ck),cr=DATA.cer&&DATA.cer[ck]&&DATA.cer[ck].items[i+1];
+    lines.push([i+1,q(sen),LABELS[k],ck,c.step,...DIMS.map(([d])=>s[d]??""),...FLAGS.map(([f])=>s[f]?1:""),q(s.note),cr?cr.cer:"",q(cr?cr.hyp:"")].join(","))}));
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["﻿"+lines.join("\n")],{type:"text/csv;charset=utf-8"}));a.download="blind_scores.csv";a.click()};
+document.addEventListener("keydown",e=>{if(e.target.type==="text"||e.ctrlKey||e.metaKey||e.altKey)return;const v=rows[cur];
+  const go=r=>{if(r<0||r>=rows.length)return;setCur(r,0);rows[r].scrollIntoView({block:"center"});rows[r].querySelector("audio").play()};
+  if(e.key==="j"||e.key==="J"){e.preventDefault();go(cur+1)}
+  else if(e.key==="k"||e.key==="K"){e.preventDefault();go(cur-1)}
+  else if(e.key===" "&&v){e.preventDefault();const a=v.querySelector("audio");a.paused?a.play():a.pause()}
+  else if(/^[1-5]$/.test(e.key)){e.preventDefault();score(+e.key)}
+  else if(e.key==="Tab"&&v){e.preventDefault();setCur(cur,(curDim+(e.shiftKey?DIMS.length-1:1))%DIMS.length)}});
+render();
+</script></body></html>

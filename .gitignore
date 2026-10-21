@@ -1,0 +1,24 @@
+# Audio (copyrighted source voice data)
+*.ogg
+*.wav
+*.mp3
+*.flac
+
+# Python envs / caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Models / checkpoints
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.onnx
+03_asr/models/
+
+
+# Secrets
+.env
+*.key

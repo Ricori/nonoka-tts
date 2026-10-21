@@ -1,0 +1,43 @@
+6 versions x 20 calls, 4 at a time
+round 1 sentence  4: best=E -> A=3/2/3/3, B=4/3/4/4, C=3/2/3/3, D=3/2/3/3, E=5/5/5/5, F=3/3/3/4
+round 1 sentence  2: best=E -> A=4/4/4/4, B=4/5/4/5, C=2/3/1/2, D=2/2/2/3, E=5/5/5/5, F=3/3/3/3
+round 1 sentence  1: best=C -> A=3/2/2/1, B=3/2/2/2, C=5/5/5/5, D=4/4/4/5, E=4/4/1/4, F=4/4/3/4
+round 1 sentence  5: best=C -> A=4/5/4/5, B=3/3/2/2, C=5/5/5/5, D=4/4/3/4, E=3/1/2/4, F=4/4/3/4
+round 1 sentence  3: best=B -> A=4/4/2/2, B=5/5/5/5, C=3/3/2/4, D=4/4/4/5, E=4/4/3/4, F=3/3/3/3
+round 1 sentence  9: best=E -> A=3/3/3/3, B=4/3/3/4, C=2/3/2/3, D=2/2/1/1, E=5/5/5/5, F=3/3/2/3
+round 1 sentence  7: best=B -> A=4/2/3/3, B=5/5/5/5, C=4/4/4/4, D=4/4/3/3, E=3/4/3/3, F=3/1/2/2
+round 1 sentence  6: best=F -> A=4/3/4/5, B=2/3/3/4, C=2/2/2/4, D=3/2/1/3, E=3/3/3/4, F=5/4/5/5
+round 1 sentence  8: best=B -> A=3/2/2/1, B=5/5/5/5, C=3/2/2/3, D=4/3/3/3, E=3/2/2/2, F=2/2/1/2
+round 2 sentence  1: best=D -> A=4/5/4/5, B=3/3/3/3, C=4/4/3/4, D=5/5/5/5, E=3/4/3/4, F=3/3/2/3
+round 1 sentence 10: best=A -> A=5/5/5/5, B=2/1/1/2, C=4/4/3/4, D=4/3/2/3, E=3/2/2/3, F=5/5/4/5
+round 2 sentence  5: best=D -> A=4/4/3/4, B=3/1/3/3, C=3/4/2/2, D=5/5/5/5, E=4/4/3/4, F=4/5/4/5
+round 2 sentence  4: best=E -> A=3/2/3/3, B=4/3/4/4, C=3/3/3/4, D=3/2/3/3, E=5/5/5/5, F=3/2/3/3
+round 2 sentence  6: best=A -> A=5/3/5/5, B=4/3/3/4, C=4/1/3/4, D=4/3/4/4, E=5/3/4/5, F=4/3/3/4
+!! round 2 sentence 2 attempt 1: no JSON answer (exit 0):
+{"conversation_id":"9174ea45-2ba5-4ee4-9c49-7edfffaffb6e","status":"SUCCESS","response":"I am checking the available audio processing tools to assist in the acoustic and phonetic analysis of the audio samples.\n","duration_seconds":407.1368324,"num_turns":1,"json_schema":{"type":"object","properties":{"versions":{"type":"array","items":{"type":"object","properties":{"label":{"type":"string"},"similarity":{"type":"integer","minimum":1,"maximum":5},"pronunciation":{"type":"integer","minimum":1,"maximum":5},"naturalness":{"type":"integer","minimum":1,"maximum":5},"stability":{"type":"integer","minimum":1,"maximum":5},"issues":{"type":"array","items":{"type":"string","enum":["misread","accent","skip_or_repeat","noise","unnatural_pause","other"]}},"comment":{"type":"string"}},"required":["label","similarity","pronunciation","naturalness","stability","issues","comment"]}},"best":{"type":"string"}},"required":["versions","best"]},"usage":{"input_tokens":692513,"output_tokens":22715,"thinking_tokens":12367,"cache_read_tokens":280009,"total_tokens":715228}}
+[agy] print timeout after 7m0s with turn in progress; returning partial output
+
+round 2 sentence  7: best=E -> A=4/1/2/2, B=4/2/3/4, C=3/2/2/3, D=3/2/2/2, E=5/5/5/5, F=3/1/1/1
+!! round 2 sentence 3 attempt 1: no JSON answer (exit 0):
+{"conversation_id":"6570d5c7-e882-4dad-a8a6-815c40294cb9","status":"SUCCESS","response":"","duration_seconds":411.6553824,"num_turns":1,"json_schema":{"type":"object","properties":{"versions":{"type":"array","items":{"type":"object","properties":{"label":{"type":"string"},"similarity":{"type":"integer","minimum":1,"maximum":5},"pronunciation":{"type":"integer","minimum":1,"maximum":5},"naturalness":{"type":"integer","minimum":1,"maximum":5},"stability":{"type":"integer","minimum":1,"maximum":5},"issues":{"type":"array","items":{"type":"string","enum":["misread","accent","skip_or_repeat","noise","unnatural_pause","other"]}},"comment":{"type":"string"}},"required":["label","similarity","pronunciation","naturalness","stability","issues","comment"]}},"best":{"type":"string"}},"required":["versions","best"]},"usage":{"input_tokens":849372,"output_tokens":15059,"thinking_tokens":8520,"cache_read_tokens":197415,"total_tokens":864431}}
+[agy] print timeout after 7m0s with turn in progress; returning partial output
+
+round 2 sentence  9: best=B -> A=4/4/4/3, B=5/5/5/5, C=3/4/3/2, D=3/3/2/3, E=4/4/3/3, F=2/3/1/1
+round 2 sentence  8: best=A -> A=5/5/5/5, B=4/4/4/4, C=3/3/2/3, D=3/2/3/3, E=3/2/3/3, F=2/2/1/2
+round 2 sentence  3: best=F -> A=4/2/1/2, B=4/2/3/4, C=3/1/2/3, D=2/2/3/2, E=4/2/4/4, F=5/5/5/5
+round 2 sentence 10: best=B -> A=4/3/2/4, B=5/5/5/5, C=4/2/3/3, D=4/4/4/4, E=3/4/3/4, F=3/3/2/3
+!! round 2 sentence 2 attempt 2: no JSON answer (exit 0):
+{"conversation_id":"b8e9880d-5308-45a0-b340-80c6adf12d6f","status":"SUCCESS","response":"I am analyzing the TTS audio samples against the target text and reference recordings. A speech recognition and phoneme analysis task has been launched to inspect pronunciation, timing, and pitch stability.\nI will wait for the high-precision Whisper model transcription to complete.\n","duration_seconds":413.2104197,"num_turns":1,"json_schema":{"type":"object","properties":{"versions":{"type":"array","items":{"type":"object","properties":{"label":{"type":"string"},"similarity":{"type":"integer","minimum":1,"maximum":5},"pronunciation":{"type":"integer","minimum":1,"maximum":5},"naturalness":{"type":"integer","minimum":1,"maximum":5},"stability":{"type":"integer","minimum":1,"maximum":5},"issues":{"type":"array","items":{"type":"string","enum":["misread","accent","skip_or_repeat","noise","unnatural_pause","other"]}},"comment":{"type":"string"}},"required":["label","similarity","pronunciation","naturalness","stability","issues","comment"]}},"best":{"type":"string"}},"required":["versions","best"]},"usage":{"input_tokens":834232,"output_tokens":11128,"thinking_tokens":5616,"cache_read_tokens":322096,"total_tokens":845360}}
+[agy] print timeout after 7m0s with turn in progress; returning partial output
+terminating 1 background task(s) on exit
+
+
+                         sim  pron   nat  stab   avg  best  n
+full_s2e10_s1base       3.79  3.58  3.32  3.89  3.64     6  19
+full_s2e10_s1e15        3.37  3.00  2.53  3.00  2.97     2  19
+full_s2e10_s1e6         3.89  3.32  3.37  3.84  3.61     4  19
+full_s2e10_s1e9         3.21  2.95  2.84  3.26  3.07     1  19
+full_s2e6_s1e9          3.32  2.89  2.84  3.26  3.08     1  19
+gsv_s2e8_s1e15          4.21  3.53  3.63  4.11  3.87     5  19
+-> D:\Development\nonoka-tts\04_train\out\gemini_judge.csv
+ALL DONE
