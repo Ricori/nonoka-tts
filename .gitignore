@@ -1,23 +1,16 @@
-# Audio (copyrighted source voice data)
-*.ogg
-*.wav
-*.mp3
-*.flac
-
-# Python envs / caches
+# Python envs / caches (rebuild: see README 4.3)
 venv/
 .venv/
 __pycache__/
 *.pyc
 
-# Models / checkpoints
+# Models / checkpoints (auto_eval downloads ECAPA on first run)
 *.ckpt
 *.pth
 *.pt
 *.safetensors
 *.onnx
 03_asr/models/
-
 
 # Secrets
 .env

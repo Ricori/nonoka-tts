@@ -35,8 +35,9 @@ nonoka-tts/
 │  ├─ run_cer.bat          CER：把试听转写回文本，结果写到 04_train/out/cer.csv
 │  ├─ cer_samples.py       （中文加 --zh）
 │  ├─ auto_eval.py         客观指标：音色相似度、MOS、DNSMOS、音高起伏、语速 → 试听文件夹上一级的 auto_eval.csv
-│  ├─ venv/                转写和评测用的 Python 环境（约 3GB；删掉后 run_transcribe.bat 会重建，但 auto_eval 需要的包要另外装，见 4.3）
-│  └─ models/              auto_eval 用的 ECAPA 模型缓存
+│  ├─ venv/                转写和评测用的 Python 环境（约 3GB，不进 git；重建方法见 4.3）
+│  ├─ requirements.lock.txt  venv 的完整包版本（pip freeze）
+│  └─ models/              auto_eval 用的 ECAPA 模型缓存（不进 git，首次运行自动下载）
 ├─ 04_train/               GPT-SoVITS 微调（Modal 云端）
 │  ├─ 1_train.bat          预处理 → 训练 SoVITS 和 GPT → 生成日语和中文试听
 │  ├─ 2_render.bat         改了测试句之后，用已训练好的权重重新生成试听，并更新结果页
@@ -123,7 +124,12 @@ Modal 上的存储：
 - 局限：Whisper 按上下文写汉字，多音字和アクセント的错误基本测不出来。pykakasi 给参考文本标的人名读音（「奏」そう、「夜月」よるがつ）本身就是错的，所以人名那句的日语 CER 没有意义。
 
 ### 4.3 客观指标（`03_asr/auto_eval.py`，CPU 即可）
-- 运行：`03_asr\venv\Scripts\python auto_eval.py`（中文加参数 `..\04_train\out\zh\samples`）。venv 里已装 CPU 版 torch、speechbrain、speechmos、librosa；venv 重建后要再装：`pip install torch torchaudio speechbrain speechmos librosa pykakasi`。
+- 运行：`03_asr\venv\Scripts\python auto_eval.py`（中文加参数 `..\04_train\out\zh\samples`）。venv 里已装 CPU 版 torch、speechbrain、speechmos、librosa。
+- venv 重建（venv 不进 git，clone 后要先建）：Python 3.12，在 `03_asr` 下运行
+  1. `python -m venv venv`
+  2. `venv\Scripts\python -m pip install -r requirements.lock.txt`（和原环境的包版本完全一致）
+  - 装不上时退回宽松版本：先跑一次 `run_transcribe.bat`（会自动建 venv 并装 Whisper），再 `venv\Scripts\python -m pip install torch torchaudio speechbrain speechmos librosa pykakasi`。
+  - ECAPA 模型（`03_asr/models/`）首次运行 auto_eval 时自动下载。
 - 指标：音色相似（SpeechBrain ECAPA，和 90 条原声的余弦相似度）、MOS（torchaudio SQUIM）、DNSMOS（杂音和音质）、音高起伏（半音）、语速（拍/秒）。90 条原声按同样方法评测，作为基线。
 - 局限：SQUIM 和 DNSMOS 都先降到 16kHz，**听不出高频差异**（比如"发闷"）。MOS 模型用英语数据训练，只看相对高低。
 
