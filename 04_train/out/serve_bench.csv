@@ -1,0 +1,40 @@
+tag,time,round,kind,lang,seconds,status,bytes,x_timing
+baseline,2026-10-23 00:21:32,0,cold,ja,28.56,200,358444,
+baseline,2026-10-23 00:21:38,0,warm,zh,5.90,200,261164,
+baseline,2026-10-23 00:21:41,0,warm,ja,3.35,200,358444,
+baseline,2026-10-23 00:23:07,1,cold,ja,25.57,200,358444,
+baseline,2026-10-23 00:23:13,1,warm,zh,6.36,200,261164,
+baseline,2026-10-23 00:23:17,1,warm,ja,3.47,200,358444,
+baseline,2026-10-23 00:24:42,2,cold,ja,24.91,200,358444,
+baseline,2026-10-23 00:24:49,2,warm,zh,7.57,200,261164,
+baseline,2026-10-23 00:24:53,2,warm,ja,3.46,200,358444,
+snap,2026-10-23 00:26:15,0,cold,ja,34.92,200,358444,total=32.62;synth=1.78;gpu=NVIDIA A10;fresh=1
+snap,2026-10-23 00:26:19,0,warm,zh,4.03,200,261164,total=2.37;synth=1.76;gpu=NVIDIA A10;fresh=0
+snap,2026-10-23 00:26:23,0,warm,ja,3.95,200,358444,total=2.15;synth=1.45;gpu=NVIDIA A10;fresh=0
+snap,2026-10-23 00:27:23,1,cold,ja,14.86,200,358444,total=13.10;synth=2.42;gpu=NVIDIA A10;fresh=1
+snap,2026-10-23 00:27:27,1,warm,zh,4.33,200,261164,total=1.46;synth=1.34;gpu=NVIDIA A10;fresh=0
+snap,2026-10-23 00:27:31,1,warm,ja,3.65,200,358444,total=1.36;synth=1.24;gpu=NVIDIA A10;fresh=0
+snap,2026-10-23 00:28:22,2,cold,ja,6.69,200,358444,total=4.63;synth=1.78;gpu=NVIDIA A10;fresh=1
+snap,2026-10-23 00:28:25,2,warm,zh,2.95,200,261164,total=1.46;synth=1.34;gpu=NVIDIA A10;fresh=0
+snap,2026-10-23 00:28:28,2,warm,ja,3.08,200,358444,total=1.36;synth=1.24;gpu=NVIDIA A10;fresh=0
+snap,2026-10-23 00:30:05,3,cold,ja,51.91,200,330284,total=48.80;synth=2.59;gpu=NVIDIA L4;fresh=1
+snap,2026-10-23 00:30:09,3,warm,zh,3.98,200,248364,total=2.28;synth=2.08;gpu=NVIDIA L4;fresh=0
+snap,2026-10-23 00:30:13,3,warm,ja,4.02,200,330284,total=2.18;synth=1.97;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:31:52,0,cold,ja,37.21,200,358444,total=31.77;synth=1.63;gpu=NVIDIA A10;fresh=1
+snap8g,2026-10-23 00:31:55,0,warm,zh,3.23,200,261164,total=1.72;synth=1.51;gpu=NVIDIA A10;fresh=0
+snap8g,2026-10-23 00:31:58,0,warm,ja,3.23,200,358444,total=1.56;synth=1.34;gpu=NVIDIA A10;fresh=0
+snap8g,2026-10-23 00:33:28,1,cold,ja,44.29,200,330284,total=42.19;synth=2.61;gpu=NVIDIA L4;fresh=1
+snap8g,2026-10-23 00:33:32,1,warm,zh,4.18,200,248364,total=2.18;synth=1.97;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:33:36,1,warm,ja,3.94,200,330284,total=2.10;synth=1.88;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:34:25,2,cold,ja,4.04,200,330284,total=2.17;synth=1.95;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:34:42,2,warm,zh,17.34,200,248364,total=15.51;synth=3.26;gpu=NVIDIA L4;fresh=1
+snap8g,2026-10-23 00:34:47,2,warm,ja,5.09,200,330284,total=2.87;synth=2.70;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:35:36,3,cold,ja,4.01,200,330284,total=2.10;synth=1.93;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:35:41,3,warm,zh,4.92,200,248364,total=1.88;synth=1.72;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:35:45,3,warm,ja,3.94,200,330284,total=2.15;synth=2.00;gpu=NVIDIA L4;fresh=0
+snap8g,2026-10-23 00:36:46,4,cold,ja,15.59,200,358444,total=12.07;synth=1.78;gpu=NVIDIA A10;fresh=1
+snap8g,2026-10-23 00:36:49,4,warm,zh,3.34,200,261164,total=1.54;synth=1.41;gpu=NVIDIA A10;fresh=0
+snap8g,2026-10-23 00:36:52,4,warm,ja,3.41,200,358444,total=1.39;synth=1.26;gpu=NVIDIA A10;fresh=0
+snap8g,2026-10-23 00:37:41,5,cold,ja,4.03,200,358444,total=1.30;synth=1.18;gpu=NVIDIA A10;fresh=0
+snap8g,2026-10-23 00:38:16,5,warm,zh,34.84,200,261164,total=33.12;synth=1.95;gpu=NVIDIA A10G;fresh=1
+snap8g,2026-10-23 00:38:21,5,warm,ja,4.74,200,358444,total=2.66;synth=2.38;gpu=NVIDIA A10G;fresh=0
