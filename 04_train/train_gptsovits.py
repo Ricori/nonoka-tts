@@ -48,16 +48,27 @@ S1_EPOCHS, S1_SAVE_EVERY = 15, 3
 # GPT epoch 0 = the official base GPT (s1v3), untouched by Japanese. The folder name gets the GPT epoch, then
 # _t<temperature*10>k<top_k> when sampling is overridden and _ref<last 4 digits> when the reference isn't REF.
 # Round 2 (full set) rendered (6, 9), (10, 6), (10, 9), (10, 15), (10, 0) with REF and default sampling.
+# Round 3 rendered (10, 3, REF, {}), (10, 3, REF, LOW), (10, 6, REF, LOW), (10, 6, 03010230, LOW), (10, 6, 03004690, LOW).
+# Extra params: "speed_factor" (name gets _sp<x10>) and "aux": [clip ids] fused as aux_ref_audio_paths (name gets _aux<n>).
 LOW = {"temperature": 0.7, "top_k": 3}
-COMBOS = [(10, 3, REF, {}), (10, 3, REF, LOW), (10, 6, REF, LOW),
-          (10, 6, "03010230", LOW), (10, 6, "03004690", LOW)]
+COMBOS = [(10, 3, "03004690", LOW), (10, 6, "03005670", LOW), (10, 6, "03002830", LOW), (10, 6, "03004800", LOW),
+          (10, 6, "03004690", {**LOW, "speed_factor": 0.9}),
+          (10, 6, "03004690", {**LOW, "aux": ["03005670", "03002830"]})]
 
 
 def _combo_name(prefix, e2, e1, ref, params):
     name = f"{prefix}_s2e{e2}_s1{f'e{e1}' if e1 else 'base'}"
     if params:
         name += f"_t{round(params.get('temperature', 1) * 10)}k{params.get('top_k', 'd')}"
+    if "speed_factor" in params:
+        name += f"_sp{round(params['speed_factor'] * 10)}"
+    if params.get("aux"):
+        name += f"_aux{len(params['aux'])}"
     return name + ("" if ref == REF else f"_ref{ref[-4:]}")
+
+
+def _clip_ids():
+    return {c[2] for c in COMBOS} | {a for c in COMBOS for a in c[3].get("aux", [])}
 XXXXRT = "https://huggingface.co/XXXXRT/GPT-SoVITS-Pretrained/resolve/main"
 SMOKE = f"""
 import sys; sys.path.insert(0, 'GPT_SoVITS')
@@ -237,8 +248,11 @@ def _render(refs, sets, exp, prefix):
         s2 = sorted(glob.glob(f"{SOVITS_DIR}/{exp}_e{e2}_s*.pth"))
         s1 = f"{GPT_DIR}/{exp}-e{e1}.ckpt" if e1 else f"{PRE}/s1v3.ckpt"
         assert s2, f"no SoVITS weights for epoch {e2} in {os.listdir(SOVITS_DIR)}"
+        run_params = {k: v for k, v in params.items() if k != "aux"}
+        if params.get("aux"):
+            run_params["aux_ref_audio_paths"] = [f"{VOL}/data/ref_{a}.wav" for a in params["aux"]]
         combos.append({"name": _combo_name(prefix, e2, e1, rid, params), "s2": s2[-1], "s1": s1,
-                       "ref": f"{VOL}/data/ref_{rid}.wav", "ref_text": refs[rid][1], "params": params})
+                       "ref": f"{VOL}/data/ref_{rid}.wav", "ref_text": refs[rid][1], "params": run_params})
     out = f"{VOL}/render"
     shutil.rmtree(out, ignore_errors=True)
     job = {"version": VERSION, "combos": combos, "sets": sets, "out": out,
@@ -278,7 +292,7 @@ def _inputs(here, dataset_name):
              for fn, _, _, text in esd]
     read = lambda f: [l.strip() for l in (here / f).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     sets = {"ja": [_names(t) for t in read("test_sentences.txt")], "zh": read("zh_sentences.txt")}
-    refs = {s: (b, t) for s, b, t in clips if s in {c[2] for c in COMBOS}}  # reference clips must be in the dataset
+    refs = {s: (b, t) for s, b, t in clips if s in _clip_ids()}  # reference clips must be in the dataset
     return clips, sets, refs
 
 

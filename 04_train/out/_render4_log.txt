@@ -1,0 +1,3734 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ricori/main/ap-XI1yMwULzEj2SEJgZpqPgH
+✓ Created objects.
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\t
+│   rain_gptsovits.py
+├── 🔨 Created function train.
+└── 🔨 Created function render.
+[02_dataset_full] rendering ja, zh x 6 combos with references 03002830, 03004690, 03004800, 03005670
+$ render_job.py /vol/render_job.json
+TTS.run defaults: [('top_k', '15'), ('top_p', '1'), ('temperature', '1'), ('repetition_penalty', '1.35')]
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e3.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+先輩、おはようございます。今日は一緒に帰れますか？
+Actual Input Target Text (after sentence segmentation):
+['先輩、おはようございます。', '今日は一緒に帰れますか？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 883.38it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は一緒に帰れますか？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  0%|          | 5/1500 [00:00<00:30, 49.33it/s]
+[1A  3%|▎         | 38/1500 [00:00<00:06, 209.96it/s]
+[1A  4%|▎         | 55/1500 [00:00<00:06, 210.47it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  4.65it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  4.64it/s]
+Processed text from the frontend (per sentence): ['先輩、おはようございます。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:05, 283.45it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:04, 299.73it/s]  6%|▌         | 86/1500 [00:00<00:04, 299.35it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  6.35it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  6.34it/s]
+1.155   0.005   0.791   0.374
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+Actual Input Target Text (after sentence segmentation):
+['昨日の夜、。', '駅前の本屋さんで新しい小説を三冊買いました。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 821.77it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨日の夜、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]  2%|▏         | 30/1500 [00:00<00:04, 295.65it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  3.88it/s]100%|██████████| 1/1 [00:00<00:00,  3.88it/s]
+Processed text from the frontend (per sentence): ['駅前の本屋さんで新しい小説を三冊買いました。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:04, 305.63it/s]
+[1A  4%|▍         | 64/1500 [00:00<00:04, 314.97it/s]
+[1A  6%|▋         | 96/1500 [00:00<00:04, 314.04it/s]
+[1A  9%|▊         | 129/1500 [00:00<00:04, 317.55it/s]
+[1A  9%|▉         | 140/1500 [00:00<00:04, 313.33it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.81it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.80it/s]
+0.000   0.003   0.578   0.372
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+来週の金曜日、午後三時に生徒会室に集合してください。
+Actual Input Target Text (after sentence segmentation):
+['来週の金曜日、。', '午後三時に生徒会室に集合してください。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 898.43it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['来週の金曜日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 317.06it/s]  4%|▎         | 54/1500 [00:00<00:04, 311.36it/s]
+
+############ Synthesize Audio ############
+Processed text from the frontend (per sentence): ['午後三時に生徒会室に集合してください。']
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.51it/s]100%|██████████| 1/1 [00:00<00:00,  9.50it/s]
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 312.58it/s]
+[1A  4%|▍         | 65/1500 [00:00<00:04, 317.40it/s]
+[1A  6%|▋         | 97/1500 [00:00<00:04, 315.83it/s]  7%|▋         | 104/1500 [00:00<00:04, 313.48it/s]
+
+############ Synthesize Audio ############
+0.000   0.003   0.531   0.209
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.70it/s]100%|██████████| 1/1 [00:00<00:00,  9.69it/s]
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+今日は風が強いので、上着を着ていったほうがいいと思いますよ。
+Actual Input Target Text (after sentence segmentation):
+['今日は風が強いので、。', '上着を着ていったほうがいいと思いますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 943.92it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は風が強いので、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 314.93it/s]  4%|▍         | 57/1500 [00:00<00:04, 312.42it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.58it/s]100%|██████████| 1/1 [00:00<00:00,  9.56it/s]
+Processed text from the frontend (per sentence): ['上着を着ていったほうがいいと思いますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 323.08it/s]
+[1A  4%|▍         | 66/1500 [00:00<00:04, 321.06it/s]  5%|▌         | 80/1500 [00:00<00:04, 316.71it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.55it/s]100%|██████████| 1/1 [00:00<00:00,  9.54it/s]
+0.000   0.003   0.462   0.210
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。
+Actual Input Target Text (after sentence segmentation):
+['カナデ先輩とヨルツキ先輩は、。', 'いつも仲がいいですね。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1047.66it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['いつも仲がいいですね。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 317.25it/s]
+[1A  4%|▍         | 65/1500 [00:00<00:04, 319.51it/s]
+[1A  5%|▌         | 76/1500 [00:00<00:04, 315.17it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.32it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.30it/s]
+Processed text from the frontend (per sentence): ['カナデ先輩とヨルツキ先輩は、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 325.19it/s]
+[1A  4%|▍         | 66/1500 [00:00<00:04, 324.37it/s]  6%|▌         | 88/1500 [00:00<00:04, 320.88it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.74it/s]100%|██████████| 1/1 [00:00<00:00,  9.73it/s]
+0.000   0.003   0.542   0.211
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+人気のお店だから、十分くらい並ぶかもしれません。
+Actual Input Target Text (after sentence segmentation):
+['人気のお店だから、。', '十分くらい並ぶかもしれません。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1008.85it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['人気のお店だから、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 316.85it/s]  4%|▎         | 53/1500 [00:00<00:04, 313.14it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.83it/s]100%|██████████| 1/1 [00:00<00:00,  9.81it/s]
+Processed text from the frontend (per sentence): ['十分くらい並ぶかもしれません。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 316.50it/s]
+[1A  4%|▍         | 64/1500 [00:00<00:04, 315.21it/s]
+[1A  5%|▌         | 77/1500 [00:00<00:04, 313.51it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.50it/s]
+0.000   0.003   0.445   0.197
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？
+Actual Input Target Text (after sentence segmentation):
+['生まれて初めて、。', '自分でお弁当を作ってみたんです。', '上手にできたかな？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 1294.41it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['生まれて初めて、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 310.73it/s]  3%|▎         | 47/1500 [00:00<00:04, 309.57it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.38it/s]100%|██████████| 1/1 [00:00<00:00,  9.36it/s]
+Processed text from the frontend (per sentence): ['上手にできたかな？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 322.77it/s]  4%|▎         | 54/1500 [00:00<00:04, 310.42it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 34.84it/s]
+Processed text from the frontend (per sentence): ['自分でお弁当を作ってみたんです。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 312.88it/s]
+[1A  4%|▍         | 64/1500 [00:00<00:04, 311.88it/s]  6%|▌         | 93/1500 [00:00<00:04, 309.82it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.75it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.73it/s]
+0.000   0.003   0.667   0.251
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+ふふっ、先輩ったら、また寝癖がついてますよ。
+Actual Input Target Text (after sentence segmentation):
+['ふふっ、先輩ったら、。', 'また寝癖がついてますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1258.04it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ふふっ、先輩ったら、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 320.58it/s]
+[1A  4%|▍         | 66/1500 [00:00<00:04, 324.94it/s]  5%|▍         | 74/1500 [00:00<00:04, 319.35it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.51it/s]
+Processed text from the frontend (per sentence): ['また寝癖がついてますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 268.47it/s]
+[1A  4%|▍         | 58/1500 [00:00<00:05, 287.94it/s]  5%|▌         | 76/1500 [00:00<00:04, 287.73it/s]
+############ Synthesize Audio ############
+
+0.000   0.002   0.521   0.117
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 46.57it/s]
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。
+Actual Input Target Text (after sentence segmentation):
+['約束ですよ。', '明日の朝、。', '七時半に、。', 'いつもの場所で待ってますから。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/4 [00:00<?, ?it/s]
+[1A100%|██████████| 4/4 [00:00<00:00, 1527.15it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['約束ですよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 316.38it/s]  3%|▎         | 42/1500 [00:00<00:04, 310.06it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.24it/s]
+Processed text from the frontend (per sentence): ['明日の朝、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 317.91it/s]  3%|▎         | 42/1500 [00:00<00:04, 310.21it/s]
+
+############ Synthesize Audio ############
+Processed text from the frontend (per sentence): ['七時半に、。']
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 36.93it/s]
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]  2%|▏         | 32/1500 [00:00<00:04, 311.64it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.89it/s]100%|██████████| 1/1 [00:00<00:00,  9.88it/s]
+Processed text from the frontend (per sentence): ['いつもの場所で待ってますから。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 320.34it/s]
+[1A  4%|▍         | 66/1500 [00:00<00:04, 315.34it/s]  6%|▌         | 89/1500 [00:00<00:04, 313.65it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.87it/s]100%|██████████| 1/1 [00:00<00:00,  9.86it/s]
+0.000   0.003   0.706   0.328
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+2026年10月21日、今日の気温は十八度でした。
+Actual Input Target Text (after sentence segmentation):
+['2026年10月21日、。', '今日の気温は十八度でした。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 858.52it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['2026年10月21日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 311.50it/s]
+[1A  4%|▍         | 64/1500 [00:00<00:04, 315.91it/s]
+[1A  6%|▋         | 97/1500 [00:00<00:04, 318.83it/s]  7%|▋         | 110/1500 [00:00<00:04, 310.22it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.43it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.41it/s]
+Processed text from the frontend (per sentence): ['今日の気温は十八度でした。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 294.37it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:04, 296.15it/s]  5%|▌         | 76/1500 [00:00<00:04, 292.11it/s]
+############ Synthesize Audio ############
+
+0.000   0.003   0.643   0.137
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33.19it/s]
+rendered ja full_s2e10_s1e3_t7k3_ref4690
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+Failed to load libcublasLt.so.13: libcublasLt.so.13: cannot open shared object file: No such file or directory
+Failed to load libcublas.so.13: libcublas.so.13: cannot open shared object file: No such file or directory
+Failed to load libcudart.so.13: libcudart.so.13: cannot open shared object file: No such file or directory
+Please follow https://onnxruntime.ai/docs/install/#cuda-and-cudnn to install CUDA.
+[1A  0%|          | 0/2 [00:00<?, ?it/s][1;31m2026-10-22 09:48:43.052911662 [E:onnxruntime:Default, provider_bridge_ort.cc:2458 operator()] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:2043 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library /usr/local/lib/python3.11/site-packages/onnxruntime/capi/libonnxruntime_providers_cuda.so with error: libcublasLt.so.13: cannot open shared object file: No such file or directory
+[m
+
+[1A 50%|█████     | 1/2 [00:01<00:01,  1.93s/it]100%|██████████| 2/2 [00:01<00:00,  1.02it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:05, 289.52it/s]  4%|▎         | 55/1500 [00:00<00:05, 288.20it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34.15it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 295.18it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:04, 296.69it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:04, 291.47it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.34it/s]
+0.000   1.971   0.430   0.126
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 26.75it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 295.99it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:05, 285.90it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33.36it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 297.05it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:04, 298.48it/s]  6%|▌         | 90/1500 [00:00<00:04, 303.80it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.78it/s]100%|██████████| 1/1 [00:00<00:00,  9.76it/s]
+0.000   0.075   0.429   0.133
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 27.26it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:05, 286.96it/s]  3%|▎         | 49/1500 [00:00<00:05, 283.15it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.10it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 294.72it/s]  3%|▎         | 52/1500 [00:00<00:04, 290.31it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.33it/s]
+0.000   0.074   0.383   0.196
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 30.61it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 294.78it/s]  3%|▎         | 38/1500 [00:00<00:04, 292.52it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.68it/s]100%|██████████| 1/1 [00:00<00:00,  9.66it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 320.86it/s]
+[1A  4%|▍         | 59/1500 [00:00<00:04, 302.85it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.65it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.64it/s]
+0.000   0.066   0.351   0.208
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 23.46it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:05, 289.09it/s]
+[1A  4%|▍         | 59/1500 [00:00<00:04, 293.93it/s]
+[1A  4%|▍         | 64/1500 [00:00<00:04, 288.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.62it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.61it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 297.77it/s]  3%|▎         | 42/1500 [00:00<00:05, 291.03it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 47.68it/s]
+0.000   0.086   0.395   0.126
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 29.98it/s]100%|██████████| 3/3 [00:00<00:00, 29.93it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 299.77it/s]  2%|▏         | 34/1500 [00:00<00:04, 294.58it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.40it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 314.86it/s]  3%|▎         | 44/1500 [00:00<00:04, 303.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.20it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 312.50it/s]  3%|▎         | 43/1500 [00:00<00:04, 308.83it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 10.36it/s]
+0.000   0.101   0.439   0.291
+rendered zh full_s2e10_s1e3_t7k3_ref4690
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+先輩、おはようございます。今日は一緒に帰れますか？
+Actual Input Target Text (after sentence segmentation):
+['先輩、おはようございます。', '今日は一緒に帰れますか？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 1106.09it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は一緒に帰れますか？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.73it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:05, 242.06it/s]  4%|▍         | 62/1500 [00:00<00:06, 237.95it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.05it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.03it/s]
+Processed text from the frontend (per sentence): ['先輩、おはようございます。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.87it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 242.94it/s]
+[1A  5%|▍         | 74/1500 [00:00<00:05, 240.52it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.67it/s]
+0.059   0.003   0.651   0.152
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+Actual Input Target Text (after sentence segmentation):
+['昨日の夜、。', '駅前の本屋さんで新しい小説を三冊買いました。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 759.22it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨日の夜、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.67it/s]  3%|▎         | 48/1500 [00:00<00:06, 238.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.25it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.23it/s]
+Processed text from the frontend (per sentence): ['駅前の本屋さんで新しい小説を三冊買いました。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.01it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.78it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 244.15it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 244.53it/s]
+[1A  8%|▊         | 125/1500 [00:00<00:05, 245.01it/s]
+[1A  9%|▊         | 128/1500 [00:00<00:05, 242.22it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.26it/s]100%|██████████| 1/1 [00:00<00:00,  8.24it/s]
+0.000   0.003   0.763   0.243
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+来週の金曜日、午後三時に生徒会室に集合してください。
+Actual Input Target Text (after sentence segmentation):
+['来週の金曜日、。', '午後三時に生徒会室に集合してください。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 789.81it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['来週の金曜日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.20it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:05, 242.13it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:06, 237.35it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.72it/s]
+Processed text from the frontend (per sentence): ['午後三時に生徒会室に集合してください。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.24it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.88it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.93it/s]
+[1A  6%|▌         | 89/1500 [00:00<00:05, 242.77it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.68it/s]
+0.000   0.003   0.628   0.054
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+今日は風が強いので、上着を着ていったほうがいいと思いますよ。
+Actual Input Target Text (after sentence segmentation):
+['今日は風が強いので、。', '上着を着ていったほうがいいと思いますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 773.00it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は風が強いので、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.52it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.91it/s]
+[1A  4%|▍         | 63/1500 [00:00<00:05, 240.35it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.26it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.24it/s]
+Processed text from the frontend (per sentence): ['上着を着ていったほうがいいと思いますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.88it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.90it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.59it/s]
+[1A  6%|▌         | 92/1500 [00:00<00:05, 243.06it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.49it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.48it/s]
+0.000   0.003   0.675   0.240
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。
+Actual Input Target Text (after sentence segmentation):
+['カナデ先輩とヨルツキ先輩は、。', 'いつも仲がいいですね。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 889.28it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['いつも仲がいいですね。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.80it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.89it/s]
+[1A  4%|▍         | 59/1500 [00:00<00:05, 240.61it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.31it/s]
+Processed text from the frontend (per sentence): ['カナデ先輩とヨルツキ先輩は、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.76it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.99it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 243.99it/s]  5%|▌         | 79/1500 [00:00<00:05, 240.09it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.21it/s]100%|██████████| 1/1 [00:00<00:00,  8.19it/s]
+0.000   0.003   0.607   0.149
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+人気のお店だから、十分くらい並ぶかもしれません。
+Actual Input Target Text (after sentence segmentation):
+['人気のお店だから、。', '十分くらい並ぶかもしれません。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 833.20it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['人気のお店だから、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 23/1500 [00:00<00:06, 227.23it/s]
+[1A  3%|▎         | 47/1500 [00:00<00:06, 234.48it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:06, 229.36it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.46it/s]
+Processed text from the frontend (per sentence): ['十分くらい並ぶかもしれません。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.90it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:05, 243.17it/s]
+[1A  5%|▍         | 74/1500 [00:00<00:05, 244.53it/s]  5%|▌         | 77/1500 [00:00<00:05, 240.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.22it/s]
+0.000   0.003   0.587   0.055
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？
+Actual Input Target Text (after sentence segmentation):
+['生まれて初めて、。', '自分でお弁当を作ってみたんです。', '上手にできたかな？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 1061.49it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['生まれて初めて、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.39it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 240.86it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:06, 234.69it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.51it/s]
+Processed text from the frontend (per sentence): ['上手にできたかな？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.57it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 238.68it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.25it/s]
+Processed text from the frontend (per sentence): ['自分でお弁当を作ってみたんです。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 245.73it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.20it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.60it/s]  6%|▌         | 92/1500 [00:00<00:05, 243.87it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.76it/s]
+0.000   0.004   0.859   0.082
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+ふふっ、先輩ったら、また寝癖がついてますよ。
+Actual Input Target Text (after sentence segmentation):
+['ふふっ、先輩ったら、。', 'また寝癖がついてますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 1036.27it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ふふっ、先輩ったら、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.89it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.95it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 243.94it/s]
+[1A  5%|▌         | 79/1500 [00:00<00:05, 240.15it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.70it/s]
+Processed text from the frontend (per sentence): ['また寝癖がついてますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.74it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.91it/s]
+[1A  5%|▍         | 68/1500 [00:00<00:05, 239.02it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.28it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.26it/s]
+0.000   0.003   0.647   0.148
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。
+Actual Input Target Text (after sentence segmentation):
+['約束ですよ。', '明日の朝、。', '七時半に、。', 'いつもの場所で待ってますから。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 1282.86it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['約束ですよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.38it/s]
+[1A  3%|▎         | 48/1500 [00:00<00:06, 241.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.42it/s]
+Processed text from the frontend (per sentence): ['明日の朝、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 246.05it/s]
+[1A  3%|▎         | 38/1500 [00:00<00:06, 240.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.43it/s]
+Processed text from the frontend (per sentence): ['七時半に、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 245.31it/s]
+[1A  2%|▏         | 36/1500 [00:00<00:06, 239.39it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.40it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.38it/s]
+Processed text from the frontend (per sentence): ['いつもの場所で待ってますから。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 245.17it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.62it/s]
+[1A  5%|▍         | 71/1500 [00:00<00:05, 243.62it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.43it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.42it/s]
+0.000   0.004   0.863   0.291
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+2026年10月21日、今日の気温は十八度でした。
+Actual Input Target Text (after sentence segmentation):
+['2026年10月21日、。', '今日の気温は十八度でした。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 728.49it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['2026年10月21日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.52it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.04it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.49it/s]
+[1A  6%|▋         | 97/1500 [00:00<00:05, 243.55it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.46it/s]100%|██████████| 1/1 [00:00<00:00,  8.45it/s]
+Processed text from the frontend (per sentence): ['今日の気温は十八度でした。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.32it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.64it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 247.68it/s]  5%|▌         | 81/1500 [00:00<00:05, 244.10it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.52it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.51it/s]
+0.000   0.004   0.763   0.236
+rendered ja full_s2e10_s1e6_t7k3_ref5670
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 21.56it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.68it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.63it/s]  4%|▍         | 62/1500 [00:00<00:05, 242.54it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 39.17it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 246.77it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.68it/s]  4%|▍         | 58/1500 [00:00<00:05, 243.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.49it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.48it/s]
+0.000   0.094   0.526   0.144
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 27.60it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.29it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:06, 238.29it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.45it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.43it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 246.47it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.77it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 248.50it/s]
+[1A  7%|▋         | 101/1500 [00:00<00:05, 249.22it/s]
+[1A  8%|▊         | 126/1500 [00:00<00:05, 249.11it/s]
+[1A 10%|▉         | 147/1500 [00:00<00:05, 247.06it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.45it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.44it/s]
+0.000   0.073   0.791   0.238
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 26.32it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.15it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 267.44it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 261.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.41it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 265.60it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 266.92it/s]
+[1A  4%|▍         | 62/1500 [00:00<00:05, 262.33it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.43it/s]
+0.000   0.077   0.473   0.049
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.24it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 262.56it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:05, 259.06it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.74it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 266.94it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 268.04it/s]
+[1A  4%|▍         | 64/1500 [00:00<00:05, 263.70it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.41it/s]
+0.000   0.072   0.468   0.049
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 22.38it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.01it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.06it/s]  5%|▍         | 71/1500 [00:00<00:05, 240.97it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.63it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.48it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.22it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 241.31it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 39.72it/s]
+0.000   0.090   0.551   0.052
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 先輩のおかげで、今日はたくさん猫の像を見つけられました。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 30.40it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.41it/s]
+[1A  2%|▏         | 34/1500 [00:00<00:06, 234.51it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.07it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 245.93it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.47it/s]  4%|▍         | 59/1500 [00:00<00:05, 243.41it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 40.17it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.71it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 239.90it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.91it/s]
+0.000   0.100   0.639   0.076
+rendered zh full_s2e10_s1e6_t7k3_ref5670
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+先輩、おはようございます。今日は一緒に帰れますか？
+Actual Input Target Text (after sentence segmentation):
+['先輩、おはようございます。', '今日は一緒に帰れますか？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1178.51it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は一緒に帰れますか？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.19it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:06, 241.39it/s]
+[1A  4%|▍         | 65/1500 [00:00<00:06, 237.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.14it/s]100%|██████████| 1/1 [00:00<00:00,  8.13it/s]
+Processed text from the frontend (per sentence): ['先輩、おはようございます。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.50it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 242.90it/s]  5%|▍         | 71/1500 [00:00<00:05, 240.03it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.15it/s]
+0.060   0.003   0.652   0.149
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+Actual Input Target Text (after sentence segmentation):
+['昨日の夜、。', '駅前の本屋さんで新しい小説を三冊買いました。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 743.21it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨日の夜、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.11it/s]  3%|▎         | 41/1500 [00:00<00:06, 235.73it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.35it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.34it/s]
+Processed text from the frontend (per sentence): ['駅前の本屋さんで新しい小説を三冊買いました。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.82it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.69it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 244.65it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 245.39it/s]
+[1A  8%|▊         | 121/1500 [00:00<00:05, 243.26it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.38it/s]100%|██████████| 1/1 [00:00<00:00,  8.37it/s]
+0.000   0.004   0.704   0.240
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+来週の金曜日、午後三時に生徒会室に集合してください。
+Actual Input Target Text (after sentence segmentation):
+['来週の金曜日、。', '午後三時に生徒会室に集合してください。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 811.12it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['来週の金曜日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 237.06it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 241.50it/s]
+[1A  4%|▎         | 55/1500 [00:00<00:06, 237.00it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.55it/s]
+Processed text from the frontend (per sentence): ['午後三時に生徒会室に集合してください。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.98it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.87it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.54it/s]
+[1A  6%|▌         | 84/1500 [00:00<00:05, 243.64it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.40it/s]100%|██████████| 1/1 [00:00<00:00,  8.39it/s]
+0.000   0.003   0.610   0.146
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+今日は風が強いので、上着を着ていったほうがいいと思いますよ。
+Actual Input Target Text (after sentence segmentation):
+['今日は風が強いので、。', '上着を着ていったほうがいいと思いますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 791.83it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は風が強いので、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.80it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.46it/s]
+[1A  4%|▍         | 62/1500 [00:00<00:05, 240.82it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.32it/s]
+Processed text from the frontend (per sentence): ['上着を着ていったほうがいいと思いますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 246.23it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.81it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 248.04it/s]
+[1A  6%|▌         | 87/1500 [00:00<00:05, 244.90it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.35it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.33it/s]
+0.000   0.003   0.646   0.147
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。
+Actual Input Target Text (after sentence segmentation):
+['カナデ先輩とヨルツキ先輩は、。', 'いつも仲がいいですね。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 863.29it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['いつも仲がいいですね。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 236.73it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 240.53it/s]
+[1A  5%|▍         | 72/1500 [00:00<00:05, 238.83it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.29it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.27it/s]
+Processed text from the frontend (per sentence): ['カナデ先輩とヨルツキ先輩は、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.10it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:05, 243.75it/s]
+[1A  5%|▍         | 74/1500 [00:00<00:05, 245.31it/s]
+[1A  6%|▌         | 83/1500 [00:00<00:05, 240.21it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.24it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.22it/s]
+0.000   0.003   0.683   0.243
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+人気のお店だから、十分くらい並ぶかもしれません。
+Actual Input Target Text (after sentence segmentation):
+['人気のお店だから、。', '十分くらい並ぶかもしれません。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 856.94it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['人気のお店だから、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.45it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.43it/s]
+[1A  4%|▎         | 55/1500 [00:00<00:06, 238.71it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.63it/s]
+Processed text from the frontend (per sentence): ['十分くらい並ぶかもしれません。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.72it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.83it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 247.29it/s]  5%|▌         | 76/1500 [00:00<00:05, 243.60it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.81it/s]
+0.000   0.003   0.575   0.052
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？
+Actual Input Target Text (after sentence segmentation):
+['生まれて初めて、。', '自分でお弁当を作ってみたんです。', '上手にできたかな？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 1103.96it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['生まれて初めて、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.27it/s]
+[1A  3%|▎         | 48/1500 [00:00<00:06, 239.06it/s]
+[1A  5%|▍         | 73/1500 [00:00<00:05, 241.24it/s]  5%|▍         | 73/1500 [00:00<00:06, 237.27it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.21it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.20it/s]
+Processed text from the frontend (per sentence): ['上手にできたかな？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 237.13it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 240.53it/s]  4%|▍         | 61/1500 [00:00<00:06, 235.71it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.68it/s]
+Processed text from the frontend (per sentence): ['自分でお弁当を作ってみたんです。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.65it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.46it/s]
+[1A  5%|▍         | 71/1500 [00:00<00:05, 242.10it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.90it/s]
+0.000   0.004   0.909   0.174
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+ふふっ、先輩ったら、また寝癖がついてますよ。
+Actual Input Target Text (after sentence segmentation):
+['ふふっ、先輩ったら、。', 'また寝癖がついてますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 1046.87it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ふふっ、先輩ったら、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.87it/s]  2%|▏         | 35/1500 [00:00<00:06, 235.52it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.33it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.32it/s]
+Processed text from the frontend (per sentence): ['また寝癖がついてますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.80it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.17it/s]
+[1A  4%|▍         | 63/1500 [00:00<00:05, 240.70it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.02it/s]
+0.000   0.003   0.444   0.147
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。
+Actual Input Target Text (after sentence segmentation):
+['約束ですよ。', '明日の朝、。', '七時半に、。', 'いつもの場所で待ってますから。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 1301.87it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['約束ですよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 237.64it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:06, 235.16it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.58it/s]
+Processed text from the frontend (per sentence): ['明日の朝、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.16it/s]  2%|▏         | 36/1500 [00:00<00:06, 238.01it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 39.34it/s]
+Processed text from the frontend (per sentence): ['七時半に、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.31it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:06, 239.68it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.60it/s]
+Processed text from the frontend (per sentence): ['いつもの場所で待ってますから。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.71it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.48it/s]  4%|▍         | 67/1500 [00:00<00:05, 241.97it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.50it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.49it/s]
+0.000   0.004   0.850   0.195
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+2026年10月21日、今日の気温は十八度でした。
+Actual Input Target Text (after sentence segmentation):
+['2026年10月21日、。', '今日の気温は十八度でした。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 723.59it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['2026年10月21日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.51it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:06, 230.22it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:06, 236.92it/s]  7%|▋         | 98/1500 [00:00<00:05, 235.95it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.39it/s]100%|██████████| 1/1 [00:00<00:00,  8.38it/s]
+Processed text from the frontend (per sentence): ['今日の気温は十八度でした。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 245.56it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.60it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 248.12it/s]  5%|▌         | 79/1500 [00:00<00:05, 244.63it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 39.63it/s]
+0.000   0.004   0.771   0.145
+rendered ja full_s2e10_s1e6_t7k3_ref2830
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 22.85it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.17it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 239.05it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.71it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.22it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 238.98it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.78it/s]
+0.000   0.088   0.444   0.054
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 27.88it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.70it/s]  2%|▏         | 28/1500 [00:00<00:06, 233.60it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.37it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.36it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.08it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:05, 263.99it/s]
+[1A  5%|▌         | 80/1500 [00:00<00:05, 265.95it/s]
+[1A  6%|▌         | 93/1500 [00:00<00:05, 262.33it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.93it/s]
+0.000   0.073   0.508   0.145
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 25.98it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.30it/s]  3%|▎         | 46/1500 [00:00<00:05, 258.63it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.56it/s]100%|██████████| 1/1 [00:00<00:00,  8.55it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:05, 272.77it/s]  4%|▎         | 56/1500 [00:00<00:05, 274.12it/s]
+############ Synthesize Audio ############
+
+0.000   0.078   0.413   0.216
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.11it/s]
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 29.42it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:05, 292.34it/s]  3%|▎         | 49/1500 [00:00<00:04, 290.87it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 45.33it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 321.91it/s]  4%|▍         | 62/1500 [00:00<00:04, 320.55it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 50.55it/s]
+0.000   0.069   0.388   0.042
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 21.92it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 32/1500 [00:00<00:04, 318.48it/s]
+[1A  4%|▍         | 65/1500 [00:00<00:04, 324.02it/s]  5%|▌         | 79/1500 [00:00<00:04, 319.55it/s]
+############ Synthesize Audio ############
+
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 48.64it/s]
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:04, 295.34it/s]  3%|▎         | 52/1500 [00:00<00:04, 291.46it/s]
+
+############ Synthesize Audio ############
+0.000   0.092   0.452   0.043
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 44.63it/s]
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 今日は、さすがに少し疲れましたね。宿題やったらすぐに寝たいかもです。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.66it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.57it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]  2%|▏         | 26/1500 [00:00<00:04, 297.96it/s]
+
+############ Synthesize Audio ############
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.79it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 323.37it/s]  3%|▎         | 50/1500 [00:00<00:04, 318.07it/s]
+
+############ Synthesize Audio ############
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10.11it/s]
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 33/1500 [00:00<00:04, 321.62it/s]  3%|▎         | 45/1500 [00:00<00:04, 316.39it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.97it/s]100%|██████████| 1/1 [00:00<00:00,  9.95it/s]
+0.000   0.102   0.428   0.293
+rendered zh full_s2e10_s1e6_t7k3_ref2830
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+先輩、おはようございます。今日は一緒に帰れますか？
+Actual Input Target Text (after sentence segmentation):
+['先輩、おはようございます。', '今日は一緒に帰れますか？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1095.40it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は一緒に帰れますか？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 237.42it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 239.61it/s]
+[1A  5%|▍         | 74/1500 [00:00<00:05, 240.12it/s]
+[1A  6%|▌         | 83/1500 [00:00<00:05, 236.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 33.56it/s]
+Processed text from the frontend (per sentence): ['先輩、おはようございます。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 260.52it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 261.59it/s]
+[1A  5%|▌         | 79/1500 [00:00<00:05, 258.32it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.87it/s]
+0.060   0.003   0.738   0.056
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+Actual Input Target Text (after sentence segmentation):
+['昨日の夜、。', '駅前の本屋さんで新しい小説を三冊買いました。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 703.57it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨日の夜、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 235.70it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:06, 228.93it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.82it/s]
+Processed text from the frontend (per sentence): ['駅前の本屋さんで新しい小説を三冊買いました。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.12it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.85it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 244.04it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 244.67it/s]
+[1A  8%|▊         | 125/1500 [00:00<00:05, 245.36it/s]
+[1A  9%|▉         | 140/1500 [00:00<00:05, 244.83it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.27it/s]
+0.000   0.004   0.739   0.053
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+来週の金曜日、午後三時に生徒会室に集合してください。
+Actual Input Target Text (after sentence segmentation):
+['来週の金曜日、。', '午後三時に生徒会室に集合してください。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 830.64it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['来週の金曜日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 263.94it/s]
+[1A  3%|▎         | 41/1500 [00:00<00:05, 258.60it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.42it/s]
+Processed text from the frontend (per sentence): ['午後三時に生徒会室に集合してください。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 265.44it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 265.67it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 265.63it/s]
+[1A  6%|▌         | 83/1500 [00:00<00:05, 262.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.49it/s]
+0.000   0.003   0.506   0.049
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+今日は風が強いので、上着を着ていったほうがいいと思いますよ。
+Actual Input Target Text (after sentence segmentation):
+['今日は風が強いので、。', '上着を着ていったほうがいいと思いますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 759.56it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は風が強いので、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 263.09it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 259.71it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.86it/s]
+Processed text from the frontend (per sentence): ['上着を着ていったほうがいいと思いますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 248.23it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.81it/s]
+[1A  5%|▌         | 76/1500 [00:00<00:05, 251.01it/s]
+[1A  6%|▌         | 87/1500 [00:00<00:05, 249.40it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.15it/s]
+0.000   0.003   0.576   0.049
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。
+Actual Input Target Text (after sentence segmentation):
+['カナデ先輩とヨルツキ先輩は、。', 'いつも仲がいいですね。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 907.96it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['いつも仲がいいですね。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.15it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 263.33it/s]
+[1A  4%|▍         | 63/1500 [00:00<00:05, 258.72it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.49it/s]
+Processed text from the frontend (per sentence): ['カナデ先輩とヨルツキ先輩は、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.19it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 264.81it/s]
+[1A  5%|▌         | 76/1500 [00:00<00:05, 260.96it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.10it/s]
+0.000   0.003   0.567   0.049
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+人気のお店だから、十分くらい並ぶかもしれません。
+Actual Input Target Text (after sentence segmentation):
+['人気のお店だから、。', '十分くらい並ぶかもしれません。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 934.77it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['人気のお店だから、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.04it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:05, 258.21it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.13it/s]
+Processed text from the frontend (per sentence): ['十分くらい並ぶかもしれません。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 265.46it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 266.90it/s]
+[1A  5%|▌         | 76/1500 [00:00<00:05, 263.20it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.63it/s]
+0.000   0.003   0.525   0.048
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？
+Actual Input Target Text (after sentence segmentation):
+['生まれて初めて、。', '自分でお弁当を作ってみたんです。', '上手にできたかな？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 1096.84it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['生まれて初めて、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 237.58it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:06, 241.17it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:06, 236.54it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.05it/s]
+Processed text from the frontend (per sentence): ['上手にできたかな？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.40it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.36it/s]
+[1A  5%|▍         | 73/1500 [00:00<00:05, 241.01it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.27it/s]
+Processed text from the frontend (per sentence): ['自分でお弁当を作ってみたんです。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.98it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.23it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 244.17it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 241.12it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.86it/s]
+0.000   0.004   0.917   0.079
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+ふふっ、先輩ったら、また寝癖がついてますよ。
+Actual Input Target Text (after sentence segmentation):
+['ふふっ、先輩ったら、。', 'また寝癖がついてますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1046.74it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ふふっ、先輩ったら、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.06it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.95it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.21it/s]  5%|▌         | 79/1500 [00:00<00:05, 241.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.51it/s]
+Processed text from the frontend (per sentence): ['また寝癖がついてますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.60it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.65it/s]
+[1A  4%|▎         | 56/1500 [00:00<00:05, 240.94it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.13it/s]
+0.000   0.003   0.592   0.051
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。
+Actual Input Target Text (after sentence segmentation):
+['約束ですよ。', '明日の朝、。', '七時半に、。', 'いつもの場所で待ってますから。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/4 [00:00<?, ?it/s]
+[1A100%|██████████| 4/4 [00:00<00:00, 1292.74it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['約束ですよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.47it/s]
+[1A  2%|▏         | 34/1500 [00:00<00:06, 234.33it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.25it/s]
+Processed text from the frontend (per sentence): ['明日の朝、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.73it/s]
+[1A  3%|▎         | 38/1500 [00:00<00:05, 255.49it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.36it/s]
+Processed text from the frontend (per sentence): ['七時半に、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 263.07it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:05, 257.66it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.63it/s]
+Processed text from the frontend (per sentence): ['いつもの場所で待ってますから。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.66it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 262.26it/s]
+[1A  4%|▍         | 62/1500 [00:00<00:05, 258.13it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.02it/s]
+0.000   0.004   0.765   0.098
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+2026年10月21日、今日の気温は十八度でした。
+Actual Input Target Text (after sentence segmentation):
+['2026年10月21日、。', '今日の気温は十八度でした。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 768.33it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['2026年10月21日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.02it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 261.10it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 261.76it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 259.74it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.33it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.32it/s]
+Processed text from the frontend (per sentence): ['今日の気温は十八度でした。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.04it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 264.57it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 264.27it/s]
+[1A  6%|▌         | 88/1500 [00:00<00:05, 261.08it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.78it/s]
+0.000   0.003   0.753   0.145
+rendered ja full_s2e10_s1e6_t7k3_ref4800
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 21.70it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.81it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:05, 261.68it/s]
+[1A  5%|▍         | 71/1500 [00:00<00:05, 258.65it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 40.16it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 262.63it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:05, 257.39it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.38it/s]
+0.000   0.093   0.484   0.049
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 26.30it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.42it/s]
+[1A  2%|▏         | 37/1500 [00:00<00:05, 252.78it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.44it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.43it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.83it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 263.08it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 264.42it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 261.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.85it/s]
+0.000   0.077   0.560   0.144
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 25.45it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.31it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.45it/s]
+[1A  4%|▎         | 55/1500 [00:00<00:06, 240.68it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.82it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.79it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.89it/s]
+[1A  4%|▍         | 57/1500 [00:00<00:05, 240.59it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 38.69it/s]
+0.000   0.079   0.499   0.053
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 27.19it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 238.86it/s]  3%|▎         | 41/1500 [00:00<00:06, 234.60it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.32it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 238.01it/s]
+[1A  3%|▎         | 51/1500 [00:00<00:05, 250.25it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 243.81it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.73it/s]
+0.000   0.074   0.429   0.052
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 20.53it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 260.60it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 262.83it/s]
+[1A  5%|▌         | 78/1500 [00:00<00:05, 260.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.41it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.39it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 260.37it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:05, 257.41it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.37it/s]
+0.000   0.098   0.522   0.145
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 特別な時間の中では、何でもないものでも特別に見えるんですよね。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 30.15it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]  2%|▏         | 26/1500 [00:00<00:05, 273.87it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 49.24it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:05, 292.13it/s]  3%|▎         | 51/1500 [00:00<00:05, 288.28it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  9.89it/s]100%|██████████| 1/1 [00:00<00:00,  9.87it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+############ Synthesize Audio ############
+[1A  2%|▏         | 29/1500 [00:00<00:05, 285.37it/s]  2%|▏         | 37/1500 [00:00<00:05, 275.37it/s]
+
+0.000   0.100   0.448   0.146
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 42.81it/s]
+rendered zh full_s2e10_s1e6_t7k3_ref4800
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+先輩、おはようございます。今日は一緒に帰れますか？
+Actual Input Target Text (after sentence segmentation):
+['先輩、おはようございます。', '今日は一緒に帰れますか？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1101.30it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['先輩、おはようございます。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 237.79it/s]
+[1A  3%|▎         | 49/1500 [00:00<00:05, 241.86it/s]  5%|▍         | 70/1500 [00:00<00:05, 238.55it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 24.58it/s]
+Processed text from the frontend (per sentence): ['今日は一緒に帰れますか？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.99it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.20it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 244.56it/s]
+[1A  5%|▌         | 78/1500 [00:00<00:05, 240.76it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.74it/s]
+0.048   0.003   0.654   0.068
+Set seed to 1236
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+Actual Input Target Text (after sentence segmentation):
+['昨日の夜、。', '駅前の本屋さんで新しい小説を三冊買いました。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 742.95it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨日の夜、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.22it/s]
+[1A  3%|▎         | 41/1500 [00:00<00:06, 236.80it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.73it/s]
+Processed text from the frontend (per sentence): ['駅前の本屋さんで新しい小説を三冊買いました。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.92it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.10it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.49it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 246.95it/s]
+[1A  7%|▋         | 110/1500 [00:00<00:05, 244.54it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.06it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.05it/s]
+0.000   0.003   0.658   0.138
+Set seed to 1237
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+来週の金曜日、午後三時に生徒会室に集合してください。
+Actual Input Target Text (after sentence segmentation):
+['来週の金曜日、。', '午後三時に生徒会室に集合してください。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 806.21it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['来週の金曜日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.64it/s]
+[1A  3%|▎         | 47/1500 [00:00<00:06, 240.74it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.09it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.08it/s]
+Processed text from the frontend (per sentence): ['午後三時に生徒会室に集合してください。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.92it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.80it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.73it/s]
+[1A  6%|▌         | 84/1500 [00:00<00:05, 242.41it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.13it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.12it/s]
+0.000   0.003   0.575   0.220
+Set seed to 1238
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+今日は風が強いので、上着を着ていったほうがいいと思いますよ。
+Actual Input Target Text (after sentence segmentation):
+['今日は風が強いので、。', '上着を着ていったほうがいいと思いますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 794.38it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は風が強いので、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.73it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.23it/s]
+[1A  4%|▍         | 62/1500 [00:00<00:05, 240.81it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.04it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.02it/s]
+Processed text from the frontend (per sentence): ['上着を着ていったほうがいいと思いますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 246.60it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.28it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 247.77it/s]
+[1A  6%|▌         | 87/1500 [00:00<00:05, 244.50it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.71it/s]
+0.000   0.003   0.647   0.138
+Set seed to 1239
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。
+Actual Input Target Text (after sentence segmentation):
+['カナデ先輩とヨルツキ先輩は、。', 'いつも仲がいいですね。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 870.10it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['カナデ先輩とヨルツキ先輩は、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.79it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.24it/s]
+[1A  5%|▍         | 69/1500 [00:00<00:05, 243.58it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 26.78it/s]
+Processed text from the frontend (per sentence): ['いつも仲がいいですね。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.17it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.05it/s]
+[1A  4%|▍         | 57/1500 [00:00<00:05, 240.78it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.97it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.95it/s]
+0.000   0.003   0.553   0.150
+Set seed to 1240
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+人気のお店だから、十分くらい並ぶかもしれません。
+Actual Input Target Text (after sentence segmentation):
+['人気のお店だから、。', '十分くらい並ぶかもしれません。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 880.14it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['人気のお店だから、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.34it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.86it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:06, 240.07it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.32it/s]
+Processed text from the frontend (per sentence): ['十分くらい並ぶかもしれません。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 247.16it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.64it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.32it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 242.03it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.22it/s]100%|██████████| 1/1 [00:00<00:00,  8.21it/s]
+0.000   0.003   0.564   0.149
+Set seed to 1241
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？
+Actual Input Target Text (after sentence segmentation):
+['生まれて初めて、。', '自分でお弁当を作ってみたんです。', '上手にできたかな？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 1107.36it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['生まれて初めて、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.22it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.33it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:06, 240.35it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.28it/s]
+Processed text from the frontend (per sentence): ['自分でお弁当を作ってみたんです。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.71it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.30it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.81it/s]
+[1A  5%|▌         | 77/1500 [00:00<00:05, 243.27it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 39.55it/s]
+Processed text from the frontend (per sentence): ['上手にできたかな？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 245.24it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.55it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:05, 242.60it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26.48it/s]
+0.000   0.003   0.833   0.090
+Set seed to 1242
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+ふふっ、先輩ったら、また寝癖がついてますよ。
+Actual Input Target Text (after sentence segmentation):
+['ふふっ、先輩ったら、。', 'また寝癖がついてますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 1029.02it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ふふっ、先輩ったら、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.54it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 242.38it/s]
+[1A  5%|▍         | 71/1500 [00:00<00:05, 239.04it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.20it/s]
+Processed text from the frontend (per sentence): ['また寝癖がついてますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.45it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 241.69it/s]
+[1A  5%|▍         | 68/1500 [00:00<00:06, 238.10it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.11it/s]
+0.000   0.003   0.616   0.055
+Set seed to 1243
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。
+Actual Input Target Text (after sentence segmentation):
+['約束ですよ。', '明日の朝、。', '七時半に、。', 'いつもの場所で待ってますから。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/4 [00:00<?, ?it/s]
+[1A100%|██████████| 4/4 [00:00<00:00, 1284.43it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['約束ですよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.98it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:05, 253.76it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.84it/s]
+Processed text from the frontend (per sentence): ['明日の朝、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 263.15it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:05, 254.11it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.36it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.35it/s]
+Processed text from the frontend (per sentence): ['七時半に、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 265.05it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 254.53it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.56it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.54it/s]
+Processed text from the frontend (per sentence): ['いつもの場所で待ってますから。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.53it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 265.80it/s]
+[1A  4%|▍         | 62/1500 [00:00<00:05, 261.14it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.65it/s]
+0.000   0.004   0.693   0.273
+Set seed to 1244
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+2026年10月21日、今日の気温は十八度でした。
+Actual Input Target Text (after sentence segmentation):
+['2026年10月21日、。', '今日の気温は十八度でした。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 615.41it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['2026年10月21日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.25it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 266.78it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 267.54it/s]
+[1A  7%|▋         | 108/1500 [00:00<00:05, 258.22it/s]
+[1A  7%|▋         | 109/1500 [00:00<00:05, 258.42it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.20it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.18it/s]
+Processed text from the frontend (per sentence): ['今日の気温は十八度でした。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.23it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.46it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:05, 240.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.23it/s]
+0.000   0.004   0.707   0.150
+rendered ja full_s2e10_s1e6_t7k3_sp9_ref4690
+Set seed to 1235
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 20.86it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 251.79it/s]
+[1A  3%|▎         | 52/1500 [00:00<00:05, 248.56it/s]  4%|▎         | 53/1500 [00:00<00:05, 244.15it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 37.59it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.48it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.63it/s]
+[1A  4%|▍         | 63/1500 [00:00<00:05, 240.99it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.15it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.14it/s]
+0.000   0.097   0.511   0.136
+Set seed to 1236
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 24.97it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.66it/s]
+[1A  3%|▎         | 41/1500 [00:00<00:05, 256.95it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.14it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.40it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 264.86it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 265.77it/s]
+[1A  6%|▌         | 85/1500 [00:00<00:05, 262.24it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.34it/s]100%|██████████| 1/1 [00:00<00:00,  8.33it/s]
+0.000   0.081   0.516   0.145
+Set seed to 1237
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 26.97it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 257.86it/s]
+[1A  3%|▎         | 47/1500 [00:00<00:05, 256.27it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.45it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 264.13it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 259.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 42.97it/s]
+0.000   0.075   0.406   0.048
+Set seed to 1238
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 27.01it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 258.78it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:05, 255.82it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.04it/s]100%|██████████| 1/1 [00:00<00:00,  9.03it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.44it/s]
+[1A  3%|▎         | 51/1500 [00:00<00:05, 258.13it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 41.89it/s]
+0.000   0.075   0.404   0.135
+Set seed to 1239
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 20.57it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.93it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 265.11it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:05, 260.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 40.29it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.68it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:05, 256.43it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.30it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.29it/s]
+0.000   0.098   0.417   0.133
+Set seed to 1240
+串行推理模式已开启
+Speech Rate Adjustment does not support Bucket Processing, Bucket Processing Disabled automatically
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 26.73it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 26.68it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.63it/s]
+[1A  2%|▏         | 34/1500 [00:00<00:06, 234.50it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.04it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.71it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:06, 238.21it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.95it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.31it/s]  3%|▎         | 43/1500 [00:00<00:06, 240.25it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.30it/s]
+0.000   0.113   0.562   0.079
+rendered zh full_s2e10_s1e6_t7k3_sp9_ref4690
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+先輩、おはようございます。今日は一緒に帰れますか？
+Actual Input Target Text (after sentence segmentation):
+['先輩、おはようございます。', '今日は一緒に帰れますか？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 1159.77it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は一緒に帰れますか？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 262.16it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 265.54it/s]
+[1A  5%|▍         | 73/1500 [00:00<00:05, 262.27it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.22it/s]
+Processed text from the frontend (per sentence): ['先輩、おはようございます。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.63it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 263.97it/s]
+[1A  4%|▍         | 65/1500 [00:00<00:05, 259.63it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.44it/s]
+0.066   0.003   0.613   0.054
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+Actual Input Target Text (after sentence segmentation):
+['昨日の夜、。', '駅前の本屋さんで新しい小説を三冊買いました。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 790.93it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨日の夜、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.77it/s]
+[1A  3%|▎         | 41/1500 [00:00<00:05, 254.55it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33.12it/s]
+Processed text from the frontend (per sentence): ['駅前の本屋さんで新しい小説を三冊買いました。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.90it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.87it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 243.85it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 243.76it/s]
+[1A  7%|▋         | 110/1500 [00:00<00:05, 241.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 34.85it/s]
+0.000   0.003   0.702   0.059
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+来週の金曜日、午後三時に生徒会室に集合してください。
+Actual Input Target Text (after sentence segmentation):
+['来週の金曜日、。', '午後三時に生徒会室に集合してください。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 808.31it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['来週の金曜日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 258.88it/s]
+[1A  3%|▎         | 47/1500 [00:00<00:05, 256.03it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.26it/s]
+Processed text from the frontend (per sentence): ['午後三時に生徒会室に集合してください。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:05, 261.62it/s]
+[1A  4%|▎         | 54/1500 [00:00<00:05, 263.58it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 252.00it/s]
+[1A  6%|▌         | 84/1500 [00:00<00:05, 251.17it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 34.97it/s]
+0.000   0.003   0.602   0.056
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+今日は風が強いので、上着を着ていったほうがいいと思いますよ。
+Actual Input Target Text (after sentence segmentation):
+['今日は風が強いので、。', '上着を着ていったほうがいいと思いますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 799.30it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今日は風が強いので、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.61it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.02it/s]
+[1A  4%|▍         | 62/1500 [00:00<00:06, 238.75it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.82it/s]
+Processed text from the frontend (per sentence): ['上着を着ていったほうがいいと思いますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.46it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.68it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.49it/s]
+[1A  6%|▌         | 87/1500 [00:00<00:05, 242.73it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.63it/s]
+0.000   0.003   0.705   0.056
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。
+Actual Input Target Text (after sentence segmentation):
+['カナデ先輩とヨルツキ先輩は、。', 'いつも仲がいいですね。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 903.17it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['いつも仲がいいですね。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.49it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 242.96it/s]
+[1A  4%|▍         | 63/1500 [00:00<00:06, 238.83it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 35.36it/s]
+Processed text from the frontend (per sentence): ['カナデ先輩とヨルツキ先輩は、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:05, 246.52it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 247.30it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.72it/s]
+[1A  5%|▌         | 81/1500 [00:00<00:05, 243.73it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.80it/s]
+0.000   0.003   0.683   0.056
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+人気のお店だから、十分くらい並ぶかもしれません。
+Actual Input Target Text (after sentence segmentation):
+['人気のお店だから、。', '十分くらい並ぶかもしれません。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 897.66it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['人気のお店だから、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.21it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.64it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:06, 240.54it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.08it/s]
+Processed text from the frontend (per sentence): ['十分くらい並ぶかもしれません。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 244.81it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 245.85it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 245.51it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 242.13it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.20it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.19it/s]
+0.000   0.003   0.617   0.137
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？
+Actual Input Target Text (after sentence segmentation):
+['生まれて初めて、。', '自分でお弁当を作ってみたんです。', '上手にできたかな？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 1115.61it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['生まれて初めて、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.00it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.77it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:06, 238.80it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.41it/s]
+Processed text from the frontend (per sentence): ['上手にできたかな？']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.57it/s]
+[1A  3%|▎         | 47/1500 [00:00<00:06, 239.08it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.89it/s]
+Processed text from the frontend (per sentence): ['自分でお弁当を作ってみたんです。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.44it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.52it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 243.46it/s]
+[1A  5%|▌         | 79/1500 [00:00<00:05, 240.26it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.61it/s]
+0.000   0.004   0.876   0.083
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+ふふっ、先輩ったら、また寝癖がついてますよ。
+Actual Input Target Text (after sentence segmentation):
+['ふふっ、先輩ったら、。', 'また寝癖がついてますよ。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 1031.94it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ふふっ、先輩ったら、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.31it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.62it/s]
+[1A  5%|▍         | 71/1500 [00:00<00:05, 240.30it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.85it/s]
+Processed text from the frontend (per sentence): ['また寝癖がついてますよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.77it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.06it/s]
+[1A  5%|▍         | 68/1500 [00:00<00:05, 240.38it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.00it/s]
+0.000   0.003   0.665   0.055
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。
+Actual Input Target Text (after sentence segmentation):
+['約束ですよ。', '明日の朝、。', '七時半に、。', 'いつもの場所で待ってますから。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 1296.54it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['約束ですよ。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 238.13it/s]  3%|▎         | 43/1500 [00:00<00:06, 235.23it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.55it/s]
+Processed text from the frontend (per sentence): ['明日の朝、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.61it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:06, 235.09it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.21it/s]
+Processed text from the frontend (per sentence): ['七時半に、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.08it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:06, 233.59it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.10it/s]100%|██████████| 1/1 [00:00<00:00,  9.08it/s]
+Processed text from the frontend (per sentence): ['いつもの場所で待ってますから。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.28it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:06, 241.39it/s]  4%|▍         | 62/1500 [00:00<00:06, 237.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 37.69it/s]
+0.000   0.004   0.859   0.192
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+2026年10月21日、今日の気温は十八度でした。
+Actual Input Target Text (after sentence segmentation):
+['2026年10月21日、。', '今日の気温は十八度でした。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 739.87it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['2026年10月21日、。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.66it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.86it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 246.09it/s]
+[1A  7%|▋         | 100/1500 [00:00<00:05, 246.92it/s]  7%|▋         | 109/1500 [00:00<00:05, 244.10it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.11it/s]100%|██████████| 1/1 [00:00<00:00,  9.10it/s]
+Processed text from the frontend (per sentence): ['今日の気温は十八度でした。']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 245.22it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.43it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:05, 242.52it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.74it/s]
+0.000   0.004   0.784   0.138
+rendered ja full_s2e10_s1e6_t7k3_aux2_ref4690
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 23.03it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.85it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 244.23it/s]  4%|▎         | 53/1500 [00:00<00:06, 239.46it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.81it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 242.10it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 242.95it/s]
+[1A  4%|▍         | 63/1500 [00:00<00:06, 238.93it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 37.26it/s]
+0.000   0.088   0.570   0.055
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.21it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.63it/s]  3%|▎         | 41/1500 [00:00<00:06, 235.68it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 36.22it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 241.47it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 242.19it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:05, 242.85it/s]  6%|▌         | 85/1500 [00:00<00:05, 239.93it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.06it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  9.05it/s]
+0.000   0.072   0.614   0.138
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.27it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 238.83it/s]  3%|▎         | 47/1500 [00:00<00:06, 236.27it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.75it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.96it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 243.40it/s]  3%|▎         | 50/1500 [00:00<00:06, 238.17it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 37.24it/s]
+0.000   0.072   0.495   0.055
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 30.50it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.74it/s]  3%|▎         | 45/1500 [00:00<00:06, 240.35it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 36.40it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.93it/s]
+[1A  3%|▎         | 50/1500 [00:00<00:05, 246.11it/s]
+[1A  3%|▎         | 51/1500 [00:00<00:06, 240.91it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 37.69it/s]
+0.000   0.067   0.484   0.054
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 20.89it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 259.16it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:05, 261.64it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:05, 257.09it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.38it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:05, 257.39it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:05, 251.75it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 38.22it/s]
+0.000   0.097   0.472   0.053
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: はい、それにですね、記念品の折り紙、いつもとても綺麗な柄なんです。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 26.51it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 26.44it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 240.29it/s]
+[1A  2%|▏         | 34/1500 [00:00<00:06, 234.33it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.56it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:06, 243.18it/s]  3%|▎         | 45/1500 [00:00<00:06, 239.62it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 36.82it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  2%|▏         | 24/1500 [00:00<00:06, 239.80it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:06, 236.64it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 35.40it/s]
+0.000   0.115   0.643   0.084
+rendered zh full_s2e10_s1e6_t7k3_aux2_ref4690
+10 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples\full_s2e10_s1e3_t7k3_ref4690
+10 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples\full_s2e10_s1e6_t7k3_ref5670
+10 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples\full_s2e10_s1e6_t7k3_ref2830
+10 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples\full_s2e10_s1e6_t7k3_ref4800
+10 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples\full_s2e10_s1e6_t7k3_sp9_ref4690
+10 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples\full_s2e10_s1e6_t7k3_aux2_ref4690
+6 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e3_t7k3_ref4690
+6 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_ref5670
+6 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_ref2830
+6 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_ref4800
+6 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_sp9_ref4690
+6 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_aux2_ref4690
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ricori/main/ap-XI1yMwULzEj2SEJgZpqPgH

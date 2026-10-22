@@ -1,0 +1,54 @@
+7 checkpoints in D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples
+full_s2e10_s1e3_t7k3_ref4690 01 cer=0.000  学长,早上好。今天能一起回家吗?
+full_s2e10_s1e3_t7k3_ref4690 02 cer=0.000  昨天晚上,我在车站前的书店买了三本新小说。
+full_s2e10_s1e3_t7k3_ref4690 03 cer=0.000  下周五下午三点,请到学生会室集合。
+full_s2e10_s1e3_t7k3_ref4690 04 cer=0.214  今天风很大,车门最好拆上外道哦。
+full_s2e10_s1e3_t7k3_ref4690 05 cer=0.923  嘻嘻嘻嘻,是让你干,都把你打起来啦。
+full_s2e10_s1e3_t7k3_ref4690 06 cer=0.111  也好了啊,明天早上七点半,我在老地方等你。
+full_s2e10_s1e6 01 cer=0.077  学长,早上好啊。今天能一起回家吗?
+full_s2e10_s1e6 02 cer=0.000  昨天晚上,我在车站前的书店买了三本新小说。
+full_s2e10_s1e6 03 cer=0.000  下周五下午三点,请到学生会室集合。
+full_s2e10_s1e6 04 cer=0.071  今天风很大,出门最好穿上外套。
+full_s2e10_s1e6 05 cer=0.308  嘿嘿,说到你干,头发又吵起来了。
+full_s2e10_s1e6 06 cer=0.222  宇昊然,明天早上七点半,我在老地方等你。
+full_s2e10_s1e6_t7k3_aux2_ref4690 01 cer=0.077  学长,早上好啊,今天能一起回家吗?
+full_s2e10_s1e6_t7k3_aux2_ref4690 02 cer=0.000  昨天晚上,我在车站前的书店买了三本新小说。
+full_s2e10_s1e6_t7k3_aux2_ref4690 03 cer=0.000  下周五下午三点,请到学生会室集合。
+full_s2e10_s1e6_t7k3_aux2_ref4690 04 cer=0.500  今天风很大,充满最好插向歪道。
+full_s2e10_s1e6_t7k3_aux2_ref4690 05 cer=1.077  嘿嘿,世道に関、とばゆーちゃちゃらら。
+full_s2e10_s1e6_t7k3_aux2_ref4690 06 cer=0.111  也好了啊,明天早上七点半,我在老地方等你。
+full_s2e10_s1e6_t7k3_ref2830 01 cer=0.000  学长,早上好。今天能一起回家吗?
+full_s2e10_s1e6_t7k3_ref2830 02 cer=0.105  昨天晚上,我在折弹前的书店买了三本新小说。
+full_s2e10_s1e6_t7k3_ref2830 03 cer=0.000  下周五下午三点,请到学生会室集合。
+full_s2e10_s1e6_t7k3_ref2830 04 cer=0.286  今天风很大,出门最好在乡外到。
+full_s2e10_s1e6_t7k3_ref2830 05 cer=0.692  嘻嘻,谁叫你干,头发又焦脆了啦。
+full_s2e10_s1e6_t7k3_ref2830 06 cer=0.167  也好了啊,明天早上几点半,我在老地方等你。
+full_s2e10_s1e6_t7k3_ref4800 01 cer=0.000  学长,早上好,今天能一起回家吗?
+full_s2e10_s1e6_t7k3_ref4800 02 cer=0.000  昨天晚上,我在车站前的书店买了三本新小说。
+full_s2e10_s1e6_t7k3_ref4800 03 cer=0.000  下周五下午三点,请到学生会室集合。
+full_s2e10_s1e6_t7k3_ref4800 04 cer=0.071  今天风很大,出门最好穿上外套。
+full_s2e10_s1e6_t7k3_ref4800 05 cer=0.077  嘿嘿,学长你看,后发又翘起来了。
+full_s2e10_s1e6_t7k3_ref4800 06 cer=0.000  约好了哦,明天早上七点半,我在老地方等你。
+full_s2e10_s1e6_t7k3_ref5670 01 cer=0.154  携带,早上好。今天能一起回家吗?
+full_s2e10_s1e6_t7k3_ref5670 02 cer=0.000  昨天晚上,我在车站前的书店买了三本新小说。
+full_s2e10_s1e6_t7k3_ref5670 03 cer=0.067  下周五下午三点,请到学生会设集合。
+full_s2e10_s1e6_t7k3_ref5670 04 cer=0.286  今天风很大,出门最好摘下外道啊。
+full_s2e10_s1e6_t7k3_ref5670 05 cer=0.077  嘿嘿,学长你看,头发也又翘起来了。
+full_s2e10_s1e6_t7k3_ref5670 06 cer=0.111  也好了啊,明天早上七点半。我在老地方等你。
+full_s2e10_s1e6_t7k3_sp9_ref4690 01 cer=0.000  学长,早上好。今天能一起回家吗?
+full_s2e10_s1e6_t7k3_sp9_ref4690 02 cer=0.000  昨天晚上,我在车站前的书店买了三本新小说。
+full_s2e10_s1e6_t7k3_sp9_ref4690 03 cer=0.000  下周五下午三点,请到学生会室集合。
+full_s2e10_s1e6_t7k3_sp9_ref4690 04 cer=0.214  今天风很大,出门最好插上外道。
+full_s2e10_s1e6_t7k3_sp9_ref4690 05 cer=0.692  嘿嘿,许多尼康,多发有趣俱来啦。
+full_s2e10_s1e6_t7k3_sp9_ref4690 06 cer=0.111  也好了啊,明天早上七点半,我在老地方等你。
+
+== CER per checkpoint (total edits / total kana)
+full_s2e10_s1e3_t7k3_ref4690 18.48%   sentences with errors: 04 05 06
+full_s2e10_s1e6        10.87%   sentences with errors: 01 04 05 06
+full_s2e10_s1e6_t7k3_aux2_ref4690 26.09%   sentences with errors: 01 04 05 06
+full_s2e10_s1e6_t7k3_ref2830 19.57%   sentences with errors: 02 04 05 06
+full_s2e10_s1e6_t7k3_ref4800 2.17%   sentences with errors: 04 05
+full_s2e10_s1e6_t7k3_ref5670 10.87%   sentences with errors: 01 03 04 05 06
+full_s2e10_s1e6_t7k3_sp9_ref4690 15.22%   sentences with errors: 04 05 06
+-> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\cer.csv
+ALL DONE
