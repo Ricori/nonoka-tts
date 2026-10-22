@@ -2,7 +2,7 @@
 
 用游戏角色「nonoka」的语音数据，微调 GPT-SoVITS，让她能说日语和中文。个人非商用。
 
-更新：2026-10-23（Modal 上部署了推理试用接口；下一步优化推理成本，见 6.4）
+更新：2026-10-23（Modal 上部署了推理试用接口；翻唱流程 4_sing.bat，见 5.9；下一步优化推理成本，见 6.4）
 
 ---
 
@@ -42,6 +42,7 @@ nonoka-tts/
 │  ├─ transcribe.py
 │  ├─ run_cer.bat          CER：把试听转写回文本，结果写到 04_train/out/cer.csv
 │  ├─ cer_samples.py       （中文加 --zh）
+│  ├─ sing_eval.py         翻唱的音色相似度和 DNSMOS（见 5.9）
 │  ├─ auto_eval.py         客观指标：音色相似度、MOS、DNSMOS、音高起伏、语速 → 试听文件夹上一级的 auto_eval.csv
 │  ├─ venv/                转写和评测用的 Python 环境（约 3GB，不进 git；重建方法见 4.3）
 │  ├─ requirements.lock.txt  venv 的完整包版本（pip freeze）
@@ -54,7 +55,8 @@ nonoka-tts/
 │  ├─ test_sentences.txt   日语测试句（可以改）
 │  ├─ zh_sentences.txt     中文测试句（可以改）
 │  ├─ serve.py             云端推理试用接口（Modal，见 6.4）
-│  ├─ sing_vc.py           唱歌测试：分离人声 → Seed-VC 歌声模型零样本转成她的音色 → 混回伴奏（见 5.9）
+│  ├─ 4_sing.bat           用她的声音翻唱一首歌：把歌曲文件拖到上面即可（见 5.9）
+│  ├─ sing_vc.py           翻唱流程：分离人声 → 判断变调 → Seed-VC 歌声模型零样本转成她的音色 → 混回伴奏（见 5.9）
 │  ├─ zh_vc.py             中文可行性验证：Qwen3-TTS 中文 → Seed-VC 微调并转换音色（见 5.5）；`::refs_main` 生成中文参考音频候选（见 5.7）
 │  ├─ make_blind.py        结果页生成脚本（模板 blind_tpl.html）
 │  ├─ gemini_judge.py      让 Antigravity 的 Gemini 3.8 Flash 盲评试听
@@ -416,13 +418,31 @@ Gemini 用 low 档完整跑了 2 轮 × 10 句（20/20 次调用）。之前 hig
 
 ## 5.9 唱歌测试：歌声转换（2026-10-23）
 
-GPT-SoVITS 不能唱歌：它的输入只有文本和参考音频，没有控制旋律（音高、节拍）的输入，训练数据里也只有说话。想让她唱歌，可行的办法是**歌声转换**：保留原唱的旋律和咬字，只把音色换成她的。脚本是 `04_train/sing_vc.py`。
+GPT-SoVITS 不能唱歌：它的输入只有文本和参考音频，没有控制旋律（音高、节拍）的输入，训练数据里也只有说话。想让她唱歌，可行的办法是**歌声转换**：保留原唱的旋律和咬字，只把音色换成她的。第一首试下来"效果还行"，流程已整理成 `04_train/4_sing.bat` + `sing_vc.py`，换歌直接用。
 
-- 测试歌曲：`test_data/私は、わたしの事が好き.mp3`（4 分 11 秒，女声）。歌曲文件和输出都不进 git（`.gitignore` 里有 `04_train/out/sing/`）。
-- 流程：
-  1. **分轨**（audio-separator，Modal L4，约 8 秒）：BS-Roformer 分出人声和伴奏 → Mel-Roformer karaoke 把人声再分成主唱和和声 → Mel-Roformer 去混响得到干的主唱。结果在 `out/sing/<歌名>/stems/`。
-  2. **转换**：Seed-VC v1 歌声模型（whisper-small + RMVPE F0，44.1kHz BigVGAN），零样本，50 步扩散。不开自动调音高（开了会把旋律拉到她说话的音高）；需要时用 `--shift` 手动设半音。原唱主唱的音高中位数 349Hz，她说话时是 320Hz，只差 1.5 个半音，所以没有变调。
-  3. **混音**：转换后的主唱 + 和声 + 伴奏，主唱加一点混响。Seed-VC 输出比原唱人声轻约 5dB，所以先把响度对齐原唱主唱，再高 3dB（`VOCAL_BOOST_DB`）。第一版没对齐，人声比原曲低约 11dB，几乎听不见。只想重混时用 `::remix --folder ... --boost N`，几秒就好，不用重新转换。
+### 用法（换一首歌）
+
+1. 把歌曲文件（mp3/flac/wav/m4a 都行）拖到 `04_train/4_sing.bat` 上，或者在命令行运行：`4_sing.bat "D:\路径\歌.mp3"`。
+2. 等它跑完（4 分钟的歌约 6–7 分钟，都在 Modal 上：分轨约 1 分钟，测音高约 1 分钟，转换约 5 分钟），最后一行 `DONE` 后面就是成品：`04_train/out/sing/<歌名>/full_k<变调>/refcat_mix.mp3`。
+3. 可选参数（加在歌曲路径后面）：
+   - `--start 60 --length 30`：先只转 30 秒试听（约 1 分钟），满意再转整首。
+   - `--shift 12` / `--shift -12`：手动指定变调的半音数。默认 `auto`，见下面第 2 步。
+   - `--refs refcat,ref4690`：同时出几个参考音频的版本（`REFS` 里定义）。
+4. 人声太轻或太响：在 `04_train` 里运行 `python -m modal run sing_vc.py::remix --folder "out/sing/<歌名>/<那次的文件夹>" --boost 5`（默认 3，数字越大人声越响），只在本地重新混音，几秒就好，不用 GPU。
+5. 想看指标：`03_asrenvScriptspython 03_asrsing_eval.py 04_trainoutsing<歌名><那次的文件夹>`（音色相似度、DNSMOS）。
+
+同一首歌的分轨和音高会缓存在 `out/sing/<歌名>/stems/`（`pitch.txt` 是原唱主唱的音高中位数），再跑只做转换。歌曲文件和输出都不进 git（`.gitignore` 里有 `04_train/out/sing/`）。
+
+### 流程
+
+1. **分轨**（audio-separator，Modal L4，约 8 秒）：BS-Roformer 分出人声和伴奏 → Mel-Roformer karaoke 把人声再分成主唱和和声 → Mel-Roformer 去混响得到干的主唱。
+2. **变调**：用 pyin 测原唱主唱的音高中位数（Modal CPU），和她说话的音高中位数（`HER_F0` = 320Hz，51 条原声）比。`auto` 只按整八度变（取最接近差值的 12 的倍数），伴奏不用动、调性不变：男声的歌一般会升 12，女声的歌一般是 0。差值离整八度超过 4 个半音时会打印提示。手动给的不是 12 的倍数时，伴奏和和声也一起用 ffmpeg rubberband 移调（等于换调；已验证 `--shift 2` 时人声和伴奏都升了 2 个半音）。Seed-VC 自带的自动调音高不开：它会把旋律拉到她说话的音高。
+3. **转换**：Seed-VC v1 歌声模型（whisper-small + RMVPE F0，44.1kHz BigVGAN），零样本，50 步扩散，参考音频默认 `refcat`。
+4. **混音**：转换后的主唱 + 和声 + 伴奏，主唱加一点混响，再导出 mp3。Seed-VC 输出比原唱人声轻约 5dB，所以先把响度对齐原唱主唱，再高 3dB（`VOCAL_BOOST_DB`）。第一版没对齐，人声比原曲低约 11dB，几乎听不见。
+
+### 第一首的结果
+
+测试歌曲：`test_data/私は、わたしの事が好き.mp3`（4 分 11 秒，女声）。原唱主唱的音高中位数 349Hz，比她低 1.5 个半音，`auto` 选择不变调。
 - 参考音频对比（110–140 秒，ECAPA 音色相似度，和 90 条原声的中心比；整段算 1 次，括号里是每 6 秒算 1 次的平均值）：
 
 | | 音色相似 | DNSMOS |
@@ -504,7 +524,7 @@ GPT-SoVITS 不能唱歌：它的输入只有文本和参考音频，没有控制
 - [x] 中文参考音频换成不在测试句里的 zr04（5.7）：CER 2.1%、音色 0.811，确认 5.6 的效果；aux5 音色 0.819
 - [x] 中文 6.2 方法 3（5.8）：合成中文 475 条 + 日语原声训练 GPT（`nonoka_mix`），中文 e2 小幅提升（Gemini 4.05、CER 1.4%），日语继续用 `nonoka_full` e6
 - [x] 云端推理试用接口（Modal，`serve.py`，一个 GET 接口，见 6.4）
-- [x] 唱歌测试（5.9）：分轨 + Seed-VC 歌声模型零样本转换，整首音色相似度 0.826（原唱 0.400）
+- [x] 翻唱（5.9）：分轨 + Seed-VC 歌声模型零样本转换，整首音色相似度 0.826（原唱 0.400）；整理成 `4_sing.bat`，换歌直接用
 - [ ] 推理成本优化（6.4）：T4、API 与 GPU 推理分开、容器快照
 - [ ] 云端推理正式方案（平台、形式、鉴权待定；2026-10-22 决定不做本地推理）
 

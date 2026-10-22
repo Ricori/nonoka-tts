@@ -1,17 +1,25 @@
 """
-Singing test: convert a song's lead vocal to her timbre with Seed-VC's singing model (zero-shot).
+Song cover in her voice (README 5.9): convert a song's lead vocal to her timbre with Seed-VC's singing model (zero-shot).
+4_sing.bat wraps the first form; drop a song file onto it.
 
-  python -m modal run sing_vc.py --song <mp3>                         (separate stems only -> out/sing/<song>/stems/)
-  python -m modal run sing_vc.py --song <mp3> --start 60 --length 30  (also convert that slice)
-  python -m modal run sing_vc.py --song <mp3> --length 0              (convert the whole lead vocal)
-  python -m modal run sing_vc.py::remix --folder out/sing/<song>/<slice> --boost 4   (redo the mixes only, local)
+  python -m modal run sing_vc.py::main --song <audio>                  (whole song)
+  python -m modal run sing_vc.py::main --song <audio> --start 60 --length 30 (preview a slice)
+  python -m modal run sing_vc.py::main --song <audio> --shift 12             (override the key shift, semitones)
+  python -m modal run sing_vc.py::main --song <audio> --length -1            (stems + pitch only, no conversion)
+  python -m modal run sing_vc.py::remix --folder out/sing/<song>/<run> --boost 5   (redo the mix only, local)
 
 1. Stems (audio-separator): BS-Roformer splits vocals / instrumental, the Mel-Roformer karaoke model splits the
-   vocals into lead / backing, the Mel-Roformer dereverb model dries the lead. Cached under out/sing/<song>/stems/.
-2. Timbre: Seed-VC v1 singing model (whisper-small content, RMVPE F0, 44.1 kHz BigVGAN), zero-shot. The source F0 is
-   kept and shifted by --shift semitones (no auto-adjust: that would pull the melody down to her speaking pitch).
-   Each reference in REFS gives one version: a single clip, or several clips joined (Seed-VC reads up to ~25 s).
-3. Mix: converted lead + backing + instrumental with a light reverb -> out/sing/<song>/<version>_mix.wav.
+   vocals into lead / backing, the Mel-Roformer dereverb model dries the lead. Cached under out/sing/<song>/stems/,
+   with the lead's median pitch in stems/pitch.txt.
+2. Key: --shift auto moves the melody by the multiple of 12 closest to the gap between the singer's median pitch and
+   hers (HER_F0), so a male song goes up an octave and the accompaniment stays in key. Any other shift transposes the
+   backing and instrumental with it (ffmpeg rubberband) - a key change. Seed-VC's own auto-adjust is off: it would
+   pull the melody down to her speaking pitch.
+3. Timbre: Seed-VC v1 singing model (whisper-small content, RMVPE F0, 44.1 kHz BigVGAN), zero-shot. Each reference
+   in --refs (keys of REFS) gives one version; refcat (three clips joined) clearly beat a single clip.
+4. Mix: converted lead + backing + instrumental, lead matched to the original lead's loudness + VOCAL_BOOST_DB,
+   light reverb, peak-limited.
+Output: out/sing/<song>/<full|START s_LENGTH s>_k<shift>/<ref>_mix.mp3 (+ wavs of every part).
 Song audio is not committed (out/sing/ is in .gitignore).
 """
 from pathlib import Path
@@ -29,6 +37,7 @@ SEP_MODELS = {
 DIFFUSION_STEPS = 50  # README: 30-50; singing gets the top of the range
 GPUS = ["L4", "A10G", "L40S"]
 VOCAL_BOOST_DB = 3.0  # lead over the original's level in the mix: the instrumental stem keeps some vocal bleed
+HER_F0 = 320  # Hz, median pitch of 51 of her 030 clips (pyin, README 5.9)
 # references: the GPT-SoVITS reference clips (README 5.2/5.3)
 REFS = {
     "ref4690": ["03004690"],
@@ -84,7 +93,7 @@ def separate(song: bytes, name: str) -> dict:
 
     work = Path("/tmp/sep")
     work.mkdir(exist_ok=True)
-    src = work / f"{name}{Path(name).suffix or '.mp3'}"
+    src = work / (name if Path(name).suffix else f"{name}.mp3")
     src.write_bytes(song)
     sep = Separator(model_file_dir=SEP_DIR, output_dir=str(work), output_format="FLAC", sample_rate=44100)
 
@@ -105,6 +114,19 @@ def separate(song: bytes, name: str) -> dict:
     d = split(k["vocals"], SEP_MODELS["dereverb"], ["noreverb"])
     stems = {"instrumental": v["instrumental"], "backing": k["instrumental"], "lead": k["vocals"], "lead_dry": d["noreverb"]}
     return {s: p.read_bytes() for s, p in stems.items()}
+
+
+@app.function(image=sep_image, cpu=4, timeout=1800)
+def median_f0(audio: bytes) -> float:
+    """Median pitch (Hz) of the voiced frames of a vocal stem (pyin, same settings as HER_F0)."""
+    import io
+
+    import librosa
+    import numpy as np
+
+    y, sr = librosa.load(io.BytesIO(audio), sr=16000, mono=True)
+    f, voiced, _ = librosa.pyin(y, fmin=80, fmax=1200, sr=sr, frame_length=1024)
+    return float(np.median(f[voiced & ~np.isnan(f)]))
 
 
 @app.function(image=seedvc_image, gpu=GPUS, timeout=3600, max_containers=5)
@@ -149,8 +171,9 @@ def _lufs(path):
 
 
 def _mix(lead, original, backing, instrumental, out, boost=VOCAL_BOOST_DB):
-    """Converted lead (mono) centred over backing + instrumental, peak-limited. The lead is first matched to the
-    original lead's loudness (Seed-VC comes out ~5 dB quieter), then raised by `boost` dB; light reverb on top."""
+    """Converted lead (mono) centred over backing + instrumental, peak-limited; writes out (.wav) and an .mp3 next to it.
+    The lead is first matched to the original lead's loudness (Seed-VC comes out ~5 dB quieter), then raised by
+    `boost` dB; light reverb on top."""
     gain = _lufs(original) - _lufs(lead) + boost
     print(f"lead gain {gain:+.1f} dB", flush=True)
     _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(lead), "-i", str(backing), "-i", str(instrumental),
@@ -159,6 +182,7 @@ def _mix(lead, original, backing, instrumental, out, boost=VOCAL_BOOST_DB):
           "[1:a]aresample=44100[b];[2:a]aresample=44100[i];"
           "[l][b][i]amix=inputs=3:duration=shortest:normalize=0,alimiter=limit=0.95[m]",
           "-map", "[m]", str(out)])
+    _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(out), "-b:a", "256k", str(out.with_suffix(".mp3"))])
 
 
 def _mix_version(out_dir, version, boost=VOCAL_BOOST_DB):
@@ -166,52 +190,80 @@ def _mix_version(out_dir, version, boost=VOCAL_BOOST_DB):
          out_dir / f"{version}_mix.wav", boost)
 
 
-@app.local_entrypoint()
-def main(song: str, start: float = 60.0, length: float = 30.0, shift: int = 0, refs: str = ",".join(REFS)):
-    import io
+def _transpose(path, semitones):
+    """Pitch-shift a wav in place by `semitones`, tempo unchanged (rubberband, formants kept)."""
+    tmp = path.with_name(path.stem + ".tmp.wav")
+    _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(path), "-af",
+          f"rubberband=pitch={2 ** (semitones / 12):.6f}:formant=preserved", str(tmp)])
+    tmp.replace(path)
 
-    import soundfile as sf
 
-    song_path = Path(song)
-    root = Path(__file__).resolve().parent / "out" / "sing" / song_path.stem
-    stems_dir = root / "stems"
+def _stems(song_path, stems_dir):
+    """Separate once and measure the lead's pitch once; both are cached in stems_dir. -> median F0 (Hz)."""
     if not (stems_dir / "lead_dry.flac").exists():
         stems_dir.mkdir(parents=True, exist_ok=True)
         print(f"separating {song_path.name}", flush=True)
         for s, b in separate.remote(song_path.read_bytes(), song_path.name).items():
             (stems_dir / f"{s}.flac").write_bytes(b)
         print(f"stems -> {stems_dir}", flush=True)
+    pitch = stems_dir / "pitch.txt"
+    if not pitch.exists():
+        print("measuring the lead's pitch", flush=True)
+        pitch.write_text(f"{median_f0.remote((stems_dir / 'lead_dry.flac').read_bytes()):.1f}", encoding="utf-8")
+    return float(pitch.read_text(encoding="utf-8"))
+
+
+@app.local_entrypoint()
+def main(song: str, start: float = 0.0, length: float = 0.0, shift: str = "auto", refs: str = "refcat"):
+    import io
+    import math
+
+    import soundfile as sf
+
+    song_path = Path(song).resolve()
+    assert song_path.exists(), f"no such file: {song_path}"
+    unknown = [r for r in refs.split(",") if r not in REFS]
+    assert not unknown, f"unknown refs {unknown}; choose from {list(REFS)}"
+    root = Path(__file__).resolve().parent / "out" / "sing" / song_path.stem
+    f0 = _stems(song_path, root / "stems")
+    gap = 12 * math.log2(HER_F0 / f0)
+    k = 12 * round(gap / 12) if shift == "auto" else int(shift)
+    print(f"singer's median pitch {f0:.0f} Hz, hers {HER_F0} Hz: gap {gap:+.1f} semitones -> shift {k:+d}"
+          + (" (auto: octaves only, keeps the accompaniment's key)" if shift == "auto" else ""), flush=True)
+    if shift == "auto" and abs(gap - k) > 4:
+        print(f"!! the gap is far from a whole octave; if it sounds strained try --shift {k + (12 if gap > k else -12):+d}"
+              " or a key change such as --shift " + f"{round(gap):+d}", flush=True)
     if length < 0:
         return
 
     # slice every stem the same way so the mix lines up; length 0 = whole song
-    tag = "full" if length == 0 else f"{int(start)}s_{int(length)}s"
-    seg = {}
+    out_dir = root / (("full" if length == 0 else f"{int(start)}s_{int(length)}s") + f"_k{k:+d}")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    lead = None
     for s in ("instrumental", "backing", "lead_dry"):
-        audio, sr = sf.read(stems_dir / f"{s}.flac", dtype="float32")
+        audio, sr = sf.read(root / "stems" / f"{s}.flac", dtype="float32")
         if length:
             audio = audio[int(start * sr):int((start + length) * sr)]
-        seg[s] = (audio, sr)
-    out_dir = root / tag
-    out_dir.mkdir(parents=True, exist_ok=True)
-    for s, (audio, sr) in seg.items():
         sf.write(out_dir / f"_{s}.wav", audio, sr)
-    lead, sr = seg["lead_dry"]
+        if s == "lead_dry":
+            lead = (audio.mean(axis=1) if audio.ndim == 2 else audio, sr)
+        elif k % 12:
+            _transpose(out_dir / f"_{s}.wav", k)  # key change: the accompaniment moves with the melody
     buf = io.BytesIO()
-    sf.write(buf, lead.mean(axis=1) if lead.ndim == 2 else lead, sr, format="WAV")
+    sf.write(buf, *lead, format="WAV")
 
-    jobs = [(f"{r}_k{shift:+d}", buf.getvalue(), _ref_wav(REFS[r]), shift) for r in refs.split(",")]
+    jobs = [(r, buf.getvalue(), _ref_wav(REFS[r]), k) for r in refs.split(",")]
     for version, wav in convert.map(jobs, order_outputs=False):
         (out_dir / f"{version}.wav").write_bytes(wav)
         _mix_version(out_dir, version)
-        print(f"{version} -> {out_dir}", flush=True)
+        print(f"DONE {out_dir / (version + '_mix.mp3')}", flush=True)
 
 
 @app.local_entrypoint()
 def remix(folder: str, boost: float = VOCAL_BOOST_DB):
-    """python -m modal run sing_vc.py::remix --folder out/sing/<song>/<slice> [--boost 4]  (local only, no GPU)"""
+    """python -m modal run sing_vc.py::remix --folder out/sing/<song>/<run> [--boost 5]  (local only, no GPU)"""
     out_dir = Path(folder).resolve()
     for lead in sorted(out_dir.glob("*.wav")):
         if not lead.name.startswith("_") and not lead.stem.endswith("_mix"):
             _mix_version(out_dir, lead.stem, boost)
-            print(f"{lead.stem}_mix.wav", flush=True)
+            print(f"DONE {out_dir / (lead.stem + '_mix.mp3')}", flush=True)
