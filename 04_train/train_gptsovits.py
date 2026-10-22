@@ -59,10 +59,19 @@ AUX2 = ["03005670", "03002830"]
 # Japanese default (README 5.4): (10, 6, "03004690", {**LOW, "aux": AUX2}).
 # A reference can also be "zh:<folder>/<NN>": clip NN of out/zh/samples/<folder> (a Chinese line converted to her voice
 # by zh_vc.py), used with its Chinese text and prompt_lang zh; the folder name gets _zhref<NN>.
+# "zr:<folder>/<NN>" is the same from out/zh_refs/samples (zh_vc.py::refs_main, lines that aren't test sentences);
+# the folder name gets _zr<NN>.
 AUX3 = ["03004690", "03005670", "03002830"]
 ZHREF = "zh:vc_ft1000_ref4690/13"
-COMBOS = [(10, 6, ZHREF, LOW), (10, 6, ZHREF, {**LOW, "aux": AUX3}),
-          (10, 0, ZHREF, LOW), (10, 0, ZHREF, {**LOW, "aux": AUX3})]
+# Round 6 (zh) rendered ZHREF with and without AUX3, on GPT e6 and the base GPT; Chinese default (README 5.6):
+# (10, 6, ZHREF, {**LOW, "aux": AUX3}).
+# Round 7 (zh): three converted lines that aren't test sentences (best ECAPA of 8) as the reference, and AUX5.
+# Chinese default since README 5.7: (10, 6, ZR + "04", {**LOW, "aux": AUX3}).
+AUX5 = AUX3 + ["03004800", "03010230"]
+ZR = "zr:vc_ft1000_ref4690/"
+COMBOS = [(10, 6, ZR + "04", {**LOW, "aux": AUX3}), (10, 6, ZR + "08", {**LOW, "aux": AUX3}),
+          (10, 6, ZR + "02", {**LOW, "aux": AUX3}), (10, 6, ZHREF, {**LOW, "aux": AUX5}),
+          (10, 6, ZR + "04", {**LOW, "aux": AUX5})]
 
 
 def _combo_name(prefix, e2, e1, ref, params):
@@ -75,6 +84,8 @@ def _combo_name(prefix, e2, e1, ref, params):
         name += f"_aux{len(params['aux'])}"
     if ref.startswith("zh:"):
         return name + f"_zhref{ref[-2:]}"
+    if ref.startswith("zr:"):
+        return name + f"_zr{ref[-2:]}"
     return name + ("" if ref == REF else f"_ref{ref[-4:]}")
 
 
@@ -270,7 +281,7 @@ def _render(refs, sets, exp, prefix):
             run_params["aux_ref_audio_paths"] = [f"{VOL}/data/ref_{a}.wav" for a in params["aux"]]
         combos.append({"name": _combo_name(prefix, e2, e1, rid, params), "s2": s2[-1], "s1": s1,
                        "ref": f"{VOL}/data/{_ref_file(rid)}", "ref_text": refs[rid][1],
-                       "ref_lang": "zh" if rid.startswith("zh:") else "ja", "params": run_params})
+                       "ref_lang": "zh" if rid[:3] in ("zh:", "zr:") else "ja", "params": run_params})
     out = f"{VOL}/render"
     shutil.rmtree(out, ignore_errors=True)
     job = {"version": VERSION, "combos": combos, "sets": sets, "out": out,
@@ -311,9 +322,9 @@ def _inputs(here, dataset_name):
     read = lambda f: [l.strip() for l in (here / f).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     sets = {"ja": [_names(t) for t in read("test_sentences.txt")], "zh": read("zh_sentences.txt")}
     refs = {s: (b, t) for s, b, t in clips if s in _clip_ids()}  # Japanese reference clips must be in the dataset
-    for rid in (r for r in _clip_ids() if r.startswith("zh:")):
+    for rid in (r for r in _clip_ids() if r[:3] in ("zh:", "zr:")):
         folder, nn = rid[3:].split("/")
-        d = here / "out" / "zh" / "samples" / folder
+        d = here / "out" / ("zh" if rid.startswith("zh:") else "zh_refs") / "samples" / folder
         refs[rid] = ((d / f"{nn}.wav").read_bytes(), (d / "sentences.txt").read_text(encoding="utf-8").splitlines()[int(nn) - 1])
     return clips, sets, refs
 

@@ -1,0 +1,14 @@
+1 checkpoints in D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train\out\zh_refs\samples
+vc_ft1000_ref4690 01 cer=0.000  今天天气真好,我们一起去散步吧。
+vc_ft1000_ref4690 02 cer=0.000  学长,这是我昨天做的饼干,请你尝尝看。
+vc_ft1000_ref4690 03 cer=0.000  我已经准备好了,随时都可以出发。
+vc_ft1000_ref4690 04 cer=0.000  放学以后,我想去图书馆借几本书。
+vc_ft1000_ref4690 05 cer=0.000  谢谢学长帮我搬东西,真是帮了大忙。
+vc_ft1000_ref4690 06 cer=0.000  周末的活动,我会提前把东西准备好的。
+vc_ft1000_ref4690 07 cer=0.000  今天的晚霞特别漂亮,我拍了好几张照片。
+vc_ft1000_ref4690 08 cer=0.000  这次考试我很努力,结果比想象中好多了。
+
+== CER per checkpoint (total edits / total kana)
+vc_ft1000_ref4690      0.00%   sentences with errors: -
+-> D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train\out\zh_refs\cer.csv
+ALL DONE

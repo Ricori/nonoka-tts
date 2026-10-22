@@ -187,3 +187,36 @@ def main(steps: int = 1000):
              for k, p in ckpts.items() if k != f"step{steps}"]  # step<steps> is the same weights as final
     for version, wavs in convert.map(jobs, order_outputs=False):
         _save(here, version, wavs, lines)
+
+
+# Candidate Chinese reference clips for GPT-SoVITS (README 5.7): short calm lines that are NOT test sentences,
+# so a reference can't give away the line it is scored on. Written to out/zh_refs/samples/ (kept out of the
+# blind-test pages); train_gptsovits.py uses one as "zr:<folder>/<NN>".
+REF_LINES = [
+    "今天天气真好，我们一起去散步吧。",
+    "学长，这是我昨天做的饼干，请你尝尝看。",
+    "我已经准备好了，随时都可以出发。",
+    "放学以后，我想去图书馆借几本书。",
+    "谢谢学长帮我搬东西，真是帮了大忙。",
+    "周末的活动，我会提前把东西准备好的。",
+    "今天的晚霞特别漂亮，我拍了好几张照片。",
+    "这次考试我很努力，结果比想象中好多了。",
+]
+
+
+@app.local_entrypoint()
+def refs_main(steps: int = 1000):
+    """python -m modal run zh_vc.py::refs_main  -> Qwen3 reads REF_LINES, the fine-tuned Seed-VC converts them."""
+    here = Path(__file__).resolve().parent
+    ref = (here.parent / "02_dataset_full" / f"{REF}.ogg").read_bytes()
+    src, notes = qwen_source.remote(ref, REF_LINES)
+    if notes:
+        print("!! qwen runaways:", "; ".join(notes), flush=True)
+    # the checkpoint from main(); convert() fails on the missing config if that run was never trained
+    _, wavs = convert.remote((f"ref_ft{steps}", f"{VOL}/runs/nonoka_{steps}/ft_model.pth", ref, src))
+    d = here / "out" / "zh_refs" / "samples" / f"vc_ft{steps}_ref{REF[-4:]}"
+    d.mkdir(parents=True, exist_ok=True)
+    for i, w in enumerate(wavs, 1):
+        (d / f"{i:02d}.wav").write_bytes(w)
+    (d / "sentences.txt").write_text("\n".join(REF_LINES), encoding="utf-8")
+    print(f"{len(wavs)} files -> {d}", flush=True)

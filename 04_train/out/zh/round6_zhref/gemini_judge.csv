@@ -1,0 +1,193 @@
+﻿round,idx,label,checkpoint,similarity,pronunciation,naturalness,stability,issues,comment,best
+1,1,A,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,4,,语速稍慢略平，整体发音清晰。,0
+1,1,B,full_s2e10_s1e6_t7k3_zhref13,5,4,5,5,,语调自然灵动，音色与情绪还原最好。,1
+1,1,C,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,4,4,,语调较为自然，但咬字稍显平淡。,0
+1,1,D,vc_ft1000_ref4690,4,2,3,4,misread,句首“学长”读成“我长”，有误读。,0
+1,1,E,full_s2e10_s1base_t7k3_zhref13,4,4,3,4,,整体尚可，但后半句节奏略显生硬。,0
+1,1,F,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,4,4,,表现良好，但灵动感略逊于B版。,0
+1,2,A,full_s2e10_s1base_t7k3_zhref13,4,4,3,4,accent,“昨天”声调略平，尾音偏机械。,0
+1,2,B,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,咬字清晰自然，音色贴合，节奏流畅。,1
+1,2,C,full_s2e10_s1base_t7k3_aux3_zhref13,4,3,3,4,accent,“昨”声调稍怪，“新”发音略显模糊。,0
+1,2,D,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,2,3,unnatural_pause accent,语速迟缓停顿刻意，气息断续不自然。,0
+1,2,E,vc_ft1000_ref4690,4,4,4,4,,发音标准，韵律较好，尾音稍有轻微瑕疵。,0
+1,2,F,full_s2e10_s1e6_t7k3_zhref13,3,3,3,4,accent unnatural_pause,“昨”声调偏平，句中停顿稍显生硬。,0
+1,3,A,vc_ft1000_ref4690,3,3,3,4,accent,“会室”声调偏高不准，整体音色尚可,0
+1,3,B,full_s2e10_s1base_t7k3_zhref13,3,3,2,3,accent unnatural_pause,“学生会室集合”吞音含糊，发音不自然,0
+1,3,C,full_s2e10_s1base_t7k3_aux3_zhref13,3,3,3,4,accent,“学生会室”轻微吃字，句尾调值略显生硬,0
+1,3,D,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,发音清晰准确，音色还原度高，语调自然,1
+1,3,E,full_s2e10_s1e6_t7k3_zhref13,3,3,3,4,accent,语速稍快，学生会室咬字偏扁微有口音,0
+1,3,F,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,2,3,unnatural_pause,中间节奏拖沓顿挫明显，尾音气息不稳,0
+1,4,A,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,发音自然标准，语调轻快，声线还原度高。,1
+1,4,B,vc_ft1000_ref4690,4,5,4,5,,尾音“哦”略短促，整体语调稍显平淡。,0
+1,4,C,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,unnatural_pause,“风”和“门”音准稍显生硬，节奏较赶。,0
+1,4,D,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,,“外套”轻重音略显机械，语气稍平。,0
+1,4,E,full_s2e10_s1base_t7k3_aux3_zhref13,3,4,3,4,misread,“风”字声调略平，声线偏单薄。,0
+1,4,F,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,3,3,misread noise,“外套哦”末尾吞音，咬字含糊且带轻微杂音。,0
+1,5,A,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,4,5,,音色较贴近但略平，发音清晰稳定。,0
+1,5,B,full_s2e10_s1base_t7k3_zhref13,4,4,4,5,,语调自然灵动，音色还原度高，表现良好。,0
+1,5,C,full_s2e10_s1e6_t7k3_aux3_zhref13,3,4,3,5,,发音准确，但整体语调略显平缓机械。,0
+1,5,D,full_s2e10_s1e6_t7k3_zhref13,3,4,3,5,,声调自然度稍欠，音色与参考有一定差距。,0
+1,5,E,vc_ft1000_ref4690,5,5,5,5,,音色和俏皮语气还原极佳，自然度最高。,1
+1,5,F,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,3,noise,尾音略带轻微电流杂音，自然度略低。,0
+1,6,A,vc_ft1000_ref4690,4,5,5,5,,咬字清晰，声线贴合，语调自然生动。,1
+1,6,B,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,,声调基本准确，但尾音略平直，感情稍欠。,0
+1,6,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,3,2,misread noise,开头字音含糊，且伴有杂音和底噪。,0
+1,6,D,full_s2e10_s1base_t7k3_zhref13,4,4,3,4,misread,首字约读音偏轻模糊，语调略显机械。,0
+1,6,E,full_s2e10_s1base_t7k3_aux3_zhref13,3,4,4,4,,声调较好，但语气稍显仓促，声线略偏薄。,0
+1,6,F,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,4,3,noise,开头发音不够饱满，带轻微轻噪。,0
+1,7,A,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,4,4,noise,整体不错，但结尾略有轻微杂音拖尾。,0
+1,7,B,vc_ft1000_ref4690,4,5,4,5,,音质干净，但句尾语气略显平淡机械。,0
+1,7,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,3,noise unnatural_pause,电音感稍明显，语速偏慢且气息发虚。,0
+1,7,D,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,咬字较清晰，但韵律稍欠生动。,0
+1,7,E,full_s2e10_s1e6_t7k3_zhref13,5,5,5,5,,音色还原好且咬字清楚，语调自然流利。,1
+1,7,F,full_s2e10_s1base_t7k3_aux3_zhref13,5,5,4,4,unnatural_pause,整体完成度很高，句中停顿略微生硬。,0
+1,8,A,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,语调较为自然甜美，音色贴近参考，咬字清晰。,0
+1,8,B,vc_ft1000_ref4690,4,2,4,5,misread,学长误读为“huá zhǎng”，发音错误严重。,0
+1,8,C,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,4,5,,音质良好，情绪略平，整体完成度较高。,0
+1,8,D,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,情感细腻且契合角色，语调起伏自然，还原度高。,1
+1,8,E,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,4,unnatural_pause,语速略显拖沓，结尾字音微颤，稍欠灵动。,0
+1,8,F,full_s2e10_s1e6_t7k3_zhref13,4,5,3,5,,发音清晰，但句尾语气略平淡，机械感稍明显。,0
+1,9,A,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,3,4,,音色较接近，整体较平，声调基本准确。,0
+1,9,B,vc_ft1000_ref4690,5,5,5,5,,音色最贴近原声，语调自然生动，发音准确。,1
+1,9,C,full_s2e10_s1e6_t7k3_zhref13,3,4,3,4,accent,音调偏尖锐，闷发音略怪，稍显机械。,0
+1,9,D,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,4,3,4,unnatural_pause,句间停顿稍长，语气略显拖沓，音质偏暗。,0
+1,9,E,full_s2e10_s1base_t7k3_aux3_zhref13,3,4,3,4,,语速平稳但缺少抑扬顿挫，略带电子感。,0
+1,9,F,full_s2e10_s1base_t7k3_zhref13,4,4,4,5,,音色略偏幼，语调稍微生硬，基本无杂音。,0
+1,10,A,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,3,3,accent noise,音色较闷且有轻微杂音，发音偏生硬。,0
+1,10,B,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,4,4,,音色还原尚可，语调起伏稍显机械。,0
+1,10,C,full_s2e10_s1e6_t7k3_aux3_zhref13,3,4,3,3,noise,声音较尖，带有轻微电音和毛刺感。,0
+1,10,D,full_s2e10_s1base_t7k3_zhref13,3,3,3,3,accent,咬字稍显含糊，操场节奏略显拖沓。,0
+1,10,E,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,,音质干净但情感表现力一般，略显平淡。,0
+1,10,F,vc_ft1000_ref4690,5,5,5,5,,语气生动自然，音色贴合度高且清晰稳定。,1
+1,11,A,full_s2e10_s1e6_t7k3_zhref13,5,5,5,5,,音色还原佳，咬字清晰，语调自然灵动。,1
+1,11,B,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,5,4,4,other,语速较拖沓，音质有轻微失真感。,0
+1,11,C,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,咬字清晰流畅，但音色略显单薄。,0
+1,11,D,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,3,4,unnatural_pause,语调平淡略显机械，尾音上扬不够自然。,0
+1,11,E,vc_ft1000_ref4690,4,4,4,4,noise,开头有轻微底噪杂音，气音偏重。,0
+1,11,F,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,整体发音准确，但韵律节奏略显平直。,0
+1,12,A,vc_ft1000_ref4690,5,5,5,5,,发音准确自然，音色贴合，语调流畅。,1
+1,12,B,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,4,4,noise accent,“今天”读音不自然有杂音，音质略发虚。,0
+1,12,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,3,3,noise accent,吐字无力且有轻微杂音电音，咬字不清。,0
+1,12,D,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,noise,“今天”辅音有杂音失真，韵律稍显平淡。,0
+1,12,E,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,noise,整体较流畅但后半句气音略显杂乱。,0
+1,12,F,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,4,4,noise,“今天”发音突兀有细微噪点，略欠自然。,0
+1,13,A,vc_ft1000_ref4690,4,4,4,4,,对不起轻声处理略生硬，整体较好,0
+1,13,B,full_s2e10_s1base_t7k3_aux3_zhref13,5,5,5,5,,音色还原度高，语气自然，咬字清晰,1
+1,13,C,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,accent,语调略显平直，久等了语调稍怪,0
+1,13,D,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,,字音略显机械，连贯性稍逊于B,0
+1,13,E,full_s2e10_s1e6_t7k3_aux3_zhref13,3,4,3,4,,发音尚可但音色略显呆板平淡,0
+1,13,F,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,2,2,2,2,accent unnatural_pause noise,节奏拖沓怪异，音色暗哑有电音杂感,0
+1,14,A,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,发音标准，音色略微偏成熟，整体自然。,0
+1,14,B,vc_ft1000_ref4690,5,5,5,5,,音色高度还原参考，语调自然，表达生动。,1
+1,14,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,4,3,2,noise unnatural_pause,气息声过多且带有喘息感，背景有底噪。,0
+1,14,D,full_s2e10_s1base_t7k3_zhref13,4,4,3,4,,音色和语调偏机械，声调略显生硬。,0
+1,14,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,4,5,,音色还原不错，但语速稍快，节奏欠佳。,0
+1,14,F,full_s2e10_s1e6_t7k3_zhref13,4,5,4,5,,音色较甜美，发音准确稳定，略欠灵动。,0
+1,15,A,vc_ft1000_ref4690,3,4,3,4,,开头的叹词偏硬，音色略粗，咬字清晰,0
+1,15,B,full_s2e10_s1base_t7k3_zhref13,5,5,5,5,,音色还原度高，语气情绪生动自然且稳定,1
+1,15,C,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,,音色接近，叹词偏拖沓，发音略生硬,0
+1,15,D,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,4,,语气略平，句尾来得及断句节奏欠佳,0
+1,15,E,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,3,3,noise,开头的叹词略带杂音/气息不稳定,0
+1,15,F,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,4,4,,整体发音不错，但情感起伏相对偏平淡,0
+1,16,A,full_s2e10_s1base_t7k3_zhref13,4,4,3,4,unnatural_pause,长声调偏高不自然，字间顿挫感略显生硬。,0
+1,16,B,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,4,unnatural_pause,整体平淡生硬，长声调不准且语气略机械。,0
+1,16,C,full_s2e10_s1e6_t7k3_zhref13,3,3,3,4,misread accent,咬字稍显含糊黏连，学长与身边的发音略怪。,0
+1,16,D,vc_ft1000_ref4690,5,5,5,5,,音色契合，语气自然带感情，咬字清晰。,1
+1,16,E,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,4,3,noise,尾音与字尾有电音杂质，整体听感不够干净。,0
+1,16,F,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,3,4,accent,音色虽贴但语调起伏略显突兀，长字调值偏高。,0
+2,1,A,full_s2e10_s1base_t7k3_zhref13,4,2,3,3,misread accent,学长读成'写长'，声调带外国口音，尾音颤抖,0
+2,1,B,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,2,2,2,misread accent unnatural_pause,'学长'和'早'严重走音，后半句语调怪异低沉,0
+2,1,C,vc_ft1000_ref4690,4,3,3,3,noise misread accent,句首夹杂杂音，'学长'发音含糊，音调生硬,0
+2,1,D,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,音色还原度高，咬字清晰准确，语气自然流畅,1
+2,1,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,4,4,,发音基本准确，但语调略显平缓，不如D生动,0
+2,1,F,full_s2e10_s1e6_t7k3_zhref13,4,3,4,4,misread accent,'学长'发音略微扁平偏'写'，韵律尚可,0
+2,2,A,full_s2e10_s1base_t7k3_zhref13,3,2,3,4,misread accent,平翘舌严重不分，错读为“四天”，声调生硬。,0
+2,2,B,full_s2e10_s1e6_t7k3_zhref13,2,2,2,4,misread accent,“昨天”发音不清，带有明显外语口音，音色稍暗。,0
+2,2,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,2,2,3,misread accent noise,有底噪，语调机械平淡，“昨天”发音含糊不准。,0
+2,2,D,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,4,4,,音色还原度高，发音较清晰自然，语调节奏最好。,1
+2,2,E,full_s2e10_s1base_t7k3_aux3_zhref13,3,3,3,4,accent,发音生硬偏机械，平翘舌稍有偏差，整体偏生涩。,0
+2,2,F,vc_ft1000_ref4690,3,3,3,4,accent,齿音偏重，“昨天”有些失真，节奏略显生硬。,0
+2,3,A,vc_ft1000_ref4690,3,4,3,4,accent,音色偏扁平，学生会发音稍有不准。,0
+2,3,B,full_s2e10_s1e6_t7k3_aux3_zhref13,3,4,3,4,accent,声音偏粗偏干，生字发音生硬。,0
+2,3,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,2,4,2,4,accent,声线过粗且发虚，语调偏闷。,0
+2,3,D,full_s2e10_s1base_t7k3_zhref13,5,5,5,5,,音色还原度最高，咬字与语调自然流畅。,1
+2,3,E,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,accent,声线稍尖锐，尾音略生硬。,0
+2,3,F,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,4,accent,音质略有噪感，学生字调稍有不稳。,0
+2,4,A,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,音色贴合，发音清晰自然，整体表现最好。,1
+2,4,B,vc_ft1000_ref4690,4,5,4,5,,音质清晰稳定，语调自然，发音准确。,0
+2,4,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,4,3,noise,底噪明显，电流杂音较重，轻微电音感。,0
+2,4,D,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,noise,“门”字有轻微杂音或音变，稍显生硬。,0
+2,4,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,3,noise accent,底噪与嗡嗡杂音明显，咬字稍显含糊。,0
+2,4,F,full_s2e10_s1e6_t7k3_zhref13,4,4,4,3,noise,背景有明显电流噪声，句尾“外套”略糙。,0
+2,5,A,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,发音准确，音色与参考最贴合，语调自然灵动。,1
+2,5,B,vc_ft1000_ref4690,4,4,4,5,accent,音质不错，但“学”字声调略平，感情较平淡。,0
+2,5,C,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,,尾音略有机械感，“翘”字发音略扁。,0
+2,5,D,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,,整体较好，但“学长”二字稍显含糊。,0
+2,5,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,4,unnatural_pause,笑声略生硬，“翘起来了”连读略微拖沓。,0
+2,5,F,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,4,3,2,noise,开头笑声底噪明显，后半句音质劣化且有杂音。,0
+2,6,A,full_s2e10_s1base_t7k3_zhref13,3,4,3,4,,语速偏慢且平缓，音色较原声偏粗钝。,0
+2,6,B,vc_ft1000_ref4690,4,4,3,4,unnatural_pause,“等”字发音调值不自然，咬字稍显生硬。,0
+2,6,C,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,咬字自然清晰，音色与语调最贴合原声。,1
+2,6,D,full_s2e10_s1base_t7k3_aux3_zhref13,3,4,3,4,,声调起伏稍显生硬机械，结尾略显突兀。,0
+2,6,E,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,4,2,4,unnatural_pause,语速过于拖沓，缺乏生活对话的轻快感。,0
+2,6,F,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,,句首“约好了哦”发音稍显平，整体尚可。,0
+2,7,A,full_s2e10_s1e6_t7k3_zhref13,4,5,4,5,,音色较还原，字音清晰但略有机械感。,0
+2,7,B,vc_ft1000_ref4690,5,5,5,5,,音色最贴近原声，语调自然生动且清晰。,1
+2,7,C,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,整体良好，但韵律稍显平淡。,0
+2,7,D,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,2,3,accent other,声音偏虚且带气泡音，发音含混不自然。,0
+2,7,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,4,5,,表现不错，但停顿节奏略微发冲。,0
+2,7,F,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,发音准确清晰，声调自然，表现很均衡。,0
+2,8,A,vc_ft1000_ref4690,4,2,3,4,misread accent,学长读音模糊且怪异，在字发音不准。,0
+2,8,B,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,音质清澈，情感自然流露，咬字标准。,1
+2,8,C,full_s2e10_s1base_t7k3_aux3_zhref13,5,4,4,4,,学长读音稍有生硬感，语速偏快。,0
+2,8,D,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,5,3,4,unnatural_pause,句中停顿稍长稍生硬，尾音略带轻微杂音。,0
+2,8,E,full_s2e10_s1e6_t7k3_zhref13,5,5,4,5,,发音清晰自然，还原度高，语调稍平。,0
+2,8,F,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,,整体表现不错，但在在意等处略欠自然。,0
+2,9,A,vc_ft1000_ref4690,5,5,5,5,,咬字清晰自然，音色贴合，断句节奏良好。,1
+2,9,B,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,4,5,,整体表现不错，声线与语调略带机械感。,0
+2,9,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,4,other,带气泡音且语速偏缓，气息偏虚弱。,0
+2,9,D,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,音色较还原，但句尾声调稍显生硬。,0
+2,9,E,full_s2e10_s1e6_t7k3_zhref13,4,5,4,5,,音色与发音尚可，语调起伏略平。,0
+2,9,F,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,情绪表达生动，发音清晰，但音色略微偏尖。,0
+2,10,A,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,3,4,,音质轻微粗糙，咬字略生硬，整体尚可。,0
+2,10,B,vc_ft1000_ref4690,5,5,5,5,,音色高度还原，语调自然生动，发音准确。,1
+2,10,C,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,3,noise,电音杂音感较重，“白”字发音略微含混。,0
+2,10,D,full_s2e10_s1e6_t7k3_zhref13,4,4,3,4,,后半句声音轻微发虚，句尾自然度稍欠。,0
+2,10,E,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,2,2,unnatural_pause noise,语速断续停顿不自然，带有颤音杂音与漏气。,0
+2,10,F,full_s2e10_s1base_t7k3_zhref13,4,4,4,4,noise,整体较流畅，但在“学长”和句尾略有轻微杂音。,0
+2,11,A,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,音色较贴合，句尾语调略平，吐字清晰,0
+2,11,B,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,4,5,,音质较干净，但整体音调偏平淡欠灵动,0
+2,11,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,4,3,3,noise unnatural_pause,语速拖沓偏慢，后半句音质有杂音毛刺,0
+2,11,D,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,发音标准，但声线偏薄，稍微有点生硬,0
+2,11,E,vc_ft1000_ref4690,4,4,4,4,,开头发音稍有吞音气声，整体较自然,0
+2,11,F,full_s2e10_s1e6_t7k3_zhref13,5,5,5,5,,音色高度还原，语调生动娇俏，最自然,1
+2,12,A,full_s2e10_s1e6_t7k3_zhref13,4,5,4,4,,吐字清晰，音色较贴近，略微平淡。,0
+2,12,B,full_s2e10_s1base_t7k3_zhref13,4,5,3,4,noise,发音标准，但音质略带机械感与底噪。,0
+2,12,C,vc_ft1000_ref4690,3,4,3,3,noise,音质偏薄，尾音有些许电音杂音。,0
+2,12,D,full_s2e10_s1e6_t7k3_aux3_zhref13,5,5,5,5,,发音自然生动，语调和音色还原度高。,1
+2,12,E,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,4,3,3,noise unnatural_pause,气息较弱，声音稍显颤抖且有杂音。,0
+2,12,F,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,4,accent,语速稍慢，部分字音调不够自然。,0
+2,13,A,full_s2e10_s1e6_t7k3_zhref13,4,4,3,4,,音色还原较好，语调稍平，字音清晰完整。,0
+2,13,B,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,3,4,,音色贴合，断句略平直，整体较流畅。,0
+2,13,C,full_s2e10_s1base_t7k3_zhref13,5,4,4,4,,音色还原度高，语调生动自然，表现最好。,1
+2,13,D,vc_ft1000_ref4690,4,4,3,4,other,音色较像，起伏略显机械生硬。,0
+2,13,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,4,,发音清晰，但咬字偏钝，自然度一般。,0
+2,13,F,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,2,2,accent noise unnatural_pause,发音带气泡感与电音，语调迟滞怪异。,0
+2,14,A,vc_ft1000_ref4690,5,5,5,5,,音色贴合度好，吐字自然流畅且韵味生动。,1
+2,14,B,full_s2e10_s1base_t7k3_zhref13,4,5,4,5,,发音准确音色较好，语调稍微略平直。,0
+2,14,C,full_s2e10_s1base_t7k3_aux3_zhref13,4,4,3,4,other,音质有些发干且略带机械感，情绪平淡。,0
+2,14,D,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,4,accent unnatural_pause,“问题”音调略怪，中间停顿略拖沓。,0
+2,14,E,full_s2e10_s1e6_t7k3_zhref13,5,5,4,5,,音色还原佳，发音正确，整体表现良好。,0
+2,14,F,full_s2e10_s1e6_t7k3_aux3_zhref13,4,4,4,4,accent,略带鼻音与含糊感，整体听感尚可。,0
+2,15,A,full_s2e10_s1base_t7k3_zhref13,5,5,5,5,,音色还原度高，语气自然生动，发音准确无杂音。,1
+2,15,B,full_s2e10_s1e6_t7k3_aux3_zhref13,4,5,4,5,,音色略扁，语气略显平直，咬字稍生硬。,0
+2,15,C,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,4,4,3,4,unnatural_pause,语速偏慢，尾音拖沓，略带气泡音影响自然度。,0
+2,15,D,full_s2e10_s1e6_t7k3_zhref13,4,5,4,5,,音色贴合，但情绪稍平缓，表现力中规中矩。,0
+2,15,E,full_s2e10_s1base_t7k3_aux3_zhref13,4,5,4,5,unnatural_pause,呼吸与停顿较平，韵律稍欠起伏。,0
+2,15,F,vc_ft1000_ref4690,4,3,3,4,misread,开头“呜”念成“五”，声调与语气稍显刻意。,0
+2,16,A,full_s2e10_s1base_t7k3_zhref13,3,4,3,4,,咬字稍平，学长发音略硬但整体流畅。,0
+2,16,B,full_s2e10_s1base_t7k3_aux3_zhref13,3,4,3,3,noise,语调较生硬，音色稍有失真与电音感。,0
+2,16,C,full_s2e10_s1e6_t7k3_zhref13,4,4,4,4,,音色贴合度好，语气自然柔和，表现最佳。,1
+2,16,D,full_s2e10_s1e6_t7k3_aux3_zhref13,3,3,3,3,unnatural_pause,学长声调稍怪，句中停顿略显突兀。,0
+2,16,E,full_s2e10_s1e6_t7k3_sp9_aux2_ref4690,3,3,2,2,noise unnatural_pause,前半句语速怪异，气息不稳且有沙哑电音。,0
+2,16,F,vc_ft1000_ref4690,3,3,3,4,misread,学长发音含糊，句间停顿略显机械。,0
