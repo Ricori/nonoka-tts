@@ -6,7 +6,8 @@ default settings. Opening the URL in a browser plays it.
   <url>?text=学长，早上好！&lang=zh[&speed=1.0][&seed=-1]
   python -m modal app stop nonoka-tts-serve   (take it down)
   python serve_bench.py <url> --tag ...       (cold / warm latency, README 6.4)
-  set "SERVE_GPU=T4" && python -m modal deploy serve.py   -> separate test app nonoka-tts-serve-t4 on another GPU type
+  set "SERVE_GPU=A10G" && python -m modal deploy serve.py   -> separate test app nonoka-tts-serve-a10g on other GPU types
+  API for other projects: API.md
 
 Defaults (README 5.4 / 5.8): SoVITS nonoka_full e10 for both languages; GPT nonoka_full e6 for Japanese and
 nonoka_mix e2 for Chinese; Japanese reference 03004690 + aux 03005670, 03002830; Chinese reference zr04 (a converted
@@ -15,7 +16,8 @@ Chinese line) + aux 03004690, 03005670, 03002830; temperature 0.7, top_k 3, cut5
 Cost layout (README 6.4):
 - `tts` is the web endpoint on a small CPU container: it checks the parameters and calls the GPU worker, so a bad
   request never starts a GPU.
-- `TTSWorker` is the GPU (L4 only, so only one GPU type needs snapshots; one container at most). It shuts down SCALEDOWN
+- `TTSWorker` is the GPU (T4, or L4 when T4 capacity runs out; one container at most). Each GPU type keeps its
+  own snapshots, so the list is kept short. It shuts down SCALEDOWN
   seconds after the last request so the GPU never idles. Its cold start is cut by a memory snapshot taken after the
   models are loaded on the GPU and warmed up (GPU snapshots are alpha on Modal): restores skip the imports, the
   weight loading and the first-inference warmup. The two languages share one TTS (BERT, HuBERT, SoVITS, SV) and only
@@ -36,7 +38,8 @@ REFS = "/refs"
 ZR04 = HERE / "out" / "zh_refs" / "samples" / "vc_ft1000_ref4690" / "04.wav"
 MAX_CHARS = 300  # longer input is refused, so one request can't hold the GPU for minutes
 SCALEDOWN = 12
-GPU = os.environ.get("SERVE_GPU", "L4")  # anything else deploys a separate test app (README 6.4)
+DEFAULT_GPU = "T4,L4"  # README 6.4: T4 is ~22% cheaper and as good; L4 as the fallback when T4 runs out
+GPU = os.environ.get("SERVE_GPU", DEFAULT_GPU)  # anything else deploys a separate test app
 
 LANGS = {
     "ja": {"gpt": "nonoka_full-e6.ckpt", "ref": "03004690.ogg", "ref_lang": "ja",
@@ -55,10 +58,10 @@ gpu_image = gpu_image.add_local_file(ZR04, f"{REFS}/zr04.wav")
 web_image = (modal.Image.debian_slim(python_version="3.11").pip_install("fastapi[standard]")
              .env({"SERVE_GPU": GPU}).add_local_python_source("train_gptsovits"))
 
-app = modal.App("nonoka-tts-serve" + ("" if GPU == "L4" else "-" + GPU.lower()))
+app = modal.App("nonoka-tts-serve" + ("" if GPU == DEFAULT_GPU else "-" + GPU.lower().replace(",", "-")))
 
 
-@app.cls(image=gpu_image, gpu=GPU, cpu=2, memory=8192, volumes={VOL: vol}, timeout=600,
+@app.cls(image=gpu_image, gpu=GPU.split(","), cpu=2, memory=8192, volumes={VOL: vol}, timeout=600,
          scaledown_window=SCALEDOWN, max_containers=1, enable_memory_snapshot=True, experimental_options={"enable_gpu_snapshot": True})
 class TTSWorker:
     @modal.enter(snap=True)

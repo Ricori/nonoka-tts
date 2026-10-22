@@ -1,3 +1,25 @@
+Building image im-CFxkiZ7IA44Ro2ybeiVTEN
+
+=> Step 0: FROM base
+
+=> Step 1: ENV SERVE_GPU=T4,L4
+Saving image...
+Building image im-nXpwajn7Mh4QZ0FlZd2UNR
+
+=> Step 0: FROM base
+
+=> Step 1: ENV SERVE_GPU=T4,L4
+Saving image...
+Image saved, took 1.41s
+
+Built image im-CFxkiZ7IA44Ro2ybeiVTEN in 2.06s
+
+
+Image saved, took 1.18s
+
+Built image im-nXpwajn7Mh4QZ0FlZd2UNR in 1.80s
+
+
 ✓ Created objects.
 ├── 🔨 Created mount 
 │   D:\Development\nonoka-tts\.claude\worktrees\inference-cost-optimization-7c3
@@ -18,6 +40,6 @@
 ├── 🔨 Created web function tts => 
 │   https://ricori--nonoka-tts-serve-tts.us-east.modal.run
 └── 🔨 Created function TTSWorker.*.
-✓ App deployed in 4.465s! 🎉
+✓ App deployed in 7.153s! 🎉
 
 View Deployment: https://modal.com/apps/ricori/main/deployed/nonoka-tts-serve

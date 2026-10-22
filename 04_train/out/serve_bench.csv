@@ -86,3 +86,9 @@ t4,2026-10-23 01:33:22,6,warm,ja,4.05,200,314924,total=2.18;synth=1.81;gpu=Tesla
 t4,2026-10-23 01:35:00,7,cold,ja,22.35,200,314924,total=18.58;synth=6.11;gpu=Tesla T4;fresh=1;restored=1
 t4,2026-10-23 01:35:05,7,warm,zh,5.63,200,261164,total=2.64;synth=2.19;gpu=Tesla T4;fresh=0;restored=1
 t4,2026-10-23 01:35:09,7,warm,ja,4.14,200,314924,total=2.25;synth=1.88;gpu=Tesla T4;fresh=0;restored=1
+t4l4,2026-10-23 02:13:03,0,cold,ja,60.72,200,314924,total=55.74;synth=2.05;gpu=Tesla T4;fresh=1;restored=0
+t4l4,2026-10-23 02:13:06,0,warm,zh,3.63,200,261164,total=1.84;synth=1.72;gpu=Tesla T4;fresh=0;restored=0
+t4l4,2026-10-23 02:13:10,0,warm,ja,4.09,200,314924,total=1.84;synth=1.73;gpu=Tesla T4;fresh=0;restored=0
+t4l4,2026-10-23 02:15:07,1,cold,ja,41.78,200,314924,total=39.99;synth=2.16;gpu=Tesla T4;fresh=1;restored=0
+t4l4,2026-10-23 02:15:11,1,warm,zh,3.62,200,261164,total=1.80;synth=1.69;gpu=Tesla T4;fresh=0;restored=0
+t4l4,2026-10-23 02:15:15,1,warm,ja,3.95,200,314924,total=2.14;synth=2.02;gpu=Tesla T4;fresh=0;restored=0
