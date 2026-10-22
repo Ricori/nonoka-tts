@@ -23,6 +23,8 @@ QWEN_ID = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
 QWEN_DIR = "/models/qwen3-tts"
 CFG = "configs/presets/config_dit_mel_seed_uvit_whisper_small_wavenet.yml"
 DIFFUSION_STEPS = 30  # README: 30-50 for best quality
+GPUS = ["L4", "A10G", "L40S"]  # L4 capacity runs out at times; Modal takes the first one available
+MAX_CONTAINERS = 5  # per fanned-out function: Qwen3 + Seed-VC together stay within the account limit of 10
 
 # Qwen3-TTS: same caps as round 1 (an utterance that never emits EOS otherwise runs ~170 s and blocks the GPU)
 MAX_NEW_TOKENS = 400  # longest new test line is ~25 characters, < 15 s
@@ -66,7 +68,7 @@ app = modal.App("nonoka-zh-vc")
 vol = modal.Volume.from_name("nonoka-zhvc", create_if_missing=True)
 
 
-@app.function(image=qwen_image, gpu="L4", timeout=1800)
+@app.function(image=qwen_image, gpu=GPUS, timeout=1800, max_containers=MAX_CONTAINERS)
 def qwen_source(ref_ogg: bytes, sentences: list) -> tuple:
     """-> ([wav bytes per sentence], notes)"""
     import io
@@ -132,7 +134,7 @@ def finetune(clips: list, steps: int, batch: int = 8) -> dict:
     return ckpts
 
 
-@app.function(image=seedvc_image, gpu="L4", volumes={VOL: vol}, timeout=3600)
+@app.function(image=seedvc_image, gpu=GPUS, volumes={VOL: vol}, timeout=3600, max_containers=MAX_CONTAINERS)
 def convert(job: tuple) -> tuple:
     """job: (version, checkpoint path or None for zero-shot, ref ogg bytes, [source wav bytes]) -> (version, [wav bytes])"""
     import glob
@@ -220,3 +222,43 @@ def refs_main(steps: int = 1000):
         (d / f"{i:02d}.wav").write_bytes(w)
     (d / "sentences.txt").write_text("\n".join(REF_LINES), encoding="utf-8")
     print(f"{len(wavs)} files -> {d}", flush=True)
+
+
+@app.local_entrypoint()
+def corpus_main(steps: int = 1000, chunk: int = 25, limit: int = 0):
+    """README 6.2 method 3: python -m modal run zh_vc.py::corpus_main
+    Reads 02_dataset_zh/_translate.csv (tools/translate_zh.py) and writes her-voice Chinese clips to
+    02_dataset_zh/<id>.ogg (Qwen3 source kept in 02_dataset_zh/_qwen/, not in git). Lines that already have an
+    .ogg are skipped, so an interrupted run resumes. Chunks run in parallel: Qwen3 on one L4 per chunk, and each
+    chunk goes to its own Seed-VC container as soon as its source is ready."""
+    import csv
+    import io
+
+    import soundfile as sf
+
+    here = Path(__file__).resolve().parent
+    d = here.parent / "02_dataset_zh"
+    (d / "_qwen").mkdir(parents=True, exist_ok=True)
+    rows = list(csv.DictReader(open(d / "_translate.csv", encoding="utf-8-sig")))
+    todo = [r for r in rows if r["zh"] and not (d / f"{r['id']}.ogg").exists()]
+    if limit:
+        todo = todo[:limit]
+    chunks = [todo[i:i + chunk] for i in range(0, len(todo), chunk)]
+    print(f"{len(todo)} of {len(rows)} lines to synthesize in {len(chunks)} chunks", flush=True)
+    ref = (here.parent / "02_dataset_full" / f"{REF}.ogg").read_bytes()
+    ckpt = f"{VOL}/runs/nonoka_{steps}/ft_model.pth"
+    calls = []
+    for k, (wavs, notes) in enumerate(qwen_source.starmap([(ref, [r["zh"] for r in c]) for c in chunks])):
+        for r, w in zip(chunks[k], wavs):
+            (d / "_qwen" / f"{r['id']}.wav").write_bytes(w)
+        if notes:
+            print(f"!! chunk {k} qwen runaways:", "; ".join(notes), flush=True)
+        calls.append((k, convert.spawn((f"corpus{k:02d}", ckpt, ref, wavs))))
+        print(f"chunk {k}: source ready, converting", flush=True)
+    for k, call in calls:
+        _, outs = call.get()
+        for r, w in zip(chunks[k], outs):
+            audio, sr = sf.read(io.BytesIO(w), dtype="float32")
+            sf.write(d / f"{r['id']}.ogg", audio, sr, format="OGG", subtype="VORBIS")
+        print(f"chunk {k}: {len(outs)} clips saved", flush=True)
+    print(f"ALL DONE: {sum(1 for _ in d.glob('*.ogg'))} clips in {d}", flush=True)

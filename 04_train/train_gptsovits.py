@@ -3,6 +3,7 @@ GPT-SoVITS (v2ProPlus) fine-tuning on Modal for the "nonoka" voice.
 
   python -m modal run --detach train_gptsovits.py::train_main      (or double-click 1_train.bat)
   python -m modal run train_gptsovits.py::render_main              (or 2_render.bat: re-render after editing the sentence files)
+  python -m modal run --detach train_gptsovits.py::train_gpt_main  (README 5.8: GPT only, her Japanese + synthetic Chinese)
 
 Both default to the full dataset (02_dataset_full, experiment "nonoka_full"); `--dataset 02_dataset_v1` runs the
 round-1 90-clip set (experiment "nonoka"). Each experiment keeps its own features and weights on the volume.
@@ -66,7 +67,8 @@ ZHREF = "zh:vc_ft1000_ref4690/13"
 # Round 6 (zh) rendered ZHREF with and without AUX3, on GPT e6 and the base GPT; Chinese default (README 5.6):
 # (10, 6, ZHREF, {**LOW, "aux": AUX3}).
 # Round 7 (zh): three converted lines that aren't test sentences (best ECAPA of 8) as the reference, and AUX5.
-# Chinese default since README 5.7: (10, 6, ZR + "04", {**LOW, "aux": AUX3}).
+# README 5.7 setting: (10, 6, ZR + "04", {**LOW, "aux": AUX3}); since 5.8 the Chinese default keeps it but swaps the
+# GPT for nonoka_mix e2 (MIX_COMBOS below); Japanese keeps nonoka_full e6.
 AUX5 = AUX3 + ["03004800", "03010230"]
 ZR = "zr:vc_ft1000_ref4690/"
 COMBOS = [(10, 6, ZR + "04", {**LOW, "aux": AUX3}), (10, 6, ZR + "08", {**LOW, "aux": AUX3}),
@@ -93,8 +95,18 @@ def _ref_file(rid):  # "zh:<folder>/<NN>" -> a file name without separators
     return "ref_" + rid.replace(":", "_").replace("/", "_") + ".wav"
 
 
-def _clip_ids():
-    return {c[2] for c in COMBOS} | {a for c in COMBOS for a in c[3].get("aux", [])}
+# README 6.2 method 3: GPT trained on the 498 Japanese clips + 02_dataset_zh (her lines translated, read by Qwen3,
+# converted to her voice by Seed-VC); SoVITS stays nonoka_full e10 (real voice only). "langs" limits a version to
+# one test set, since the Japanese and Chinese defaults use different references.
+MIX_EXP, MIX_S1_EPOCHS, MIX_S1_SAVE_EVERY = "nonoka_mix", 10, 2
+ZH_DEFAULT = (ZR + "04", {**LOW, "aux": AUX3, "langs": ["zh"]})
+JA_DEFAULT = ("03004690", {**LOW, "aux": AUX2, "langs": ["ja"]})
+MIX_COMBOS = [(10, e, *d) for e in (2, 4, 6, 8) for d in (JA_DEFAULT, ZH_DEFAULT)]
+
+
+def _clip_ids(combos=None):
+    combos = combos or COMBOS
+    return {c[2] for c in combos} | {a for c in combos for a in c[3].get("aux", [])}
 
 
 XXXXRT = "https://huggingface.co/XXXXRT/GPT-SoVITS-Pretrained/resolve/main"
@@ -178,10 +190,10 @@ def _prepare(clips: list, exp: str):
     os.makedirs(wav_dir, exist_ok=True)
     os.makedirs(EXP_DIR, exist_ok=True)
     rows = []
-    for stem, ogg, text in clips:
+    for stem, ogg, text, *lang in clips:
         audio, sr = sf.read(io.BytesIO(ogg), dtype="float32")
         sf.write(f"{wav_dir}/{stem}.wav", audio, sr)
-        rows.append(f"{stem}.wav|{exp}|JA|{text}")
+        rows.append(f"{stem}.wav|{exp}|{lang[0] if lang else 'JA'}|{text}")
     inp_text = f"{VOL}/data/{exp}/{exp}.list"
     Path(inp_text).write_text("\n".join(rows) + "\n", encoding="utf-8")
     common = {"inp_text": inp_text, "inp_wav_dir": wav_dir, "exp_name": exp, "opt_dir": EXP_DIR,
@@ -216,12 +228,12 @@ def _train_s2(batch, exp):
     _run("GPT_SoVITS/s2_train.py", args=("--config", cfg))
 
 
-def _train_s1(batch, exp):
+def _train_s1(batch, exp, epochs=S1_EPOCHS, save_every=S1_SAVE_EVERY):
     import yaml
 
     EXP_DIR = f"{VOL}/logs/{exp}"
     data = yaml.safe_load(Path(f"{REPO}/GPT_SoVITS/configs/s1longer-v2.yaml").read_text())
-    data["train"].update(batch_size=batch, epochs=S1_EPOCHS, save_every_n_epoch=S1_SAVE_EVERY,
+    data["train"].update(batch_size=batch, epochs=epochs, save_every_n_epoch=save_every,
                          if_save_every_weights=True, if_save_latest=True, if_dpo=False,
                          half_weights_save_dir=GPT_DIR, exp_name=exp)
     data.update(pretrained_s1=f"{PRE}/s1v3.ckpt", train_semantic_path=f"{EXP_DIR}/6-name2semantic.tsv",
@@ -247,6 +259,8 @@ for combo in job["combos"]:
     tts = TTS({"custom": {"device": "cuda", "is_half": True, "version": job["version"], "t2s_weights_path": s1,
                           "vits_weights_path": s2, "bert_base_path": job["bert"], "cnhuhbert_base_path": job["hubert"]}})
     for lang, lines in job["sets"].items():
+        if lang not in combo["langs"]:
+            continue
         out = os.path.join(job["out"], lang, combo["name"])
         os.makedirs(out, exist_ok=True)
         for i, text in enumerate(lines, 1):
@@ -260,8 +274,9 @@ for combo in job["combos"]:
 '''
 
 
-def _render(refs, sets, exp, prefix):
-    """refs: {clip id: (ogg bytes, text)} for every reference COMBOS uses."""
+def _render(refs, sets, exp, prefix, combos_spec=None, s2_exp=None):
+    """refs: {clip id: (ogg bytes, text)} for every reference the combos use (default COMBOS).
+    s2_exp: experiment whose SoVITS weights to use (default exp)."""
     import glob
     import io
     import shutil
@@ -272,16 +287,17 @@ def _render(refs, sets, exp, prefix):
         audio, sr = sf.read(io.BytesIO(ogg), dtype="float32")
         sf.write(f"{VOL}/data/{_ref_file(rid)}", audio, sr)
     combos = []
-    for e2, e1, rid, params in COMBOS:
-        s2 = sorted(glob.glob(f"{SOVITS_DIR}/{exp}_e{e2}_s*.pth"))
+    for e2, e1, rid, params in combos_spec or COMBOS:
+        s2 = sorted(glob.glob(f"{SOVITS_DIR}/{s2_exp or exp}_e{e2}_s*.pth"))
         s1 = f"{GPT_DIR}/{exp}-e{e1}.ckpt" if e1 else f"{PRE}/s1v3.ckpt"
         assert s2, f"no SoVITS weights for epoch {e2} in {os.listdir(SOVITS_DIR)}"
-        run_params = {k: v for k, v in params.items() if k != "aux"}
+        run_params = {k: v for k, v in params.items() if k not in ("aux", "langs")}
         if params.get("aux"):
             run_params["aux_ref_audio_paths"] = [f"{VOL}/data/ref_{a}.wav" for a in params["aux"]]
         combos.append({"name": _combo_name(prefix, e2, e1, rid, params), "s2": s2[-1], "s1": s1,
                        "ref": f"{VOL}/data/{_ref_file(rid)}", "ref_text": refs[rid][1],
-                       "ref_lang": "zh" if rid[:3] in ("zh:", "zr:") else "ja", "params": run_params})
+                       "ref_lang": "zh" if rid[:3] in ("zh:", "zr:") else "ja", "params": run_params,
+                       "langs": params.get("langs", list(sets))})
     out = f"{VOL}/render"
     shutil.rmtree(out, ignore_errors=True)
     job = {"version": VERSION, "combos": combos, "sets": sets, "out": out,
@@ -291,7 +307,7 @@ def _render(refs, sets, exp, prefix):
     _run("render_job.py", args=(f"{VOL}/render_job.json",))
     result = {}
     for lang in sets:
-        for c in combos:
+        for c in (c for c in combos if lang in c["langs"]):
             d = Path(out) / lang / c["name"]
             result[f"{lang}/{c['name']}"] = {p.name: p.read_bytes() for p in d.iterdir()}
     return result
@@ -314,15 +330,31 @@ def render(refs: dict, sets: dict, exp: str, prefix: str) -> dict:
     return _render(refs, sets, exp, prefix)
 
 
-def _inputs(here, dataset_name):
+@app.function(gpu="L40S", cpu=8, memory=32768, volumes={VOL: vol}, timeout=3 * 3600)
+def train_gpt(clips: list, refs: dict, sets: dict, batch: int = 8) -> dict:
+    vol.reload()
+    _prepare(clips, MIX_EXP)
+    _train_s1(batch, MIX_EXP, MIX_S1_EPOCHS, MIX_S1_SAVE_EVERY)
+    print("== GPT weights:", sorted(os.listdir(GPT_DIR)), flush=True)
+    return _render(refs, sets, MIX_EXP, "mix", MIX_COMBOS, s2_exp="nonoka_full")
+
+
+@app.function(gpu="L40S", volumes={VOL: vol}, timeout=3600)
+def render_mix(refs: dict, sets: dict) -> dict:
+    vol.reload()
+    return _render(refs, sets, MIX_EXP, "mix", MIX_COMBOS, s2_exp="nonoka_full")
+
+
+def _inputs(here, dataset_name, combos=None):
     dataset = here.parent / dataset_name
     esd = [l.split("|") for l in (dataset / "esd.list").read_text(encoding="utf-8").splitlines() if l.strip()]
     clips = [(fn.rsplit(".", 1)[0], (dataset / f"{fn.rsplit('.', 1)[0]}.ogg").read_bytes(), _names(text))
              for fn, _, _, text in esd]
     read = lambda f: [l.strip() for l in (here / f).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     sets = {"ja": [_names(t) for t in read("test_sentences.txt")], "zh": read("zh_sentences.txt")}
-    refs = {s: (b, t) for s, b, t in clips if s in _clip_ids()}  # Japanese reference clips must be in the dataset
-    for rid in (r for r in _clip_ids() if r[:3] in ("zh:", "zr:")):
+    ids = _clip_ids(combos)
+    refs = {s: (b, t) for s, b, t in clips if s in ids}  # Japanese reference clips must be in the dataset
+    for rid in (r for r in ids if r[:3] in ("zh:", "zr:")):
         folder, nn = rid[3:].split("/")
         d = here / "out" / ("zh" if rid.startswith("zh:") else "zh_refs") / "samples" / folder
         refs[rid] = ((d / f"{nn}.wav").read_bytes(), (d / "sentences.txt").read_text(encoding="utf-8").splitlines()[int(nn) - 1])
@@ -354,3 +386,20 @@ def render_main(dataset: str = "02_dataset_full", langs: str = "ja,zh"):
     sets = {k: v for k, v in sets.items() if k in langs.split(",")}
     print(f"[{dataset}] rendering {', '.join(sets)} x {len(COMBOS)} combos with references {', '.join(refs)}")
     _save(here, render.remote(refs, sets, *DATASETS[dataset]))
+
+
+@app.local_entrypoint()
+def train_gpt_main(zh_dataset: str = "02_dataset_zh", render_only: bool = False):
+    """GPT on her Japanese clips + the synthetic Chinese set; renders MIX_COMBOS. --render-only re-renders."""
+    here = Path(__file__).resolve().parent
+    clips, sets, refs = _inputs(here, "02_dataset_full", MIX_COMBOS)
+    if render_only:
+        print(f"rendering {len(MIX_COMBOS)} versions with {MIX_EXP}")
+        return _save(here, render_mix.remote(refs, sets))
+    zd = here.parent / zh_dataset
+    zh = [l.split("|") for l in (zd / "esd.list").read_text(encoding="utf-8").splitlines() if l.strip()]
+    zh_clips = [(f"zh_{fn.rsplit('.', 1)[0]}", (zd / f"{fn.rsplit('.', 1)[0]}.ogg").read_bytes(), text, "ZH")
+                for fn, _, _, text in zh]
+    print(f"[{MIX_EXP}] uploading {len(clips)} ja + {len(zh_clips)} zh clips; GPT {MIX_S1_EPOCHS} epochs; "
+          f"rendering {len(MIX_COMBOS)} versions")
+    _save(here, train_gpt.remote(clips + zh_clips, refs, sets))

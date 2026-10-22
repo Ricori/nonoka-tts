@@ -1,0 +1,60 @@
+5 checkpoints in D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train\out\samples
+full_s2e10_s1e6_t7k3_aux2_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6_t7k3_aux2_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3_aux2_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_aux2_ref4690 04 cer=0.000  今日は風が強いので 上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1e6_t7k3_aux2_ref4690 05 cer=0.214  奏先輩とゆる月先輩は いつも仲がいいですね
+full_s2e10_s1e6_t7k3_aux2_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_aux2_ref4690 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_aux2_ref4690 08 cer=0.182  先輩言ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3_aux2_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e6_t7k3_aux2_ref4690 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+mix_s2e10_s1e2_t7k3_aux2_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+mix_s2e10_s1e2_t7k3_aux2_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+mix_s2e10_s1e2_t7k3_aux2_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+mix_s2e10_s1e2_t7k3_aux2_ref4690 04 cer=0.000  今日は風が強いので、上着を着て行った方がいいと思いますよ。
+mix_s2e10_s1e2_t7k3_aux2_ref4690 05 cer=0.214  奏先輩と寄月先輩はいつも仲がいいですね
+mix_s2e10_s1e2_t7k3_aux2_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+mix_s2e10_s1e2_t7k3_aux2_ref4690 07 cer=0.000  生まれて初めて自分でお弁当を作ってみたんです上手にできたかな
+mix_s2e10_s1e2_t7k3_aux2_ref4690 08 cer=0.409  はい。また寝癖がついてますよ。
+mix_s2e10_s1e2_t7k3_aux2_ref4690 09 cer=0.000  約束ですよ。明日の朝、7時半にいつもの場所で待ってますから。
+mix_s2e10_s1e2_t7k3_aux2_ref4690 10 cer=0.122  2320 6年10月21日 今日の気温は18度でした
+mix_s2e10_s1e4_t7k3_aux2_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+mix_s2e10_s1e4_t7k3_aux2_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+mix_s2e10_s1e4_t7k3_aux2_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+mix_s2e10_s1e4_t7k3_aux2_ref4690 04 cer=0.029  今日は風が強いので 上着を着ていた方がいいと思いますよ
+mix_s2e10_s1e4_t7k3_aux2_ref4690 05 cer=0.250  奏先輩と頼月先輩は いつも仲がいいですね
+mix_s2e10_s1e4_t7k3_aux2_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+mix_s2e10_s1e4_t7k3_aux2_ref4690 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+mix_s2e10_s1e4_t7k3_aux2_ref4690 08 cer=0.182  へへ、先輩言ったらまた寝癖がついてますよ
+mix_s2e10_s1e4_t7k3_aux2_ref4690 09 cer=0.000  約束ですよ。明日の朝、7時半に、いつもの場所で待ってますから。
+mix_s2e10_s1e4_t7k3_aux2_ref4690 10 cer=0.122  2326年10月21日 今日の気温は18度でした
+mix_s2e10_s1e6_t7k3_aux2_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+mix_s2e10_s1e6_t7k3_aux2_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+mix_s2e10_s1e6_t7k3_aux2_ref4690 03 cer=0.000  来週の金曜日午後3時に生徒会室に集合してください
+mix_s2e10_s1e6_t7k3_aux2_ref4690 04 cer=0.029  今日は風が強いので 上着を着ていた方がいいと思いますよ
+mix_s2e10_s1e6_t7k3_aux2_ref4690 05 cer=0.071  かなで先輩と夜月先輩はいつも仲がいいですね
+mix_s2e10_s1e6_t7k3_aux2_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+mix_s2e10_s1e6_t7k3_aux2_ref4690 07 cer=0.000  生まれて初めて自分でお弁当を作ってみたんです。上手にできたかな?
+mix_s2e10_s1e6_t7k3_aux2_ref4690 08 cer=0.045  フフフ、センパイったら、また寝癖がついてますよ。
+mix_s2e10_s1e6_t7k3_aux2_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+mix_s2e10_s1e6_t7k3_aux2_ref4690 10 cer=0.122  2326年10月21日今日の気温は18度でした
+mix_s2e10_s1e8_t7k3_aux2_ref4690 01 cer=0.000  先輩おはようございます 今日は一緒に帰れますか
+mix_s2e10_s1e8_t7k3_aux2_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+mix_s2e10_s1e8_t7k3_aux2_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+mix_s2e10_s1e8_t7k3_aux2_ref4690 04 cer=0.000  今日は風が強いので上着を着て行った方がいいと思いますよ
+mix_s2e10_s1e8_t7k3_aux2_ref4690 05 cer=0.250  奏先輩と頼月先輩は いつも仲がいいですね
+mix_s2e10_s1e8_t7k3_aux2_ref4690 06 cer=0.000  人気のお店だから十分くらい並ぶかもしれません
+mix_s2e10_s1e8_t7k3_aux2_ref4690 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+mix_s2e10_s1e8_t7k3_aux2_ref4690 08 cer=0.182  へへへ、先輩言ったら、また寝癖がついてますよ。
+mix_s2e10_s1e8_t7k3_aux2_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+mix_s2e10_s1e8_t7k3_aux2_ref4690 10 cer=0.049  2020年6年10月21日今日の気温は18度でした
+
+== CER per checkpoint (total edits / total kana)
+full_s2e10_s1e6_t7k3_aux2_ref4690 3.07%   sentences with errors: 05 08
+mix_s2e10_s1e2_t7k3_aux2_ref4690 6.13%   sentences with errors: 05 08 10
+mix_s2e10_s1e4_t7k3_aux2_ref4690 5.21%   sentences with errors: 04 05 08 10
+mix_s2e10_s1e6_t7k3_aux2_ref4690 2.76%   sentences with errors: 04 05 08 10
+mix_s2e10_s1e8_t7k3_aux2_ref4690 3.99%   sentences with errors: 05 08 10
+-> D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train\out\cer.csv
+ALL DONE

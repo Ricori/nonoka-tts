@@ -15,3 +15,6 @@ __pycache__/
 # Secrets
 .env
 *.key
+
+# Qwen3 source audio for the synthetic Chinese set (regenerable, README 5.8)
+02_dataset_zh/_qwen/
