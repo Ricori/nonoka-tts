@@ -431,7 +431,7 @@ GPT-SoVITS 不能唱歌：它的输入只有文本和参考音频，没有控制
 4. 人声太轻或太响：在 `04_train` 里运行 `python -m modal run sing_vc.py::remix --folder "out/sing/<歌名>/<那次的文件夹>" --boost 5`（默认 3，数字越大人声越响），只在本地重新混音，几秒就好，不用 GPU。
 5. 想看指标：在 `03_asr` 里运行 `venv\Scripts\python sing_eval.py ..\04_train\out\sing\<歌名>\<那次的文件夹>`（音色相似度、DNSMOS）。
 
-同一首歌的分轨和音高会缓存在 `out/sing/<歌名>/stems/`（`pitch.txt` 是原唱主唱的音高中位数），再跑只做转换。歌曲文件和输出都不进 git（`.gitignore` 里有 `04_train/out/sing/`）。
+三个 Modal 函数（分轨、测音高、转换）的 scaledown 都是 3 秒（`SCALEDOWN`，默认 60 秒）：每个函数一次运行只调用一次，用完 3 秒就停，不空转计费。同一首歌的分轨和音高会缓存在 `out/sing/<歌名>/stems/`（`pitch.txt` 是原唱主唱的音高中位数），再跑只做转换。歌曲文件和输出都不进 git（`.gitignore` 里有 `04_train/out/sing/`）。
 
 ### 流程
 

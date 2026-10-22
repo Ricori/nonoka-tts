@@ -36,6 +36,7 @@ SEP_MODELS = {
 }
 DIFFUSION_STEPS = 50  # README: 30-50; singing gets the top of the range
 GPUS = ["L4", "A10G", "L40S"]
+SCALEDOWN = 3  # s: a container stops 3 s after its last call (default 60) - each function is called once per run
 VOCAL_BOOST_DB = 3.0  # lead over the original's level in the mix: the instrumental stem keeps some vocal bleed
 HER_F0 = 320  # Hz, median pitch of 51 of her 030 clips (pyin, README 5.9)
 # references: the GPT-SoVITS reference clips (README 5.2/5.3)
@@ -86,7 +87,7 @@ def _run(cmd, cwd=None):
     subprocess.run(cmd, cwd=cwd, check=True, stdout=sys.stdout, stderr=sys.stderr)
 
 
-@app.function(image=sep_image, gpu=GPUS, timeout=1800)
+@app.function(image=sep_image, gpu=GPUS, timeout=1800, scaledown_window=SCALEDOWN)
 def separate(song: bytes, name: str) -> dict:
     """-> {stem: flac bytes} for instrumental, backing, lead, lead_dry (stereo 44.1 kHz)."""
     from audio_separator.separator import Separator
@@ -116,7 +117,7 @@ def separate(song: bytes, name: str) -> dict:
     return {s: p.read_bytes() for s, p in stems.items()}
 
 
-@app.function(image=sep_image, cpu=4, timeout=1800)
+@app.function(image=sep_image, cpu=4, timeout=1800, scaledown_window=SCALEDOWN)
 def median_f0(audio: bytes) -> float:
     """Median pitch (Hz) of the voiced frames of a vocal stem (pyin, same settings as HER_F0)."""
     import io
@@ -129,7 +130,7 @@ def median_f0(audio: bytes) -> float:
     return float(np.median(f[voiced & ~np.isnan(f)]))
 
 
-@app.function(image=seedvc_image, gpu=GPUS, timeout=3600, max_containers=5)
+@app.function(image=seedvc_image, gpu=GPUS, timeout=3600, max_containers=5, scaledown_window=SCALEDOWN)
 def convert(job: tuple) -> tuple:
     """job: (version, source wav bytes, ref wav bytes, semitone shift) -> (version, wav bytes at 44.1 kHz)"""
     version, source, ref, shift = job
