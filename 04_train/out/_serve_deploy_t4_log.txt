@@ -1,0 +1,46 @@
+Building image im-y0sYeKAtn0fX8sesVUY5Pp
+
+=> Step 0: FROM base
+
+=> Step 1: ENV SERVE_GPU=T4
+Saving image...
+Building image im-xtR7uafQi5qw2ToIVsOvfK
+
+=> Step 0: FROM base
+
+=> Step 1: ENV SERVE_GPU=T4
+Saving image...
+Image saved, took 1.46s
+
+Built image im-y0sYeKAtn0fX8sesVUY5Pp in 2.01s
+
+
+Image saved, took 1.43s
+
+Built image im-xtR7uafQi5qw2ToIVsOvfK in 2.03s
+
+
+✓ Created objects.
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\inference-cost-optimization-7c3
+│   ae9\04_train\serve.py
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\inference-cost-optimization-7c3
+│   ae9\04_train\out\zh_refs\samples\vc_ft1000_ref4690\04.wav
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\inference-cost-optimization-7c3
+│   ae9\02_dataset_full\03002830.ogg
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\inference-cost-optimization-7c3
+│   ae9\02_dataset_full\03005670.ogg
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\inference-cost-optimization-7c3
+│   ae9\02_dataset_full\03004690.ogg
+├── 🔨 Created mount PythonPackage:train_gptsovits
+├── 🔨 Created web function tts => 
+│   https://ricori--nonoka-tts-serve-t4-tts.us-east.modal.run
+└── 🔨 Created function TTSWorker.*.
+✓ App deployed in 7.898s! 🎉
+
+View Deployment: 
+https://modal.com/apps/ricori/main/deployed/nonoka-tts-serve-t4

@@ -18,14 +18,14 @@ TEXT = {"ja": "先輩、おはようございます。今日もいい天気で�
 SEED = 42
 
 
-def get(url, lang, timeout=600):
-    q = urllib.parse.urlencode({"text": TEXT[lang], "lang": lang, "seed": SEED})
+def get(url, lang, timeout=600, text=None, seed=SEED):
+    q = urllib.parse.urlencode({"text": text or TEXT[lang], "lang": lang, "seed": seed})
     t = time.perf_counter()
     try:
         with urllib.request.urlopen(f"{url.rstrip('/')}/?{q}", timeout=timeout) as r:
-            body, status, hdr = r.read(), r.status, dict(r.headers)
+            body, status, hdr = r.read(), r.status, r.headers  # case-insensitive
     except urllib.error.HTTPError as e:
-        body, status, hdr = e.read(), e.code, dict(e.headers)
+        body, status, hdr = e.read(), e.code, e.headers
     return time.perf_counter() - t, status, body, hdr
 
 

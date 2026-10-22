@@ -6,6 +6,7 @@ default settings. Opening the URL in a browser plays it.
   <url>?text=学长，早上好！&lang=zh[&speed=1.0][&seed=-1]
   python -m modal app stop nonoka-tts-serve   (take it down)
   python serve_bench.py <url> --tag ...       (cold / warm latency, README 6.4)
+  set "SERVE_GPU=T4" && python -m modal deploy serve.py   -> separate test app nonoka-tts-serve-t4 on another GPU type
 
 Defaults (README 5.4 / 5.8): SoVITS nonoka_full e10 for both languages; GPT nonoka_full e6 for Japanese and
 nonoka_mix e2 for Chinese; Japanese reference 03004690 + aux 03005670, 03002830; Chinese reference zr04 (a converted
@@ -21,6 +22,7 @@ Cost layout (README 6.4):
   swap the GPT and its prompt cache.
 NOTE: the URL is public; anyone who has it can generate audio while the app is deployed.
 """
+import os
 import time
 from pathlib import Path
 
@@ -34,6 +36,7 @@ REFS = "/refs"
 ZR04 = HERE / "out" / "zh_refs" / "samples" / "vc_ft1000_ref4690" / "04.wav"
 MAX_CHARS = 300  # longer input is refused, so one request can't hold the GPU for minutes
 SCALEDOWN = 12
+GPU = os.environ.get("SERVE_GPU", "L4")  # anything else deploys a separate test app (README 6.4)
 
 LANGS = {
     "ja": {"gpt": "nonoka_full-e6.ckpt", "ref": "03004690.ogg", "ref_lang": "ja",
@@ -45,17 +48,17 @@ LANGS = {
 }
 SOVITS = "nonoka_full_e10"  # SOVITS_DIR/nonoka_full_e10_s<step>.pth
 
-gpu_image = image.add_local_python_source("train_gptsovits")  # the container imports the constants above
+gpu_image = image.env({"SERVE_GPU": GPU}).add_local_python_source("train_gptsovits")  # the container imports the constants above
 for clip in ("03004690", "03005670", "03002830"):
     gpu_image = gpu_image.add_local_file(DATASET / f"{clip}.ogg", f"{REFS}/{clip}.ogg")
 gpu_image = gpu_image.add_local_file(ZR04, f"{REFS}/zr04.wav")
 web_image = (modal.Image.debian_slim(python_version="3.11").pip_install("fastapi[standard]")
-             .add_local_python_source("train_gptsovits"))
+             .env({"SERVE_GPU": GPU}).add_local_python_source("train_gptsovits"))
 
-app = modal.App("nonoka-tts-serve")
+app = modal.App("nonoka-tts-serve" + ("" if GPU == "L4" else "-" + GPU.lower()))
 
 
-@app.cls(image=gpu_image, gpu="L4", cpu=2, memory=8192, volumes={VOL: vol}, timeout=600,
+@app.cls(image=gpu_image, gpu=GPU, cpu=2, memory=8192, volumes={VOL: vol}, timeout=600,
          scaledown_window=SCALEDOWN, max_containers=1, enable_memory_snapshot=True, experimental_options={"enable_gpu_snapshot": True})
 class TTSWorker:
     @modal.enter(snap=True)
@@ -95,7 +98,12 @@ class TTSWorker:
             self.synth_raw(cfg["warmup"], lang, 1.0, 0)
         t3 = time.perf_counter()
         print(f"snapshot phase: import {t1 - t0:.1f} s, load {t2 - t1:.1f} s, warmup {t3 - t2:.1f} s", flush=True)
-        self.fresh = True
+        self.fresh, self.snap_time = True, time.time()
+
+    @modal.enter(snap=False)
+    def restore(self):
+        # right after the snapshot phase when this container took the snapshot, minutes later when restored from one
+        self.restored = time.time() - self.snap_time > 10
 
     def use(self, lang: str):
         if lang != self.lang:
@@ -129,7 +137,7 @@ class TTSWorker:
         sr, audio = self.synth_raw(text, lang, speed, seed)
         buf = io.BytesIO()
         sf.write(buf, audio, sr, format="WAV")
-        note = f"synth={time.perf_counter() - t:.2f};gpu={torch.cuda.get_device_name(0)};fresh={int(self.fresh)}"
+        note = f"synth={time.perf_counter() - t:.2f};gpu={torch.cuda.get_device_name(0)};fresh={int(self.fresh)};restored={int(self.restored)}"
         self.fresh = False
         return buf.getvalue(), seed, note
 
