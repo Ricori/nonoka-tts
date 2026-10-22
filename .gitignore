@@ -18,3 +18,6 @@ __pycache__/
 
 # Qwen3 source audio for the synthetic Chinese set (regenerable, README 5.8)
 02_dataset_zh/_qwen/
+
+# Song tests: copyrighted source audio and stems (README 6.5)
+04_train/out/sing/
