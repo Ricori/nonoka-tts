@@ -1,0 +1,39 @@
+4 versions x 30 calls, 10 at a time
+round 1 sentence  9: best=C -> A=4/5/4/5, B=4/5/3/4, C=5/5/5/5, D=4/5/4/4
+round 1 sentence  8: best=C -> A=4/5/4/4, B=4/5/4/4, C=5/5/5/5, D=4/5/4/4
+round 1 sentence  7: best=B -> A=4/5/4/5, B=5/5/5/5, C=4/5/3/4, D=4/5/3/4
+round 1 sentence  5: best=B -> A=4/5/4/4, B=5/5/5/5, C=4/5/4/4, D=4/5/4/3
+round 1 sentence 10: best=A -> A=4/5/4/5, B=4/5/4/4, C=4/5/4/4, D=4/5/4/4
+round 1 sentence  3: best=A -> A=5/5/5/5, B=3/4/3/4, C=4/5/4/4, D=3/4/3/3
+round 1 sentence  6: best=C -> A=4/3/4/4, B=4/3/3/4, C=5/3/5/5, D=3/3/3/3
+round 1 sentence  2: best=B -> A=4/5/4/5, B=5/5/4/5, C=4/4/3/4, D=4/4/3/4
+round 1 sentence  1: best=C -> A=4/5/4/5, B=4/5/4/4, C=5/5/5/5, D=4/5/4/5
+round 1 sentence  4: best=D -> A=4/5/4/4, B=4/5/4/4, C=4/5/4/4, D=5/5/5/5
+round 2 sentence  1: best=A -> A=5/5/5/5, B=3/4/3/4, C=3/4/3/3, D=4/4/4/4
+round 2 sentence  3: best=C -> A=4/5/4/5, B=4/5/3/4, C=5/5/5/5, D=4/5/4/4
+round 2 sentence  5: best=B -> A=4/4/4/5, B=5/5/5/5, C=4/4/4/4, D=4/4/4/5
+round 2 sentence  6: best=B -> A=4/3/4/4, B=5/4/5/5, C=4/3/4/4, D=4/3/3/4
+round 2 sentence  8: best=A -> A=5/5/5/5, B=4/5/4/4, C=4/5/3/4, D=3/5/3/3
+round 2 sentence  4: best=A -> A=5/5/5/5, B=4/5/4/4, C=4/5/4/3, D=4/5/3/4
+round 2 sentence  2: best=D -> A=4/5/4/5, B=4/4/4/5, C=4/5/4/5, D=5/5/5/5
+round 2 sentence  7: best=B -> A=4/3/4/4, B=5/5/5/5, C=4/3/3/3, D=4/3/3/4
+round 2 sentence  9: best=B -> A=4/5/5/5, B=5/5/5/5, C=4/5/4/4, D=4/5/4/4
+round 2 sentence 10: best=B -> A=3/1/2/4, B=4/1/2/4, C=3/1/2/4, D=3/1/2/4
+round 3 sentence  1: best=B -> A=4/5/4/5, B=5/5/5/5, C=4/4/3/4, D=4/4/4/4
+round 3 sentence  2: best=D -> A=4/5/4/5, B=3/5/3/3, C=4/5/3/4, D=5/5/5/5
+round 3 sentence  3: best=D -> A=5/4/4/5, B=5/4/4/5, C=4/4/4/5, D=5/5/5/5
+round 3 sentence  8: best=A -> A=5/5/5/5, B=5/5/5/4, C=4/5/4/5, D=4/5/4/4
+round 3 sentence  5: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/4/3/4, D=4/5/4/5
+round 3 sentence 10: best=C -> A=4/2/3/4, B=4/2/3/4, C=5/2/4/5, D=4/2/4/4
+round 3 sentence  4: best=A -> A=5/5/5/5, B=5/5/5/5, C=5/5/5/5, D=5/5/5/5
+round 3 sentence  6: best=B -> A=4/3/3/4, B=5/5/5/5, C=4/3/3/4, D=4/3/4/4
+round 3 sentence  7: best=B -> A=4/3/3/4, B=4/4/4/4, C=3/3/3/3, D=3/3/3/3
+round 3 sentence  9: best=A -> A=5/5/5/5, B=4/4/4/5, C=4/5/4/4, D=4/4/4/4
+
+                         sim  pron   nat  stab   avg  best  n
+full_s2e10_s1e6_t7k3_aux2_ref4690  4.33  4.37  4.10  4.47  4.32     8  30
+full_s2e10_s1e6_t7k3_ref4690  4.07  4.27  3.93  4.43  4.17     5  30
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690  4.17  4.40  3.90  4.23  4.17     8  30
+full_s2e10_s1e6_t7k3_sp9_ref4690  4.13  4.27  3.83  4.27  4.12     9  30
+-> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\gemini_judge.csv
+ALL DONE

@@ -50,10 +50,13 @@ S1_EPOCHS, S1_SAVE_EVERY = 15, 3
 # Round 2 (full set) rendered (6, 9), (10, 6), (10, 9), (10, 15), (10, 0) with REF and default sampling.
 # Round 3 rendered (10, 3, REF, {}), (10, 3, REF, LOW), (10, 6, REF, LOW), (10, 6, 03010230, LOW), (10, 6, 03004690, LOW).
 # Extra params: "speed_factor" (name gets _sp<x10>) and "aux": [clip ids] fused as aux_ref_audio_paths (name gets _aux<n>).
+# Round 4 rendered (10, 3, 03004690, LOW), (10, 6, 03005670 / 03002830 / 03004800, LOW),
+# (10, 6, 03004690, LOW + speed 0.9) and (10, 6, 03004690, LOW + aux 03005670, 03002830).
 LOW = {"temperature": 0.7, "top_k": 3}
-COMBOS = [(10, 3, "03004690", LOW), (10, 6, "03005670", LOW), (10, 6, "03002830", LOW), (10, 6, "03004800", LOW),
-          (10, 6, "03004690", {**LOW, "speed_factor": 0.9}),
-          (10, 6, "03004690", {**LOW, "aux": ["03005670", "03002830"]})]
+AUX2 = ["03005670", "03002830"]
+# Round 5: ja rendered only the aux2 + speed 0.9 stack; zh (16 sentences) rendered all three as the baseline for zh_vc.py.
+COMBOS = [(10, 6, REF, {}), (10, 6, "03004690", {**LOW, "speed_factor": 0.9}),
+          (10, 6, "03004690", {**LOW, "speed_factor": 0.9, "aux": AUX2})]
 
 
 def _combo_name(prefix, e2, e1, ref, params):

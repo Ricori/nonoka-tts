@@ -1,0 +1,21 @@
+loading models (first run downloads ~100 MB)
+ dataset 1/90 dataset 2/90 dataset 3/90 dataset 4/90 dataset 5/90 dataset 6/90 dataset 7/90 dataset 8/90 dataset 9/90 dataset 10/90 dataset 11/90 dataset 12/90 dataset 13/90 dataset 14/90 dataset 15/90 dataset 16/90 dataset 17/90 dataset 18/90 dataset 19/90 dataset 20/90 dataset 21/90 dataset 22/90 dataset 23/90 dataset 24/90 dataset 25/90 dataset 26/90 dataset 27/90 dataset 28/90 dataset 29/90 dataset 30/90 dataset 31/90 dataset 32/90 dataset 33/90 dataset 34/90 dataset 35/90 dataset 36/90 dataset 37/90 dataset 38/90 dataset 39/90 dataset 40/90 dataset 41/90 dataset 42/90 dataset 43/90 dataset 44/90 dataset 45/90 dataset 46/90 dataset 47/90 dataset 48/90 dataset 49/90 dataset 50/90 dataset 51/90 dataset 52/90 dataset 53/90 dataset 54/90 dataset 55/90 dataset 56/90 dataset 57/90 dataset 58/90 dataset 59/90 dataset 60/90 dataset 61/90 dataset 62/90 dataset 63/90 dataset 64/90 dataset 65/90 dataset 66/90 dataset 67/90 dataset 68/90 dataset 69/90 dataset 70/90 dataset 71/90 dataset 72/90 dataset 73/90 dataset 74/90 dataset 75/90 dataset 76/90 dataset 77/90 dataset 78/90 dataset 79/90 dataset 80/90 dataset 81/90 dataset 82/90 dataset 83/90 dataset 84/90 dataset 85/90 dataset 86/90 dataset 87/90 dataset 88/90 dataset 89/90 dataset 90/90
+ scored full_s2e10_s1e6
+ scored full_s2e10_s1e6_t7k3_sp9_aux2_ref4690
+ scored full_s2e10_s1e6_t7k3_sp9_ref4690
+ scored qwen3_xvec_ref4690
+ scored vc_ft1000_ref4690
+ scored vc_ft500_ref4690
+ scored vc_zs_ref4690
+
+                          sim   MOS DNSMOS   F0Hz  F0st mora/s   worst sim (idx)
+原声 (baseline)           0.846  3.93   3.12    321  3.68   4.26   0.679 (03002700)
+full_s2e10_s1e6         0.809  3.83   3.08    336  2.36   3.95   0.772 (1)
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690  0.821  3.98   3.14    286  3.53   3.73   0.713 (1)
+full_s2e10_s1e6_t7k3_sp9_ref4690  0.802  3.78   3.06    302  3.43   3.74   0.671 (1)
+qwen3_xvec_ref4690      0.701  3.12   3.32    290  3.58   4.52   0.630 (12)
+vc_ft1000_ref4690       0.762  2.76   3.23    310  3.88   4.57   0.718 (1)
+vc_ft500_ref4690        0.768  2.88   3.20    304  3.67   4.59   0.691 (1)
+vc_zs_ref4690           0.756  2.94   3.20    320  3.79   4.55   0.700 (12)
+-> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\auto_eval.csv
+ALL DONE

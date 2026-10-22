@@ -1,0 +1,49 @@
+4 checkpoints in D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\samples
+full_s2e10_s1e6_t7k3_aux2_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6_t7k3_aux2_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3_aux2_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_aux2_ref4690 04 cer=0.000  今日は風が強いので 上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1e6_t7k3_aux2_ref4690 05 cer=0.214  奏先輩とゆる月先輩は いつも仲がいいですね
+full_s2e10_s1e6_t7k3_aux2_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_aux2_ref4690 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_aux2_ref4690 08 cer=0.182  先輩言ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3_aux2_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e6_t7k3_aux2_ref4690 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e6_t7k3_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6_t7k3_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_ref4690 04 cer=0.000  今日は風が強いので 上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1e6_t7k3_ref4690 05 cer=0.107  かなで先輩とゆる月先輩はいつも仲がいいですね
+full_s2e10_s1e6_t7k3_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_ref4690 07 cer=0.000  生まれて初めて自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_ref4690 08 cer=0.182  先輩言ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e6_t7k3_ref4690 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 01 cer=0.000  先輩おはようございます 今日は一緒に帰れますか
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 02 cer=0.000  昨日の夜 駅前の本屋さんで新しい小説を3冊買いました
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 04 cer=0.000  今日は風が強いので 上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 05 cer=0.000  カナデ先輩とヨルツキ先輩はいつも仲がいいですね
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 08 cer=0.182  先輩言ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e6_t7k3_sp9_ref4690 01 cer=0.000  先輩、おはようございます。今日は、一緒に帰れますか?
+full_s2e10_s1e6_t7k3_sp9_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3_sp9_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_sp9_ref4690 04 cer=0.000  今日は風が強いので 上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1e6_t7k3_sp9_ref4690 05 cer=0.071  かなで先輩と夜月先輩はいつも仲がいいですね
+full_s2e10_s1e6_t7k3_sp9_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_sp9_ref4690 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_sp9_ref4690 08 cer=0.182  先輩言ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3_sp9_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e6_t7k3_sp9_ref4690 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+
+== CER per checkpoint (total edits / total kana)
+full_s2e10_s1e6_t7k3_aux2_ref4690 3.07%   sentences with errors: 05 08
+full_s2e10_s1e6_t7k3_ref4690 2.15%   sentences with errors: 05 08
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690 1.23%   sentences with errors: 08
+full_s2e10_s1e6_t7k3_sp9_ref4690 1.84%   sentences with errors: 05 08
+-> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\cer.csv
+ALL DONE
