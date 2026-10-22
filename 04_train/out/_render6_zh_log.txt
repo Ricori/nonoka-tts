@@ -1,0 +1,2572 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ricori/main/ap-bBHCi40NRnH1YN7PrdMpzc
+✓ Created objects.
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\t
+│   rain_gptsovits.py
+├── 🔨 Created function train.
+└── 🔨 Created function render.
+[02_dataset_full] rendering zh x 4 combos with references 03002830, 03004690, 03005670, zh:vc_ft1000_ref4690/13
+$ render_job.py /vol/render_job.json
+TTS.run defaults: [('top_k', '15'), ('top_p', '1'), ('temperature', '1'), ('repetition_penalty', '1.35')]
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+Failed to load libcublasLt.so.13: libcublasLt.so.13: cannot open shared object file: No such file or directory
+Failed to load libcublas.so.13: libcublas.so.13: cannot open shared object file: No such file or directory
+Failed to load libcudart.so.13: libcudart.so.13: cannot open shared object file: No such file or directory
+Please follow https://onnxruntime.ai/docs/install/#cuda-and-cudnn to install CUDA.
+[1;31m2026-10-22 11:44:12.828854523 [E:onnxruntime:Default, provider_bridge_ort.cc:2458 operator()] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:2043 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library /usr/local/lib/python3.11/site-packages/onnxruntime/capi/libonnxruntime_providers_cuda.so with error: libcublasLt.so.13: cannot open shared object file: No such file or directory
+[m
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 28.26it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  0%|          | 1/1500 [00:00<03:08,  7.94it/s]
+[1A  1%|          | 15/1500 [00:00<00:19, 78.06it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:13, 108.82it/s]  3%|▎         | 39/1500 [00:00<00:14, 99.05it/s] 
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.58it/s]100%|██████████| 1/1 [00:00<00:00,  3.58it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 13/1500 [00:00<00:11, 129.18it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 138.97it/s]  3%|▎         | 39/1500 [00:00<00:11, 131.97it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19.97it/s]
+3.779   0.074   0.962   0.330
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 29.07it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.91it/s]  2%|▏         | 27/1500 [00:00<00:10, 140.11it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  5.97it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  5.97it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.66it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.66it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 146.22it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:09, 145.97it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:09, 145.71it/s]  5%|▌         | 76/1500 [00:00<00:09, 143.96it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.44it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.44it/s]
+0.000   0.070   0.772   0.459
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 32.40it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.92it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.86it/s]  3%|▎         | 39/1500 [00:00<00:10, 143.16it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.66it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.92it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.27it/s]  3%|▎         | 42/1500 [00:00<00:10, 144.20it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.16it/s]100%|██████████| 1/1 [00:00<00:00,  8.15it/s]
+0.000   0.063   0.615   0.172
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 32.55it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.29it/s]  2%|▏         | 28/1500 [00:00<00:10, 141.76it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.80it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.79it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.75it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.31it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 146.77it/s]  3%|▎         | 48/1500 [00:00<00:10, 143.50it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.58it/s]100%|██████████| 1/1 [00:00<00:00,  7.57it/s]
+0.000   0.062   0.583   0.261
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 27.27it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 137.57it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:11, 128.57it/s]
+[1A  3%|▎         | 41/1500 [00:00<00:11, 124.63it/s]  3%|▎         | 46/1500 [00:00<00:11, 121.45it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  4.60it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  4.59it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  0%|          | 5/1500 [00:00<00:32, 46.05it/s]
+[1A  1%|          | 11/1500 [00:00<00:29, 50.67it/s]
+[1A  2%|▏         | 23/1500 [00:00<00:18, 78.35it/s]
+[1A  2%|▏         | 37/1500 [00:00<00:14, 99.35it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:17, 85.71it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.07it/s]
+0.000   0.074   0.894   0.267
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A 33%|███▎      | 1/3 [00:00<00:00,  9.67it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 15.70it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 12/1500 [00:00<00:12, 116.07it/s]
+[1A  2%|▏         | 23/1500 [00:00<00:13, 107.00it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.67it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.66it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 10/1500 [00:00<00:16, 92.54it/s]
+[1A  1%|▏         | 21/1500 [00:00<00:15, 95.31it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:15, 91.90it/s]
+[1A  2%|▏         | 35/1500 [00:00<00:16, 89.17it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.54it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  3.54it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 12/1500 [00:00<00:12, 117.34it/s]
+[1A  2%|▏         | 25/1500 [00:00<00:12, 121.50it/s]
+[1A  2%|▏         | 34/1500 [00:00<00:12, 119.21it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  6.30it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  6.28it/s]
+0.000   0.193   0.993   0.717
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这家店的蛋糕特别好吃，我们排队的时候，前面还有二十多个人呢。
+Actual Input Target Text (after sentence segmentation):
+['这家店的蛋糕特别好吃，', '我们排队的时候，', '前面还有二十多个人呢。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A 33%|███▎      | 1/3 [00:00<00:00,  8.11it/s]100%|██████████| 3/3 [00:00<00:00, 11.08it/s]100%|██████████| 3/3 [00:00<00:00, 10.68it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['我们排队的时候,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 11/1500 [00:00<00:14, 105.13it/s]
+[1A  2%|▏         | 23/1500 [00:00<00:13, 108.48it/s]
+[1A  2%|▏         | 35/1500 [00:00<00:12, 113.03it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.59it/s]
+Processed text from the frontend (per sentence): ['这家店的蛋糕特别好吃,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 133.84it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 134.69it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 134.44it/s]  3%|▎         | 51/1500 [00:00<00:10, 132.63it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.42it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.41it/s]
+Processed text from the frontend (per sentence): ['前面还有二十多个人呢.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.55it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.56it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 140.45it/s]  3%|▎         | 45/1500 [00:00<00:10, 137.73it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.67it/s]100%|██████████| 1/1 [00:00<00:00,  7.66it/s]
+0.000   0.283   1.159   0.313
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+学长总是说没关系，可是我知道，你其实一直都很在意。
+Actual Input Target Text (after sentence segmentation):
+['学长总是说没关系，', '可是我知道，', '你其实一直都很在意。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 28.99it/s]100%|██████████| 3/3 [00:00<00:00, 28.94it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['可是我知道,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 133.14it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:11, 130.88it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.47it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.45it/s]
+Processed text from the frontend (per sentence): ['学长总是说没关系,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 135.91it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.12it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:10, 138.97it/s]  3%|▎         | 47/1500 [00:00<00:10, 135.98it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.67it/s]100%|██████████| 1/1 [00:00<00:00,  7.66it/s]
+Processed text from the frontend (per sentence): ['你其实一直都很在意.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 129.72it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:11, 131.90it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:11, 131.36it/s]  3%|▎         | 42/1500 [00:00<00:11, 128.32it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.42it/s]
+0.000   0.105   0.959   0.313
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+图书馆的空调好像坏了，里面又闷又热，根本没办法好好学习。
+Actual Input Target Text (after sentence segmentation):
+['图书馆的空调好像坏了，', '里面又闷又热，', '根本没办法好好学习。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 27.55it/s]100%|██████████| 3/3 [00:00<00:00, 27.50it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['里面又闷又热,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 13/1500 [00:00<00:11, 127.68it/s]
+[1A  2%|▏         | 27/1500 [00:00<00:11, 130.90it/s]  2%|▏         | 36/1500 [00:00<00:11, 129.30it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.56it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.55it/s]
+Processed text from the frontend (per sentence): ['根本没办法好好学习.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.95it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 137.70it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 137.52it/s]  3%|▎         | 47/1500 [00:00<00:10, 134.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 23.31it/s]
+Processed text from the frontend (per sentence): ['图书馆的空调好像坏了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.28it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 141.86it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 140.33it/s]  3%|▎         | 51/1500 [00:00<00:10, 137.48it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 22.83it/s]
+0.000   0.110   1.082   0.220
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。哇，下雪了！学长快看，整个操场都变成白色的了。
+Actual Input Target Text (after sentence segmentation):
+['哇，下雪了！', '学长快看，', '整个操场都变成白色的了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 28.73it/s]100%|██████████| 3/3 [00:00<00:00, 28.68it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长快看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.81it/s]
+[1A  1%|▏         | 21/1500 [00:00<00:11, 130.21it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.92it/s]100%|██████████| 1/1 [00:00<00:00,  7.91it/s]
+Processed text from the frontend (per sentence): ['哇,下雪了!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.06it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 138.63it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:10, 137.53it/s]
+[1A  3%|▎         | 48/1500 [00:00<00:10, 134.41it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19.53it/s]
+Processed text from the frontend (per sentence): ['整个操场都变成白色的了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.18it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 139.09it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 138.26it/s]
+[1A  4%|▎         | 56/1500 [00:00<00:10, 137.00it/s]
+[1A  4%|▍         | 57/1500 [00:00<00:10, 135.19it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.61it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.60it/s]
+0.000   0.106   1.020   0.310
+Set seed to 1245
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+如果明天不下雨的话，我们去海边散步吧，好不好？
+Actual Input Target Text (after sentence segmentation):
+['如果明天不下雨的话，', '我们去海边散步吧，好不好？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 24.43it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['如果明天不下雨的话,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.94it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 137.21it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 138.18it/s]
+[1A  3%|▎         | 48/1500 [00:00<00:10, 135.35it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.72it/s]
+Processed text from the frontend (per sentence): ['我们去海边散步吧,好不好?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 137.82it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 142.03it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 141.12it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:10, 138.18it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.37it/s]100%|██████████| 1/1 [00:00<00:00,  7.36it/s]
+0.000   0.083   0.795   0.183
+Set seed to 1246
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+二零二六年十月二十二日，今天的气温是十八度。
+Actual Input Target Text (after sentence segmentation):
+['二零二六年十月二十二日，', '今天的气温是十八度。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 28.63it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天的气温是十八度.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.77it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 143.26it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 143.08it/s]  3%|▎         | 47/1500 [00:00<00:10, 139.80it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 23.28it/s]
+Processed text from the frontend (per sentence): ['二零二六年十月二十二日,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.48it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 143.74it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 142.66it/s]  4%|▎         | 54/1500 [00:00<00:10, 139.45it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.96it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.95it/s]
+0.000   0.071   0.777   0.169
+Set seed to 1247
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。对不起，让你久等了。路上的车太多，公交车一直没来。
+Actual Input Target Text (after sentence segmentation):
+['对不起，让你久等了。', '路上的车太多，', '公交车一直没来。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 31.81it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['路上的车太多,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.19it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 141.70it/s]  2%|▏         | 33/1500 [00:00<00:10, 136.88it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.89it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.87it/s]
+Processed text from the frontend (per sentence): ['公交车一直没来.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.71it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 140.08it/s]  3%|▎         | 40/1500 [00:00<00:10, 137.27it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.77it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.76it/s]
+Processed text from the frontend (per sentence): ['对不起,让你久等了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.72it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 143.33it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 143.60it/s]  3%|▎         | 48/1500 [00:00<00:10, 140.45it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 20.01it/s]
+0.000   0.095   0.956   0.307
+Set seed to 1248
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这个问题我想了很久，还是觉得应该先跟大家商量一下。
+Actual Input Target Text (after sentence segmentation):
+['这个问题我想了很久，', '还是觉得应该先跟大家商量一下。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 27.52it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['这个问题我想了很久,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 131.91it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 135.27it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 135.51it/s]
+[1A  3%|▎         | 52/1500 [00:00<00:10, 132.53it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.87it/s]100%|██████████| 1/1 [00:00<00:00,  7.86it/s]
+Processed text from the frontend (per sentence): ['还是觉得应该先跟大家商量一下.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.89it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 136.51it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 135.93it/s]
+[1A  4%|▎         | 56/1500 [00:00<00:10, 135.71it/s]  4%|▍         | 62/1500 [00:00<00:10, 133.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.34it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.33it/s]
+0.000   0.074   0.911   0.264
+Set seed to 1249
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。呜…我的作业忘在教室里了，现在回去拿还来得及吗？
+Actual Input Target Text (after sentence segmentation):
+['呜…我的作业忘在教室里了，', '现在回去拿还来得及吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 27.34it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['现在回去拿还来得及吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.57it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 142.42it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 142.88it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:10, 139.51it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 23.69it/s]
+Processed text from the frontend (per sentence): ['呜…我的作业忘在教室里了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.78it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.42it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 145.12it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:09, 145.27it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:09, 144.95it/s]  6%|▌         | 86/1500 [00:00<00:09, 143.05it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.17it/s]100%|██████████| 1/1 [00:00<00:00,  8.16it/s]
+0.000   0.074   0.985   0.165
+Set seed to 1250
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。谢谢你，学长。有你在身边，我就什么都不怕了。
+Actual Input Target Text (after sentence segmentation):
+['谢谢你，学长。', '有你在身边，', '我就什么都不怕了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 30.81it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['有你在身边,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.18it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.87it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.79it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.11it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.10it/s]
+Processed text from the frontend (per sentence): ['谢谢你,学长.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 148.24it/s]  2%|▏         | 29/1500 [00:00<00:10, 144.15it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.21it/s]100%|██████████| 1/1 [00:00<00:00,  8.20it/s]
+Processed text from the frontend (per sentence): ['我就什么都不怕了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.02it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.11it/s]  2%|▏         | 36/1500 [00:00<00:10, 144.32it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24.04it/s]
+0.000   0.098   0.737   0.288
+rendered zh full_s2e10_s1e6_t7k3_zhref13
+Loading Text2Semantic weights from /vol/GPT_weights_v2ProPlus/nonoka_full-e6.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 29.49it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.96it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 144.70it/s]  3%|▎         | 39/1500 [00:00<00:10, 141.22it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18.85it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.53it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.33it/s]  3%|▎         | 39/1500 [00:00<00:10, 142.08it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.87it/s]
+0.142   0.069   0.867   0.099
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 29.50it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.29it/s]  2%|▏         | 27/1500 [00:00<00:10, 140.17it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.85it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.12it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.49it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 139.82it/s]
+[1A  4%|▍         | 59/1500 [00:00<00:10, 140.11it/s]
+[1A  5%|▍         | 74/1500 [00:00<00:10, 140.27it/s]  5%|▌         | 76/1500 [00:00<00:10, 138.18it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.15it/s]
+0.000   0.069   0.933   0.094
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 32.22it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.95it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 140.85it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:10, 137.40it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.29it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.52it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 142.03it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 137.85it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 20.87it/s]
+0.000   0.063   0.781   0.096
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 31.43it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.68it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 136.37it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 20.97it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.27it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 143.20it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 142.27it/s]  3%|▎         | 48/1500 [00:00<00:10, 139.22it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.04it/s]
+0.000   0.064   0.744   0.096
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 26.68it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.45it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 143.68it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 144.19it/s]  3%|▎         | 46/1500 [00:00<00:10, 140.65it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.08it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.41it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.74it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:10, 139.24it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.04it/s]
+0.000   0.076   0.802   0.096
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 31.90it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 135.30it/s]  2%|▏         | 23/1500 [00:00<00:11, 132.00it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 20.46it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 137.47it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.15it/s]  2%|▏         | 35/1500 [00:00<00:10, 135.70it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.45it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 137.76it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 140.17it/s]  2%|▏         | 34/1500 [00:00<00:10, 135.91it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 20.01it/s]
+0.000   0.095   0.991   0.149
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这家店的蛋糕特别好吃，我们排队的时候，前面还有二十多个人呢。
+Actual Input Target Text (after sentence segmentation):
+['这家店的蛋糕特别好吃，', '我们排队的时候，', '前面还有二十多个人呢。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.27it/s]100%|██████████| 3/3 [00:00<00:00, 29.22it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['我们排队的时候,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 135.81it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 137.62it/s]
+[1A  2%|▏         | 35/1500 [00:00<00:10, 133.83it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.81it/s]
+Processed text from the frontend (per sentence): ['这家店的蛋糕特别好吃,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.52it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.21it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:10, 138.81it/s]  3%|▎         | 51/1500 [00:00<00:10, 135.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.96it/s]
+Processed text from the frontend (per sentence): ['前面还有二十多个人呢.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 133.07it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 137.44it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:10, 137.68it/s]  3%|▎         | 45/1500 [00:00<00:10, 134.18it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.33it/s]
+0.000   0.104   1.264   0.143
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+学长总是说没关系，可是我知道，你其实一直都很在意。
+Actual Input Target Text (after sentence segmentation):
+['学长总是说没关系，', '可是我知道，', '你其实一直都很在意。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 31.89it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['可是我知道,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.35it/s]  2%|▏         | 26/1500 [00:00<00:11, 133.02it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.85it/s]
+Processed text from the frontend (per sentence): ['学长总是说没关系,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.34it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.17it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:10, 138.93it/s]  3%|▎         | 47/1500 [00:00<00:10, 135.72it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.05it/s]
+Processed text from the frontend (per sentence): ['你其实一直都很在意.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.80it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.99it/s]  3%|▎         | 42/1500 [00:00<00:10, 139.22it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.09it/s]
+0.000   0.095   1.137   0.144
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+图书馆的空调好像坏了，里面又闷又热，根本没办法好好学习。
+Actual Input Target Text (after sentence segmentation):
+['图书馆的空调好像坏了，', '里面又闷又热，', '根本没办法好好学习。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 31.02it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['里面又闷又热,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.19it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 144.83it/s]  2%|▏         | 36/1500 [00:00<00:10, 141.01it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.29it/s]
+Processed text from the frontend (per sentence): ['根本没办法好好学习.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.31it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 148.28it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 147.92it/s]  3%|▎         | 47/1500 [00:00<00:10, 144.64it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.75it/s]
+Processed text from the frontend (per sentence): ['图书馆的空调好像坏了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.58it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.73it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.92it/s]  3%|▎         | 51/1500 [00:00<00:09, 145.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.11it/s]
+0.000   0.098   1.214   0.139
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。哇，下雪了！学长快看，整个操场都变成白色的了。
+Actual Input Target Text (after sentence segmentation):
+['哇，下雪了！', '学长快看，', '整个操场都变成白色的了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.11it/s]100%|██████████| 3/3 [00:00<00:00, 29.06it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长快看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.30it/s]  1%|▏         | 21/1500 [00:00<00:10, 141.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.79it/s]
+Processed text from the frontend (per sentence): ['哇,下雪了!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.63it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.11it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 148.20it/s]  3%|▎         | 48/1500 [00:00<00:10, 144.23it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.61it/s]
+Processed text from the frontend (per sentence): ['整个操场都变成白色的了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.91it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.94it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 147.63it/s]  4%|▍         | 57/1500 [00:00<00:09, 144.92it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.76it/s]
+0.000   0.104   1.154   0.139
+Set seed to 1245
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+如果明天不下雨的话，我们去海边散步吧，好不好？
+Actual Input Target Text (after sentence segmentation):
+['如果明天不下雨的话，', '我们去海边散步吧，好不好？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 25.23it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['如果明天不下雨的话,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.11it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.29it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 147.20it/s]  3%|▎         | 48/1500 [00:00<00:10, 143.93it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.68it/s]
+Processed text from the frontend (per sentence): ['我们去海边散步吧,好不好?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.30it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.21it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 146.71it/s]
+[1A  4%|▎         | 53/1500 [00:00<00:10, 143.47it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.24it/s]
+0.000   0.080   0.893   0.094
+Set seed to 1246
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+二零二六年十月二十二日，今天的气温是十八度。
+Actual Input Target Text (after sentence segmentation):
+['二零二六年十月二十二日，', '今天的气温是十八度。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.85it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天的气温是十八度.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.22it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 143.90it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 145.43it/s]  3%|▎         | 47/1500 [00:00<00:10, 141.70it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.36it/s]
+Processed text from the frontend (per sentence): ['二零二六年十月二十二日,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.67it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 148.56it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 147.71it/s]  4%|▎         | 54/1500 [00:00<00:09, 144.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.82it/s]
+0.000   0.070   0.899   0.093
+Set seed to 1247
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。对不起，让你久等了。路上的车太多，公交车一直没来。
+Actual Input Target Text (after sentence segmentation):
+['对不起，让你久等了。', '路上的车太多，', '公交车一直没来。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 32.99it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['路上的车太多,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.66it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.51it/s]  2%|▏         | 33/1500 [00:00<00:10, 144.15it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.57it/s]
+Processed text from the frontend (per sentence): ['公交车一直没来.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.53it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 148.94it/s]
+[1A  3%|▎         | 40/1500 [00:00<00:10, 145.22it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.80it/s]
+Processed text from the frontend (per sentence): ['对不起,让你久等了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.72it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.14it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.64it/s]
+[1A  3%|▎         | 48/1500 [00:00<00:09, 145.43it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.00it/s]
+0.000   0.092   1.116   0.138
+Set seed to 1248
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这个问题我想了很久，还是觉得应该先跟大家商量一下。
+Actual Input Target Text (after sentence segmentation):
+['这个问题我想了很久，', '还是觉得应该先跟大家商量一下。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.48it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['这个问题我想了很久,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.73it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.22it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.93it/s]
+[1A  3%|▎         | 52/1500 [00:00<00:09, 145.86it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.88it/s]
+Processed text from the frontend (per sentence): ['还是觉得应该先跟大家商量一下.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.65it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.09it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.38it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:09, 148.25it/s]  4%|▍         | 62/1500 [00:00<00:09, 145.95it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.61it/s]
+0.000   0.071   0.969   0.093
+Set seed to 1249
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。呜…我的作业忘在教室里了，现在回去拿还来得及吗？
+Actual Input Target Text (after sentence segmentation):
+['呜…我的作业忘在教室里了，', '现在回去拿还来得及吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 27.16it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['现在回去拿还来得及吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.46it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 137.19it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 137.03it/s]  3%|▎         | 46/1500 [00:00<00:10, 133.80it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.44it/s]
+Processed text from the frontend (per sentence): ['呜…我的作业忘在教室里了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.95it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 136.69it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 136.20it/s]
+[1A  4%|▎         | 56/1500 [00:00<00:10, 135.97it/s]
+[1A  5%|▍         | 70/1500 [00:00<00:10, 135.69it/s]
+[1A  6%|▌         | 84/1500 [00:00<00:10, 135.59it/s]
+[1A  6%|▌         | 86/1500 [00:00<00:10, 134.20it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.42it/s]
+0.000   0.075   1.185   0.099
+Set seed to 1250
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。谢谢你，学长。有你在身边，我就什么都不怕了。
+Actual Input Target Text (after sentence segmentation):
+['谢谢你，学长。', '有你在身边，', '我就什么都不怕了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 30.80it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['有你在身边,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.66it/s]  2%|▏         | 30/1500 [00:00<00:10, 143.67it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.70it/s]
+Processed text from the frontend (per sentence): ['谢谢你,学长.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.42it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 143.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.80it/s]
+Processed text from the frontend (per sentence): ['我就什么都不怕了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:09, 148.88it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 150.17it/s]  2%|▏         | 36/1500 [00:00<00:10, 146.02it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.94it/s]
+0.000   0.098   0.941   0.138
+rendered zh full_s2e10_s1e6_t7k3_aux3_zhref13
+Loading Text2Semantic weights from /gsv/GPT_SoVITS/pretrained_models/s1v3.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 29.45it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.00it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.58it/s]  2%|▏         | 37/1500 [00:00<00:10, 135.78it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.79it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.78it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.84it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 141.28it/s]  2%|▏         | 33/1500 [00:00<00:10, 137.12it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.59it/s]
+0.106   0.069   0.567   0.171
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 29.43it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.02it/s]
+[1A  2%|▏         | 26/1500 [00:00<00:10, 134.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 22.90it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.38it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 141.78it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 141.14it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:10, 140.30it/s]  5%|▍         | 71/1500 [00:00<00:10, 138.73it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.82it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.81it/s]
+0.000   0.069   0.757   0.172
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 32.29it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.45it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 141.03it/s]  2%|▏         | 37/1500 [00:00<00:10, 137.55it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.05it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.31it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 140.92it/s]  2%|▏         | 37/1500 [00:00<00:10, 137.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.38it/s]
+0.000   0.063   0.590   0.089
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 31.90it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.24it/s]  2%|▏         | 25/1500 [00:00<00:10, 135.59it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.90it/s]100%|██████████| 1/1 [00:00<00:00,  7.89it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.36it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 138.44it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 136.98it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 134.43it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.27it/s]
+0.000   0.064   0.571   0.172
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 26.26it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.36it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 140.89it/s]  3%|▎         | 42/1500 [00:00<00:10, 137.61it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.63it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 138.80it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 140.49it/s]  2%|▏         | 36/1500 [00:00<00:10, 136.84it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.85it/s]
+0.000   0.077   0.622   0.089
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 32.24it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 135.30it/s]
+[1A  1%|          | 17/1500 [00:00<00:11, 128.33it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.91it/s]100%|██████████| 1/1 [00:00<00:00,  7.90it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.89it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.04it/s]
+[1A  2%|▏         | 34/1500 [00:00<00:10, 140.88it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.56it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.26it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.33it/s]  2%|▏         | 31/1500 [00:00<00:10, 140.64it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.97it/s]100%|██████████| 1/1 [00:00<00:00,  7.95it/s]
+0.000   0.094   0.672   0.296
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这家店的蛋糕特别好吃，我们排队的时候，前面还有二十多个人呢。
+Actual Input Target Text (after sentence segmentation):
+['这家店的蛋糕特别好吃，', '我们排队的时候，', '前面还有二十多个人呢。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.74it/s]100%|██████████| 3/3 [00:00<00:00, 29.66it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['我们排队的时候,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.66it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 144.42it/s]  2%|▏         | 32/1500 [00:00<00:10, 139.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.00it/s]100%|██████████| 1/1 [00:00<00:00,  7.99it/s]
+Processed text from the frontend (per sentence): ['这家店的蛋糕特别好吃,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.76it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.30it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 144.39it/s]  3%|▎         | 50/1500 [00:00<00:10, 141.39it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.15it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.14it/s]
+Processed text from the frontend (per sentence): ['前面还有二十多个人呢.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.99it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.64it/s]  3%|▎         | 40/1500 [00:00<00:10, 142.49it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.80it/s]
+0.000   0.102   0.940   0.291
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+学长总是说没关系，可是我知道，你其实一直都很在意。
+Actual Input Target Text (after sentence segmentation):
+['学长总是说没关系，', '可是我知道，', '你其实一直都很在意。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 31.94it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['可是我知道,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.22it/s]  2%|▏         | 26/1500 [00:00<00:10, 136.15it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.04it/s]
+Processed text from the frontend (per sentence): ['学长总是说没关系,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 135.06it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 136.64it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 136.44it/s]  3%|▎         | 44/1500 [00:00<00:10, 133.13it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.74it/s]100%|██████████| 1/1 [00:00<00:00,  7.73it/s]
+Processed text from the frontend (per sentence): ['你其实一直都很在意.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.50it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 138.25it/s]
+[1A  3%|▎         | 39/1500 [00:00<00:10, 134.55it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.81it/s]
+0.000   0.095   0.892   0.220
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+图书馆的空调好像坏了，里面又闷又热，根本没办法好好学习。
+Actual Input Target Text (after sentence segmentation):
+['图书馆的空调好像坏了，', '里面又闷又热，', '根本没办法好好学习。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.85it/s]100%|██████████| 3/3 [00:00<00:00, 29.79it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['里面又闷又热,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:11, 134.23it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 136.40it/s]  2%|▏         | 32/1500 [00:00<00:11, 131.36it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.81it/s]
+Processed text from the frontend (per sentence): ['根本没办法好好学习.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.01it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 140.92it/s]  3%|▎         | 42/1500 [00:00<00:10, 137.65it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.30it/s]
+Processed text from the frontend (per sentence): ['图书馆的空调好像坏了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.67it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 143.23it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 142.95it/s]  3%|▎         | 51/1500 [00:00<00:10, 139.68it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.23it/s]
+0.000   0.102   0.993   0.133
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。哇，下雪了！学长快看，整个操场都变成白色的了。
+Actual Input Target Text (after sentence segmentation):
+['哇，下雪了！', '学长快看，', '整个操场都变成白色的了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 28.51it/s]100%|██████████| 3/3 [00:00<00:00, 28.46it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长快看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.79it/s]
+[1A  1%|▏         | 22/1500 [00:00<00:10, 138.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.98it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.97it/s]
+Processed text from the frontend (per sentence): ['哇,下雪了!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.64it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.18it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 145.46it/s]  3%|▎         | 46/1500 [00:00<00:10, 142.03it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.63it/s]
+Processed text from the frontend (per sentence): ['整个操场都变成白色的了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.38it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 139.85it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 138.78it/s]
+[1A  4%|▍         | 59/1500 [00:00<00:10, 139.34it/s]  4%|▍         | 59/1500 [00:00<00:10, 137.21it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.00it/s]100%|██████████| 1/1 [00:00<00:00,  7.99it/s]
+0.000   0.106   0.989   0.294
+Set seed to 1245
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+如果明天不下雨的话，我们去海边散步吧，好不好？
+Actual Input Target Text (after sentence segmentation):
+['如果明天不下雨的话，', '我们去海边散步吧，好不好？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 24.76it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['如果明天不下雨的话,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.82it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 138.53it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 137.89it/s]  3%|▎         | 42/1500 [00:00<00:10, 134.64it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 22.98it/s]
+Processed text from the frontend (per sentence): ['我们去海边散步吧,好不好?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 137.50it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 139.08it/s]
+[1A  3%|▎         | 43/1500 [00:00<00:10, 137.86it/s]  3%|▎         | 49/1500 [00:00<00:10, 135.04it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.93it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.92it/s]
+0.000   0.082   0.727   0.170
+Set seed to 1246
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+二零二六年十月二十二日，今天的气温是十八度。
+Actual Input Target Text (after sentence segmentation):
+['二零二六年十月二十二日，', '今天的气温是十八度。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 28.90it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天的气温是十八度.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 135.49it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 137.14it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 136.97it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 133.62it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 22.39it/s]
+Processed text from the frontend (per sentence): ['二零二六年十月二十二日,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.62it/s]
+[1A  2%|▏         | 28/1500 [00:00<00:10, 138.45it/s]
+[1A  3%|▎         | 42/1500 [00:00<00:10, 137.50it/s]  4%|▎         | 55/1500 [00:00<00:10, 134.74it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.84it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.83it/s]
+0.000   0.070   0.777   0.173
+Set seed to 1247
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。对不起，让你久等了。路上的车太多，公交车一直没来。
+Actual Input Target Text (after sentence segmentation):
+['对不起，让你久等了。', '路上的车太多，', '公交车一直没来。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 32.61it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['路上的车太多,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 136.67it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 140.38it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:10, 135.82it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.02it/s]
+Processed text from the frontend (per sentence): ['公交车一直没来.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.23it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 141.52it/s]  2%|▏         | 36/1500 [00:00<00:10, 137.69it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.31it/s]
+Processed text from the frontend (per sentence): ['对不起,让你久等了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.27it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 141.55it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 142.21it/s]  3%|▎         | 48/1500 [00:00<00:10, 138.60it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.51it/s]
+0.000   0.093   0.914   0.136
+Set seed to 1248
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这个问题我想了很久，还是觉得应该先跟大家商量一下。
+Actual Input Target Text (after sentence segmentation):
+['这个问题我想了很久，', '还是觉得应该先跟大家商量一下。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.68it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['这个问题我想了很久,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 14/1500 [00:00<00:10, 139.82it/s]
+[1A  2%|▏         | 29/1500 [00:00<00:10, 142.04it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 141.27it/s]
+[1A  3%|▎         | 44/1500 [00:00<00:10, 138.09it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.30it/s]
+Processed text from the frontend (per sentence): ['还是觉得应该先跟大家商量一下.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.37it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 140.82it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 140.11it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:10, 139.52it/s]  4%|▍         | 67/1500 [00:00<00:10, 137.67it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.82it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  7.81it/s]
+0.000   0.071   0.857   0.172
+Set seed to 1249
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。呜…我的作业忘在教室里了，现在回去拿还来得及吗？
+Actual Input Target Text (after sentence segmentation):
+['呜…我的作业忘在教室里了，', '现在回去拿还来得及吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 27.46it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['现在回去拿还来得及吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 143.03it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.26it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 144.30it/s]  3%|▎         | 46/1500 [00:00<00:10, 141.24it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.37it/s]
+Processed text from the frontend (per sentence): ['呜…我的作业忘在教室里了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.77it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.82it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 146.00it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:09, 146.10it/s]
+[1A  5%|▌         | 75/1500 [00:00<00:09, 146.20it/s]
+[1A  6%|▌         | 90/1500 [00:00<00:09, 146.17it/s]  6%|▌         | 92/1500 [00:00<00:09, 144.28it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.08it/s]
+[1A100%|██████████| 1/1 [00:00<00:00,  8.07it/s]
+0.000   0.074   1.015   0.167
+Set seed to 1250
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。谢谢你，学长。有你在身边，我就什么都不怕了。
+Actual Input Target Text (after sentence segmentation):
+['谢谢你，学长。', '有你在身边，', '我就什么都不怕了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 30.80it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['有你在身边,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.56it/s]  2%|▏         | 26/1500 [00:00<00:10, 142.70it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.50it/s]
+Processed text from the frontend (per sentence): ['谢谢你,学长.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.68it/s]  2%|▏         | 27/1500 [00:00<00:10, 142.97it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23.75it/s]
+Processed text from the frontend (per sentence): ['我就什么都不怕了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.74it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 147.99it/s]  2%|▏         | 33/1500 [00:00<00:10, 143.43it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24.16it/s]
+0.000   0.098   0.678   0.127
+rendered zh full_s2e10_s1base_t7k3_zhref13
+Loading Text2Semantic weights from /gsv/GPT_SoVITS/pretrained_models/s1v3.ckpt
+Loading VITS weights from /vol/SoVITS_weights_v2ProPlus/nonoka_full_e10_s690.pth. _IncompatibleKeys(missing_keys=['enc_q.pre.weight', 'enc_q.pre.bias', 'enc_q.enc.in_layers.0.bias', 'enc_q.enc.in_layers.0.weight_g', 'enc_q.enc.in_layers.0.weight_v', 'enc_q.enc.in_layers.1.bias', 'enc_q.enc.in_layers.1.weight_g', 'enc_q.enc.in_layers.1.weight_v', 'enc_q.enc.in_layers.2.bias', 'enc_q.enc.in_layers.2.weight_g', 'enc_q.enc.in_layers.2.weight_v', 'enc_q.enc.in_layers.3.bias', 'enc_q.enc.in_layers.3.weight_g', 'enc_q.enc.in_layers.3.weight_v', 'enc_q.enc.in_layers.4.bias', 'enc_q.enc.in_layers.4.weight_g', 'enc_q.enc.in_layers.4.weight_v', 'enc_q.enc.in_layers.5.bias', 'enc_q.enc.in_layers.5.weight_g', 'enc_q.enc.in_layers.5.weight_v', 'enc_q.enc.in_layers.6.bias', 'enc_q.enc.in_layers.6.weight_g', 'enc_q.enc.in_layers.6.weight_v', 'enc_q.enc.in_layers.7.bias', 'enc_q.enc.in_layers.7.weight_g', 'enc_q.enc.in_layers.7.weight_v', 'enc_q.enc.in_layers.8.bias', 'enc_q.enc.in_layers.8.weight_g', 'enc_q.enc.in_layers.8.weight_v', 'enc_q.enc.in_layers.9.bias', 'enc_q.enc.in_layers.9.weight_g', 'enc_q.enc.in_layers.9.weight_v', 'enc_q.enc.in_layers.10.bias', 'enc_q.enc.in_layers.10.weight_g', 'enc_q.enc.in_layers.10.weight_v', 'enc_q.enc.in_layers.11.bias', 'enc_q.enc.in_layers.11.weight_g', 'enc_q.enc.in_layers.11.weight_v', 'enc_q.enc.in_layers.12.bias', 'enc_q.enc.in_layers.12.weight_g', 'enc_q.enc.in_layers.12.weight_v', 'enc_q.enc.in_layers.13.bias', 'enc_q.enc.in_layers.13.weight_g', 'enc_q.enc.in_layers.13.weight_v', 'enc_q.enc.in_layers.14.bias', 'enc_q.enc.in_layers.14.weight_g', 'enc_q.enc.in_layers.14.weight_v', 'enc_q.enc.in_layers.15.bias', 'enc_q.enc.in_layers.15.weight_g', 'enc_q.enc.in_layers.15.weight_v', 'enc_q.enc.res_skip_layers.0.bias', 'enc_q.enc.res_skip_layers.0.weight_g', 'enc_q.enc.res_skip_layers.0.weight_v', 'enc_q.enc.res_skip_layers.1.bias', 'enc_q.enc.res_skip_layers.1.weight_g', 'enc_q.enc.res_skip_layers.1.weight_v', 'enc_q.enc.res_skip_layers.2.bias', 'enc_q.enc.res_skip_layers.2.weight_g', 'enc_q.enc.res_skip_layers.2.weight_v', 'enc_q.enc.res_skip_layers.3.bias', 'enc_q.enc.res_skip_layers.3.weight_g', 'enc_q.enc.res_skip_layers.3.weight_v', 'enc_q.enc.res_skip_layers.4.bias', 'enc_q.enc.res_skip_layers.4.weight_g', 'enc_q.enc.res_skip_layers.4.weight_v', 'enc_q.enc.res_skip_layers.5.bias', 'enc_q.enc.res_skip_layers.5.weight_g', 'enc_q.enc.res_skip_layers.5.weight_v', 'enc_q.enc.res_skip_layers.6.bias', 'enc_q.enc.res_skip_layers.6.weight_g', 'enc_q.enc.res_skip_layers.6.weight_v', 'enc_q.enc.res_skip_layers.7.bias', 'enc_q.enc.res_skip_layers.7.weight_g', 'enc_q.enc.res_skip_layers.7.weight_v', 'enc_q.enc.res_skip_layers.8.bias', 'enc_q.enc.res_skip_layers.8.weight_g', 'enc_q.enc.res_skip_layers.8.weight_v', 'enc_q.enc.res_skip_layers.9.bias', 'enc_q.enc.res_skip_layers.9.weight_g', 'enc_q.enc.res_skip_layers.9.weight_v', 'enc_q.enc.res_skip_layers.10.bias', 'enc_q.enc.res_skip_layers.10.weight_g', 'enc_q.enc.res_skip_layers.10.weight_v', 'enc_q.enc.res_skip_layers.11.bias', 'enc_q.enc.res_skip_layers.11.weight_g', 'enc_q.enc.res_skip_layers.11.weight_v', 'enc_q.enc.res_skip_layers.12.bias', 'enc_q.enc.res_skip_layers.12.weight_g', 'enc_q.enc.res_skip_layers.12.weight_v', 'enc_q.enc.res_skip_layers.13.bias', 'enc_q.enc.res_skip_layers.13.weight_g', 'enc_q.enc.res_skip_layers.13.weight_v', 'enc_q.enc.res_skip_layers.14.bias', 'enc_q.enc.res_skip_layers.14.weight_g', 'enc_q.enc.res_skip_layers.14.weight_v', 'enc_q.enc.res_skip_layers.15.bias', 'enc_q.enc.res_skip_layers.15.weight_g', 'enc_q.enc.res_skip_layers.15.weight_v', 'enc_q.enc.cond_layer.bias', 'enc_q.enc.cond_layer.weight_g', 'enc_q.enc.cond_layer.weight_v', 'enc_q.proj.weight', 'enc_q.proj.bias'], unexpected_keys=[])
+Loading BERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from /gsv/GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 1235
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。学长，早上好！今天能一起回家吗？
+Actual Input Target Text (after sentence segmentation):
+['学长，早上好！', '今天能一起回家吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 29.36it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长,早上好!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.52it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.73it/s]
+[1A  2%|▏         | 37/1500 [00:00<00:10, 145.94it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.81it/s]
+Processed text from the frontend (per sentence): ['今天能一起回家吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 144.27it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 148.18it/s]  2%|▏         | 33/1500 [00:00<00:10, 143.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.32it/s]
+0.136   0.069   0.674   0.096
+Set seed to 1236
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+昨天晚上，我在车站前的书店买了三本新小说。
+Actual Input Target Text (after sentence segmentation):
+['昨天晚上，', '我在车站前的书店买了三本新小说。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 29.21it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['昨天晚上,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.67it/s]  2%|▏         | 26/1500 [00:00<00:10, 136.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.11it/s]
+Processed text from the frontend (per sentence): ['我在车站前的书店买了三本新小说.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.42it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 140.93it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 140.53it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:10, 139.95it/s]
+[1A  5%|▍         | 71/1500 [00:00<00:10, 138.17it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.87it/s]
+0.000   0.069   0.898   0.096
+Set seed to 1237
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+下周五下午三点，请到学生会室集合。
+Actual Input Target Text (after sentence segmentation):
+['下周五下午三点，', '请到学生会室集合。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 32.95it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['下周五下午三点,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.54it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 148.96it/s]  2%|▏         | 37/1500 [00:00<00:10, 145.30it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.49it/s]
+Processed text from the frontend (per sentence): ['请到学生会室集合.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:09, 148.83it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 149.23it/s]  2%|▏         | 37/1500 [00:00<00:10, 145.08it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.97it/s]
+0.000   0.061   0.699   0.093
+Set seed to 1238
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+今天风很大，出门最好穿上外套哦。
+Actual Input Target Text (after sentence segmentation):
+['今天风很大，', '出门最好穿上外套哦。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 32.60it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天风很大,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.98it/s]  2%|▏         | 25/1500 [00:00<00:10, 141.23it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.64it/s]
+Processed text from the frontend (per sentence): ['出门最好穿上外套哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.14it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.85it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 147.38it/s]  3%|▎         | 45/1500 [00:00<00:10, 144.20it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.91it/s]
+0.000   0.062   0.678   0.092
+Set seed to 1239
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。嘿嘿，学长你看，头发又翘起来了。
+Actual Input Target Text (after sentence segmentation):
+['嘿嘿，学长你看，', '头发又翘起来了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 26.80it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['嘿嘿,学长你看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 148.14it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 150.19it/s]  3%|▎         | 42/1500 [00:00<00:10, 145.78it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.39it/s]
+Processed text from the frontend (per sentence): ['头发又翘起来了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:09, 149.82it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 151.35it/s]  2%|▏         | 36/1500 [00:00<00:09, 147.23it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.20it/s]
+0.000   0.075   0.721   0.092
+Set seed to 1240
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+约好了哦。明天早上七点半，我在老地方等你。
+Actual Input Target Text (after sentence segmentation):
+['约好了哦。', '明天早上七点半，', '我在老地方等你。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 32.36it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['约好了哦.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.57it/s]  1%|          | 17/1500 [00:00<00:10, 139.79it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.53it/s]
+Processed text from the frontend (per sentence): ['明天早上七点半,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.34it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.69it/s]  2%|▏         | 34/1500 [00:00<00:10, 144.39it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.81it/s]
+Processed text from the frontend (per sentence): ['我在老地方等你.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.16it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.27it/s]  2%|▏         | 31/1500 [00:00<00:10, 143.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.91it/s]
+0.000   0.094   0.854   0.139
+Set seed to 1241
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这家店的蛋糕特别好吃，我们排队的时候，前面还有二十多个人呢。
+Actual Input Target Text (after sentence segmentation):
+['这家店的蛋糕特别好吃，', '我们排队的时候，', '前面还有二十多个人呢。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 29.92it/s]100%|██████████| 3/3 [00:00<00:00, 29.86it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['我们排队的时候,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.77it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.10it/s]  2%|▏         | 32/1500 [00:00<00:10, 137.76it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.90it/s]
+Processed text from the frontend (per sentence): ['这家店的蛋糕特别好吃,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.76it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 140.57it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 140.56it/s]  3%|▎         | 50/1500 [00:00<00:10, 137.75it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.33it/s]
+Processed text from the frontend (per sentence): ['前面还有二十多个人呢.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.16it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.58it/s]  3%|▎         | 40/1500 [00:00<00:10, 138.54it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.35it/s]
+0.000   0.101   1.180   0.142
+Set seed to 1242
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+学长总是说没关系，可是我知道，你其实一直都很在意。
+Actual Input Target Text (after sentence segmentation):
+['学长总是说没关系，', '可是我知道，', '你其实一直都很在意。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 32.40it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['可是我知道,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.98it/s]  2%|▏         | 26/1500 [00:00<00:10, 139.91it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.55it/s]
+Processed text from the frontend (per sentence): ['学长总是说没关系,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.94it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 147.19it/s]  3%|▎         | 44/1500 [00:00<00:10, 142.13it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.82it/s]
+Processed text from the frontend (per sentence): ['你其实一直都很在意.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 142.65it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 145.53it/s]  3%|▎         | 39/1500 [00:00<00:10, 141.56it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.67it/s]
+0.000   0.094   1.058   0.139
+Set seed to 1243
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+图书馆的空调好像坏了，里面又闷又热，根本没办法好好学习。
+Actual Input Target Text (after sentence segmentation):
+['图书馆的空调好像坏了，', '里面又闷又热，', '根本没办法好好学习。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 30.05it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['里面又闷又热,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.21it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 140.87it/s]  2%|▏         | 32/1500 [00:00<00:10, 136.94it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.01it/s]
+Processed text from the frontend (per sentence): ['根本没办法好好学习.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.61it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.65it/s]  3%|▎         | 42/1500 [00:00<00:10, 138.80it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.37it/s]
+Processed text from the frontend (per sentence): ['图书馆的空调好像坏了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 141.30it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 142.60it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:10, 141.59it/s]  3%|▎         | 51/1500 [00:00<00:10, 138.68it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.50it/s]
+0.000   0.101   1.194   0.142
+Set seed to 1244
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。哇，下雪了！学长快看，整个操场都变成白色的了。
+Actual Input Target Text (after sentence segmentation):
+['哇，下雪了！', '学长快看，', '整个操场都变成白色的了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 27.98it/s]100%|██████████| 3/3 [00:00<00:00, 27.92it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['学长快看,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.54it/s]  1%|▏         | 22/1500 [00:00<00:10, 139.34it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.99it/s]
+Processed text from the frontend (per sentence): ['哇,下雪了!']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.83it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.59it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 147.79it/s]  3%|▎         | 46/1500 [00:00<00:10, 144.20it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.24it/s]
+Processed text from the frontend (per sentence): ['整个操场都变成白色的了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.58it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.11it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 147.19it/s]  4%|▍         | 59/1500 [00:00<00:10, 144.02it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.18it/s]
+0.000   0.108   1.169   0.141
+Set seed to 1245
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+如果明天不下雨的话，我们去海边散步吧，好不好？
+Actual Input Target Text (after sentence segmentation):
+['如果明天不下雨的话，', '我们去海边散步吧，好不好？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 24.34it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['如果明天不下雨的话,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.48it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.04it/s]  3%|▎         | 42/1500 [00:00<00:10, 144.28it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.43it/s]
+Processed text from the frontend (per sentence): ['我们去海边散步吧,好不好?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.83it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 148.94it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.10it/s]  3%|▎         | 49/1500 [00:00<00:10, 145.03it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.80it/s]
+0.000   0.083   0.824   0.093
+Set seed to 1246
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+二零二六年十月二十二日，今天的气温是十八度。
+Actual Input Target Text (after sentence segmentation):
+['二零二六年十月二十二日，', '今天的气温是十八度。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 28.88it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['今天的气温是十八度.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.20it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.20it/s]  3%|▎         | 42/1500 [00:00<00:10, 144.39it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.38it/s]
+Processed text from the frontend (per sentence): ['二零二六年十月二十二日,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 148.09it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.28it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 147.97it/s]  4%|▎         | 55/1500 [00:00<00:09, 145.13it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.80it/s]
+0.000   0.070   0.861   0.095
+Set seed to 1247
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。对不起，让你久等了。路上的车太多，公交车一直没来。
+Actual Input Target Text (after sentence segmentation):
+['对不起，让你久等了。', '路上的车太多，', '公交车一直没来。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 33.20it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['路上的车太多,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.30it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.06it/s]  2%|▏         | 31/1500 [00:00<00:10, 141.57it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.08it/s]
+Processed text from the frontend (per sentence): ['公交车一直没来.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:09, 149.14it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 150.79it/s]  2%|▏         | 36/1500 [00:00<00:09, 146.69it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22.15it/s]
+Processed text from the frontend (per sentence): ['对不起,让你久等了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.66it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:09, 148.94it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 148.49it/s]  3%|▎         | 48/1500 [00:00<00:09, 145.22it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.54it/s]
+0.000   0.091   1.078   0.140
+Set seed to 1248
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+这个问题我想了很久，还是觉得应该先跟大家商量一下。
+Actual Input Target Text (after sentence segmentation):
+['这个问题我想了很久，', '还是觉得应该先跟大家商量一下。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 28.31it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['这个问题我想了很久,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.30it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.91it/s]  3%|▎         | 44/1500 [00:00<00:10, 143.40it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]
+[1A100%|██████████| 1/1 [00:00<00:00, 21.46it/s]
+Processed text from the frontend (per sentence): ['还是觉得应该先跟大家商量一下.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 145.40it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.63it/s]
+[1A  3%|▎         | 45/1500 [00:00<00:09, 145.52it/s]
+[1A  4%|▍         | 60/1500 [00:00<00:09, 144.18it/s]  4%|▍         | 67/1500 [00:00<00:10, 141.74it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.12it/s]
+0.000   0.071   0.969   0.095
+Set seed to 1249
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。呜…我的作业忘在教室里了，现在回去拿还来得及吗？
+Actual Input Target Text (after sentence segmentation):
+['呜…我的作业忘在教室里了，', '现在回去拿还来得及吗？']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 27.78it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['现在回去拿还来得及吗?']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 147.73it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.20it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.24it/s]  3%|▎         | 46/1500 [00:00<00:10, 145.10it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.67it/s]
+Processed text from the frontend (per sentence): ['呜…我的作业忘在教室里了,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:09, 148.55it/s]
+[1A  2%|▏         | 31/1500 [00:00<00:09, 149.47it/s]
+[1A  3%|▎         | 46/1500 [00:00<00:09, 148.30it/s]
+[1A  4%|▍         | 61/1500 [00:00<00:09, 147.23it/s]
+[1A  5%|▌         | 76/1500 [00:00<00:09, 146.73it/s]
+[1A  6%|▌         | 91/1500 [00:00<00:09, 146.41it/s]  6%|▌         | 92/1500 [00:00<00:09, 145.51it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.88it/s]
+0.000   0.073   1.138   0.092
+Set seed to 1250
+串行推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: 对不起，让你久等了。路上的车太多，公交车一直没来。
+############ Segment Text ############
+Actual Input Target Text:
+。谢谢你，学长。有你在身边，我就什么都不怕了。
+Actual Input Target Text (after sentence segmentation):
+['谢谢你，学长。', '有你在身边，', '我就什么都不怕了。']
+############ Extract Text BERT Features ############
+
+[1A  0%|          | 0/3 [00:00<?, ?it/s]
+[1A100%|██████████| 3/3 [00:00<00:00, 30.45it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['有你在身边,']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 140.21it/s]  2%|▏         | 26/1500 [00:00<00:10, 135.71it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20.74it/s]
+Processed text from the frontend (per sentence): ['谢谢你,学长.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 139.89it/s]  2%|▏         | 27/1500 [00:00<00:10, 135.89it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.32it/s]
+Processed text from the frontend (per sentence): ['我就什么都不怕了.']
+############ Predict Semantic Token ############
+
+[1A  0%|          | 0/1500 [00:00<?, ?it/s]
+[1A  1%|          | 15/1500 [00:00<00:10, 146.27it/s]
+[1A  2%|▏         | 30/1500 [00:00<00:10, 146.70it/s]  2%|▏         | 33/1500 [00:00<00:10, 141.91it/s]
+############ Synthesize Audio ############
+
+[1A  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.26it/s]
+0.000   0.099   0.914   0.143
+rendered zh full_s2e10_s1base_t7k3_aux3_zhref13
+16 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_zhref13
+16 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1e6_t7k3_aux3_zhref13
+16 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1base_t7k3_zhref13
+16 files -> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\samples\full_s2e10_s1base_t7k3_aux3_zhref13
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ricori/main/ap-bBHCi40NRnH1YN7PrdMpzc

@@ -54,9 +54,15 @@ S1_EPOCHS, S1_SAVE_EVERY = 15, 3
 # (10, 6, 03004690, LOW + speed 0.9) and (10, 6, 03004690, LOW + aux 03005670, 03002830).
 LOW = {"temperature": 0.7, "top_k": 3}
 AUX2 = ["03005670", "03002830"]
-# Round 5: ja rendered only the aux2 + speed 0.9 stack; zh (16 sentences) rendered all three as the baseline for zh_vc.py.
-COMBOS = [(10, 6, REF, {}), (10, 6, "03004690", {**LOW, "speed_factor": 0.9}),
-          (10, 6, "03004690", {**LOW, "speed_factor": 0.9, "aux": AUX2})]
+# Round 5: ja rendered only the aux2 + speed 0.9 stack; zh (16 sentences) rendered (10, 6, REF, {}) and
+# (10, 6, 03004690, LOW + speed 0.9, with and without aux2) as the baseline for zh_vc.py.
+# Japanese default (README 5.4): (10, 6, "03004690", {**LOW, "aux": AUX2}).
+# A reference can also be "zh:<folder>/<NN>": clip NN of out/zh/samples/<folder> (a Chinese line converted to her voice
+# by zh_vc.py), used with its Chinese text and prompt_lang zh; the folder name gets _zhref<NN>.
+AUX3 = ["03004690", "03005670", "03002830"]
+ZHREF = "zh:vc_ft1000_ref4690/13"
+COMBOS = [(10, 6, ZHREF, LOW), (10, 6, ZHREF, {**LOW, "aux": AUX3}),
+          (10, 0, ZHREF, LOW), (10, 0, ZHREF, {**LOW, "aux": AUX3})]
 
 
 def _combo_name(prefix, e2, e1, ref, params):
@@ -67,11 +73,19 @@ def _combo_name(prefix, e2, e1, ref, params):
         name += f"_sp{round(params['speed_factor'] * 10)}"
     if params.get("aux"):
         name += f"_aux{len(params['aux'])}"
+    if ref.startswith("zh:"):
+        return name + f"_zhref{ref[-2:]}"
     return name + ("" if ref == REF else f"_ref{ref[-4:]}")
+
+
+def _ref_file(rid):  # "zh:<folder>/<NN>" -> a file name without separators
+    return "ref_" + rid.replace(":", "_").replace("/", "_") + ".wav"
 
 
 def _clip_ids():
     return {c[2] for c in COMBOS} | {a for c in COMBOS for a in c[3].get("aux", [])}
+
+
 XXXXRT = "https://huggingface.co/XXXXRT/GPT-SoVITS-Pretrained/resolve/main"
 SMOKE = f"""
 import sys; sys.path.insert(0, 'GPT_SoVITS')
@@ -226,7 +240,7 @@ for combo in job["combos"]:
         os.makedirs(out, exist_ok=True)
         for i, text in enumerate(lines, 1):
             sr, audio = next(tts.run({"text": text, "text_lang": "all_" + lang, "ref_audio_path": combo["ref"],
-                                      "prompt_text": combo["ref_text"], "prompt_lang": "ja", "seed": 1234 + i,
+                                      "prompt_text": combo["ref_text"], "prompt_lang": combo["ref_lang"], "seed": 1234 + i,
                                       "text_split_method": "cut5", "batch_size": 1, "parallel_infer": False,
                                       "use_cuda_graph": False, "use_flash_attention": False, **combo["params"]}))
             sf.write(os.path.join(out, f"{i:02d}.wav"), audio, sr)
@@ -245,7 +259,7 @@ def _render(refs, sets, exp, prefix):
 
     for rid, (ogg, _) in refs.items():
         audio, sr = sf.read(io.BytesIO(ogg), dtype="float32")
-        sf.write(f"{VOL}/data/ref_{rid}.wav", audio, sr)
+        sf.write(f"{VOL}/data/{_ref_file(rid)}", audio, sr)
     combos = []
     for e2, e1, rid, params in COMBOS:
         s2 = sorted(glob.glob(f"{SOVITS_DIR}/{exp}_e{e2}_s*.pth"))
@@ -255,7 +269,8 @@ def _render(refs, sets, exp, prefix):
         if params.get("aux"):
             run_params["aux_ref_audio_paths"] = [f"{VOL}/data/ref_{a}.wav" for a in params["aux"]]
         combos.append({"name": _combo_name(prefix, e2, e1, rid, params), "s2": s2[-1], "s1": s1,
-                       "ref": f"{VOL}/data/ref_{rid}.wav", "ref_text": refs[rid][1], "params": run_params})
+                       "ref": f"{VOL}/data/{_ref_file(rid)}", "ref_text": refs[rid][1],
+                       "ref_lang": "zh" if rid.startswith("zh:") else "ja", "params": run_params})
     out = f"{VOL}/render"
     shutil.rmtree(out, ignore_errors=True)
     job = {"version": VERSION, "combos": combos, "sets": sets, "out": out,
@@ -295,7 +310,11 @@ def _inputs(here, dataset_name):
              for fn, _, _, text in esd]
     read = lambda f: [l.strip() for l in (here / f).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     sets = {"ja": [_names(t) for t in read("test_sentences.txt")], "zh": read("zh_sentences.txt")}
-    refs = {s: (b, t) for s, b, t in clips if s in _clip_ids()}  # reference clips must be in the dataset
+    refs = {s: (b, t) for s, b, t in clips if s in _clip_ids()}  # Japanese reference clips must be in the dataset
+    for rid in (r for r in _clip_ids() if r.startswith("zh:")):
+        folder, nn = rid[3:].split("/")
+        d = here / "out" / "zh" / "samples" / folder
+        refs[rid] = ((d / f"{nn}.wav").read_bytes(), (d / "sentences.txt").read_text(encoding="utf-8").splitlines()[int(nn) - 1])
     return clips, sets, refs
 
 
