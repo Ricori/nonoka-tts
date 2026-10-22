@@ -18,6 +18,6 @@
 ├── 🔨 Created web function tts => 
 │   https://ricori--nonoka-tts-serve-tts.us-east.modal.run
 └── 🔨 Created function TTSWorker.*.
-✓ App deployed in 4.549s! 🎉
+✓ App deployed in 4.465s! 🎉
 
 View Deployment: https://modal.com/apps/ricori/main/deployed/nonoka-tts-serve

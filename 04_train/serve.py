@@ -14,7 +14,7 @@ Chinese line) + aux 03004690, 03005670, 03002830; temperature 0.7, top_k 3, cut5
 Cost layout (README 6.4):
 - `tts` is the web endpoint on a small CPU container: it checks the parameters and calls the GPU worker, so a bad
   request never starts a GPU.
-- `TTSWorker` is the GPU (L4, or A10G when L4 capacity runs out; one container at most). It shuts down SCALEDOWN
+- `TTSWorker` is the GPU (L4 only, so only one GPU type needs snapshots; one container at most). It shuts down SCALEDOWN
   seconds after the last request so the GPU never idles. Its cold start is cut by a memory snapshot taken after the
   models are loaded on the GPU and warmed up (GPU snapshots are alpha on Modal): restores skip the imports, the
   weight loading and the first-inference warmup. The two languages share one TTS (BERT, HuBERT, SoVITS, SV) and only
@@ -55,7 +55,7 @@ web_image = (modal.Image.debian_slim(python_version="3.11").pip_install("fastapi
 app = modal.App("nonoka-tts-serve")
 
 
-@app.cls(image=gpu_image, gpu=["L4", "A10G"], cpu=2, memory=8192, volumes={VOL: vol}, timeout=600,
+@app.cls(image=gpu_image, gpu="L4", cpu=2, memory=8192, volumes={VOL: vol}, timeout=600,
          scaledown_window=SCALEDOWN, max_containers=1, enable_memory_snapshot=True, experimental_options={"enable_gpu_snapshot": True})
 class TTSWorker:
     @modal.enter(snap=True)
