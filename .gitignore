@@ -21,3 +21,6 @@ __pycache__/
 
 # Song tests: copyrighted source audio and stems (README 6.5)
 04_train/out/sing/
+
+# test data
+test_data/
