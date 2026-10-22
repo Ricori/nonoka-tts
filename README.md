@@ -12,7 +12,7 @@
 - 理由：SBV2 JP-Extra 只能说日语，零样本模型的音色不够像。GPT-SoVITS 是唯一一个音色像、又能说中文的方案。日语朗读的稳定性目前还不如 SBV2，要靠全量数据和调参来补。
 - 第一轮（SBV2、零样本对照、评测方法的摸索）的完整记录、数据和脚本都在 `99_archive/2026-10-22_round1/`，说明见其中的 `README_round1.md`。
 - **当前状态（2026-10-22）**：SoVITS 两种语言共用 `nonoka_full` e10。**GPT 按语言分开**：日语用 `nonoka_full` e6，默认 `aux2_ref4690`（5.4）；中文用 `nonoka_mix` e2（日语原声 + 合成中文一起训练的 GPT，5.8），默认 `aux3_zr04`，即一条转换后的、不在测试句里的中文当参考音频，再融合 3 条日语原声（5.7）。
-- **下次从这里继续**：6.2 方法 3 已做完（5.8），中文小幅提升，日语继续用原来的 GPT。下一步是推理部署：**2026-10-22 决定不做本地推理，改为云端推理**。Modal 上已经有一个试用网页（6.4），正式方案到时再定。部署内容是一个 SoVITS、两个 GPT，按语言切换 GPT 权重和参考音频。
+- **下次从这里继续**：6.2 方法 3 已做完（5.8），中文小幅提升，日语继续用原来的 GPT。下一步是推理部署：**2026-10-22 决定不做本地推理，改为云端推理**。Modal 上已经有一个试用接口（6.4），正式方案到时再定。部署内容是一个 SoVITS、两个 GPT，按语言切换 GPT 权重和参考音频。
 
 ---
 
@@ -52,7 +52,7 @@ nonoka-tts/
 │  ├─ train_gptsovits.py
 │  ├─ test_sentences.txt   日语测试句（可以改）
 │  ├─ zh_sentences.txt     中文测试句（可以改）
-│  ├─ serve.py             云端推理试用页（Modal，见 6.4）
+│  ├─ serve.py             云端推理试用接口（Modal，见 6.4）
 │  ├─ zh_vc.py             中文可行性验证：Qwen3-TTS 中文 → Seed-VC 微调并转换音色（见 5.5）；`::refs_main` 生成中文参考音频候选（见 5.7）
 │  ├─ make_blind.py        结果页生成脚本（模板 blind_tpl.html）
 │  ├─ gemini_judge.py      让 Antigravity 的 Gemini 3.8 Flash 盲评试听
@@ -444,10 +444,12 @@ Gemini 用 low 档完整跑了 2 轮 × 10 句（20/20 次调用）。之前 hig
   - GPT：日语用 `nonoka_full` e6，中文用 `nonoka_mix` e2，按语言切换。
   - 参考音频：日语主参考 03004690 + aux 03005670、03002830；中文主参考 `out/zh_refs/samples/vc_ft1000_ref4690/04.wav`（`prompt_lang` zh）+ aux 03004690、03005670、03002830。
   - 采样：temperature 0.7、top_k 3，`all_ja` / `all_zh`，cut5。
-- **试用版已部署（2026-10-23）**：`04_train/serve.py`，Modal 应用 `nonoka-tts-serve`，网页 <接口地址> 。输入文字、选日语或中文，可调语速和种子（-1 随机），生成的音频列在下面。
-  - 用上面的默认设置；L4 GPU，最多 1 个容器，5 分钟没有请求就停机（不收费）。冷启动约 1 分钟以内（实测连生成 11 秒），之后一句几秒。一次最多 300 字。
-  - 部署/更新：`cd 04_train`，`python -m modal deploy serve.py`；下线：`python -m modal app stop nonoka-tts-serve`。不开网页的冒烟测试：`python -m modal run serve.py --lang zh --text 学长，早上好！`。
+- **试用接口已部署（2026-10-23）**：`04_train/serve.py`，Modal 应用 `nonoka-tts-serve`，只有一个 GET 接口，返回 WAV，浏览器直接打开就能播放：
+  `<接口地址>?text=学长，早上好！&lang=zh`（参数：`text` 最多 300 字，`lang` ja/zh，可选 `speed` 0.6–1.5、`seed`，-1 为随机；实际用的种子在响应头 `x-seed` 里）。
+  - 用上面的默认设置；最多 1 个 GPU 容器（L4，没货时用 A10G）。**scaledown 5 秒**：请求结束 5 秒就停机，GPU 不空转，代价是几乎每次请求都是冷启动（实测 50 秒左右，L4 排队时会更久）；连续请求时第二句起只要几秒。
+  - 部署/更新：`cd 04_train`，`python -m modal deploy serve.py`；下线：`python -m modal app stop nonoka-tts-serve`。
   - **网址是公开的**，拿到网址的人都能生成音频（会消耗 GPU 时间）。不用时可以下线。
+  - 坑：Git Bash 里用 curl 传中日文参数会被转错码，生成的内容不对；用浏览器或 Python 的 urlencode 就正常。
   - 正式方案（平台、API 形式、鉴权）到时再定，可以从 `serve.py` 改起。
 - 本机 RTX 3070 继续用来跑转写、CER、客观指标这些评测工具（`03_asr/`）。
 
@@ -471,7 +473,7 @@ Gemini 用 low 档完整跑了 2 轮 × 10 句（20/20 次调用）。之前 hig
 - [x] 中文参考音频（5.6）：转换后的中文当参考 + aux3 日语原声，Gemini 4.26、CER 2.3%、音色 0.803，目前中文最好
 - [x] 中文参考音频换成不在测试句里的 zr04（5.7）：CER 2.1%、音色 0.811，确认 5.6 的效果；aux5 音色 0.819
 - [x] 中文 6.2 方法 3（5.8）：合成中文 475 条 + 日语原声训练 GPT（`nonoka_mix`），中文 e2 小幅提升（Gemini 4.05、CER 1.4%），日语继续用 `nonoka_full` e6
-- [x] 云端推理试用页（Modal，`serve.py`，见 6.4）
+- [x] 云端推理试用接口（Modal，`serve.py`，一个 GET 接口，见 6.4）
 - [ ] 云端推理正式方案（平台、形式待定；2026-10-22 决定不做本地推理）
 
 ## 8. 注意事项
