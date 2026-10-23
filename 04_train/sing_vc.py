@@ -39,9 +39,9 @@ GPUS = ["L4", "A10G", "L40S"]
 SCALEDOWN = 3  # s: a container stops 3 s after its last call (default 60) - each function is called once per run
 VOCAL_BOOST_DB = 3.0  # lead over the original's level in the mix: the instrumental stem keeps some vocal bleed
 # KTV effect on the lead: repeating echo, then a stereo hall reverb on a send
-KTV_ECHO_MS, KTV_ECHO_DECAYS = 200, (0.3, 0.15, 0.07)
-REVERB_RT60 = 1.8  # s
-REVERB_WET_DB = -9.0  # reverb send level against the dry lead
+KTV_ECHO_MS, KTV_ECHO_DECAYS = 200, (0.18, 0.07)
+REVERB_RT60 = 1.3  # s
+REVERB_WET_DB = -15.0  # reverb send level against the dry lead; -9 was too wet
 HER_F0 = 320  # Hz, median pitch of 51 of her 030 clips (pyin, README 5.9)
 # references: the GPT-SoVITS reference clips (README 5.2/5.3)
 REFS = {
