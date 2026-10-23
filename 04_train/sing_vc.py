@@ -6,7 +6,7 @@ Song cover in her voice (README 5.9): convert a song's lead vocal to her timbre 
   python -m modal run sing_vc.py::main --song <audio> --start 60 --length 30 (preview a slice)
   python -m modal run sing_vc.py::main --song <audio> --shift 12             (override the key shift, semitones)
   python -m modal run sing_vc.py::main --song <audio> --length -1            (stems + pitch only, no conversion)
-  python -m modal run sing_vc.py::remix --folder out/sing/<song>/<run> --boost 5   (redo the mix only, local)
+  python -m modal run sing_vc.py::remix --folder out/sing/<song>/<run> --boost 5 --wet -6   (redo the mix only, local)
 
 1. Stems (audio-separator): BS-Roformer splits vocals / instrumental, the Mel-Roformer karaoke model splits the
    vocals into lead / backing, the Mel-Roformer dereverb model dries the lead. Cached under out/sing/<song>/stems/,
@@ -18,7 +18,7 @@ Song cover in her voice (README 5.9): convert a song's lead vocal to her timbre 
 3. Timbre: Seed-VC v1 singing model (whisper-small content, RMVPE F0, 44.1 kHz BigVGAN), zero-shot. Each reference
    in --refs (keys of REFS) gives one version; refcat (three clips joined) clearly beat a single clip.
 4. Mix: converted lead + backing + instrumental, lead matched to the original lead's loudness + VOCAL_BOOST_DB,
-   light reverb, peak-limited.
+   KTV-style echo + hall reverb on the lead (REVERB_WET_DB), peak-limited.
 Output: out/sing/<song>/<full|START s_LENGTH s>_k<shift>/<ref>_mix.mp3 (+ wavs of every part).
 Song audio is not committed (out/sing/ is in .gitignore).
 """
@@ -38,6 +38,10 @@ DIFFUSION_STEPS = 50  # README: 30-50; singing gets the top of the range
 GPUS = ["L4", "A10G", "L40S"]
 SCALEDOWN = 3  # s: a container stops 3 s after its last call (default 60) - each function is called once per run
 VOCAL_BOOST_DB = 3.0  # lead over the original's level in the mix: the instrumental stem keeps some vocal bleed
+# KTV effect on the lead: repeating echo, then a stereo hall reverb on a send
+KTV_ECHO_MS, KTV_ECHO_DECAYS = 200, (0.3, 0.15, 0.07)
+REVERB_RT60 = 1.8  # s
+REVERB_WET_DB = -9.0  # reverb send level against the dry lead
 HER_F0 = 320  # Hz, median pitch of 51 of her 030 clips (pyin, README 5.9)
 # references: the GPT-SoVITS reference clips (README 5.2/5.3)
 REFS = {
@@ -171,24 +175,51 @@ def _lufs(path):
     return float(re.findall(r"I:\s+(-?[\d.]+) LUFS", log)[-1])
 
 
-def _mix(lead, original, backing, instrumental, out, boost=VOCAL_BOOST_DB):
+def _reverb_ir(path, sr=44100, rt60=REVERB_RT60, seed=0):
+    """Synthetic hall impulse response (stereo, unit energy per channel): 25 ms pre-delay, sparse early
+    reflections, then decaying noise whose highs die ~2.5x faster than the lows."""
+    import numpy as np
+    import soundfile as sf
+
+    rng = np.random.default_rng(seed)
+    pre, n = int(0.025 * sr), int(rt60 * sr)
+    t = np.arange(n) / sr
+    ir = np.zeros((pre + n, 2), np.float32)
+    for ch in range(2):  # independent noise per channel = width
+        noise = rng.standard_normal(n)
+        low = np.convolve(noise, np.ones(6) / 6, "same")
+        tail = low * np.exp(-6.91 * t / rt60) + (noise - low) * np.exp(-6.91 * t / (rt60 * 0.4))
+        taps = rng.integers(int(0.005 * sr), int(0.08 * sr), 8)
+        tail[taps] += rng.uniform(0.3, 0.8, 8) * rng.choice([-1, 1], 8) * np.abs(tail[:sr // 100]).max()
+        ir[pre:, ch] = tail / np.sqrt(np.sum(tail ** 2))
+    sf.write(str(path), ir, sr)
+
+
+def _mix(lead, original, backing, instrumental, out, boost=VOCAL_BOOST_DB, wet=REVERB_WET_DB):
     """Converted lead (mono) centred over backing + instrumental, peak-limited; writes out (.wav) and an .mp3 next to it.
     The lead is first matched to the original lead's loudness (Seed-VC comes out ~5 dB quieter), then raised by
-    `boost` dB; light reverb on top."""
+    `boost` dB; KTV echo + reverb (`wet` dB send) on top."""
     gain = _lufs(original) - _lufs(lead) + boost
-    print(f"lead gain {gain:+.1f} dB", flush=True)
+    print(f"lead gain {gain:+.1f} dB, reverb {wet:+.1f} dB", flush=True)
+    ir = out.with_name("_reverb_ir.wav")
+    _reverb_ir(ir)
+    delays = "|".join(str(KTV_ECHO_MS * (i + 1)) for i in range(len(KTV_ECHO_DECAYS)))
+    decays = "|".join(str(d) for d in KTV_ECHO_DECAYS)
     _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(lead), "-i", str(backing), "-i", str(instrumental),
-          "-filter_complex",
-          f"[0:a]aresample=44100,volume={gain:.2f}dB,pan=stereo|c0=c0|c1=c0,aecho=1.0:1.0:60|120:0.2|0.1[l];"
+          "-i", str(ir), "-filter_complex",
+          f"[0:a]aresample=44100,volume={gain:.2f}dB,aecho=1.0:1.0:{delays}:{decays},"
+          "pan=stereo|c0=c0|c1=c0,asplit[dry][send];"
+          f"[send]highpass=f=250,lowpass=f=7000,apad=pad_dur={REVERB_RT60}[s];"
+          f"[s][3:a]afir=gtype=none:irnorm=-1,volume={wet:.2f}dB[wet];"
           "[1:a]aresample=44100[b];[2:a]aresample=44100[i];"
-          "[l][b][i]amix=inputs=3:duration=shortest:normalize=0,alimiter=limit=0.95[m]",
+          "[dry][wet][b][i]amix=inputs=4:duration=shortest:normalize=0,alimiter=limit=0.95[m]",
           "-map", "[m]", str(out)])
     _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(out), "-b:a", "256k", str(out.with_suffix(".mp3"))])
 
 
-def _mix_version(out_dir, version, boost=VOCAL_BOOST_DB):
+def _mix_version(out_dir, version, boost=VOCAL_BOOST_DB, wet=REVERB_WET_DB):
     _mix(out_dir / f"{version}.wav", out_dir / "_lead_dry.wav", out_dir / "_backing.wav", out_dir / "_instrumental.wav",
-         out_dir / f"{version}_mix.wav", boost)
+         out_dir / f"{version}_mix.wav", boost, wet)
 
 
 def _transpose(path, semitones):
@@ -261,10 +292,10 @@ def main(song: str, start: float = 0.0, length: float = 0.0, shift: str = "auto"
 
 
 @app.local_entrypoint()
-def remix(folder: str, boost: float = VOCAL_BOOST_DB):
-    """python -m modal run sing_vc.py::remix --folder out/sing/<song>/<run> [--boost 5]  (local only, no GPU)"""
+def remix(folder: str, boost: float = VOCAL_BOOST_DB, wet: float = REVERB_WET_DB):
+    """python -m modal run sing_vc.py::remix --folder out/sing/<song>/<run> [--boost 5] [--wet -6]  (local only, no GPU)"""
     out_dir = Path(folder).resolve()
     for lead in sorted(out_dir.glob("*.wav")):
         if not lead.name.startswith("_") and not lead.stem.endswith("_mix"):
-            _mix_version(out_dir, lead.stem, boost)
+            _mix_version(out_dir, lead.stem, boost, wet)
             print(f"DONE {out_dir / (lead.stem + '_mix.mp3')}", flush=True)
