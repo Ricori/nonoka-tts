@@ -1,6 +1,6 @@
-# nonoka TTS
+# Nonoka TTS
 
-「nonoka」的语音数据，微调 GPT-SoVITS，让她能说日语和中文。
+「Nonoka」的语音数据，让她能说日语和中文。
 
 ---
 
