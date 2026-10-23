@@ -11,7 +11,7 @@
 - 第一轮（SBV2、零样本对照、评测方法的摸索）的完整记录、数据和脚本都在 `99_archive/2026-10-22_round1/`，说明见其中的 `README_round1.md`。
 - **当前状态（2026-10-22）**：SoVITS 两种语言共用 `nonoka_full` e10。**GPT 按语言分开**：日语用 `nonoka_full` e6，默认 `aux2_ref4690`（5.4）；中文用 `nonoka_mix` e2（日语原声 + 合成中文一起训练的 GPT，5.8），默认 `aux3_zr04`，即一条转换后的、不在测试句里的中文当参考音频，再融合 3 条日语原声（5.7）。
 - **推理成本优化已完成（2026-10-23，6.4）**：API 放在 CPU 小容器，GPU 推理是单独的函数；GPU 内存快照；两种语言共用一套模型；GPU 容器 2 核 / 8192 MB、scaledown 12 秒；**GPU 用 T4，T4 没货时用 L4**（T4 实测速度、CER、音色相似度都不比 L4 差，整体便宜约 22%）。冷启动从约 25–29 秒降到快照恢复后约 10–20 秒，热请求 3–5 秒；同种子输出与旧版一致。结果缓存决定不做。
-- **外部项目调用接口**：看 `04_train/API.md`（参数、返回、错误、延迟、并发、Python/JS/curl 例子、费用、运维）。
+- **外部项目调用接口**：看本地的 `04_train/API.md`（参数、返回、错误、延迟、并发、Python/JS/curl 例子、费用、运维）。接口地址和密钥都在里面，**这份文件和 `serve*.py` 不进 git**（见 `.gitignore`）。
 - **项目状态：已完成（2026-10-23）**。云端推理就用现在的 Modal 接口（`serve.py`，POST + JSON，固定密钥鉴权，见 6.4），外部调用看 `API.md`。之后如果要换平台或改接口，从 `serve.py` 改起；6.1–6.3 里标了「可选」「可以试」的是可做可不做的改进。
 - 之前的进展：6.2 方法 3 已做完（5.8），中文小幅提升，日语继续用原来的 GPT。2026-10-22 决定不做本地推理，改为云端推理。部署内容是一个 SoVITS、两个 GPT，按语言切换 GPT 权重和参考音频。
 
@@ -54,10 +54,10 @@ nonoka-tts/
 │  ├─ train_gptsovits.py
 │  ├─ test_sentences.txt   日语测试句（可以改）
 │  ├─ zh_sentences.txt     中文测试句（可以改）
-│  ├─ serve.py             云端推理接口（Modal，见 6.4）
-│  ├─ API.md               给外部项目的接口调用说明
-│  ├─ serve_bench.py       试用接口的冷启动、热请求延迟测试 → out/serve_bench.csv（见 6.4）
-│  ├─ serve_render.py      用部署好的接口生成全部测试句（比较 GPU 卡型用）→ out/gpu_test/（见 6.4）
+│  ├─ serve.py             云端推理接口（Modal，见 6.4；含密钥，不进 git）
+│  ├─ API.md               给外部项目的接口调用说明（含地址和密钥，不进 git）
+│  ├─ serve_bench.py       试用接口的冷启动、热请求延迟测试 → out/serve_bench.csv（见 6.4；不进 git）
+│  ├─ serve_render.py      用部署好的接口生成全部测试句（比较 GPU 卡型用）→ out/gpu_test/（见 6.4；不进 git）
 │  ├─ 4_sing.bat           用她的声音翻唱一首歌：把歌曲文件拖到上面即可（见 5.9）
 │  ├─ sing_vc.py           翻唱流程：分离人声 → 判断变调 → Seed-VC 歌声模型零样本转成她的音色 → 混回伴奏（见 5.9）
 │  ├─ zh_vc.py             中文可行性验证：Qwen3-TTS 中文 → Seed-VC 微调并转换音色（见 5.5）；`::refs_main` 生成中文参考音频候选（见 5.7）
@@ -68,7 +68,7 @@ nonoka-tts/
 │     ├─ blind.html        日语结果页，另有 cer.csv、auto_eval.csv、gemini_judge.csv
 │     ├─ zh/               中文试听（samples/，16 句）、中文结果页（blind.html）和评测结果；zh/round2_full/、zh/round4_full/ 是之前的中文版本（6 句），zh/round5_vc/ 是 5.5 的版本，zh/round6_zhref/ 是 5.6 的其余版本，zh/round7_zr/ 是 5.7 的其余版本（16 句）
 │     ├─ sing/             唱歌测试的分轨和转换结果（歌曲有版权，不进 git，见 5.9）
-│     ├─ gpu_test/         L4 和 T4 的对比（6.4）：ja/、zh/ 下各有 samples/<卡>_s<种子>/、cer.csv、auto_eval.csv；render_timing.csv 是逐句耗时
+│     ├─ gpu_test/         L4 和 T4 的对比（6.4）：ja/、zh/ 下各有 samples/<卡>_s<种子>/、cer.csv、auto_eval.csv；render_timing.csv 是逐句耗时（不进 git）
 │     ├─ zh_refs/          中文参考音频候选（samples/vc_ft1000_ref4690/，8 条，不在测试句里）及其 CER、客观指标
 │     ├─ round4_full/      推理调参第二轮（5.3）的其余版本和评测结果
 │     ├─ round5_full/      日语最终设置对比（5.4）的其余版本和评测结果
@@ -495,10 +495,10 @@ GPT-SoVITS 不能唱歌：它的输入只有文本和参考音频，没有控制
   - 参考音频：日语主参考 03004690 + aux 03005670、03002830；中文主参考 `out/zh_refs/samples/vc_ft1000_ref4690/04.wav`（`prompt_lang` zh）+ aux 03004690、03005670、03002830。
   - 采样：temperature 0.7、top_k 3，`all_ja` / `all_zh`，cut5。
 - **接口已部署（2026-10-23）**（外部调用说明：`04_train/API.md`）：`04_train/serve.py`，Modal 应用 `nonoka-tts-serve`，只有一个 POST 接口，返回 WAV：
-  `POST <接口地址>`，JSON 请求体 `{"text": "学长，早上好！", "lang": "zh"}`（2026-10-23 从 GET 改为 POST；字段：`text` 最多 300 字，`lang` ja/zh，可选 `speed` 0.6–1.5、`seed`，-1 为随机；实际用的种子在响应头 `x-seed` 里，耗时在 `x-timing` 里：`total` 服务端总时间、`synth` 推理时间、`gpu` 卡型、`fresh=1` 表示这次是新容器即冷启动、`restored=1` 表示容器从快照恢复）。
-  - 网址 2026-10-23 换过一次（拆分后接口变成单独的函数）；旧网址 `...-ttsservice-tts...` 已经不能用。
+  `POST <接口地址>`（地址见本地 `API.md` 或 `modal deploy` 的输出），JSON 请求体 `{"text": "学长，早上好！", "lang": "zh"}`（2026-10-23 从 GET 改为 POST；字段：`text` 最多 300 字，`lang` ja/zh，可选 `speed` 0.6–1.5、`seed`，-1 为随机；实际用的种子在响应头 `x-seed` 里，耗时在 `x-timing` 里：`total` 服务端总时间、`synth` 推理时间、`gpu` 卡型、`fresh=1` 表示这次是新容器即冷启动、`restored=1` 表示容器从快照恢复）。
+  - 网址 2026-10-23 换过一次（拆分后接口变成单独的函数），旧网址已经不能用。
   - 部署/更新：`cd 04_train`，`python -m modal deploy serve.py`；下线：`python -m modal app stop nonoka-tts-serve`。
-  - **鉴权（2026-10-23）**：请求头 `Authorization` 必须正好是 `<密钥>`（不加 `Bearer`），否则 401。密钥是 `serve.py` 的 `TOKEN`（`serve_bench.py` 里有一份副本，改密钥时一起改）。在 CPU 接口上检查，不带密钥的请求不会启动 GPU。浏览器地址栏打不开，要用代码请求（例子见 `API.md`）。
+  - **鉴权（2026-10-23）**：请求头 `Authorization` 必须正好等于密钥（不加 `Bearer`），否则 401。密钥是 `serve.py` 的 `TOKEN`（`serve_bench.py` 里有一份副本，改密钥时一起改）。在 CPU 接口上检查，不带密钥的请求不会启动 GPU。浏览器地址栏打不开，要用代码请求（例子见 `API.md`）。
   - 坑：Git Bash 里用 curl 传中日文会被转错码，生成的内容不对；用 Python 就正常。
   - 正式方案：就用这个 Modal 接口（2026-10-23 定，项目完成）。以后要换平台或改形式，从 `serve.py` 改起。
 - **推理成本优化，第一步（2026-10-23，先不换 GPU）**：
@@ -527,7 +527,7 @@ GPT-SoVITS 不能唱歌：它的输入只有文本和参考音频，没有控制
     - GPU 容器每秒：L4 $0.000222 + 2 核 $0.000026 + 8 GiB $0.000018 ≈ **$0.000266/秒**（CPU 和内存约占 17%）。
     - 单独一次请求（冷启动）：恢复约 10–11 秒 + 推理约 2.5 秒 + 空闲 12 秒 ≈ 25 秒 ≈ **$0.0067**（约 0.05 元）；改之前约 24 秒加载 + 2 秒 + 5 秒 ≈ 31 秒。scaledown 从 5 秒加到 12 秒吃掉了一部分节省，换来连续请求时更容易接上热容器。
     - 接口 CPU 容器：0.25 核 + 0.25 GiB ≈ $0.0000038/秒，每次用完留 60 秒 ≈ $0.0002，可以忽略。
-- **T4 试验（2026-10-23）**：`cd 04_train`，`set "SERVE_GPU=T4" && python -m modal deploy serve.py`（cmd；引号不能省，否则值里会带上空格），部署成单独的测试应用 `nonoka-tts-serve-t4`（网址 `<接口地址>`），配置和线上一样（2 核 / 8192 MB / 12 秒 / GPU 快照）。**试完已下线**（`modal app stop nonoka-tts-serve-t4`），线上还是 L4。
+- **T4 试验（2026-10-23）**：`cd 04_train`，`set "SERVE_GPU=T4" && python -m modal deploy serve.py`（cmd；引号不能省，否则值里会带上空格），部署成单独的测试应用 `nonoka-tts-serve-t4`，配置和线上一样（2 核 / 8192 MB / 12 秒 / GPU 快照）。**试完已下线**（`modal app stop nonoka-tts-serve-t4`），线上还是 L4。
   - **GPU 快照能用**：响应头新加了 `restored`（1 = 这次冷启动是从快照恢复的；线上 L4 应用要下次部署后才有）。8 轮冷启动（`serve_bench.csv` 的 `t4`）：头两次建快照 59.2、36.9 秒，之后从快照恢复 14.3、8.0、12.7、9.3、18.6 秒（服务端），第 5 轮又建了一次（34.8 秒，文档说每种卡会重建 2–3 次）。恢复后多数在 8–14 秒，和 L4 的 12–14 秒差不多。
   - **速度**（`serve_render.py`，日语 10 句 + 中文 16 句，各 2 个种子，热容器，`gpu_test/render_timing.csv`）：推理时间 ÷ 音频时长，日语 L4 0.390、T4 0.345，中文 L4 0.435、T4 0.394，**T4 略快**。GPT-SoVITS 是逐个 token 生成，卡在单步延迟上，不吃算力，所以 T4 不吃亏。显存也够（两个 GPT + 一套 SoVITS）。fp16 在 T4 上正常。
   - **音质**（同样的句子和种子，本机 Whisper 和 auto_eval，见 4.2、4.3）：

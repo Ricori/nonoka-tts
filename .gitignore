@@ -24,3 +24,12 @@ __pycache__/
 
 # test data
 test_data/
+
+# Modal inference service: code, docs, logs and benchmarks hold the endpoint URL and the auth key (README 6.4)
+04_train/serve.py
+04_train/serve_bench.py
+04_train/serve_render.py
+04_train/API.md
+04_train/out/_serve_*
+04_train/out/serve_bench.csv
+04_train/out/gpu_test/
