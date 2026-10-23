@@ -1,8 +1,6 @@
-# nonoka TTS：角色声线制作（GPT-SoVITS）
+# nonoka TTS
 
-用游戏角色「nonoka」的语音数据，微调 GPT-SoVITS，让她能说日语和中文。个人非商用。
-
-更新：2026-10-23（**项目已完成**，云端推理就用现在的 Modal 接口，见第 7 节；推理成本优化完成：API 与 GPU 拆开、GPU 内存快照、T4 为主 L4 兜底，见 6.4；接口改为 POST + JSON，加了 Authorization 鉴权；外部调用说明见 `04_train/API.md`；翻唱流程 4_sing.bat，见 5.9）
+「nonoka」的语音数据，微调 GPT-SoVITS，让她能说日语和中文。
 
 ---
 
