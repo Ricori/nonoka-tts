@@ -37,7 +37,7 @@ __pycache__/
 # Song files used for testing
 test_data/
 
-# Modal inference service: code, docs, logs and benchmarks hold the endpoint URL and the auth key (not published)
+# Inference service: code, docs, logs and benchmarks hold the endpoint URL and the auth key (not published)
 04_train/serve.py
 04_train/serve_bench.py
 04_train/serve_render.py
