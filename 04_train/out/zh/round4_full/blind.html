@@ -1,0 +1,94 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>试听结果</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1f1f1f;--mut:#777;--line:#e3e1dc;--hi:#c2410c;--ok:#2f7d4f;--acc:#3b5bdb;--accbg:#e8ecfd}
+@media (prefers-color-scheme:dark){:root{--bg:#18181a;--card:#222225;--ink:#ececec;--mut:#9a9a9a;--line:#333;--hi:#f08c5a;--ok:#62c48a;--acc:#8ea2ff;--accbg:#2a3156}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic UI","Microsoft YaHei",sans-serif}
+header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+h1{font-size:17px;margin:0 12px 0 0}.prog{color:var(--mut)}
+button{font:inherit;padding:5px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff}
+main{max-width:980px;margin:0 auto;padding:12px 16px 80px}
+.tip{color:var(--mut);font-size:13px;margin:4px 0 12px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:12px 0}
+.c h2{font-size:16px;margin:0 0 6px;font-weight:600}.c h2 .n{color:var(--mut);font-weight:400;margin-right:6px}
+.refs .r{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:4px 12px;align-items:center;font-size:13px;color:var(--mut);padding:3px 0}
+@media (max-width:640px){.refs .r{grid-template-columns:1fr}}
+audio{height:32px;width:100%;max-width:340px}
+.v{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:150px minmax(0,320px);gap:4px 12px;align-items:center}
+.v.cur{background:var(--accbg);margin:0 -12px;padding:8px 12px}
+.lab{font-weight:600;font-size:13px;font-family:ui-monospace,Consolas,monospace;word-break:break-all}.lab small{display:block;font-size:11px;font-weight:400;color:var(--mut);line-height:1.2;white-space:nowrap}
+.dims{display:flex;flex-wrap:wrap;gap:4px 14px}
+.dim{display:flex;align-items:center;gap:3px;font-size:13px}.dim span{width:30px;color:var(--mut)}
+.dim button{width:26px;height:26px;padding:0;font-size:13px;border-radius:4px}
+.dim button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.flags{grid-column:2/4;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:13px;color:var(--mut)}
+.flags label{cursor:pointer;user-select:none}.flags input[type=text]{flex:1;min-width:140px;font:inherit;font-size:13px;padding:2px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.asr{grid-column:1/3;font-size:13px;color:var(--mut)}.asr b{color:var(--hi);font-weight:600}.asr .z{color:var(--ok)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right}th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:500}tr.best td{font-weight:700}td.top{color:var(--ok);font-weight:700}.wrap{overflow-x:auto}
+@media (max-width:640px){.v{grid-template-columns:1fr}.asr{grid-column:1}}
+</style></head><body>
+<header><h1>试听结果</h1><span class="prog" id="prog"></span></header>
+<main>
+<p class="tip">每句话下按版本列出试听，播放音量已自动对齐（响的总会显得更好）。每条下面是 Whisper 听写（CER）和 Gemini 的打分与点评（相似/读音/自然/稳定，每轮一行）。<br>
+版本名：<b>full_</b> 全量数据训练，<b>gsv_</b> 第一轮 90 条；<b>s2e</b>N 是 SoVITS 轮数，<b>s1e</b>N 是 GPT 轮数，<b>s1base</b> 是官方底模 GPT。快捷键：<b>J / K</b> 下一个 / 上一个并播放，<b>空格</b> 播放/暂停。</p>
+<div id="result"></div>
+<div class="c refs" id="refs"><h2>原声参考</h2></div>
+<div id="list"></div>
+</main>
+<script>
+const DATA={"key": "730cd1f6ee", "sentences": ["学长，早上好！今天能一起回家吗？", "昨天晚上，我在车站前的书店买了三本新小说。", "下周五下午三点，请到学生会室集合。", "今天风很大，出门最好穿上外套哦。", "嘿嘿，学长你看，头发又翘起来了。", "约好了哦。明天早上七点半，我在老地方等你。"], "ckpts": [{"name": "full_s2e10_s1e3_t7k3_ref4690", "step": 0}, {"name": "full_s2e10_s1e6", "step": 0}, {"name": "full_s2e10_s1e6_t7k3_aux2_ref4690", "step": 0}, {"name": "full_s2e10_s1e6_t7k3_ref2830", "step": 0}, {"name": "full_s2e10_s1e6_t7k3_ref4800", "step": 0}, {"name": "full_s2e10_s1e6_t7k3_ref5670", "step": 0}, {"name": "full_s2e10_s1e6_t7k3_sp9_ref4690", "step": 0}], "refs": [{"src": "../../../02_dataset_v1/03002860.ogg", "text": "先輩、何か考え事ですか？それとも、何か悩みでも？", "vol": 0.887}, {"src": "../../../02_dataset_v1/03003430.ogg", "text": "そうですね。頑張って練習しましょう。今日はもうお店閉めちゃってもいいよってお父さんが言ってくれましたし。", "vol": 0.75}, {"src": "../../../02_dataset_v1/03004600.ogg", "text": "あのお店のコーヒーもケーキも、すっごく美味しかったですね。何かうちも、大好メニューを考えなきゃいけないかもしれません。", "vol": 0.818}], "vols": {"full_s2e10_s1e3_t7k3_ref4690": {"1": 0.91, "2": 0.966, "3": 0.982, "4": 0.877, "5": 0.904, "6": 0.842}, "full_s2e10_s1e6": {"1": 1.0, "2": 1.0, "3": 1.0, "4": 1.0, "5": 1.0, "6": 1.0}, "full_s2e10_s1e6_t7k3_aux2_ref4690": {"1": 0.759, "2": 0.778, "3": 0.816, "4": 0.729, "5": 0.748, "6": 0.715}, "full_s2e10_s1e6_t7k3_ref2830": {"1": 0.697, "2": 0.726, "3": 0.747, "4": 0.711, "5": 0.689, "6": 0.646}, "full_s2e10_s1e6_t7k3_ref4800": {"1": 1.0, "2": 1.0, "3": 1.0, "4": 1.0, "5": 1.0, "6": 1.0}, "full_s2e10_s1e6_t7k3_ref5670": {"1": 0.742, "2": 0.708, "3": 0.711, "4": 0.69, "5": 0.718, "6": 0.677}, "full_s2e10_s1e6_t7k3_sp9_ref4690": {"1": 0.85, "2": 0.915, "3": 0.971, "4": 0.9, "5": 0.881, "6": 0.899}}, "cer": {"full_s2e10_s1e3_t7k3_ref4690": {"items": {"1": {"hyp": "学长,早上好。今天能一起回家吗?", "cer": 0.0}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,车门最好拆上外道哦。", "cer": 0.2143}, "5": {"hyp": "嘻嘻嘻嘻,是让你干,都把你打起来啦。", "cer": 0.9231}, "6": {"hyp": "也好了啊,明天早上七点半,我在老地方等你。", "cer": 0.1111}}, "total": 0.18478260869565216}, "full_s2e10_s1e6": {"items": {"1": {"hyp": "学长,早上好啊。今天能一起回家吗?", "cer": 0.0769}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,出门最好穿上外套。", "cer": 0.0714}, "5": {"hyp": "嘿嘿,说到你干,头发又吵起来了。", "cer": 0.3077}, "6": {"hyp": "宇昊然,明天早上七点半,我在老地方等你。", "cer": 0.2222}}, "total": 0.10869565217391304}, "full_s2e10_s1e6_t7k3_aux2_ref4690": {"items": {"1": {"hyp": "学长,早上好啊,今天能一起回家吗?", "cer": 0.0769}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,充满最好插向歪道。", "cer": 0.5}, "5": {"hyp": "嘿嘿,世道に関、とばゆーちゃちゃらら。", "cer": 1.0769}, "6": {"hyp": "也好了啊,明天早上七点半,我在老地方等你。", "cer": 0.1111}}, "total": 0.2608695652173913}, "full_s2e10_s1e6_t7k3_ref2830": {"items": {"1": {"hyp": "学长,早上好。今天能一起回家吗?", "cer": 0.0}, "2": {"hyp": "昨天晚上,我在折弹前的书店买了三本新小说。", "cer": 0.1053}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,出门最好在乡外到。", "cer": 0.2857}, "5": {"hyp": "嘻嘻,谁叫你干,头发又焦脆了啦。", "cer": 0.6923}, "6": {"hyp": "也好了啊,明天早上几点半,我在老地方等你。", "cer": 0.1667}}, "total": 0.1956521739130435}, "full_s2e10_s1e6_t7k3_ref4800": {"items": {"1": {"hyp": "学长,早上好,今天能一起回家吗?", "cer": 0.0}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,出门最好穿上外套。", "cer": 0.0714}, "5": {"hyp": "嘿嘿,学长你看,后发又翘起来了。", "cer": 0.0769}, "6": {"hyp": "约好了哦,明天早上七点半,我在老地方等你。", "cer": 0.0}}, "total": 0.021739130434782608}, "full_s2e10_s1e6_t7k3_ref5670": {"items": {"1": {"hyp": "携带,早上好。今天能一起回家吗?", "cer": 0.1538}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会设集合。", "cer": 0.0667}, "4": {"hyp": "今天风很大,出门最好摘下外道啊。", "cer": 0.2857}, "5": {"hyp": "嘿嘿,学长你看,头发也又翘起来了。", "cer": 0.0769}, "6": {"hyp": "也好了啊,明天早上七点半。我在老地方等你。", "cer": 0.1111}}, "total": 0.10869565217391304}, "full_s2e10_s1e6_t7k3_sp9_ref4690": {"items": {"1": {"hyp": "学长,早上好。今天能一起回家吗?", "cer": 0.0}, "2": {"hyp": "昨天晚上,我在车站前的书店买了三本新小说。", "cer": 0.0}, "3": {"hyp": "下周五下午三点,请到学生会室集合。", "cer": 0.0}, "4": {"hyp": "今天风很大,出门最好插上外道。", "cer": 0.2143}, "5": {"hyp": "嘿嘿,许多尼康,多发有趣俱来啦。", "cer": 0.6923}, "6": {"hyp": "也好了啊,明天早上七点半,我在老地方等你。", "cer": 0.1111}}, "total": 0.15217391304347827}}, "auto": null, "gemini": {"summary": [{"name": "full_s2e10_s1e3_t7k3_ref4690", "n": 12, "best": 1, "similarity": 3.75, "pronunciation": 3.0833333333333335, "naturalness": 3.25, "stability": 4.083333333333333}, {"name": "full_s2e10_s1e6", "n": 12, "best": 4, "similarity": 3.4166666666666665, "pronunciation": 3.3333333333333335, "naturalness": 3.0833333333333335, "stability": 3.9166666666666665}, {"name": "full_s2e10_s1e6_t7k3_aux2_ref4690", "n": 12, "best": 2, "similarity": 3.8333333333333335, "pronunciation": 3.1666666666666665, "naturalness": 3.4166666666666665, "stability": 4.083333333333333}, {"name": "full_s2e10_s1e6_t7k3_ref2830", "n": 12, "best": 0, "similarity": 3.5, "pronunciation": 2.9166666666666665, "naturalness": 2.9166666666666665, "stability": 3.6666666666666665}, {"name": "full_s2e10_s1e6_t7k3_ref4800", "n": 12, "best": 0, "similarity": 3.5, "pronunciation": 3.3333333333333335, "naturalness": 3.0, "stability": 3.8333333333333335}, {"name": "full_s2e10_s1e6_t7k3_ref5670", "n": 12, "best": 1, "similarity": 3.75, "pronunciation": 3.0833333333333335, "naturalness": 2.9166666666666665, "stability": 3.5833333333333335}, {"name": "full_s2e10_s1e6_t7k3_sp9_ref4690", "n": 12, "best": 4, "similarity": 3.9166666666666665, "pronunciation": 3.25, "naturalness": 3.4166666666666665, "stability": 4.0}], "items": {"full_s2e10_s1e3_t7k3_ref4690": {"1": ["4/3/3/5 学发音模糊，语调起伏略显扁平。", "4/3/4/4 音色还原好，但学长声调偏生硬。"], "2": ["5/5/5/5 咬字清晰，音色极其贴合原声，停顿与语调非常自然。", "4/4/4/4 声调有些僵硬，有轻微杂音。"], "3": ["3/3/3/3 “集合”声调怪，发音含混，有机械电音。", "3/2/2/4 下周五发音怪异带口音，语调机械。"], "4": ["3/2/2/4 穿上误读明显，句调起伏怪异", "3/2/3/4 穿上误读，出门节奏偏机械。"], "5": ["4/2/3/4 音色贴合，日式口音极重，翘字含混不清", "4/3/3/4 整体较平缓，俏皮感稍欠，有口音。"], "6": ["4/4/4/4 音质纯净，但语调略显平直机械。", "4/4/3/4 “约好了哦”后半声调偏怪，尾音略带轻微电流音。"]}, "full_s2e10_s1e6": {"1": ["4/2/3/5 回家吗读成回家么/模，发音明显有误。", "3/4/3/3 音质稍哑有杂音感，声调起伏略显生硬。"], "2": ["4/4/3/4 语速偏慢，尾音拖沓，语调偏平。", "2/4/3/4 音色偏低沉且电音感重，声调较生硬。"], "3": ["2/2/2/2 声调起伏怪异，后半段声音发虚飘忽，杂音大。", "5/4/4/5 音色还原度高，发音清晰，节奏较好。"], "4": ["4/4/4/5 发音较准且自然，音色契合度较高", "4/5/4/5 字音准确完整，咬字清晰，音色最贴近。"], "5": ["4/2/4/4 音色还原度高且声线清晰，语调俏皮自然", "3/2/2/3 语速较慢，音调平淡，口音重。"], "6": ["3/3/2/3 语速偏慢且气息散漫，咬字含糊。", "3/4/3/4 音色较暗，略带机械感与杂音，中规中矩。"]}, "full_s2e10_s1e6_t7k3_aux2_ref4690": {"1": ["4/3/3/5 咬字偏弱，学长一词声调稍有怪异。", "5/4/5/5 音色贴合度最高，咬字和语调最自然灵动。"], "2": ["4/4/4/5 语速稍快，停顿较为平直，但发音较标准。", "4/4/4/3 尾音有明显电音杂音，语速微快。"], "3": ["5/4/4/4 音色最还原参考音，咬字清晰自然，整体平稳。", "4/3/3/4 下周发音生硬带口音，集合调型奇怪。"], "4": ["3/2/3/4 穿上读成chāishàng，尾音略拖", "3/2/3/4 穿上误读为掐上/茶上，声调平淡。"], "5": ["4/2/3/4 日式腔调浓重，咬字含糊且尾音发飘", "3/2/3/4 发音含糊且带有明显日式口音。"], "6": ["3/4/3/3 音色略带杂音与电音感，起伏欠自然。", "4/4/3/4 “约好了哦”发音稍怪，声调稍平，整体较清楚。"]}, "full_s2e10_s1e6_t7k3_ref2830": {"1": ["4/4/4/5 学长发音略带东洋腔，整体流畅自然。", "4/3/3/4 学长声调稍怪，整体节奏尚可。"], "2": ["4/4/4/5 整体流畅，音色与发音良好，但韵律略微偏平。", "4/4/4/4 音色略带杂音与机械感，语调略微偏高。"], "3": ["3/2/2/3 字音连读模糊，中段语调不自然，杂音略重。", "4/3/3/4 下周五声调不自然，语调稍平。"], "4": ["3/2/2/3 开头有杂音，“穿”误读，语调生硬", "3/2/3/4 穿上发音混浊偏掐/茶，音色略干。"], "5": ["3/1/2/3 发音含混，学长看及翘起声调严重走样", "3/2/2/3 停顿略不自然，学长两字拉长。"], "6": ["3/4/3/3 后半句起伏不稳，声音发飘发虚。", "4/4/3/3 语气词处有明显喘息/杂音，节奏偏散。"]}, "full_s2e10_s1e6_t7k3_ref4800": {"1": ["4/4/3/5 声调略微生硬，音色较贴近参考音。", "4/4/3/4 停顿略微生硬，整体表现中规中矩。"], "2": ["4/4/3/4 语速过慢，断句略显生硬拖沓。", "3/4/3/4 音调偏低沉，语调发闷，表现平平。"], "3": ["3/3/3/3 “会室集合”吞音含混，语调偏机械生硬。", "4/3/3/4 下周发音微怪，整体节奏尚可。"], "4": ["3/3/3/3 穿上声母偏平舌/读破，略有电音感", "3/3/3/4 穿发音偏chuan但声母不清且声调生硬。"], "5": ["3/2/2/3 开头笑声发音怪异，整体口音重且含混", "3/2/3/4 开头笑声略显生硬，口音偏重。"], "6": ["4/4/3/4 整体较平，句间停顿略显生硬。", "4/4/4/4 字间连接略显生硬，尾部轻微颤动，整体尚可。"]}, "full_s2e10_s1e6_t7k3_ref5670": {"1": ["5/4/5/5 音色还原度高，语气自然灵动且无杂音。", "4/3/3/4 学长咬字偏平，语气平直缺乏起伏。"], "2": ["4/4/3/4 “昨”声母不清，“晚上”后停顿过长且带粗重呼吸声。", "4/4/2/2 前半句出现明显呼吸与叹气噪音，不稳定。"], "3": ["3/3/3/3 后半句节奏平板微颤，电音底噪明显。", "4/3/3/4 下周发音偏硬，室字读音和节奏微僵。"], "4": ["3/2/2/4 穿上严重误读成chāi，音调怪异", "3/2/3/4 穿上明显误读为掐上，咬字不准。"], "5": ["4/2/3/3 气息偏虚，气声过重导致发音含混欠清脆", "3/2/2/4 语气稍显沉闷，声调欠准，日腔明显。"], "6": ["4/4/3/3 后半句语气偏虚，换气声略不自然。", "4/4/3/3 后半句有轻微叹气声与杂音，语调略生硬。"]}, "full_s2e10_s1e6_t7k3_sp9_ref4690": {"1": ["4/3/3/4 学字带杂音轻微喷麦，节奏偏赶。", "4/3/3/4 学长读音略偏，声调稍显平淡。"], "2": ["4/4/4/4 音色较贴合，但“前”字声调略有不稳。", "5/5/5/5 音色非常贴近原声，发音自然清晰。"], "3": ["3/2/2/2 “学生会室集合”发音不准，吞字且伴有杂音。", "4/3/3/4 下周读音不准，集合声调偏高。"], "4": ["3/2/2/4 穿上读音不准近chāi，停顿生硬", "3/2/3/4 穿上严重误读成掐/茶上，语调怪异。"], "5": ["3/2/2/3 音质较暗哑沉闷，咬字含混带浓重口音", "4/3/4/4 音色贴合度好，语气俏皮可爱，最自然。"], "6": ["5/5/5/5 咬字清晰，语调俏皮自然，贴合原声。", "5/5/5/5 发音清晰准确，音色还原度高，语气自然灵动。"]}}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const gAvg=n=>{const g=DATA.gemini&&DATA.gemini.summary.find(g=>g.name===n);return g?(g.similarity+g.pronunciation+g.naturalness+g.stability)/4:-1};
+const NAMES=DATA.ckpts.map(c=>c.name).sort((a,b)=>gAvg(b)-gAvg(a));  // best Gemini overall score first
+let cur=0;const rows=[];
+
+DATA.refs.forEach(r=>{const d=document.createElement("div");d.className="r";
+  d.innerHTML=`<audio controls preload="none" src="${esc(r.src)}"></audio><span>${esc(r.text)}</span>`;
+  d.querySelector("audio").volume=r.vol??1;document.getElementById("refs").appendChild(d)});
+
+function render(){const L=document.getElementById("list");L.innerHTML="";rows.length=0;
+  DATA.sentences.forEach((sen,i)=>{const card=document.createElement("div");card.className="c";
+    card.innerHTML=`<h2><span class="n">${i+1}</span>${esc(sen)}</h2>`;
+    NAMES.forEach(ck=>{const v=document.createElement("div");v.className="v";
+      const cer=DATA.cer&&DATA.cer[ck]&&DATA.cer[ck].items[i+1];
+      const gem=DATA.gemini&&DATA.gemini.items[ck]&&DATA.gemini.items[ck][i+1];
+      v.innerHTML=`<div class="lab">${esc(ck)}</div>
+<audio controls preload="none" src="samples/${encodeURIComponent(ck)}/${String(i+1).padStart(2,"0")}.wav"></audio>
+${cer?`<div class="asr">Whisper 听写：${esc(cer.hyp)}　${cer.cer>0?`<b>CER ${(cer.cer*100).toFixed(1)}%</b>`:`<span class="z">CER 0</span>`}</div>`:""}
+${gem?gem.map(g=>`<div class="asr">Gemini：${esc(g)}</div>`).join(""):""}`;
+      const a=v.querySelector("audio");a.volume=(DATA.vols&&DATA.vols[ck]&&DATA.vols[ck][i+1])??1;  // loudness-matched playback
+      a.onplay=()=>{document.querySelectorAll("audio").forEach(x=>{if(x!==a)x.pause()});setCur(rows.indexOf(v))};
+      rows.push(v);card.appendChild(v)});
+    L.appendChild(card)});
+  document.getElementById("prog").textContent=`${NAMES.length} 个版本 × ${DATA.sentences.length} 句`;
+  setCur(0);renderResult()}
+
+function setCur(r){rows.forEach(x=>x.classList.remove("cur"));cur=r;if(rows[r])rows[r].classList.add("cur")}
+
+function renderResult(){const f=(x,d=2)=>x==null?"–":x.toFixed(d);
+  const G=Object.fromEntries((DATA.gemini?DATA.gemini.summary:[]).map(g=>[g.name,{...g,avg:(g.similarity+g.pronunciation+g.naturalness+g.stability)/4}]));
+  const A=Object.fromEntries((DATA.auto||[]).map(a=>[a.name,a]));
+  const R=NAMES.map(n=>({name:n,cer:DATA.cer&&DATA.cer[n]?DATA.cer[n].total:null,g:G[n],a:A[n]}));
+  const ext=(xs,hi)=>{const v=xs.filter(x=>x!=null);return v.length?(hi?Math.max(...v):Math.min(...v)):null};
+  const bestCer=ext(R.map(r=>r.cer),false),bestG=ext(R.map(r=>r.g&&r.g.avg),true),bestSim=ext(R.map(r=>r.a&&r.a.sim),true);
+  const td=(x,best,txt)=>`<td class="${x!=null&&x===best?"top":""}">${txt}</td>`;
+  const o=A["原声"];
+  document.getElementById("result").innerHTML=`<div class="c"><h2>汇总</h2><div class="wrap"><table>
+<tr><th>版本</th><th>CER</th><th>Gemini 相似</th><th>读音</th><th>自然</th><th>稳定</th><th>Gemini 平均</th><th>最佳次数</th><th>音色相似</th><th>MOS</th><th>音高起伏</th><th>语速</th></tr>
+${o?`<tr class="best"><td>原声（基线）</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>${f(o.sim,3)}</td><td>${f(o.mos)}</td><td>${f(o.f0_st)} st</td><td>${f(o.mora_s,1)}</td></tr>`:""}
+${R.map(r=>`<tr><td>${esc(r.name)}</td>${td(r.cer,bestCer,r.cer==null?"–":(r.cer*100).toFixed(1)+"%")}
+<td>${f(r.g&&r.g.similarity)}</td><td>${f(r.g&&r.g.pronunciation)}</td><td>${f(r.g&&r.g.naturalness)}</td><td>${f(r.g&&r.g.stability)}</td>
+${td(r.g&&r.g.avg,bestG,f(r.g&&r.g.avg))}<td>${r.g?r.g.best:"–"}</td>
+${td(r.a&&r.a.sim,bestSim,f(r.a&&r.a.sim,3))}<td>${f(r.a&&r.a.mos)}</td><td>${r.a?f(r.a.f0_st)+" st":"–"}</td><td>${f(r.a&&r.a.mora_s,1)}</td></tr>`).join("")}
+</table></div>
+<p class="tip">按 Gemini 平均分从高到低排序（每句下的版本顺序也一样）。绿色是该列最好的版本。CER：Whisper 把试听转写回文本的错误率，测不出多音字和アクセント。Gemini：Gemini 3.8 Flash 每句同时听 3 条原声和全部版本后打 1–5 分，多轮取平均；"最佳次数"是被它选为当句最佳的次数。音色相似：和 90 条原声的说话人向量余弦相似度。MOS：SQUIM 预测的自然度（只看相对高低）。音高起伏明显低于原声说明语调偏平。语速单位是拍/秒。</p></div>`}
+
+document.addEventListener("keydown",e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;const v=rows[cur];
+  const go=r=>{if(r<0||r>=rows.length)return;setCur(r);rows[r].scrollIntoView({block:"center"});rows[r].querySelector("audio").play()};
+  if(e.key==="j"||e.key==="J"){e.preventDefault();go(cur+1)}
+  else if(e.key==="k"||e.key==="K"){e.preventDefault();go(cur-1)}
+  else if(e.key===" "&&v){e.preventDefault();const a=v.querySelector("audio");a.paused?a.play():a.pause()}});
+render();
+</script></body></html>

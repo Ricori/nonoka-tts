@@ -1,0 +1,47 @@
+# Python envs / caches (rebuild: see README 3)
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Models / checkpoints (auto_eval downloads ECAPA on first run)
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.onnx
+03_asr/models/
+
+# Secrets
+.env
+*.key
+
+# Datasets: her original voice clips, their transcripts and everything derived from them
+# (game voice lines are copyrighted and not redistributed; see the note at the top of README)
+00_raw/
+02_dataset_v1/
+02_dataset_full/
+02_dataset_zh/
+
+# Audio: dataset clips, generated samples and reference clips all stay local;
+# the metrics (csv), result pages and logs are kept as the experiment record
+*.wav
+*.ogg
+*.mp3
+*.flac
+*.m4a
+
+# Song tests: copyrighted source audio and stems (README 5.9)
+04_train/out/sing/
+
+# Song files used for testing
+test_data/
+
+# Modal inference service: code, docs, logs and benchmarks hold the endpoint URL and the auth key (not published)
+04_train/serve.py
+04_train/serve_bench.py
+04_train/serve_render.py
+04_train/API.md
+04_train/out/_serve_*
+04_train/out/serve_bench.csv
+04_train/out/gpu_test/

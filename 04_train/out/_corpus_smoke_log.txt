@@ -1,0 +1,92 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ricori/main/ap-GDNXfAz51cfrSLg1VgWpaC
+✓ Created objects.
+├── 🔨 Created mount 
+│   D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train
+│   \zh_vc.py
+├── 🔨 Created function qwen_source.
+├── 🔨 Created function finetune.
+└── 🔨 Created function convert.
+3 of 498 lines to synthesize in 1 chunks
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+qwen 01 try 1: 6.9s
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+qwen 02 try 1: 7.8s
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+qwen 03 try 1: 8.8s
+chunk 0: source ready, converting
+$ python inference.py --source /tmp/corpus00/src/01.wav --target /tmp/03004690.ogg --output /tmp/corpus00/out01 --diffusion-steps 30 --length-adjust 1.0 --inference-cfg-rate 0.7 --f0-condition False --fp16 True --checkpoint /vol/runs/nonoka_1000/ft_model.pth --config /vol/runs/nonoka_1000/cfg.yml
+cfm loaded
+length_regulator loaded
+Loading weights from nvidia/bigvgan_v2_22khz_80band_256x
+Removing weight norm...
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+
+[1A0it [00:00, ?it/s]
+[1A0it [00:00, ?it/s]
+It is strongly recommended to pass the `sampling_rate` argument to this function. Failing to do so can result in silent errors that might be hard to debug.
+It is strongly recommended to pass the `sampling_rate` argument to this function. Failing to do so can result in silent errors that might be hard to debug.
+
+[1A  0%|          | 0/30 [00:00<?, ?it/s]
+[1A  3%|▎         | 1/30 [00:00<00:15,  1.88it/s]
+[1A 17%|█▋        | 5/30 [00:00<00:02,  9.73it/s]
+[1A 30%|███       | 9/30 [00:00<00:01, 15.91it/s]
+[1A 43%|████▎     | 13/30 [00:00<00:00, 20.64it/s]
+[1A 57%|█████▋    | 17/30 [00:01<00:00, 24.19it/s]
+[1A 70%|███████   | 21/30 [00:01<00:00, 26.80it/s]
+[1A 83%|████████▎ | 25/30 [00:01<00:00, 28.68it/s]
+[1A 97%|█████████▋| 29/30 [00:01<00:00, 30.04it/s]
+[1A100%|██████████| 30/30 [00:01<00:00, 21.54it/s]
+RTF: 0.42845471518277817
+$ python inference.py --source /tmp/corpus00/src/02.wav --target /tmp/03004690.ogg --output /tmp/corpus00/out02 --diffusion-steps 30 --length-adjust 1.0 --inference-cfg-rate 0.7 --f0-condition False --fp16 True --checkpoint /vol/runs/nonoka_1000/ft_model.pth --config /vol/runs/nonoka_1000/cfg.yml
+cfm loaded
+length_regulator loaded
+Loading weights from nvidia/bigvgan_v2_22khz_80band_256x
+Removing weight norm...
+It is strongly recommended to pass the `sampling_rate` argument to this function. Failing to do so can result in silent errors that might be hard to debug.
+It is strongly recommended to pass the `sampling_rate` argument to this function. Failing to do so can result in silent errors that might be hard to debug.
+
+[1A  0%|          | 0/30 [00:00<?, ?it/s]
+[1A  3%|▎         | 1/30 [00:00<00:14,  1.96it/s]
+[1A 17%|█▋        | 5/30 [00:00<00:02,  9.80it/s]
+[1A 27%|██▋       | 8/30 [00:00<00:01, 14.37it/s]
+[1A 37%|███▋      | 11/30 [00:00<00:01, 18.20it/s]
+[1A 47%|████▋     | 14/30 [00:00<00:00, 21.17it/s]
+[1A 57%|█████▋    | 17/30 [00:01<00:00, 23.50it/s]
+[1A 67%|██████▋   | 20/30 [00:01<00:00, 25.17it/s]
+[1A 77%|███████▋  | 23/30 [00:01<00:00, 26.51it/s]
+[1A 87%|████████▋ | 26/30 [00:01<00:00, 27.36it/s]
+[1A 97%|█████████▋| 29/30 [00:01<00:00, 28.07it/s]
+[1A100%|██████████| 30/30 [00:01<00:00, 20.32it/s]
+RTF: 0.28528975828935554
+$ python inference.py --source /tmp/corpus00/src/03.wav --target /tmp/03004690.ogg --output /tmp/corpus00/out03 --diffusion-steps 30 --length-adjust 1.0 --inference-cfg-rate 0.7 --f0-condition False --fp16 True --checkpoint /vol/runs/nonoka_1000/ft_model.pth --config /vol/runs/nonoka_1000/cfg.yml
+cfm loaded
+length_regulator loaded
+Loading weights from nvidia/bigvgan_v2_22khz_80band_256x
+Removing weight norm...
+It is strongly recommended to pass the `sampling_rate` argument to this function. Failing to do so can result in silent errors that might be hard to debug.
+It is strongly recommended to pass the `sampling_rate` argument to this function. Failing to do so can result in silent errors that might be hard to debug.
+
+[1A  0%|          | 0/30 [00:00<?, ?it/s]
+[1A  3%|▎         | 1/30 [00:00<00:15,  1.89it/s]
+[1A 17%|█▋        | 5/30 [00:00<00:02,  9.46it/s]
+[1A 27%|██▋       | 8/30 [00:00<00:01, 13.82it/s]
+[1A 37%|███▋      | 11/30 [00:00<00:01, 17.41it/s]
+[1A 47%|████▋     | 14/30 [00:00<00:00, 20.24it/s]
+[1A 57%|█████▋    | 17/30 [00:01<00:00, 22.37it/s]
+[1A 67%|██████▋   | 20/30 [00:01<00:00, 23.96it/s]
+[1A 77%|███████▋  | 23/30 [00:01<00:00, 25.13it/s]
+[1A 87%|████████▋ | 26/30 [00:01<00:00, 25.98it/s]
+[1A 97%|█████████▋| 29/30 [00:01<00:00, 26.58it/s]
+[1A100%|██████████| 30/30 [00:01<00:00, 19.40it/s]
+RTF: 0.2637609478351974
+chunk 0: 3 clips saved
+ALL DONE: 3 clips in D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\02_dataset_zh
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ricori/main/ap-GDNXfAz51cfrSLg1VgWpaC

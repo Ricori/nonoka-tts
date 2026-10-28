@@ -1,0 +1,101 @@
+﻿round,idx,label,checkpoint,similarity,pronunciation,naturalness,stability,issues,comment,best
+1,1,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,5,5,5,5,,音色贴合度极高，语调自然流畅，发音准确。,1
+1,1,B,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,5,,语调与音色较好，但句尾问句语调略显平直。,0
+1,1,C,mix_s2e10_s1e8_t7k3_aux2_ref4690,3,4,3,4,accent,音色略偏亮单薄，尾音稍有拖沓与机械感。,0
+1,1,D,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,4,5,,音色相似度较好，但语气略微生硬，不够生动。,0
+1,1,E,full_s2e10_s1e6_t7k3_aux2_ref4690,4,4,3,4,unnatural_pause,呼吸音与停顿略显不自然，情感表现稍弱。,0
+1,2,A,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,4,4,,音色贴合度尚可，呼吸感自然，略有电音。,0
+1,2,B,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,4,unnatural_pause,前半句音调略显平直僵硬，音色还原较好。,0
+1,2,C,full_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,语调起伏自然生动，声线最贴合原声。,1
+1,2,D,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,3,4,unnatural_pause,语气稍显平淡，句末停顿略生硬。,0
+1,2,E,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,5,4,4,,音调稍有飘忽，整体表现较平稳。,0
+1,3,A,mix_s2e10_s1e8_t7k3_aux2_ref4690,5,5,5,5,,音色最贴近原声，语调自然流畅无瑕疵。,1
+1,3,B,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,4,4,unnatural_pause,金曜日后停顿略长，尾音有轻微电音感。,0
+1,3,C,full_s2e10_s1e6_t7k3_aux2_ref4690,3,5,3,4,,语调偏平直较生硬，音色稍显单薄。,0
+1,3,D,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,3,noise,音质略有压缩杂音感，后半句语速偏快。,0
+1,3,E,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,4,,金曜日语调起伏稍显突兀，整体中规中矩。,0
+1,4,A,mix_s2e10_s1e2_t7k3_aux2_ref4690,3,4,3,4,unnatural_pause,音色偏暗稍显机械，停顿略长。,0
+1,4,B,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,4,4,4,,气声和质感较好，音色很接近。,0
+1,4,C,mix_s2e10_s1e4_t7k3_aux2_ref4690,5,5,5,5,,语调自然灵动，音色高度还原参考。,1
+1,4,D,full_s2e10_s1e6_t7k3_aux2_ref4690,3,4,3,3,noise,尾音略有电子杂质，自然度一般。,0
+1,4,E,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,4,4,4,other,语调轻快，中间停顿处呼吸声稍显突兀。,0
+1,5,A,full_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,发音准确，但停顿略微生硬。,0
+1,5,B,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,3,4,unnatural_pause,中段停顿稍长，语气略带喘息感。,0
+1,5,C,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,,整体平稳，但语调略显平淡。,0
+1,5,D,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,5,4,5,,咬字清晰，但句尾语调略显生硬。,0
+1,5,E,mix_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,音色还原度最高，抑扬顿挫十分自然。,1
+1,6,A,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,3,3,4,misread accent,十分读成じゅうぶん，语调较生硬。,0
+1,6,B,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,3,3,4,misread accent,十分读成じゅうぶん，声音略显机械。,0
+1,6,C,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,3,3,4,misread accent,十分读成じゅうぶん，音调略怪。,0
+1,6,D,full_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,正确读作じゅっぷん，语调自然还原度高。,1
+1,6,E,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,3,3,4,misread accent,十分读成じゅうぶん，声调略平。,0
+1,7,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,3,4,3,4,,音色略偏平，語調和斷句尚可但稍顯機械。,0
+1,7,B,mix_s2e10_s1e8_t7k3_aux2_ref4690,3,4,3,4,,尾音上揚略生硬，音色還原度普通。,0
+1,7,C,mix_s2e10_s1e6_t7k3_aux2_ref4690,3,4,3,3,noise,電音感較明顯，聲音偏薄且略有雜質感。,0
+1,7,D,mix_s2e10_s1e2_t7k3_aux2_ref4690,5,5,5,5,,聲線最還原參考音，氣息與抑揚頓挫自然。,1
+1,7,E,full_s2e10_s1e6_t7k3_aux2_ref4690,4,4,4,4,,前半段語調微沉，後句問句語氣稍平。,0
+1,8,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,,整体音色还原不错，略有机械感。,0
+1,8,B,full_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,声音生动自然，语气贴切，还原度高。,1
+1,8,C,mix_s2e10_s1e2_t7k3_aux2_ref4690,3,2,2,2,skip_or_repeat,完全漏读了“先輩ったら”，发音缺漏。,0
+1,8,D,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,4,unnatural_pause,在“また”后停顿略长，稍显不连贯。,0
+1,8,E,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,5,4,4,unnatural_pause,中间停顿略显生硬，语调稍平。,0
+1,9,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,4,3,4,noise,音质稍有底噪，语调偏平直略显机械。,0
+1,9,B,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,4,4,4,,声线较相似，但七点半处音调略生硬。,0
+1,9,C,mix_s2e10_s1e8_t7k3_aux2_ref4690,5,5,5,5,,音色还原极佳，发音自然生动，最贴合。,1
+1,9,D,full_s2e10_s1e6_t7k3_aux2_ref4690,4,4,3,3,noise unnatural_pause,停顿略显刻意，七字读音略含糊轻微杂音。,0
+1,9,E,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,4,4,4,,尾音和气声稍有机械感，整体表现尚可。,0
+1,10,A,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,2,3,5,misread,年份读错成2026年，语调生硬不够自然,0
+1,10,B,full_s2e10_s1e6_t7k3_aux2_ref4690,3,2,3,5,misread,年份误读为2026年，停顿略显机械,0
+1,10,C,mix_s2e10_s1e4_t7k3_aux2_ref4690,3,2,3,5,misread,年份读作2026年，音色偏尖细幼态,0
+1,10,D,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,2,3,5,misread,年份误读为2026年，语气略平淡,0
+1,10,E,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,2,4,5,misread,年份念错为2026年，但语调音色最自然贴近,1
+2,1,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,5,5,5,5,,音色最贴近原声，语调自然流畅无瑕疵。,1
+2,1,B,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,音色较近，但语句间停顿略显生硬机械。,0
+2,1,C,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,4,5,,尾音语调略平淡，情感起伏不如A自然。,0
+2,1,D,full_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,4,,后半句略有气声不稳，语速微快。,0
+2,1,E,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,句子间停顿略微拉长，整体还算稳定。,0
+2,2,A,mix_s2e10_s1e2_t7k3_aux2_ref4690,5,5,5,5,,发音自然准确，音色还原度高且清晰。,1
+2,2,B,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,5,4,4,noise,语调略平，背景带轻微底噪及发声杂音。,0
+2,2,C,mix_s2e10_s1e6_t7k3_aux2_ref4690,3,5,4,4,noise,音色偏暗沉且有噪点，句尾略显干瘪。,0
+2,2,D,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,4,noise,高频有些微毛刺感，整体节奏较平稳。,0
+2,2,E,full_s2e10_s1e6_t7k3_aux2_ref4690,3,5,3,3,noise,机械感与数码杂音较明显，声音略显生硬。,0
+2,3,A,mix_s2e10_s1e8_t7k3_aux2_ref4690,3,4,3,4,,音色较原声偏细亮，语调较生硬。,0
+2,3,B,mix_s2e10_s1e4_t7k3_aux2_ref4690,3,3,3,3,accent noise,金曜日声调不自然，尾音有电音颤感。,0
+2,3,C,mix_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,音色最贴近原声，发音自然且极连贯。,1
+2,3,D,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,4,3,3,unnatural_pause,金曜日后有明显不自然停顿与吸气断裂。,0
+2,3,E,full_s2e10_s1e6_t7k3_aux2_ref4690,4,4,4,4,,整体较为流畅，但声线稍平淡偏薄。,0
+2,4,A,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,3,5,unnatural_pause,语气偏平淡，上着断句略生硬。,0
+2,4,B,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,3,5,unnatural_pause,語調稍顯機械，いい前的停頓稍怪。,0
+2,4,C,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,,咬字清晰自然，音色還原度好。,0
+2,4,D,full_s2e10_s1e6_t7k3_aux2_ref4690,4,5,3,4,other,略有電子感，節奏稍顯緊繃。,0
+2,4,E,mix_s2e10_s1e8_t7k3_aux2_ref4690,5,5,5,5,,音色語氣極為貼合，情感自然流暢。,1
+2,5,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,中段停顿略长，整体音质和声线还原较好。,0
+2,5,B,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,3,4,unnatural_pause other,停顿偏多且略带电音感，音调稍显平淡。,0
+2,5,C,mix_s2e10_s1e8_t7k3_aux2_ref4690,3,5,4,4,noise,音色有些发虚并伴有轻微底噪，语调稍平。,0
+2,5,D,full_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,发音自然生动，语调起伏流畅，还原度高。,1
+2,5,E,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,3,4,unnatural_pause,音色还原好但句子切分停顿生硬，稍显断续。,0
+2,6,A,mix_s2e10_s1e2_t7k3_aux2_ref4690,5,5,5,5,,音色与声线还原度最高，读音准确自然。,1
+2,6,B,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,停顿略显机械，声线略有变化。,0
+2,6,C,full_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,5,,语调稍平，后半句表现力偏弱。,0
+2,6,D,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,3,4,unnatural_pause,尾音有些拖沓，中段节奏略不协调。,0
+2,6,E,mix_s2e10_s1e8_t7k3_aux2_ref4690,3,5,3,3,noise,声音偏闷且带轻微杂音，相似度较低。,0
+2,7,A,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,4,4,4,noise,「みたんです」发音含糊略有杂音。,0
+2,7,B,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,4,,整体较为流畅自然，音色贴合度好。,0
+2,7,C,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,4,4,3,noise,尾音稍带电音杂质，节奏略显平缓。,0
+2,7,D,full_s2e10_s1e6_t7k3_aux2_ref4690,4,4,3,4,unnatural_pause,尾音处理较干，中段停顿稍显生硬。,0
+2,7,E,mix_s2e10_s1e2_t7k3_aux2_ref4690,5,5,5,5,,音色还原度最高，语调灵动自然清晰。,1
+2,8,A,mix_s2e10_s1e8_t7k3_aux2_ref4690,4,5,4,5,,笑声略长但自然，声线契合，整体表现良好,0
+2,8,B,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,,语调稍平，后半句起伏略显生硬,0
+2,8,C,full_s2e10_s1e6_t7k3_aux2_ref4690,5,5,5,5,,笑声最生动自然，音色贴合度极高，节奏完美,1
+2,8,D,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,5,,寝癖发音停顿稍显刻意，但整体很稳定,0
+2,8,E,mix_s2e10_s1e2_t7k3_aux2_ref4690,3,2,2,2,misread skip_or_repeat,漏读了前半句的“先輩ったら”,0
+2,9,A,mix_s2e10_s1e8_t7k3_aux2_ref4690,5,5,5,5,,音色还原好，发音正确，语气自然。,1
+2,9,B,full_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,整体较好，但中段语调略显平直僵硬。,0
+2,9,C,mix_s2e10_s1e6_t7k3_aux2_ref4690,4,5,4,4,noise,语气生动贴合，但尾音轻微电音感。,0
+2,9,D,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,5,4,4,noise,背景有微弱杂音，声音细节略显粗糙。,0
+2,9,E,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,5,4,5,unnatural_pause,情感表现较好，但句尾气息略显突兀。,0
+2,10,A,mix_s2e10_s1e4_t7k3_aux2_ref4690,4,2,3,4,misread,把2026年念错成了奇怪的发音组合。,0
+2,10,B,full_s2e10_s1e6_t7k3_aux2_ref4690,4,4,4,4,,整体自然流畅，音色贴合，停顿节奏好。,1
+2,10,C,mix_s2e10_s1e8_t7k3_aux2_ref4690,3,3,3,3,unnatural_pause misread,年份读音粘连不自然，后半句语调微怪。,0
+2,10,D,mix_s2e10_s1e6_t7k3_aux2_ref4690,3,2,2,3,misread unnatural_pause,年份发音严重卡顿失真，节奏奇怪。,0
+2,10,E,mix_s2e10_s1e2_t7k3_aux2_ref4690,4,2,3,3,misread,年份数字读法不准确且节奏略显生硬。,0

@@ -1,0 +1,115 @@
+﻿round,idx,label,checkpoint,similarity,pronunciation,naturalness,stability,issues,comment,best
+1,1,A,full_s2e10_s1e9,3,2,2,1,skip_or_repeat noise,句中多出异常吸气杂音ha，句尾问句语调偏平僵硬。,0
+1,1,B,full_s2e6_s1e9,3,2,2,2,skip_or_repeat noise,句中同样混入多余杂音ha，尾音微颤且稳定性不足。,0
+1,1,C,full_s2e10_s1e6,5,5,5,5,,音色极其贴合角色，语调生动自然，节奏完美无瑕疵。,1
+1,1,D,gsv_s2e8_s1e15,4,4,4,5,accent,整体发音清晰稳定，但后半句语调略平，起伏稍欠生动。,0
+1,1,E,full_s2e10_s1e15,4,4,1,4,unnatural_pause,“今日は”后出现突兀的不自然长停顿，严重割裂语流。,0
+1,1,F,full_s2e10_s1base,4,4,3,4,unnatural_pause,两句衔接停顿略急促，句尾气息偏干，但整体尚算流畅。,0
+1,2,A,full_s2e10_s1e15,4,4,4,4,accent,小说与三册的声调略显平淡，整体自然流畅。,0
+1,2,B,full_s2e10_s1e6,4,5,4,5,,发音声调标准，节奏清晰，音色较原声偏亮。,0
+1,2,C,full_s2e10_s1base,2,3,1,2,noise accent,高频略带杂音，语调机械单调，三册声调偏平。,0
+1,2,D,full_s2e10_s1e9,2,2,2,3,accent unnatural_pause,三册与句尾买いました抑扬生硬，停顿不自然。,0
+1,2,E,gsv_s2e8_s1e15,5,5,5,5,,完美还原原声甜美轻柔声线，换气真实，语调生动。,1
+1,2,F,full_s2e6_s1e9,3,3,3,3,accent unnatural_pause,新しい与小説衔接急促，声调微僵，气息突兀。,0
+1,3,A,gsv_s2e8_s1e15,4,4,2,2,noise unnatural_pause,金曜日后有突兀抽气杂音，语流被打断。,0
+1,3,B,full_s2e10_s1e15,5,5,5,5,,音色甜美贴合，语调自然生动，整体表现最好。,1
+1,3,C,full_s2e10_s1base,3,3,2,4,unnatural_pause,午后三时后有明显不自然停顿，语流割裂。,0
+1,3,D,full_s2e10_s1e6,4,4,4,5,,发音清晰稳定，逗号后停顿稍长但整体良好。,0
+1,3,E,full_s2e6_s1e9,4,4,3,4,accent,后半句语调偏平淡，表现力不如参考音频。,0
+1,3,F,full_s2e10_s1e9,3,3,3,3,other,气音过重且略带浑浊，语调稍显沉闷压抑。,0
+1,4,A,full_s2e10_s1e6,3,2,3,3,misread noise,上着漏读首音节且带轻微杂音,0
+1,4,B,gsv_s2e8_s1e15,4,3,4,4,misread,上着发音残缺漏读う，音质较清晰,0
+1,4,C,full_s2e6_s1e9,3,2,3,3,misread noise,上着漏音，声线稍显单薄并有杂音,0
+1,4,D,full_s2e10_s1e15,3,2,3,3,misread unnatural_pause,上着处停顿略不自然且漏读首音节,0
+1,4,E,full_s2e10_s1base,5,5,5,5,,上着发音完整准确，音色与参考高度一致,1
+1,4,F,full_s2e10_s1e9,3,3,3,4,misread,上着读音不完整，整体语调尚可,0
+1,5,A,full_s2e10_s1base,4,5,4,5,,吐字清晰标准，语流连贯平稳，音色与参考非常接近。,0
+1,5,B,full_s2e10_s1e15,3,3,2,2,skip_or_repeat unnatural_pause,“ヨルツキ”前有多余音节杂音，“いつも”前有卡顿抽搐。,0
+1,5,C,full_s2e10_s1e6,5,5,5,5,,情感自然生动，停顿与声调极为真实，音色还原度最高。,1
+1,5,D,full_s2e6_s1e9,4,4,3,4,unnatural_pause,发音准确，但在“いつも”与“仲がいい”之间停顿生硬。,0
+1,5,E,gsv_s2e8_s1e15,3,1,2,4,misread,严重误读，将开头的“カナデ先輩”误读成了“そう先輩”。,0
+1,5,F,full_s2e10_s1e9,4,4,3,4,unnatural_pause,音色贴合，但后半句节奏略有断层，呼吸停顿不够自然。,0
+1,6,A,gsv_s2e8_s1e15,4,3,4,5,misread,十分误读为juubun，声线还原度高，整体语调自然流畅。,0
+1,6,B,full_s2e6_s1e9,2,3,3,4,misread accent,十分误读为juubun，声调偏低沉，缺乏参考音频的萌系少女感。,0
+1,6,C,full_s2e10_s1e9,2,2,2,4,misread accent,十分误读为juubun，音调起伏欠佳略显平淡，表现力较弱。,0
+1,6,D,full_s2e10_s1e15,3,2,1,3,misread unnatural_pause,十分误读为juubun，中间停顿过长且拖沓，尾音略有衰减不稳。,0
+1,6,E,full_s2e10_s1base,3,3,3,4,misread,十分误读为juubun，语速偏急促，韵律稍显紧绷但发音清晰。,0
+1,6,F,full_s2e10_s1e6,5,4,5,5,misread,十分误读为juubun，声线与抑扬顿挫最契合参考音，灵动自然。,1
+1,7,A,full_s2e10_s1e6,4,2,3,3,misread accent,“上手に”清音化误读为“ちょうず”，句尾疑问语调较平淡。,0
+1,7,B,gsv_s2e8_s1e15,5,5,5,5,,发音准确无误，音色高度还原，断句与疑问语气非常生动。,1
+1,7,C,full_s2e10_s1e9,4,4,4,4,other,“上手に”前面带有轻微的“ん”多余音，其余部分表现良好。,0
+1,7,D,full_s2e10_s1e15,4,4,3,3,noise other,“上手に”前带多余鼻音“ん”，且后半句音质略有金属毛刺感。,0
+1,7,E,full_s2e6_s1e9,3,4,3,3,noise other,“上手に”前出现明显的“ん”声杂音，呼吸气声略有不自然。,0
+1,7,F,full_s2e10_s1base,3,1,2,2,misread unnatural_pause accent,“上手に”误读为“ちょうず”，断句过紧过急且句尾语调下沉。,0
+1,8,A,full_s2e10_s1e15,3,2,2,1,misread noise unnatural_pause,“ます”读成“もす”，词间伴有两处明显的鼻音杂音，停顿生硬。,0
+1,8,B,gsv_s2e8_s1e15,5,5,5,5,,完美贴合参考音色，笑声自然甜美，发音精准无瑕，整体表现极佳。,1
+1,8,C,full_s2e10_s1base,3,2,2,3,misread unnatural_pause,开头笑声被吞截断，语速偏快，“ます”误读为“もす”，节奏欠佳。,0
+1,8,D,full_s2e10_s1e6,4,3,3,3,misread noise,“また”前有轻微鼻音杂音，“ます”发音偏“も”，音色较好。,0
+1,8,E,full_s2e10_s1e9,3,2,2,2,misread noise other,开头笑声带异音，词间有杂音粘连，“ます”发音含混成“もす”。,0
+1,8,F,full_s2e6_s1e9,2,2,1,2,misread noise accent,音色略闷且杂音明显，笑声起音怪异，语调不自然，“ます”读错。,0
+1,9,A,full_s2e10_s1e6,3,3,3,3,misread unnatural_pause noise,首字误读为いやくそく，句中有杂音且停顿不自然。,0
+1,9,B,gsv_s2e8_s1e15,4,3,3,4,misread unnatural_pause,首字误读为いやくそく，词间停顿略显生硬，音色尚可。,0
+1,9,C,full_s2e6_s1e9,2,3,2,3,misread unnatural_pause other,首字误读为いやくそく，语速拖沓沉闷，停顿过长。,0
+1,9,D,full_s2e10_s1e9,2,2,1,1,misread noise unnatural_pause,首字误读为いやくそく，有严重电音底噪，断句破碎。,0
+1,9,E,full_s2e10_s1base,5,5,5,5,,首字发音准确，停顿抑扬顿挫自然生动，音色高度契合。,1
+1,9,F,full_s2e10_s1e15,3,3,2,3,misread accent unnatural_pause,首字误读为いやくそく，语调稍显机械，停顿较生硬。,0
+1,10,A,full_s2e10_s1e9,5,5,5,5,,音色还原度高，发音和语调自然流畅，句尾处理细腻。,1
+1,10,B,full_s2e10_s1base,2,1,1,2,misread unnatural_pause,“今日”误读为“chō”，且“十八度”中间出现严重异常停顿。,0
+1,10,C,full_s2e10_s1e6,4,4,3,4,unnatural_pause,发音正确，音色贴合，但语调略显平淡机械，连贯性稍欠。,0
+1,10,D,full_s2e10_s1e15,4,3,2,3,unnatural_pause other,“今日”起音有明显卡顿与犹豫感，整体断句不够自然。,0
+1,10,E,full_s2e6_s1e9,3,2,2,3,accent,“21日”声调突兀拔高，音调走形，听感较为生硬。,0
+1,10,F,gsv_s2e8_s1e15,5,5,4,5,,音色与发音俱佳，整体流畅，仅句尾停顿收音略显生硬。,0
+2,1,A,full_s2e10_s1e15,4,5,4,5,,音色贴合度高，发音清晰自然，但情感起伏略逊于D。,0
+2,1,B,full_s2e10_s1e9,3,3,3,3,skip_or_repeat,“今日は”前多读出“あ”，且语调稍显尖锐紧绷。,0
+2,1,C,gsv_s2e8_s1e15,4,4,3,4,accent,整体发音规整，但后半句语调较平直，略带机械感。,0
+2,1,D,full_s2e10_s1e6,5,5,5,5,,音色还原度极高，语调生动富有感情，疑问句尾自然。,1
+2,1,E,full_s2e10_s1base,3,4,3,4,accent,语速偏慢且末尾升调不足，缺乏年轻女生的灵动感。,0
+2,1,F,full_s2e6_s1e9,3,3,2,3,skip_or_repeat,“今日は”前有多余的发音“あ”，节奏略显促狭生硬。,0
+2,3,A,gsv_s2e8_s1e15,4,2,1,2,misread unnatural_pause,“来週”误读为“ないしゅう”，且中途有突兀吸气与停顿。,0
+2,3,B,full_s2e10_s1e6,4,2,3,4,misread,“来週”误读为“ないしゅう”，语调稍显平淡机械。,0
+2,3,C,full_s2e10_s1e9,3,1,2,3,misread accent,“来週”误读，且“午後三時に”声调生硬不自然。,0
+2,3,D,full_s2e10_s1e15,2,2,3,2,misread noise,“来週”误读为“ないしゅう”，声音带沙哑杂音与底噪。,0
+2,3,E,full_s2e6_s1e9,4,2,4,4,misread,“来週”误读为“ないしゅう”，语速偏慢但音质较干净。,0
+2,3,F,full_s2e10_s1base,5,5,5,5,,发音完全正确，音色还原度高，语调自然流畅。,1
+2,4,A,full_s2e10_s1e6,3,2,3,3,misread noise,上着漏读首音节う，伴随轻微杂音。,0
+2,4,B,gsv_s2e8_s1e15,4,3,4,4,misread,上着漏读首音节，语调自然且音质干净。,0
+2,4,C,full_s2e10_s1e9,3,3,3,4,misread,上着发音不完整，整体语速平稳连贯。,0
+2,4,D,full_s2e10_s1e15,3,2,3,3,misread unnatural_pause,上着读音失真且停顿稍显拖沓不自然。,0
+2,4,E,full_s2e10_s1base,5,5,5,5,,上着发音准确完整，音色贴合且十分生动。,1
+2,4,F,full_s2e6_s1e9,3,2,3,3,misread noise,上着漏读首音节，声线较单薄并有轻微杂音。,0
+2,5,A,full_s2e10_s1e6,4,4,3,4,unnatural_pause,カナデ与ヨルツキ之间停顿稍显生硬，语调略有迟疑。,0
+2,5,B,gsv_s2e8_s1e15,3,1,3,3,misread,将“カナデ”严重误读为“そう”，漏读了开头的人名。,0
+2,5,C,full_s2e10_s1e15,3,4,2,2,noise unnatural_pause,“先輩は”后有突兀的吸气异音与断层卡顿，影响听感。,0
+2,5,D,full_s2e6_s1e9,5,5,5,5,,发音准确自然，声线与语调完美契合参考，表现最佳。,1
+2,5,E,full_s2e10_s1base,4,4,3,4,unnatural_pause,前后短语声调较为平淡，词间停顿稍显生硬不够连贯。,0
+2,5,F,full_s2e10_s1e9,4,5,4,5,,音色还原好且发音准确，但整体语调起伏略平不如D生动。,0
+2,6,A,full_s2e10_s1e15,5,3,5,5,misread,十分误读为juubun；声线与语气极自然。,1
+2,6,B,gsv_s2e8_s1e15,4,3,3,4,misread accent,十分读为juubun；后半句语调略僵硬。,0
+2,6,C,full_s2e10_s1e6,4,1,3,4,misread,だから误读为dokoro，十分亦误读。,0
+2,6,D,full_s2e10_s1base,4,3,4,4,misread accent,十分读为juubun；だから音调稍显突兀。,0
+2,6,E,full_s2e10_s1e9,5,3,4,5,misread,十分误读为juubun；整体表现平稳流畅。,0
+2,6,F,full_s2e6_s1e9,4,3,3,4,misread accent,十分读为juubun；句尾语调平淡缺乏起伏。,0
+2,7,A,full_s2e6_s1e9,4,1,2,2,misread noise unnatural_pause,できた误读为いってきた，句间有杂音呃声，停顿生硬。,0
+2,7,B,gsv_s2e8_s1e15,4,2,3,4,misread unnatural_pause,将できた误读为いってきた，句间停顿稍长，但无杂音。,0
+2,7,C,full_s2e10_s1e6,3,2,2,3,misread accent,できた误读成いってきた，语调偏平淡僵硬，音色略闷。,0
+2,7,D,full_s2e10_s1e9,3,2,2,2,misread noise,できた误读为いってきた，后半句前有杂音且音质偏薄。,0
+2,7,E,full_s2e10_s1base,5,5,5,5,,发音完全正确，语气自然生动，音色与参考高度一致。,1
+2,7,F,full_s2e10_s1e15,3,1,1,1,misread noise unnatural_pause,误读できた为いってきた，夹带杂音，句尾衰减不稳定。,0
+2,8,A,gsv_s2e8_s1e15,5,5,5,5,,笑声自然，语调生动甜美，音色与参考高度一致。,1
+2,8,B,full_s2e10_s1e6,4,4,4,4,accent other,整体较自然，但“また”前有杂音，“寝癖”语调略显生硬。,0
+2,8,C,full_s2e10_s1base,3,3,2,3,accent unnatural_pause noise,句尾语调异常上扬成疑问句，“寝癖”声调不自然且带杂音。,0
+2,8,D,full_s2e10_s1e9,3,2,3,3,misread noise other,“ふふっ”错读为“へへっ”，“また”前夹杂明显鼻音杂音。,0
+2,8,E,full_s2e6_s1e9,3,2,3,3,misread other,开头“ふふっ”错读成“へへっ”，“また”前面多出鼻音。,0
+2,8,F,full_s2e10_s1e15,2,2,1,2,misread unnatural_pause other,开头误读为“へへっ”，且在“また”后出现严重不自然停顿。,0
+2,9,A,gsv_s2e8_s1e15,4,4,4,3,noise,句首带有杂音“え”，其余部分发音和语调自然流畅。,0
+2,9,B,full_s2e10_s1base,5,5,5,5,,音色贴合度极高，无杂音与吞字，语调生动自然。,1
+2,9,C,full_s2e10_s1e9,3,4,3,2,noise other,句首有杂音，中段略带电音与机械感，语调偏平。,0
+2,9,D,full_s2e10_s1e15,3,3,2,3,noise unnatural_pause,句首有杂音，音色偏单薄，停顿与节奏略显生硬。,0
+2,9,E,full_s2e6_s1e9,4,4,3,3,noise,句首有杂音，语速偏快且高音区稍显紧绷。,0
+2,9,F,full_s2e10_s1e6,2,3,1,1,noise unnatural_pause skip_or_repeat,句首杂音，中段多出“ん”杂音且停顿异常不连贯。,0
+2,10,A,full_s2e10_s1e6,4,3,2,4,accent unnatural_pause,日期部分连读过急缺乏停顿，气温声调突兀。,0
+2,10,B,gsv_s2e8_s1e15,5,5,5,5,,音色贴合度极高，语调自然流畅，发音准确。,1
+2,10,C,full_s2e10_s1base,4,2,3,3,misread,“今日”发音错误读成“ちょう”，发音较差。,0
+2,10,D,full_s2e6_s1e9,4,4,4,4,,整体表现平稳，发音清晰，但语调略显平淡。,0
+2,10,E,full_s2e10_s1e9,3,4,3,4,accent,语调稍带机械感，后半句起伏略显平缓单调。,0
+2,10,F,full_s2e10_s1e15,3,3,2,3,accent unnatural_pause,年份语调节奏不均略有抖动，语调起伏稍生硬。,0

@@ -1,0 +1,94 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>试听结果</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1f1f1f;--mut:#777;--line:#e3e1dc;--hi:#c2410c;--ok:#2f7d4f;--acc:#3b5bdb;--accbg:#e8ecfd}
+@media (prefers-color-scheme:dark){:root{--bg:#18181a;--card:#222225;--ink:#ececec;--mut:#9a9a9a;--line:#333;--hi:#f08c5a;--ok:#62c48a;--acc:#8ea2ff;--accbg:#2a3156}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic UI","Microsoft YaHei",sans-serif}
+header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+h1{font-size:17px;margin:0 12px 0 0}.prog{color:var(--mut)}
+button{font:inherit;padding:5px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff}
+main{max-width:980px;margin:0 auto;padding:12px 16px 80px}
+.tip{color:var(--mut);font-size:13px;margin:4px 0 12px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:12px 0}
+.c h2{font-size:16px;margin:0 0 6px;font-weight:600}.c h2 .n{color:var(--mut);font-weight:400;margin-right:6px}
+.refs .r{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:4px 12px;align-items:center;font-size:13px;color:var(--mut);padding:3px 0}
+@media (max-width:640px){.refs .r{grid-template-columns:1fr}}
+audio{height:32px;width:100%;max-width:340px}
+.v{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:150px minmax(0,320px);gap:4px 12px;align-items:center}
+.v.cur{background:var(--accbg);margin:0 -12px;padding:8px 12px}
+.lab{font-weight:600;font-size:13px;font-family:ui-monospace,Consolas,monospace;word-break:break-all}.lab small{display:block;font-size:11px;font-weight:400;color:var(--mut);line-height:1.2;white-space:nowrap}
+.dims{display:flex;flex-wrap:wrap;gap:4px 14px}
+.dim{display:flex;align-items:center;gap:3px;font-size:13px}.dim span{width:30px;color:var(--mut)}
+.dim button{width:26px;height:26px;padding:0;font-size:13px;border-radius:4px}
+.dim button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.flags{grid-column:2/4;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:13px;color:var(--mut)}
+.flags label{cursor:pointer;user-select:none}.flags input[type=text]{flex:1;min-width:140px;font:inherit;font-size:13px;padding:2px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.asr{grid-column:1/3;font-size:13px;color:var(--mut)}.asr b{color:var(--hi);font-weight:600}.asr .z{color:var(--ok)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right}th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:500}tr.best td{font-weight:700}td.top{color:var(--ok);font-weight:700}.wrap{overflow-x:auto}
+@media (max-width:640px){.v{grid-template-columns:1fr}.asr{grid-column:1}}
+</style></head><body>
+<header><h1>试听结果</h1><span class="prog" id="prog"></span></header>
+<main>
+<p class="tip">每句话下按版本列出试听，播放音量已自动对齐（响的总会显得更好）。每条下面是 Whisper 听写（CER）和 Gemini 的打分与点评（相似/读音/自然/稳定，每轮一行）。<br>
+版本名：<b>full_</b> 全量数据训练，<b>gsv_</b> 第一轮 90 条；<b>s2e</b>N 是 SoVITS 轮数，<b>s1e</b>N 是 GPT 轮数，<b>s1base</b> 是官方底模 GPT。快捷键：<b>J / K</b> 下一个 / 上一个并播放，<b>空格</b> 播放/暂停。</p>
+<div id="result"></div>
+<div class="c refs" id="refs"><h2>原声参考</h2></div>
+<div id="list"></div>
+</main>
+<script>
+const DATA={"key": "ffb63a3d99", "sentences": ["先輩、おはようございます。今日は一緒に帰れますか？", "昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。", "来週の金曜日、午後三時に生徒会室に集合してください。", "今日は風が強いので、上着を着ていったほうがいいと思いますよ。", "カナデ先輩とヨルツキ先輩は、いつも仲がいいですね。", "人気のお店だから、十分くらい並ぶかもしれません。", "生まれて初めて、自分でお弁当を作ってみたんです。上手にできたかな？", "ふふっ、先輩ったら、また寝癖がついてますよ。", "約束ですよ。明日の朝、七時半に、いつもの場所で待ってますから。", "2026年10月21日、今日の気温は十八度でした。"], "ckpts": [{"name": "full_s2e10_s1e6_t7k3_aux2_ref4690", "step": 0}, {"name": "mix_s2e10_s1e2_t7k3_aux2_ref4690", "step": 0}, {"name": "mix_s2e10_s1e4_t7k3_aux2_ref4690", "step": 0}, {"name": "mix_s2e10_s1e6_t7k3_aux2_ref4690", "step": 0}, {"name": "mix_s2e10_s1e8_t7k3_aux2_ref4690", "step": 0}], "refs": [{"src": "../../02_dataset_v1/03002860.ogg", "text": "先輩、何か考え事ですか？それとも、何か悩みでも？", "vol": 0.887}, {"src": "../../02_dataset_v1/03003430.ogg", "text": "そうですね。頑張って練習しましょう。今日はもうお店閉めちゃってもいいよってお父さんが言ってくれましたし。", "vol": 0.75}, {"src": "../../02_dataset_v1/03004600.ogg", "text": "あのお店のコーヒーもケーキも、すっごく美味しかったですね。何かうちも、大好メニューを考えなきゃいけないかもしれません。", "vol": 0.818}], "vols": {"full_s2e10_s1e6_t7k3_aux2_ref4690": {"1": 0.709, "2": 0.777, "3": 0.778, "4": 0.77, "5": 0.741, "6": 0.699, "7": 0.729, "8": 0.738, "9": 0.833, "10": 0.783}, "mix_s2e10_s1e2_t7k3_aux2_ref4690": {"1": 0.706, "2": 0.774, "3": 0.733, "4": 0.756, "5": 0.708, "6": 0.773, "7": 0.711, "8": 0.69, "9": 0.819, "10": 0.782}, "mix_s2e10_s1e4_t7k3_aux2_ref4690": {"1": 0.759, "2": 0.77, "3": 0.727, "4": 0.779, "5": 0.766, "6": 0.726, "7": 0.717, "8": 0.711, "9": 0.851, "10": 0.77}, "mix_s2e10_s1e6_t7k3_aux2_ref4690": {"1": 0.726, "2": 0.821, "3": 0.765, "4": 0.775, "5": 0.772, "6": 0.744, "7": 0.754, "8": 0.716, "9": 0.767, "10": 0.765}, "mix_s2e10_s1e8_t7k3_aux2_ref4690": {"1": 0.703, "2": 0.757, "3": 0.752, "4": 0.792, "5": 0.722, "6": 0.702, "7": 0.745, "8": 0.727, "9": 0.796, "10": 0.721}}, "cer": {"full_s2e10_s1e6_t7k3_aux2_ref4690": {"items": {"1": {"hyp": "先輩、おはようございます。今日は一緒に帰れますか?", "cer": 0.0}, "2": {"hyp": "昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。", "cer": 0.0}, "3": {"hyp": "来週の金曜日 午後3時に生徒会室に集合してください", "cer": 0.0}, "4": {"hyp": "今日は風が強いので 上着を着て行ったほうがいいと思いますよ", "cer": 0.0}, "5": {"hyp": "奏先輩とゆる月先輩は いつも仲がいいですね", "cer": 0.2143}, "6": {"hyp": "人気のお店だから 十分くらい並ぶかもしれません", "cer": 0.0}, "7": {"hyp": "生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな", "cer": 0.0}, "8": {"hyp": "先輩言ったらまた寝癖がついてますよ", "cer": 0.1818}, "9": {"hyp": "約束ですよ 明日の朝7時半にいつもの場所で待ってますから", "cer": 0.0}, "10": {"hyp": "2026年10月21日 今日の気温は18度でした", "cer": 0.0}}, "total": 0.03067484662576687}, "mix_s2e10_s1e2_t7k3_aux2_ref4690": {"items": {"1": {"hyp": "先輩、おはようございます。今日は一緒に帰れますか?", "cer": 0.0}, "2": {"hyp": "昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。", "cer": 0.0}, "3": {"hyp": "来週の金曜日 午後3時に生徒会室に集合してください", "cer": 0.0}, "4": {"hyp": "今日は風が強いので、上着を着て行った方がいいと思いますよ。", "cer": 0.0}, "5": {"hyp": "奏先輩と寄月先輩はいつも仲がいいですね", "cer": 0.2143}, "6": {"hyp": "人気のお店だから 十分くらい並ぶかもしれません", "cer": 0.0}, "7": {"hyp": "生まれて初めて自分でお弁当を作ってみたんです上手にできたかな", "cer": 0.0}, "8": {"hyp": "はい。また寝癖がついてますよ。", "cer": 0.4091}, "9": {"hyp": "約束ですよ。明日の朝、7時半にいつもの場所で待ってますから。", "cer": 0.0}, "10": {"hyp": "2320 6年10月21日 今日の気温は18度でした", "cer": 0.122}}, "total": 0.06134969325153374}, "mix_s2e10_s1e4_t7k3_aux2_ref4690": {"items": {"1": {"hyp": "先輩、おはようございます。今日は一緒に帰れますか?", "cer": 0.0}, "2": {"hyp": "昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。", "cer": 0.0}, "3": {"hyp": "来週の金曜日 午後3時に生徒会室に集合してください", "cer": 0.0}, "4": {"hyp": "今日は風が強いので 上着を着ていた方がいいと思いますよ", "cer": 0.0294}, "5": {"hyp": "奏先輩と頼月先輩は いつも仲がいいですね", "cer": 0.25}, "6": {"hyp": "人気のお店だから 十分くらい並ぶかもしれません", "cer": 0.0}, "7": {"hyp": "生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな", "cer": 0.0}, "8": {"hyp": "へへ、先輩言ったらまた寝癖がついてますよ", "cer": 0.1818}, "9": {"hyp": "約束ですよ。明日の朝、7時半に、いつもの場所で待ってますから。", "cer": 0.0}, "10": {"hyp": "2326年10月21日 今日の気温は18度でした", "cer": 0.122}}, "total": 0.05214723926380368}, "mix_s2e10_s1e6_t7k3_aux2_ref4690": {"items": {"1": {"hyp": "先輩、おはようございます。今日は一緒に帰れますか?", "cer": 0.0}, "2": {"hyp": "昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。", "cer": 0.0}, "3": {"hyp": "来週の金曜日午後3時に生徒会室に集合してください", "cer": 0.0}, "4": {"hyp": "今日は風が強いので 上着を着ていた方がいいと思いますよ", "cer": 0.0294}, "5": {"hyp": "かなで先輩と夜月先輩はいつも仲がいいですね", "cer": 0.0714}, "6": {"hyp": "人気のお店だから 十分くらい並ぶかもしれません", "cer": 0.0}, "7": {"hyp": "生まれて初めて自分でお弁当を作ってみたんです。上手にできたかな?", "cer": 0.0}, "8": {"hyp": "フフフ、センパイったら、また寝癖がついてますよ。", "cer": 0.0455}, "9": {"hyp": "約束ですよ 明日の朝7時半にいつもの場所で待ってますから", "cer": 0.0}, "10": {"hyp": "2326年10月21日今日の気温は18度でした", "cer": 0.122}}, "total": 0.027607361963190184}, "mix_s2e10_s1e8_t7k3_aux2_ref4690": {"items": {"1": {"hyp": "先輩おはようございます 今日は一緒に帰れますか", "cer": 0.0}, "2": {"hyp": "昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。", "cer": 0.0}, "3": {"hyp": "来週の金曜日 午後3時に生徒会室に集合してください", "cer": 0.0}, "4": {"hyp": "今日は風が強いので上着を着て行った方がいいと思いますよ", "cer": 0.0}, "5": {"hyp": "奏先輩と頼月先輩は いつも仲がいいですね", "cer": 0.25}, "6": {"hyp": "人気のお店だから十分くらい並ぶかもしれません", "cer": 0.0}, "7": {"hyp": "生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな", "cer": 0.0}, "8": {"hyp": "へへへ、先輩言ったら、また寝癖がついてますよ。", "cer": 0.1818}, "9": {"hyp": "約束ですよ 明日の朝7時半にいつもの場所で待ってますから", "cer": 0.0}, "10": {"hyp": "2020年6年10月21日今日の気温は18度でした", "cer": 0.0488}}, "total": 0.03987730061349693}}, "auto": [{"name": "原声", "sim": 0.8457555555555555, "mos": 3.9295666666666667, "dnsmos": 3.119277777777778, "f0_st": 3.6754444444444445, "mora_s": 4.256333333333333}, {"name": "full_s2e10_s1e6_t7k3_aux2_ref4690", "sim": 0.85124, "mos": 3.6182000000000003, "dnsmos": 3.1573, "f0_st": 4.002, "mora_s": 5.276}, {"name": "mix_s2e10_s1e2_t7k3_aux2_ref4690", "sim": 0.84609, "mos": 3.5136000000000003, "dnsmos": 3.1902999999999997, "f0_st": 3.603, "mora_s": 5.235}, {"name": "mix_s2e10_s1e4_t7k3_aux2_ref4690", "sim": 0.84984, "mos": 3.5031, "dnsmos": 3.1798, "f0_st": 3.499, "mora_s": 5.16}, {"name": "mix_s2e10_s1e6_t7k3_aux2_ref4690", "sim": 0.8473499999999999, "mos": 3.4451, "dnsmos": 3.1744, "f0_st": 3.7659999999999996, "mora_s": 5.307}, {"name": "mix_s2e10_s1e8_t7k3_aux2_ref4690", "sim": 0.8468500000000001, "mos": 3.4269999999999996, "dnsmos": 3.1054000000000004, "f0_st": 3.777, "mora_s": 5.288}], "gemini": {"summary": [{"name": "full_s2e10_s1e6_t7k3_aux2_ref4690", "n": 20, "best": 6, "similarity": 4.05, "pronunciation": 4.5, "naturalness": 3.85, "stability": 4.3}, {"name": "mix_s2e10_s1e2_t7k3_aux2_ref4690", "n": 20, "best": 4, "similarity": 4.05, "pronunciation": 4.15, "naturalness": 3.6, "stability": 4.1}, {"name": "mix_s2e10_s1e4_t7k3_aux2_ref4690", "n": 20, "best": 3, "similarity": 4.0, "pronunciation": 4.4, "naturalness": 3.85, "stability": 4.45}, {"name": "mix_s2e10_s1e6_t7k3_aux2_ref4690", "n": 20, "best": 2, "similarity": 3.95, "pronunciation": 4.4, "naturalness": 3.65, "stability": 4.25}, {"name": "mix_s2e10_s1e8_t7k3_aux2_ref4690", "n": 20, "best": 5, "similarity": 3.9, "pronunciation": 4.4, "naturalness": 3.9, "stability": 4.25}], "items": {"full_s2e10_s1e6_t7k3_aux2_ref4690": {"1": ["4/4/3/4 呼吸音与停顿略显不自然，情感表现稍弱。", "4/5/4/4 后半句略有气声不稳，语速微快。"], "2": ["5/5/5/5 语调起伏自然生动，声线最贴合原声。", "3/5/3/3 机械感与数码杂音较明显，声音略显生硬。"], "3": ["3/5/3/4 语调偏平直较生硬，音色稍显单薄。", "4/4/4/4 整体较为流畅，但声线稍平淡偏薄。"], "4": ["3/4/3/3 尾音略有电子杂质，自然度一般。", "4/5/3/4 略有電子感，節奏稍顯緊繃。"], "5": ["4/5/4/5 发音准确，但停顿略微生硬。", "5/5/5/5 发音自然生动，语调起伏流畅，还原度高。"], "6": ["5/5/5/5 正确读作じゅっぷん，语调自然还原度高。", "4/5/4/5 语调稍平，后半句表现力偏弱。"], "7": ["4/4/4/4 前半段語調微沉，後句問句語氣稍平。", "4/4/3/4 尾音处理较干，中段停顿稍显生硬。"], "8": ["5/5/5/5 声音生动自然，语气贴切，还原度高。", "5/5/5/5 笑声最生动自然，音色贴合度极高，节奏完美"], "9": ["4/4/3/3 停顿略显刻意，七字读音略含糊轻微杂音。", "4/5/4/5 整体较好，但中段语调略显平直僵硬。"], "10": ["3/2/3/5 年份误读为2026年，停顿略显机械", "4/4/4/4 整体自然流畅，音色贴合，停顿节奏好。"]}, "mix_s2e10_s1e2_t7k3_aux2_ref4690": {"1": ["4/5/4/5 音色相似度较好，但语气略微生硬，不够生动。", "4/5/4/5 尾音语调略平淡，情感起伏不如A自然。"], "2": ["4/5/4/4 音色贴合度尚可，呼吸感自然，略有电音。", "5/5/5/5 发音自然准确，音色还原度高且清晰。"], "3": ["4/5/4/4 金曜日后停顿略长，尾音有轻微电音感。", "4/4/3/3 金曜日后有明显不自然停顿与吸气断裂。"], "4": ["3/4/3/4 音色偏暗稍显机械，停顿略长。", "4/5/3/5 语气偏平淡，上着断句略生硬。"], "5": ["4/5/3/4 中段停顿稍长，语气略带喘息感。", "4/5/3/4 停顿偏多且略带电音感，音调稍显平淡。"], "6": ["4/3/3/4 十分读成じゅうぶん，声音略显机械。", "5/5/5/5 音色与声线还原度最高，读音准确自然。"], "7": ["5/5/5/5 聲線最還原參考音，氣息與抑揚頓挫自然。", "5/5/5/5 音色还原度最高，语调灵动自然清晰。"], "8": ["3/2/2/2 完全漏读了“先輩ったら”，发音缺漏。", "3/2/2/2 漏读了前半句的“先輩ったら”"], "9": ["4/4/4/4 尾音和气声稍有机械感，整体表现尚可。", "4/5/4/4 背景有微弱杂音，声音细节略显粗糙。"], "10": ["4/2/3/5 年份误读为2026年，语气略平淡", "4/2/3/3 年份数字读法不准确且节奏略显生硬。"]}, "mix_s2e10_s1e4_t7k3_aux2_ref4690": {"1": ["5/5/5/5 音色贴合度极高，语调自然流畅，发音准确。", "5/5/5/5 音色最贴近原声，语调自然流畅无瑕疵。"], "2": ["4/5/4/4 前半句音调略显平直僵硬，音色还原较好。", "4/5/4/4 高频有些微毛刺感，整体节奏较平稳。"], "3": ["4/5/4/3 音质略有压缩杂音感，后半句语速偏快。", "3/3/3/3 金曜日声调不自然，尾音有电音颤感。"], "4": ["5/5/5/5 语调自然灵动，音色高度还原参考。", "4/5/4/5 咬字清晰自然，音色還原度好。"], "5": ["4/5/4/5 整体平稳，但语调略显平淡。", "4/5/4/5 中段停顿略长，整体音质和声线还原较好。"], "6": ["4/3/3/4 十分读成じゅうぶん，声调略平。", "4/5/4/5 停顿略显机械，声线略有变化。"], "7": ["3/4/3/4 音色略偏平，語調和斷句尚可但稍顯機械。", "4/5/4/4 整体较为流畅自然，音色贴合度好。"], "8": ["4/5/4/5 整体音色还原不错，略有机械感。", "4/5/4/5 语调稍平，后半句起伏略显生硬"], "9": ["4/4/3/4 音质稍有底噪，语调偏平直略显机械。", "4/5/4/5 情感表现较好，但句尾气息略显突兀。"], "10": ["3/2/3/5 年份读作2026年，音色偏尖细幼态", "4/2/3/4 把2026年念错成了奇怪的发音组合。"]}, "mix_s2e10_s1e6_t7k3_aux2_ref4690": {"1": ["4/5/4/5 语调与音色较好，但句尾问句语调略显平直。", "4/5/4/5 音色较近，但语句间停顿略显生硬机械。"], "2": ["4/5/3/4 语气稍显平淡，句末停顿略生硬。", "3/5/4/4 音色偏暗沉且有噪点，句尾略显干瘪。"], "3": ["4/5/4/4 金曜日语调起伏稍显突兀，整体中规中矩。", "5/5/5/5 音色最贴近原声，发音自然且极连贯。"], "4": ["4/4/4/4 语调轻快，中间停顿处呼吸声稍显突兀。", "4/5/3/5 語調稍顯機械，いい前的停頓稍怪。"], "5": ["5/5/5/5 音色还原度最高，抑扬顿挫十分自然。", "4/5/3/4 音色还原好但句子切分停顿生硬，稍显断续。"], "6": ["4/3/3/4 十分读成じゅうぶん，音调略怪。", "4/5/3/4 尾音有些拖沓，中段节奏略不协调。"], "7": ["3/4/3/3 電音感較明顯，聲音偏薄且略有雜質感。", "4/4/4/4 「みたんです」发音含糊略有杂音。"], "8": ["4/5/4/4 在“また”后停顿略长，稍显不连贯。", "4/5/4/5 寝癖发音停顿稍显刻意，但整体很稳定"], "9": ["4/4/4/4 声线较相似，但七点半处音调略生硬。", "4/5/4/4 语气生动贴合，但尾音轻微电音感。"], "10": ["4/2/3/5 年份读错成2026年，语调生硬不够自然", "3/2/2/3 年份发音严重卡顿失真，节奏奇怪。"]}, "mix_s2e10_s1e8_t7k3_aux2_ref4690": {"1": ["3/4/3/4 音色略偏亮单薄，尾音稍有拖沓与机械感。", "4/5/4/5 句子间停顿略微拉长，整体还算稳定。"], "2": ["4/5/4/4 音调稍有飘忽，整体表现较平稳。", "4/5/4/4 语调略平，背景带轻微底噪及发声杂音。"], "3": ["5/5/5/5 音色最贴近原声，语调自然流畅无瑕疵。", "3/4/3/4 音色较原声偏细亮，语调较生硬。"], "4": ["4/4/4/4 气声和质感较好，音色很接近。", "5/5/5/5 音色語氣極為貼合，情感自然流暢。"], "5": ["4/5/4/5 咬字清晰，但句尾语调略显生硬。", "3/5/4/4 音色有些发虚并伴有轻微底噪，语调稍平。"], "6": ["4/3/3/4 十分读成じゅうぶん，语调较生硬。", "3/5/3/3 声音偏闷且带轻微杂音，相似度较低。"], "7": ["3/4/3/4 尾音上揚略生硬，音色還原度普通。", "4/4/4/3 尾音稍带电音杂质，节奏略显平缓。"], "8": ["4/5/4/4 中间停顿略显生硬，语调稍平。", "4/5/4/5 笑声略长但自然，声线契合，整体表现良好"], "9": ["5/5/5/5 音色还原极佳，发音自然生动，最贴合。", "5/5/5/5 音色还原好，发音正确，语气自然。"], "10": ["4/2/4/5 年份念错为2026年，但语调音色最自然贴近", "3/3/3/3 年份读音粘连不自然，后半句语调微怪。"]}}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const gAvg=n=>{const g=DATA.gemini&&DATA.gemini.summary.find(g=>g.name===n);return g?(g.similarity+g.pronunciation+g.naturalness+g.stability)/4:-1};
+const NAMES=DATA.ckpts.map(c=>c.name).sort((a,b)=>gAvg(b)-gAvg(a));  // best Gemini overall score first
+let cur=0;const rows=[];
+
+DATA.refs.forEach(r=>{const d=document.createElement("div");d.className="r";
+  d.innerHTML=`<audio controls preload="none" src="${esc(r.src)}"></audio><span>${esc(r.text)}</span>`;
+  d.querySelector("audio").volume=r.vol??1;document.getElementById("refs").appendChild(d)});
+
+function render(){const L=document.getElementById("list");L.innerHTML="";rows.length=0;
+  DATA.sentences.forEach((sen,i)=>{const card=document.createElement("div");card.className="c";
+    card.innerHTML=`<h2><span class="n">${i+1}</span>${esc(sen)}</h2>`;
+    NAMES.forEach(ck=>{const v=document.createElement("div");v.className="v";
+      const cer=DATA.cer&&DATA.cer[ck]&&DATA.cer[ck].items[i+1];
+      const gem=DATA.gemini&&DATA.gemini.items[ck]&&DATA.gemini.items[ck][i+1];
+      v.innerHTML=`<div class="lab">${esc(ck)}</div>
+<audio controls preload="none" src="samples/${encodeURIComponent(ck)}/${String(i+1).padStart(2,"0")}.wav"></audio>
+${cer?`<div class="asr">Whisper 听写：${esc(cer.hyp)}　${cer.cer>0?`<b>CER ${(cer.cer*100).toFixed(1)}%</b>`:`<span class="z">CER 0</span>`}</div>`:""}
+${gem?gem.map(g=>`<div class="asr">Gemini：${esc(g)}</div>`).join(""):""}`;
+      const a=v.querySelector("audio");a.volume=(DATA.vols&&DATA.vols[ck]&&DATA.vols[ck][i+1])??1;  // loudness-matched playback
+      a.onplay=()=>{document.querySelectorAll("audio").forEach(x=>{if(x!==a)x.pause()});setCur(rows.indexOf(v))};
+      rows.push(v);card.appendChild(v)});
+    L.appendChild(card)});
+  document.getElementById("prog").textContent=`${NAMES.length} 个版本 × ${DATA.sentences.length} 句`;
+  setCur(0);renderResult()}
+
+function setCur(r){rows.forEach(x=>x.classList.remove("cur"));cur=r;if(rows[r])rows[r].classList.add("cur")}
+
+function renderResult(){const f=(x,d=2)=>x==null?"–":x.toFixed(d);
+  const G=Object.fromEntries((DATA.gemini?DATA.gemini.summary:[]).map(g=>[g.name,{...g,avg:(g.similarity+g.pronunciation+g.naturalness+g.stability)/4}]));
+  const A=Object.fromEntries((DATA.auto||[]).map(a=>[a.name,a]));
+  const R=NAMES.map(n=>({name:n,cer:DATA.cer&&DATA.cer[n]?DATA.cer[n].total:null,g:G[n],a:A[n]}));
+  const ext=(xs,hi)=>{const v=xs.filter(x=>x!=null);return v.length?(hi?Math.max(...v):Math.min(...v)):null};
+  const bestCer=ext(R.map(r=>r.cer),false),bestG=ext(R.map(r=>r.g&&r.g.avg),true),bestSim=ext(R.map(r=>r.a&&r.a.sim),true);
+  const td=(x,best,txt)=>`<td class="${x!=null&&x===best?"top":""}">${txt}</td>`;
+  const o=A["原声"];
+  document.getElementById("result").innerHTML=`<div class="c"><h2>汇总</h2><div class="wrap"><table>
+<tr><th>版本</th><th>CER</th><th>Gemini 相似</th><th>读音</th><th>自然</th><th>稳定</th><th>Gemini 平均</th><th>最佳次数</th><th>音色相似</th><th>MOS</th><th>音高起伏</th><th>语速</th></tr>
+${o?`<tr class="best"><td>原声（基线）</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>${f(o.sim,3)}</td><td>${f(o.mos)}</td><td>${f(o.f0_st)} st</td><td>${f(o.mora_s,1)}</td></tr>`:""}
+${R.map(r=>`<tr><td>${esc(r.name)}</td>${td(r.cer,bestCer,r.cer==null?"–":(r.cer*100).toFixed(1)+"%")}
+<td>${f(r.g&&r.g.similarity)}</td><td>${f(r.g&&r.g.pronunciation)}</td><td>${f(r.g&&r.g.naturalness)}</td><td>${f(r.g&&r.g.stability)}</td>
+${td(r.g&&r.g.avg,bestG,f(r.g&&r.g.avg))}<td>${r.g?r.g.best:"–"}</td>
+${td(r.a&&r.a.sim,bestSim,f(r.a&&r.a.sim,3))}<td>${f(r.a&&r.a.mos)}</td><td>${r.a?f(r.a.f0_st)+" st":"–"}</td><td>${f(r.a&&r.a.mora_s,1)}</td></tr>`).join("")}
+</table></div>
+<p class="tip">按 Gemini 平均分从高到低排序（每句下的版本顺序也一样）。绿色是该列最好的版本。CER：Whisper 把试听转写回文本的错误率，测不出多音字和アクセント。Gemini：Gemini 3.8 Flash 每句同时听 3 条原声和全部版本后打 1–5 分，多轮取平均；"最佳次数"是被它选为当句最佳的次数。音色相似：和 90 条原声的说话人向量余弦相似度。MOS：SQUIM 预测的自然度（只看相对高低）。音高起伏明显低于原声说明语调偏平。语速单位是拍/秒。</p></div>`}
+
+document.addEventListener("keydown",e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;const v=rows[cur];
+  const go=r=>{if(r<0||r>=rows.length)return;setCur(r);rows[r].scrollIntoView({block:"center"});rows[r].querySelector("audio").play()};
+  if(e.key==="j"||e.key==="J"){e.preventDefault();go(cur+1)}
+  else if(e.key==="k"||e.key==="K"){e.preventDefault();go(cur-1)}
+  else if(e.key===" "&&v){e.preventDefault();const a=v.querySelector("audio");a.paused?a.play():a.pause()}});
+render();
+</script></body></html>

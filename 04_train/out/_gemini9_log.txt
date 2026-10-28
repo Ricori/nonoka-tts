@@ -1,0 +1,31 @@
+5 versions x 20 calls, 10 at a time
+round 1 sentence  5: best=E -> A=4/5/4/5, B=4/5/3/4, C=4/5/4/5, D=4/5/4/5, E=5/5/5/5
+round 1 sentence 10: best=E -> A=4/2/3/5, B=3/2/3/5, C=3/2/3/5, D=4/2/3/5, E=4/2/4/5
+round 1 sentence  6: best=D -> A=4/3/3/4, B=4/3/3/4, C=4/3/3/4, D=5/5/5/5, E=4/3/3/4
+round 1 sentence  7: best=D -> A=3/4/3/4, B=3/4/3/4, C=3/4/3/3, D=5/5/5/5, E=4/4/4/4
+round 1 sentence  9: best=C -> A=4/4/3/4, B=4/4/4/4, C=5/5/5/5, D=4/4/3/3, E=4/4/4/4
+round 1 sentence  8: best=B -> A=4/5/4/5, B=5/5/5/5, C=3/2/2/2, D=4/5/4/4, E=4/5/4/4
+round 1 sentence  1: best=A -> A=5/5/5/5, B=4/5/4/5, C=3/4/3/4, D=4/5/4/5, E=4/4/3/4
+round 1 sentence  2: best=C -> A=4/5/4/4, B=4/5/4/4, C=5/5/5/5, D=4/5/3/4, E=4/5/4/4
+round 1 sentence  3: best=A -> A=5/5/5/5, B=4/5/4/4, C=3/5/3/4, D=4/5/4/3, E=4/5/4/4
+round 1 sentence  4: best=C -> A=3/4/3/4, B=4/4/4/4, C=5/5/5/5, D=3/4/3/3, E=4/4/4/4
+round 2 sentence  2: best=A -> A=5/5/5/5, B=4/5/4/4, C=3/5/4/4, D=4/5/4/4, E=3/5/3/3
+round 2 sentence  1: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/5/4/5, D=4/5/4/4, E=4/5/4/5
+round 2 sentence  5: best=D -> A=4/5/4/5, B=4/5/3/4, C=3/5/4/4, D=5/5/5/5, E=4/5/3/4
+round 2 sentence  7: best=E -> A=4/4/4/4, B=4/5/4/4, C=4/4/4/3, D=4/4/3/4, E=5/5/5/5
+round 2 sentence  8: best=C -> A=4/5/4/5, B=4/5/4/5, C=5/5/5/5, D=4/5/4/5, E=3/2/2/2
+round 2 sentence  4: best=E -> A=4/5/3/5, B=4/5/3/5, C=4/5/4/5, D=4/5/3/4, E=5/5/5/5
+round 2 sentence  6: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/5/4/5, D=4/5/3/4, E=3/5/3/3
+round 2 sentence  3: best=C -> A=3/4/3/4, B=3/3/3/3, C=5/5/5/5, D=4/4/3/3, E=4/4/4/4
+round 2 sentence  9: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/5/4/4, D=4/5/4/4, E=4/5/4/5
+round 2 sentence 10: best=B -> A=4/2/3/4, B=4/4/4/4, C=3/3/3/3, D=3/2/2/3, E=4/2/3/3
+
+                         sim  pron   nat  stab   avg  best  n
+full_s2e10_s1e6_t7k3_aux2_ref4690  4.05  4.50  3.85  4.30  4.17     6  20
+mix_s2e10_s1e2_t7k3_aux2_ref4690  4.05  4.15  3.60  4.10  3.98     4  20
+mix_s2e10_s1e4_t7k3_aux2_ref4690  4.00  4.40  3.85  4.45  4.17     3  20
+mix_s2e10_s1e6_t7k3_aux2_ref4690  3.95  4.40  3.65  4.25  4.06     2  20
+mix_s2e10_s1e8_t7k3_aux2_ref4690  3.90  4.40  3.90  4.25  4.11     5  20
+-> D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train\out\gemini_judge.csv
+ALL DONE
+EXIT 0

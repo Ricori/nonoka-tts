@@ -1,0 +1,19 @@
+loading models (first run downloads ~100 MB)
+ dataset 1/90 dataset 2/90 dataset 3/90 dataset 4/90 dataset 5/90 dataset 6/90 dataset 7/90 dataset 8/90 dataset 9/90 dataset 10/90 dataset 11/90 dataset 12/90 dataset 13/90 dataset 14/90 dataset 15/90 dataset 16/90 dataset 17/90 dataset 18/90 dataset 19/90 dataset 20/90 dataset 21/90 dataset 22/90 dataset 23/90 dataset 24/90 dataset 25/90 dataset 26/90 dataset 27/90 dataset 28/90 dataset 29/90 dataset 30/90 dataset 31/90 dataset 32/90 dataset 33/90 dataset 34/90 dataset 35/90 dataset 36/90 dataset 37/90 dataset 38/90 dataset 39/90 dataset 40/90 dataset 41/90 dataset 42/90 dataset 43/90 dataset 44/90 dataset 45/90 dataset 46/90 dataset 47/90 dataset 48/90 dataset 49/90 dataset 50/90 dataset 51/90 dataset 52/90 dataset 53/90 dataset 54/90 dataset 55/90 dataset 56/90 dataset 57/90 dataset 58/90 dataset 59/90 dataset 60/90 dataset 61/90 dataset 62/90 dataset 63/90 dataset 64/90 dataset 65/90 dataset 66/90 dataset 67/90 dataset 68/90 dataset 69/90 dataset 70/90 dataset 71/90 dataset 72/90 dataset 73/90 dataset 74/90 dataset 75/90 dataset 76/90 dataset 77/90 dataset 78/90 dataset 79/90 dataset 80/90 dataset 81/90 dataset 82/90 dataset 83/90 dataset 84/90 dataset 85/90 dataset 86/90 dataset 87/90 dataset 88/90 dataset 89/90 dataset 90/90
+ scored full_s2e10_s1e6_t7k3_aux3_zr04
+ scored mix_s2e10_s1e2_t7k3_aux3_zr04
+ scored mix_s2e10_s1e4_t7k3_aux3_zr04
+ scored mix_s2e10_s1e6_t7k3_aux3_zr04
+ scored mix_s2e10_s1e8_t7k3_aux3_zr04
+ scored vc_ft1000_ref4690
+
+                          sim   MOS DNSMOS   F0Hz  F0st mora/s   worst sim (idx)
+原声 (baseline)           0.846  3.93   3.12    321  3.68   4.26   0.679 (03002700)
+full_s2e10_s1e6_t7k3_aux3_zr04  0.811  3.61   3.17    296  3.56   4.97   0.775 (6)
+mix_s2e10_s1e2_t7k3_aux3_zr04  0.809  3.57   3.13    302  3.63   4.96   0.760 (12)
+mix_s2e10_s1e4_t7k3_aux3_zr04  0.807  3.74   3.14    300  3.58   5.02   0.752 (5)
+mix_s2e10_s1e6_t7k3_aux3_zr04  0.805  3.82   3.11    303  3.77   5.11   0.768 (5)
+mix_s2e10_s1e8_t7k3_aux3_zr04  0.804  3.86   3.08    299  3.71   5.01   0.737 (1)
+vc_ft1000_ref4690       0.762  2.76   3.23    310  3.88   4.57   0.718 (1)
+-> D:\Development\nonoka-tts\.claude\worktrees\friendly-bouman-7912a0\04_train\out\zh\auto_eval.csv
+ALL DONE

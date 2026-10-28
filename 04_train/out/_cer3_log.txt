@@ -1,0 +1,116 @@
+8 checkpoints in D:\Development\nonoka-tts\04_train\out\samples
+full_s2e10_s1base 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1base 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1base 03 cer=0.028  毎週の金曜日午後3時に生徒会室に集合してください
+full_s2e10_s1base 04 cer=0.000  今日は風が強いので上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1base 05 cer=0.179  奏先輩と夜月先輩はいつも仲がいいですね
+full_s2e10_s1base 06 cer=0.071  人気のお店だから 終盤くらい並ぶかもしれません
+full_s2e10_s1base 07 cer=0.000  生まれて初めて自分でお弁当を作ってみたんです。上手にできたかな?
+full_s2e10_s1base 08 cer=0.136  ……先輩ったら、また寝癖がついてますよ?
+full_s2e10_s1base 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1base 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e3 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e3 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e3 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e3 04 cer=0.147  今日、風が強いので上着を着て行った方がいいと思いますよ
+full_s2e10_s1e3 05 cer=0.214  奏先輩とゆる月先輩はいつも仲がいいですね
+full_s2e10_s1e3 06 cer=0.000  人気のお店だから 10分くらい並ぶかもしれません
+full_s2e10_s1e3 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e3 08 cer=0.455  また寝癖がついてますよ
+full_s2e10_s1e3 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e3 10 cer=0.122  2326年10月21日 今日の気温は18度でした
+full_s2e10_s1e3_t7k3 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e3_t7k3 02 cer=0.000  昨日の夜 駅前の本屋さんで新しい小説を3冊買いました
+full_s2e10_s1e3_t7k3 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e3_t7k3 04 cer=0.029  今日は風が強いので 上着を着ていた方がいいと思いますよ
+full_s2e10_s1e3_t7k3 05 cer=0.107  かなで先輩とゆる月先輩はいつも仲がいいですね
+full_s2e10_s1e3_t7k3 06 cer=0.036  人気のお店だから 10番くらい並ぶかもしれません
+full_s2e10_s1e3_t7k3 07 cer=0.027  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかなぁ
+full_s2e10_s1e3_t7k3 08 cer=0.000  ふふっ、先輩ったら、また寝癖がついてますよ?
+full_s2e10_s1e3_t7k3 09 cer=0.000  約束ですよ 明日の朝7時半に いつもの場所で待ってますから
+full_s2e10_s1e3_t7k3 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e6 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6 02 cer=0.000  昨日の夜 駅前の本屋さんで新しい小説を3冊買いました
+full_s2e10_s1e6 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6 04 cer=0.029  今日は風が強いので 上着を着ていた方がいいと思いますよ
+full_s2e10_s1e6 05 cer=0.214  奏先輩と寄月先輩は いつも仲がいいですね
+full_s2e10_s1e6 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6 07 cer=0.162  生まれて初めて 自分でお弁当を作ってみたんです調査に行ってきたかなぁ
+full_s2e10_s1e6 08 cer=0.000  ふふっ、センパイったらまた寝癖がついてますよ?
+full_s2e10_s1e6 09 cer=0.000  約束ですよ。明日の朝、7時半にいつもの場所で待ってますから。
+full_s2e10_s1e6 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e6_t7k3 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6_t7k3 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3 04 cer=0.206  今日風邪が強いので お脇を着て行った方がいいと思いますよ
+full_s2e10_s1e6_t7k3 05 cer=0.179  奏先輩と夜月先輩は いつも仲がいいですね
+full_s2e10_s1e6_t7k3 06 cer=0.000  人気のお店だから 10分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3 07 cer=0.108  生まれて初めて 自分でお弁当を作ってみたんです上手に行ってきたかなぁ
+full_s2e10_s1e6_t7k3 08 cer=0.136  へへ、先輩ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3 09 cer=0.000  約束ですよ 明日の朝7時半に いつもの場所で待ってますから
+full_s2e10_s1e6_t7k3 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+full_s2e10_s1e6_t7k3_ref0230 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6_t7k3_ref0230 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3_ref0230 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_ref0230 04 cer=0.000  今日は風が強いので、上着を着て行った方がいいと思いますよ。
+full_s2e10_s1e6_t7k3_ref0230 05 cer=0.179  奏先輩と夜月先輩は いつも仲がいいですね
+full_s2e10_s1e6_t7k3_ref0230 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_ref0230 07 cer=0.000  生まれて初めて 自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_ref0230 08 cer=0.455  また寝癖がついてますよ
+full_s2e10_s1e6_t7k3_ref0230 09 cer=0.000  約束ですよ。明日の朝、七時半にいつもの場所で待ってますから。
+full_s2e10_s1e6_t7k3_ref0230 10 cer=0.122  2326年10月21日 今日の気温は18度でした
+full_s2e10_s1e6_t7k3_ref4690 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+full_s2e10_s1e6_t7k3_ref4690 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を3冊買いました。
+full_s2e10_s1e6_t7k3_ref4690 03 cer=0.000  来週の金曜日 午後3時に生徒会室に集合してください
+full_s2e10_s1e6_t7k3_ref4690 04 cer=0.000  今日は風が強いので 上着を着て行ったほうがいいと思いますよ
+full_s2e10_s1e6_t7k3_ref4690 05 cer=0.107  かなで先輩とゆる月先輩はいつも仲がいいですね
+full_s2e10_s1e6_t7k3_ref4690 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+full_s2e10_s1e6_t7k3_ref4690 07 cer=0.000  生まれて初めて自分でお弁当を作ってみたんです上手にできたかな
+full_s2e10_s1e6_t7k3_ref4690 08 cer=0.182  先輩言ったらまた寝癖がついてますよ
+full_s2e10_s1e6_t7k3_ref4690 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+full_s2e10_s1e6_t7k3_ref4690 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+gsv_s2e8_s1e15 01 cer=0.000  先輩、おはようございます。今日は一緒に帰れますか?
+gsv_s2e8_s1e15 02 cer=0.000  昨日の夜、駅前の本屋さんで新しい小説を三冊買いました。
+gsv_s2e8_s1e15 03 cer=0.000  来週の金曜日午後3時に生徒会室に集合してください
+gsv_s2e8_s1e15 04 cer=0.000  今日は風が強いので 上着を着て行った方がいいと思いますよ
+gsv_s2e8_s1e15 05 cer=0.179  総先輩と寄る月先輩はいつも仲がいいですね
+gsv_s2e8_s1e15 06 cer=0.000  人気のお店だから 十分くらい並ぶかもしれません
+gsv_s2e8_s1e15 07 cer=0.054  離れて初めて 自分でお弁当を作ってみたんです上手にできたかな
+gsv_s2e8_s1e15 08 cer=0.136  先輩ったらまた寝癖がついてますよ
+gsv_s2e8_s1e15 09 cer=0.000  約束ですよ 明日の朝7時半にいつもの場所で待ってますから
+gsv_s2e8_s1e15 10 cer=0.000  2026年10月21日 今日の気温は18度でした
+
+== CER per checkpoint (total edits / total kana)
+full_s2e10_s1base      3.37%   sentences with errors: 03 05 06 08
+full_s2e10_s1e3        7.98%   sentences with errors: 04 05 08 10
+full_s2e10_s1e3_t7k3   1.84%   sentences with errors: 04 05 06 07
+full_s2e10_s1e6        3.99%   sentences with errors: 04 05 07
+full_s2e10_s1e6_t7k3   5.83%   sentences with errors: 04 05 07 08
+full_s2e10_s1e6_t7k3_ref0230 6.13%   sentences with errors: 05 08 10
+full_s2e10_s1e6_t7k3_ref4690 2.15%   sentences with errors: 05 08
+gsv_s2e8_s1e15         3.07%   sentences with errors: 05 07 08
+-> D:\Development\nonoka-tts\04_train\out\cer.csv
+ALL DONE
+loading models (first run downloads ~100 MB)
+ dataset 1/90 dataset 2/90 dataset 3/90 dataset 4/90 dataset 5/90 dataset 6/90 dataset 7/90 dataset 8/90 dataset 9/90 dataset 10/90 dataset 11/90 dataset 12/90 dataset 13/90 dataset 14/90 dataset 15/90 dataset 16/90 dataset 17/90 dataset 18/90 dataset 19/90 dataset 20/90 dataset 21/90 dataset 22/90 dataset 23/90 dataset 24/90 dataset 25/90 dataset 26/90 dataset 27/90 dataset 28/90 dataset 29/90 dataset 30/90 dataset 31/90 dataset 32/90 dataset 33/90 dataset 34/90 dataset 35/90 dataset 36/90 dataset 37/90 dataset 38/90 dataset 39/90 dataset 40/90 dataset 41/90 dataset 42/90 dataset 43/90 dataset 44/90 dataset 45/90 dataset 46/90 dataset 47/90 dataset 48/90 dataset 49/90 dataset 50/90 dataset 51/90 dataset 52/90 dataset 53/90 dataset 54/90 dataset 55/90 dataset 56/90 dataset 57/90 dataset 58/90 dataset 59/90 dataset 60/90 dataset 61/90 dataset 62/90 dataset 63/90 dataset 64/90 dataset 65/90 dataset 66/90 dataset 67/90 dataset 68/90 dataset 69/90 dataset 70/90 dataset 71/90 dataset 72/90 dataset 73/90 dataset 74/90 dataset 75/90 dataset 76/90 dataset 77/90 dataset 78/90 dataset 79/90 dataset 80/90 dataset 81/90 dataset 82/90 dataset 83/90 dataset 84/90 dataset 85/90 dataset 86/90 dataset 87/90 dataset 88/90 dataset 89/90 dataset 90/90
+ scored full_s2e10_s1base
+ scored full_s2e10_s1e3
+ scored full_s2e10_s1e3_t7k3
+ scored full_s2e10_s1e6
+ scored full_s2e10_s1e6_t7k3
+ scored full_s2e10_s1e6_t7k3_ref0230
+ scored full_s2e10_s1e6_t7k3_ref4690
+ scored gsv_s2e8_s1e15
+
+                          sim   MOS DNSMOS   F0Hz  F0st mora/s   worst sim (idx)
+原声 (baseline)           0.846  3.93   3.12    321  3.68   4.26   0.679 (03002700)
+full_s2e10_s1base       0.823  3.91   3.14    354  2.68   5.35   0.766 (8)
+full_s2e10_s1e3         0.857  3.96   3.02    343  2.94   5.03   0.812 (8)
+full_s2e10_s1e3_t7k3    0.872  3.95   3.09    342  3.03   4.69   0.850 (10)
+full_s2e10_s1e6         0.856  4.04   3.04    340  3.02   4.98   0.822 (4)
+full_s2e10_s1e6_t7k3    0.856  3.89   3.12    338  2.97   4.73   0.835 (8)
+full_s2e10_s1e6_t7k3_ref0230  0.827  3.31   3.05    289  3.12   5.20   0.807 (8)
+full_s2e10_s1e6_t7k3_ref4690  0.835  3.47   3.09    308  3.65   5.33   0.796 (10)
+gsv_s2e8_s1e15          0.843  3.93   3.22    339  3.08   4.89   0.816 (2)
+-> D:\Development\nonoka-tts\04_train\out\auto_eval.csv
+ALL DONE

@@ -1,0 +1,43 @@
+6 versions x 32 calls, 10 at a time
+round 1 sentence  3: best=D -> A=3/3/3/4, B=3/3/2/3, C=3/3/3/4, D=4/5/4/5, E=3/3/3/4, F=3/3/2/3
+round 1 sentence  4: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/4/4/4, D=4/4/4/4, E=3/4/3/4, F=3/3/3/3
+round 1 sentence 10: best=F -> A=3/3/3/3, B=4/4/4/4, C=3/4/3/3, D=3/3/3/3, E=4/4/4/4, F=5/5/5/5
+round 1 sentence  2: best=B -> A=4/4/3/4, B=5/5/5/5, C=4/3/3/4, D=3/3/2/3, E=4/4/4/4, F=3/3/3/4
+round 1 sentence  6: best=A -> A=4/5/5/5, B=4/4/4/4, C=3/3/3/2, D=4/4/3/4, E=3/4/4/4, F=4/4/4/3
+round 1 sentence  7: best=E -> A=5/5/4/4, B=4/5/4/5, C=4/4/3/3, D=4/5/4/5, E=5/5/5/5, F=5/5/4/4
+round 1 sentence  8: best=D -> A=4/5/4/5, B=4/2/4/5, C=4/5/4/5, D=5/5/5/5, E=4/4/3/4, F=4/5/3/5
+round 1 sentence  9: best=B -> A=4/4/3/4, B=5/5/5/5, C=3/4/3/4, D=3/4/3/4, E=3/4/3/4, F=4/4/4/5
+round 1 sentence  5: best=E -> A=4/4/4/5, B=4/4/4/5, C=3/4/3/5, D=3/4/3/5, E=5/5/5/5, F=4/4/3/3
+round 1 sentence  1: best=B -> A=4/4/3/4, B=5/4/5/5, C=4/4/4/4, D=4/2/3/4, E=4/4/3/4, F=4/4/4/4
+round 1 sentence 11: best=A -> A=5/5/5/5, B=4/5/4/4, C=4/5/4/5, D=4/5/3/4, E=4/4/4/4, F=4/5/4/5
+round 1 sentence 16: best=D -> A=4/4/3/4, B=4/4/3/4, C=3/3/3/4, D=5/5/5/5, E=4/4/4/3, F=4/4/3/4
+round 2 sentence  2: best=D -> A=3/2/3/4, B=2/2/2/4, C=3/2/2/3, D=4/4/4/4, E=3/3/3/4, F=3/3/3/4
+round 2 sentence  1: best=D -> A=4/2/3/3, B=3/2/2/2, C=4/3/3/3, D=5/5/5/5, E=4/4/4/4, F=4/3/4/4
+round 1 sentence 12: best=A -> A=5/5/5/5, B=4/4/4/4, C=3/3/3/3, D=4/4/4/4, E=4/4/4/4, F=4/4/4/4
+round 1 sentence 15: best=B -> A=3/4/3/4, B=5/5/5/5, C=4/4/4/4, D=4/4/3/4, E=4/4/3/3, F=4/4/4/4
+round 1 sentence 13: best=B -> A=4/4/4/4, B=5/5/5/5, C=4/4/4/4, D=4/4/4/4, E=3/4/3/4, F=2/2/2/2
+round 1 sentence 14: best=B -> A=4/5/4/5, B=5/5/5/5, C=3/4/3/2, D=4/4/3/4, E=4/5/4/5, F=4/5/4/5
+round 2 sentence  3: best=D -> A=3/4/3/4, B=3/4/3/4, C=2/4/2/4, D=5/5/5/5, E=4/4/4/4, F=4/4/3/4
+round 2 sentence  4: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/4/4/3, D=4/4/4/4, E=4/4/3/3, F=4/4/4/3
+round 2 sentence  5: best=A -> A=5/5/5/5, B=4/4/4/5, C=4/4/4/4, D=4/4/4/4, E=4/4/3/4, F=3/4/3/2
+round 2 sentence  6: best=C -> A=3/4/3/4, B=4/4/3/4, C=5/5/5/5, D=3/4/3/4, E=3/4/2/4, F=4/4/4/4
+round 2 sentence  7: best=B -> A=4/5/4/5, B=5/5/5/5, C=4/5/4/5, D=3/3/2/3, E=4/5/4/5, F=4/5/4/5
+round 2 sentence  8: best=B -> A=4/2/3/4, B=5/5/5/5, C=5/4/4/4, D=4/5/3/4, E=5/5/4/5, F=4/4/4/4
+round 2 sentence  9: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/4/3/4, D=4/5/4/5, E=4/5/4/5, F=4/5/4/5
+round 2 sentence 10: best=B -> A=4/4/3/4, B=5/5/5/5, C=4/4/3/3, D=4/4/3/4, E=3/3/2/2, F=4/4/4/4
+round 2 sentence 11: best=F -> A=4/5/4/5, B=4/5/4/5, C=3/4/3/3, D=4/5/4/5, E=4/4/4/4, F=5/5/5/5
+round 2 sentence 12: best=D -> A=4/5/4/4, B=4/5/3/4, C=3/4/3/3, D=5/5/5/5, E=3/4/3/3, F=4/4/3/4
+round 2 sentence 13: best=C -> A=4/4/3/4, B=4/4/3/4, C=5/4/4/4, D=4/4/3/4, E=4/4/3/4, F=3/3/2/2
+round 2 sentence 14: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/4/3/4, D=4/4/3/4, E=5/5/4/5, F=4/4/4/4
+round 2 sentence 16: best=C -> A=3/4/3/4, B=3/4/3/3, C=4/4/4/4, D=3/3/3/3, E=3/3/2/2, F=3/3/3/4
+round 2 sentence 15: best=A -> A=5/5/5/5, B=4/5/4/5, C=4/4/3/4, D=4/5/4/5, E=4/5/4/5, F=4/3/3/4
+
+                         sim  pron   nat  stab   avg  best  n
+full_s2e10_s1base_t7k3_aux3_zhref13  3.88  4.19  3.53  4.16  3.94     1  32
+full_s2e10_s1base_t7k3_zhref13  3.97  4.16  3.69  4.28  4.02     4  32
+full_s2e10_s1e6_t7k3_aux3_zhref13  4.16  4.50  3.97  4.41  4.26    11  32
+full_s2e10_s1e6_t7k3_sp9_aux2_ref4690  3.31  3.56  2.75  3.09  3.18     0  32
+full_s2e10_s1e6_t7k3_zhref13  3.97  4.16  3.81  4.34  4.07     5  32
+vc_ft1000_ref4690       4.12  4.09  3.97  4.44  4.16    11  32
+-> D:\Development\nonoka-tts\.claude\worktrees\continue-task-ecec10\04_train\out\zh\gemini_judge.csv
+ALL DONE
