@@ -1,10 +1,10 @@
 # Nonoka TTS
 
-用游戏角色「Nonoka」约 99 分钟的日语台词，微调出一个能说**日语和中文**的 TTS（GPT-SoVITS v2ProPlus），外加一个用她的声音翻唱歌曲的流程（Seed-VC 歌声转换）。
+用约 99 分钟的日语台词，微调出一个能说**日语和中文**的「Nonoka」 TTS（GPT-SoVITS v2ProPlus），外加一个用她的声音翻唱歌曲的流程（Seed-VC 歌声转换）。
 
 这个仓库记录了从原始音频到最终模型的完整流程：数据筛选、转写校对、训练、自动评测、推理调参，以及在只有日语数据的情况下怎样让她说好中文。每一步的脚本、评测数字和结果页都保留在仓库里，作为实验证据。
 
-> **关于数据**：原始语音、转写文本、训练数据集和所有音频（原声、生成试听、参考音频）都**不在仓库里**，也不会提供。角色语音的版权属于原作，本项目仅用于个人学习和研究，请勿用于商业用途或冒充他人。想复现的话，请换成你有权使用的语音数据（格式见 4.1）。
+> **关于数据**：原始语音、转写文本、训练数据集和所有音频（原声、生成试听、参考音频）都**不在仓库里**，也不会提供。角色语音的版权属于原作，本项目仅用于个人学习和研究，请勿用于商业用途或冒充他人。想复现的话，请换成你自己的语音数据（格式见 4.1）。
 
 ---
 
@@ -36,7 +36,7 @@
  ▼
 02_dataset_full/esd.list：498 条，约 99 分钟
  │
- ├─▶ GPT-SoVITS v2ProPlus 全量微调（Modal L40S，约 45 分钟）
+ ├─▶ GPT-SoVITS v2ProPlus 全量微调（服务器 L40S，约 45 分钟）
  │     SoVITS 10 轮 → nonoka_full e10（负责音色，两种语言共用）
  │     GPT 15 轮   → nonoka_full e6（负责"怎么读"，日语用）
  │
@@ -80,7 +80,7 @@ nonoka-tts/
 │  ├─ auto_eval.py                         客观指标 → auto_eval.csv
 │  ├─ sing_eval.py                         翻唱的音色相似度和 DNSMOS
 │  └─ requirements.lock.txt                venv 的完整包版本
-├─ 04_train/                GPT-SoVITS 训练和推理（Modal 云端）
+├─ 04_train/                GPT-SoVITS 训练和推理（在服务器上运行）
 │  ├─ train_gptsovits.py    预处理 → 训练 → 渲染试听；所有推理设置都在文件开头的常量里
 │  ├─ 1_train.bat           全量训练 + 渲染日语/中文试听
 │  ├─ 2_render.bat          用已训练的权重重新渲染试听，并更新结果页
@@ -115,7 +115,7 @@ nonoka-tts/
 
 | 用途 | 需要 |
 |---|---|
-| 训练、渲染、合成中文、翻唱 | [Modal](https://modal.com) 账号：`pip install modal`，`python -m modal setup`。GPU 用 L40S（约 $1.95/小时），部分步骤用 L4 |
+| 训练、渲染、合成中文、翻唱 | GPU 服务器：主要用 L40S，部分步骤用 L4。`04_train` 里的脚本把数据传到服务器上运行，再把结果下载回本地 |
 | 转写、CER | Windows + NVIDIA GPU（作者用 RTX 3070），Python 3.12 |
 | 客观指标 | CPU 即可 |
 | Gemini（转写定稿、翻译、盲评） | Antigravity CLI（`agy`），有个人额度；不用 Gemini 的话这几步可以跳过或改成人工 |
@@ -126,7 +126,7 @@ nonoka-tts/
 3. 装不上时用宽松版本：`venv\Scripts\python -m pip install torch torchaudio speechbrain speechmos librosa pykakasi`。
 4. auto_eval 用的 ECAPA 模型首次运行时自动下载到 `03_asr/models/`。
 
-云端镜像的版本都已固定在脚本里：GPT-SoVITS commit `b4570b8`（Python 3.11，PyTorch 2.7.0 + CUDA 12.8），Seed-VC commit `51383ef`。第一次构建 GPT-SoVITS 镜像约 15–20 分钟，之后用缓存。
+服务器镜像的版本都已固定在脚本里：GPT-SoVITS commit `b4570b8`（Python 3.11，PyTorch 2.7.0 + CUDA 12.8），Seed-VC commit `51383ef`。第一次构建 GPT-SoVITS 镜像约 15–20 分钟，之后用缓存。
 
 ---
 
@@ -156,7 +156,7 @@ nonoka-tts/
 
 ### 4.4 训练 GPT-SoVITS
 
-在 `04_train` 里双击 `1_train.bat`（即 `python -m modal run --detach train_gptsovits.py::train_main`）：上传数据集 → 预处理（WebUI 的 1-get-text、2-get-hubert-wav32k、2-get-sv、3-get-semantic，无头运行）→ 训练 SoVITS → 训练 GPT → 渲染日语和中文试听，下载到 `out/samples/` 和 `out/zh/samples/`。
+在 `04_train` 里双击 `1_train.bat`（入口 `train_gptsovits.py::train_main`）：上传数据集 → 预处理（WebUI 的 1-get-text、2-get-hubert-wav32k、2-get-sv、3-get-semantic，无头运行）→ 训练 SoVITS → 训练 GPT → 渲染日语和中文试听，下载到 `out/samples/` 和 `out/zh/samples/`。
 
 | 项目 | 设置 |
 |---|---|
@@ -167,15 +167,15 @@ nonoka-tts/
 | 人名 | 训练文本和日语测试句里的「奏先輩」「夜月先輩」「十和先輩」上传前自动换成片假名「カナデ」「ヨルツキ」「トワ」，避免 G2P 读错（`NAMES`） |
 | 耗时 | 预处理 + 训练 + 渲染约 45 分钟 L40S |
 
-- 以 `--detach` 运行，关掉窗口云端也会继续，但窗口要开着才能收到试听；没收到就跑 `2_render.bat`。
-- `--dataset 02_dataset_v1` 用第一轮数据（实验名 `nonoka`），默认全量（`nonoka_full`）。两个实验的特征和权重在 Modal Volume `nonoka-gptsovits` 上分开存放。
+- 以 `--detach` 运行，关掉窗口服务器也会继续，但窗口要开着才能收到试听；没收到就跑 `2_render.bat`。
+- `--dataset 02_dataset_v1` 用第一轮数据（实验名 `nonoka`），默认全量（`nonoka_full`）。两个实验的特征和权重在服务器的存储上分开存放。
 - **轮数的经验**：SoVITS e10 比 e6 好；GPT 训练越久越差（e6 > e9 > e15，多出吸气声和不自然的停顿），e3 也不比 e6 好。全量数据下 GPT 用 e6（378 步）。
 
 ### 4.5 生成试听和评测
 
 每次改了权重或推理设置，都走一遍这个循环：
 
-1. **渲染**：改 `train_gptsovits.py` 开头的 `COMBOS`，运行 `2_render.bat`（只要日语：`python -m modal run train_gptsovits.py::render_main --langs ja`，约 3 分钟）。每一项是（SoVITS 轮数，GPT 轮数，参考音频，推理参数），文件夹名会自动编码这些设置，例如 `full_s2e10_s1e6_t7k3_sp9_aux2_ref4690`。
+1. **渲染**：改 `train_gptsovits.py` 开头的 `COMBOS`，运行 `2_render.bat`（只要日语：入口 `train_gptsovits.py::render_main` 加 `--langs ja`，约 3 分钟）。每一项是（SoVITS 轮数，GPT 轮数，参考音频，推理参数），文件夹名会自动编码这些设置，例如 `full_s2e10_s1e6_t7k3_sp9_aux2_ref4690`。
 2. **CER**：`03_asr\run_cer.bat`（中文 `run_cer.bat ..\04_train\out\zh\samples --zh`）→ `cer.csv`。
 3. **客观指标**：`03_asr\venv\Scripts\python auto_eval.py`（中文加 `..\04_train\out\zh\samples`）→ `auto_eval.csv`。
 4. **Gemini 盲评**：`python gemini_judge.py`（中文 `--root out/zh --lang zh`）→ `gemini_judge.csv`。
@@ -210,8 +210,8 @@ nonoka-tts/
 
 问题：只用日语训练的模型，配日语参考音频和日语文字稿说中文，日语腔会被带进去（Gemini "读音"只有 3 分左右）。
 
-1. `python -m modal run zh_vc.py`：Qwen3-TTS-1.7B-Base 的 x-vector 模式以 03004690 作为说话人提示，生成中文（读音正确，音色只是"有点像"）；Seed-VC v1（whisper-small，22.05kHz，只换音色）把它转成她的音色。Seed-VC 用 498 条原声微调了 1000 步（L40S 约 25 分钟），不过和零样本差别很小（5.5）。
-2. `python -m modal run zh_vc.py::refs_main`：用同样的流程读 8 句不在测试句里的中文，作为参考音频候选（`out/zh_refs/`），按 ECAPA 挑最像的一条：zr04「放学以后，我想去图书馆借几本书。」（3.8 秒，ECAPA 0.827）。
+1. `zh_vc.py`（默认入口）：Qwen3-TTS-1.7B-Base 的 x-vector 模式以 03004690 作为说话人提示，生成中文（读音正确，音色只是"有点像"）；Seed-VC v1（whisper-small，22.05kHz，只换音色）把它转成她的音色。Seed-VC 用 498 条原声微调了 1000 步（L40S 约 25 分钟），不过和零样本差别很小（5.5）。
+2. `zh_vc.py::refs_main`：用同样的流程读 8 句不在测试句里的中文，作为参考音频候选（`out/zh_refs/`），按 ECAPA 挑最像的一条：zr04「放学以后，我想去图书馆借几本书。」（3.8 秒，ECAPA 0.827）。
 3. GPT-SoVITS 用这条中文当主参考（`prompt_lang` zh，在 `COMBOS` 里写成 `"zr:vc_ft1000_ref4690/04"`），再用 aux 融合 3 条日语原声把音色拉回来。
 
 效果：Gemini 3.18 → 4.26，CER 5.6% → 2.4%（5.6、5.7）。参考音频本身的音色决定生成结果的音色，所以挑参考时先看 ECAPA，再看转写对不对。
@@ -221,9 +221,9 @@ nonoka-tts/
 SoVITS 管音色，GPT 管"怎么读"。所以只给 GPT 喂中文，SoVITS 继续只用真实原声：
 
 1. **翻译**（`tools/translate_zh.py`）：498 条台词交给 Gemini 译成口语中文，保留语气、口吃和语气词，「先輩」译成「学长」、去掉人名，数字写成汉字。每次 25 条，几分钟。
-2. **合成**（`python -m modal run zh_vc.py::corpus_main`）：Qwen3-TTS 朗读 → Seed-VC 转成她的音色。分 20 块并行，约 35 分钟。
+2. **合成**（`zh_vc.py::corpus_main`）：Qwen3-TTS 朗读 → Seed-VC 转成她的音色。分 20 块并行，约 35 分钟。
 3. **筛选**（`tools/filter_zh.py`，用 03_asr 的 venv）：Whisper large-v3 回听，CER ≤10% 且 ≤25 秒的保留：**475/498 条，约 62 分钟**，平均 CER 2.05%。丢掉的多是 Qwen3 读错（「学长」读成「华奖」之类）。
-4. **训练 GPT**（`python -m modal run train_gptsovits.py::train_gpt_main`）：日语原声 498 条 + 合成中文 475 条，从官方底模训 10 轮，每 2 轮保存（实验名 `nonoka_mix`）。含渲染约 15 分钟 L40S。只重新渲染加 `--render-only`，渲染哪些版本在 `MIX_COMBOS` 里改。
+4. **训练 GPT**（`train_gptsovits.py::train_gpt_main`）：日语原声 498 条 + 合成中文 475 条，从官方底模训 10 轮，每 2 轮保存（实验名 `nonoka_mix`）。含渲染约 15 分钟 L40S。只重新渲染加 `--render-only`，渲染哪些版本在 `MIX_COMBOS` 里改。
 
 效果（5.8）：中文 GPT e2 最好，Gemini 3.82 → 4.05，CER 2.1% → 1.4%，音色不变（0.809 vs 0.811）；轮数再多中文就没有优势了。日语用 mix GPT 没有变好，语调还略平一点，所以**GPT 按语言分开用**。
 
@@ -239,13 +239,13 @@ SoVITS 管音色，GPT 管"怎么读"。所以只给 GPT 喂中文，SoVITS 继�
 | 文本 | `all_ja`，按标点切句（cut5） | `all_zh`，cut5 |
 | 可选 | `speed_factor` 0.9（语速更接近原声） | aux 换成 5 条（音色略像，语调略平） |
 
-在 `train_gptsovits.py` 里：日语是 `(10, 6, "03004690", {**LOW, "aux": AUX2})`，中文是 `MIX_COMBOS` 里 e2 的 `ZH_DEFAULT`。权重在 Modal Volume `nonoka-gptsovits` 的 `SoVITS_weights_v2ProPlus/`、`GPT_weights_v2ProPlus/` 下。推理服务的部署代码不在仓库里。
+在 `train_gptsovits.py` 里：日语是 `(10, 6, "03004690", {**LOW, "aux": AUX2})`，中文是 `MIX_COMBOS` 里 e2 的 `ZH_DEFAULT`。权重存放在服务器上（`SoVITS_weights_v2ProPlus/`、`GPT_weights_v2ProPlus/`）。推理服务的部署代码不在仓库里。
 
 ### 4.10 翻唱（歌声转换）
 
 GPT-SoVITS 没有控制旋律的输入，不能唱歌。翻唱用的是歌声转换：保留原唱的旋律和咬字，只换音色。
 
-用法：把歌曲文件拖到 `04_train/4_sing.bat` 上（4 分钟的歌约 6–7 分钟），成品在 `out/sing/<歌名>/full_k<变调>/refcat_mix.mp3`。可选参数：`--start 60 --length 30` 先试 30 秒；`--shift 12` 手动变调；人声音量和混响用 `python -m modal run sing_vc.py::remix --folder <文件夹> --boost 5 --wet -26` 本地重新混音。
+用法：把歌曲文件拖到 `04_train/4_sing.bat` 上（4 分钟的歌约 6–7 分钟），成品在 `out/sing/<歌名>/full_k<变调>/refcat_mix.mp3`。可选参数：`--start 60 --length 30` 先试 30 秒；`--shift 12` 手动变调；人声音量和混响用 `sing_vc.py::remix`（`--folder <文件夹> --boost 5 --wet -26`）在本地重新混音，几秒就好。
 
 流程（`sing_vc.py`）：
 1. **分轨**（audio-separator，L4）：BS-Roformer 分人声/伴奏 → Mel-Roformer karaoke 分主唱/和声 → Mel-Roformer 去混响。
@@ -491,7 +491,7 @@ GPT-SoVITS 没有控制旋律的输入，不能唱歌。翻唱用的是歌声转
 - 多音字（比如「十分」）在输入文本里可以直接写成数字或假名。
 
 ### 6.4 部署
-- 推理在云端，部署代码不在仓库里。设置见 4.9：一个 SoVITS、两个 GPT，按语言切换 GPT 权重和参考音频。
+- 推理在服务器上，部署代码不在仓库里。设置见 4.9：一个 SoVITS、两个 GPT，按语言切换 GPT 权重和参考音频。
 
 ---
 
@@ -504,11 +504,11 @@ GPT-SoVITS 无头训练（`train_gptsovits.py` 里都已处理）：
 - `TTS_Config` 找不到权重文件时会**静默回退到官方底模**。渲染前先确认文件存在。
 - 中文渲染时 onnxruntime 报找不到 `libcublasLt.so.13`：是 G2PW 的 GPU 加速加载失败，自动回退 CPU，不影响结果。
 
-Modal：
-- 每条 `run_commands` 会变成一行 Dockerfile `RUN`，多行脚本要先编码。镜像最后有一段 CPU 冒烟测试，把日语和中文的文本处理、重采样走一遍，依赖问题在构建阶段就会报出来。
-- 在同一个 `run_commands` 里加命令会让整层重建（十几分钟）；追加依赖就新开一层 `.pip_install(...)` 放在最后。
-- 账号同时最多 10 个容器，多的会排队；`zh_vc.py` 的两个函数各限 5 个。L4 没货时自动换 A10G/L40S。
-- 翻唱的三个函数 scaledown 设成 3 秒，每次只调用一次，用完就停，不空转计费。
+服务器：
+- 镜像构建时，多行脚本要先编码成一行再执行。镜像最后有一段 CPU 冒烟测试，把日语和中文的文本处理、重采样走一遍，依赖问题在构建阶段就会报出来。
+- 改动镜像前面的构建步骤会让整层重建（十几分钟）；只是追加依赖的话，新开一层放在最后。
+- 服务器同时最多 10 个容器，多的会排队；`zh_vc.py` 的两个函数各限 5 个。L4 没货时自动换 A10G/L40S。
+- 翻唱的三个步骤每次只调用一次，空闲 3 秒就关机，不空转计费。
 
 其他：
 - 新版 PyAV 和 faster-whisper 不兼容：改用 soundfile 读音频、scipy 重采样。
